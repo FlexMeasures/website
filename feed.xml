@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>FlexMeasures</title>
     <link href="/feed.xml" rel="self" />
-    <link href="https://flexmeasures.github.io/website" />
+    <link href="/" />
     <updated>2022-02-10T11:51:30+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
-    <id>https://flexmeasures.github.io/website</id>
+    <id>/</id>
 
     <entry>
         <title>Plugins</title>
