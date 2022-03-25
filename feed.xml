@@ -3,12 +3,67 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.github.io/website/feed.xml" rel="self" />
     <link href="https://flexmeasures.github.io/website" />
-    <updated>2022-02-10T11:51:30+01:00</updated>
+    <updated>2022-03-25T17:06:51+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.github.io/website</id>
 
+    <entry>
+        <title>v0.9.0: CLI &#x3D;&#x3D; developer power</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.github.io/website/080-better-scheduling-safer-data-2/"/>
+        <id>https://flexmeasures.github.io/website/080-better-scheduling-safer-data-2/</id>
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2022-03-25T17:06:51+01:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.github.io/website/media/posts/22/florian-krumm-1osIUArK5oA-unsplash-2.jpg" alt="Computer keyboard, by Florian Krumm" />
+                    Version v0.9.0 of FlexMeasures (see changelog) adds many CLI commands to control FlexMeasures' data from the terminal. We hope this helps with reducing the onboarding time for new accounts! FlexMeasures&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://flexmeasures.github.io/website/media/posts/22/florian-krumm-1osIUArK5oA-unsplash-2.jpg" alt="Computer keyboard, by Florian Krumm" />
+                <p>Version v0.9.0 of FlexMeasures (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-9-0-march-8-2022" target="_blank" rel="noopener noreferrer">see changelog</a>) adds many CLI commands to control FlexMeasures' data from the terminal. We hope this helps with reducing the onboarding time for new accounts!</p>
+<p>FlexMeasures will also now convert incoming data, if it has a different source unit than the required sensor unit.</p>
+<p>Finally, we added new tutorial on how to get started using FlexMeasures in just a few minutes and we began a new API version (v3) which is more REST-like than v2 and better supports <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html">the new data model. </a>  Do let us know if these things help you be more productive with FlexMeasures!</p>
+<h2>CLI commands</h2>
+<p>Developers like to work from the terminal. This lets them interact quicker and more direct with a software platform. With the 0.9.0 release, FlexMeasures adds several commands to work with an instance.</p>
+<p>To have them available is especially useful when onboarding a new account or new assets (which is the time when the most developer attention is spent in a FlexMeasures project, or any enterprise software project). These commands are also useful to automate tasks like data ingestion or scheduling.</p>
+<p>Here is  a list of new commands:</p>
+<ul>
+<li>Showing data: <code>flexmeasures show accounts</code>, <code>flexmeasures show account</code>, <code>flexmeasures show roles</code>, <code>flexmeasures show asset-types</code>, <code>flexmeasures show asset</code>, <code>flexmeasures show data-sources</code>, and <code>flexmeasures show beliefs</code></li>
+<li>Resample sensor data to a different resolution: <code>flexmeasures db-ops resample-data</code></li>
+<li>Create a new schedule for a given power sensor: <code>flexmeasures add schedule</code></li>
+<li>Edit/add an attribute on an asset or sensor: <code>flexmeasures edit attribute</code></li>
+<li>Add a toy account with a battery and a market for trying FlexMeasures out quickly: <code>flexmeasures add toy-account</code></li>
+<li>Deleting data: <code> flexmeasures delete unchanged-beliefs</code>, <code>flexmeasures delete nan-beliefs</code>, <code>flexmeasures delete sensor</code>, <code>flexmeasures delete asset</code></li>
+</ul>
+<p>You can see all commands in <a href="https://flexmeasures.readthedocs.io/en/latest/cli/commands.html" target="_blank" rel="noopener noreferrer">FlexMeasures' CLI documentation</a>.</p>
+<p>This work was done in Pull Requests <a href="http://www.github.com/SeitaBV/flexmeasures/pull/328">328</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/341">341</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/337">337</a> , <a href="http://www.github.com/SeitaBV/flexmeasures/pull/291">339</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/343">343</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/360">360,</a> <a href="http://www.github.com/SeitaBV/flexmeasures/pull/368">368</a> and <a href="http://www.github.com/SeitaBV/flexmeasures/pull/395">395</a>.</p>
+<h2>Unit conversion</h2>
+<p>Units are a crucial topic in time series data. Only if you get them right, will your data also be correct (and you avoid the risk of incorrect data / lengthy debugging periods). Especially if you have to transform data. One example is of course power to energy, e.g. kW to kWh. There is many more examples.</p>
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://imgs.xkcd.com/comics/rounding.png" data-is-external-image="true"  alt="XKCD on unit conversion" width="420" height="489">
+<figcaption >The relevant XKCD cartoon</figcaption>
+</figure>
+<p>We use the excellent <a href="https://pint.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer">pint library</a> to help us with that. With version 0.9.0,  FlexMeasures will now convert incoming data, if it has a different source unit than the required sensor unit.</p>
+<p>For instance, if the incoming data is kWh, and we know the sensor should store kW, and we also know the sensor's time resolution (e.g. it sends data once per 5 minutes), then we can store kWh data correctly as kW data.</p>
+<p>Another great example are percentages. We might receive data in percentages, but it should be permille.</p>
+<p>This is now done automatically in both the CLI (<code>flexmeasures add beliefs</code>) and the API (<code>POST /sensorData</code>) when adding data.</p>
+<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/341">Pull Request 341</a> and <a href="http://www.github.com/SeitaBV/flexmeasures/pull/359">Pull Request 359</a>.</p>
+<h2>Toy tutorial</h2>
+<p>We want many organisations to use FlexMeasures and drastically reduce the development time they need to get an energy flexibility app or service up and running. For this, we were missing a tutorial to show from scratch how FlexMeasures can be useful within minutes.</p>
+<p>We now have one where you install FlexMeasures and within a couple minutes you are optimizing the charging schedule of a battery. See it in action here.</p>
+<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/381">Pull Request 381</a>.</p>
+<h2> </h2>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Plugins</title>
         <author>
@@ -335,26 +390,6 @@
 <p>In addition, real-time energy flexibility optimisation is an essential part of our climate mitigation. Our CO<sub>2</sub> reduction targets depend on peak avoidance and optimal usage of renewable energy. While data is made available at high speed, the controllability of flexible devices is only now picking up.</p>
 <p>Interest in optimisation services within the energy community is increasing constantly, as demonstrated by the EU pushing regulation for dynamic pricing, smart grids and energy communities. Also, interoperability standards are maturing. As these regulations and standards land, and more assets are connected and made controllable, profitability will shortly follow suit.</p>
 <p>Meanwhile, non-Western parts of the world are not waiting for our results any more. Every continent is turning towards renewables, storage and digitisation, as purchasing costs plummet, whether they have strong grids, or favourable regulation, or none of the above.</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>FlexMeasures Documentation</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.github.io/website/documentation/"/>
-        <id>https://flexmeasures.github.io/website/documentation/</id>
-
-        <updated>2021-03-01T19:22:45+01:00</updated>
-            <summary>
-                <![CDATA[
-                    You can also visit the docs in full screen.
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p class="align-right">You can also <a href="https://flexmeasures.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer">visit the docs in full screen</a>.<div class="post__iframe"><iframe loading="lazy" width="1000px" height="1700px" src="https://flexmeasures.readthedocs.io/en/stable/" title="FlexMeasures Documentation"></iframe></div>
             ]]>
         </content>
     </entry>
