@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>FlexMeasures</title>
-    <link href="http://flexmeasures.io/feed.xml" rel="self" />
-    <link href="http://flexmeasures.io" />
+    <link href="https://flexmeasures.github.io/website/feed.xml" rel="self" />
+    <link href="https://flexmeasures.github.io/website" />
     <updated>2022-03-25T17:18:20+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
-    <id>http://flexmeasures.io</id>
+    <id>https://flexmeasures.github.io/website</id>
 
     <entry>
         <title>v0.9.0: CLI &#x3D;&#x3D; developer power</title>
         <author>
             <name>SeitaBV</name>
         </author>
-        <link href="http://flexmeasures.io/090-cli-developer-power/"/>
-        <id>http://flexmeasures.io/090-cli-developer-power/</id>
+        <link href="https://flexmeasures.github.io/website/090-cli-developer-power/"/>
+        <id>https://flexmeasures.github.io/website/090-cli-developer-power/</id>
             <category term="FlexMeasures Blog"/>
 
         <updated>2022-03-25T17:18:20+01:00</updated>
             <summary>
                 <![CDATA[
-                        <img src="http://flexmeasures.io/media/posts/22/florian-krumm-1osIUArK5oA-unsplash-2.jpg" alt="Computer keyboard, by Florian Krumm" />
+                        <img src="https://flexmeasures.github.io/website/media/posts/22/florian-krumm-1osIUArK5oA-unsplash-2.jpg" alt="Computer keyboard, by Florian Krumm" />
                     Version v0.9.0 of FlexMeasures (see changelog) adds many CLI commands to control FlexMeasures' data from the terminal. We hope this helps with reducing the onboarding time for new accounts! FlexMeasures&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="http://flexmeasures.io/media/posts/22/florian-krumm-1osIUArK5oA-unsplash-2.jpg" alt="Computer keyboard, by Florian Krumm" />
+                    <img src="https://flexmeasures.github.io/website/media/posts/22/florian-krumm-1osIUArK5oA-unsplash-2.jpg" alt="Computer keyboard, by Florian Krumm" />
                 <p>Version v0.9.0 of FlexMeasures (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-9-0-march-8-2022" target="_blank" rel="noopener noreferrer">see changelog</a>) adds many CLI commands to control FlexMeasures' data from the terminal. We hope this helps with reducing the onboarding time for new accounts!</p>
 <p>FlexMeasures will also now convert incoming data, if it has a different source unit than the required sensor unit.</p>
 <p>Finally, we added new tutorial on how to get started using FlexMeasures in just a few minutes and we began a new API version (v3) which is more REST-like than v2 and better supports <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html">the new data model. </a>  Do let us know if these things help you be more productive with FlexMeasures!</p>
@@ -69,8 +69,8 @@
         <author>
             <name>SeitaBV</name>
         </author>
-        <link href="http://flexmeasures.io/plugins/"/>
-        <id>http://flexmeasures.io/plugins/</id>
+        <link href="https://flexmeasures.github.io/website/plugins/"/>
+        <id>https://flexmeasures.github.io/website/plugins/</id>
 
         <updated>2022-02-10T11:51:30+01:00</updated>
             <summary>
@@ -80,22 +80,22 @@
             </summary>
         <content type="html">
             <![CDATA[
-                <p>You can extend FlexMeasures with functionality like UI pages, API endpoints,  CLI functions and <a href="http://flexmeasures.io/roadmap/">eventually</a> algorithms. This is eventually how energy flexibility services are built on top of FlexMeasures!</p>
+                <p>You can extend FlexMeasures with functionality like UI pages, API endpoints,  CLI functions and <a href="https://flexmeasures.github.io/website/roadmap/">eventually</a> algorithms. This is eventually how energy flexibility services are built on top of FlexMeasures!</p>
 <p>Extensibility is key to the open innovation we are going for here.  Read <a href="https://flexmeasures.readthedocs.io/en/latest/dev/plugins.html" target="_blank" rel="noopener noreferrer">here</a> how one builds a plugin. </p>
 <p>Solving a use case for a client often involves putting custom code for them in a plugin, so at Seita, we've made quite a few which are private.</p>
 <p>Here, let's list crucially useful and also open-source plugins which actually exist already ― this list should grow (<a href="https://www.seita.nl/contact" target="_blank" rel="noopener noreferrer">tell us</a> if there is one you made and want to add here):</p>
 <h3>OpenWeatherMap</h3>
 <p><a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">OpenWeatherMap</a> is one of the best services to get your weather forecasts these days. And these forecasts might be highly useful for deciding what the optimal schedule for the next few hours is. For instance, to maximise self-consumption of your solar panels.</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="http://flexmeasures.io/media/posts/21/OpenWeather-Logo.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="http://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-xs.jpg 300w ,http://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-sm.jpg 480w ,http://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-md.jpg 768w ,http://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-lg.jpg 1024w ,http://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-xl.jpg 1360w ,http://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-2xl.jpg 1600w"  alt="OpenWeatherMap  Logo" width="432" height="149"></figure>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.github.io/website/media/posts/21/OpenWeather-Logo.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.github.io/website/media/posts/21/responsive/OpenWeather-Logo-xs.jpg 300w ,https://flexmeasures.github.io/website/media/posts/21/responsive/OpenWeather-Logo-sm.jpg 480w ,https://flexmeasures.github.io/website/media/posts/21/responsive/OpenWeather-Logo-md.jpg 768w ,https://flexmeasures.github.io/website/media/posts/21/responsive/OpenWeather-Logo-lg.jpg 1024w ,https://flexmeasures.github.io/website/media/posts/21/responsive/OpenWeather-Logo-xl.jpg 1360w ,https://flexmeasures.github.io/website/media/posts/21/responsive/OpenWeather-Logo-2xl.jpg 1600w"  alt="OpenWeatherMap  Logo" width="432" height="149"></figure>
 <p>The source code of the plugin is <a href="https://github.com/SeitaBV/flexmeasures-openweathermap/" target="_blank" rel="noopener noreferrer">here</a>. It adds two CLI commands, one for registering weather sensors on desired locations, one for calling the API and gathering the forecasts for the upcoming hours.</p>
 <h3>ENTSO-E</h3>
 <p>Market data is crucial for planning ahead. Two examples we use are day-ahead prices (to optimize energy costs) and production forecasts (to estimate the CO2 content on the grid for the upcoming hours).</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="http://flexmeasures.io/media/posts/21/ENTSO-E_logo_sml.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="http://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-xs.jpg 300w ,http://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-sm.jpg 480w ,http://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-md.jpg 768w ,http://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-lg.jpg 1024w ,http://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-xl.jpg 1360w ,http://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-2xl.jpg 1600w"  alt="ENTSO-E logo" width="443" height="120"></figure>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.github.io/website/media/posts/21/ENTSO-E_logo_sml.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.github.io/website/media/posts/21/responsive/ENTSO-E_logo_sml-xs.jpg 300w ,https://flexmeasures.github.io/website/media/posts/21/responsive/ENTSO-E_logo_sml-sm.jpg 480w ,https://flexmeasures.github.io/website/media/posts/21/responsive/ENTSO-E_logo_sml-md.jpg 768w ,https://flexmeasures.github.io/website/media/posts/21/responsive/ENTSO-E_logo_sml-lg.jpg 1024w ,https://flexmeasures.github.io/website/media/posts/21/responsive/ENTSO-E_logo_sml-xl.jpg 1360w ,https://flexmeasures.github.io/website/media/posts/21/responsive/ENTSO-E_logo_sml-2xl.jpg 1600w"  alt="ENTSO-E logo" width="443" height="120"></figure>
 <p>ENTSO-E is the association of European TSOs. <a href="https://transparency.entsoe.eu/" target="_blank" rel="noopener noreferrer">Their transparency platform</a> publishes different kind of data across European regions. </p>
 <p>The source code of the plugin is <a href="https://github.com/SeitaBV/flexmeasures-entsoe" target="_blank" rel="noopener noreferrer">here</a>. It currently supports importing day-ahead prices as well as generation. Based on generation, the CO2 content for the upcoming day can be computed.</p>
 <h3>Z-Info</h3>
 <p>A plugin for importing data from <a href="https://www.z-info.nl" rel="nofollow">Z-Info</a> into FlexMeasures. Z-Info is a sensor data service for the Dutch water industry. The source code is <a href="https://github.com/SeitaBV/flexmeasures-zinfo" target="_blank" rel="noopener noreferrer">here</a>.</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="http://flexmeasures.io/media/posts/21/Z-info-FC-RGB-188x300.png" sizes="(max-width: 48em) 100vw, 768px" srcset="http://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-xs.png 300w ,http://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-sm.png 480w ,http://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-md.png 768w ,http://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-lg.png 1024w ,http://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-xl.png 1360w ,http://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-2xl.png 1600w"  alt="Z-Info Logo" width="188" height="300"></figure>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.github.io/website/media/posts/21/Z-info-FC-RGB-188x300.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.github.io/website/media/posts/21/responsive/Z-info-FC-RGB-188x300-xs.png 300w ,https://flexmeasures.github.io/website/media/posts/21/responsive/Z-info-FC-RGB-188x300-sm.png 480w ,https://flexmeasures.github.io/website/media/posts/21/responsive/Z-info-FC-RGB-188x300-md.png 768w ,https://flexmeasures.github.io/website/media/posts/21/responsive/Z-info-FC-RGB-188x300-lg.png 1024w ,https://flexmeasures.github.io/website/media/posts/21/responsive/Z-info-FC-RGB-188x300-xl.png 1360w ,https://flexmeasures.github.io/website/media/posts/21/responsive/Z-info-FC-RGB-188x300-2xl.png 1600w"  alt="Z-Info Logo" width="188" height="300"></figure>
             ]]>
         </content>
     </entry>
@@ -104,20 +104,20 @@
         <author>
             <name>SeitaBV</name>
         </author>
-        <link href="http://flexmeasures.io/080-better-scheduling-safer-data/"/>
-        <id>http://flexmeasures.io/080-better-scheduling-safer-data/</id>
+        <link href="https://flexmeasures.github.io/website/080-better-scheduling-safer-data/"/>
+        <id>https://flexmeasures.github.io/website/080-better-scheduling-safer-data/</id>
             <category term="FlexMeasures Blog"/>
 
         <updated>2022-01-24T14:02:16+01:00</updated>
             <summary>
                 <![CDATA[
-                        <img src="http://flexmeasures.io/media/posts/20/salman-hossain-saif-n6uLxWeCMao-unsplash.jpg" alt="AA batteries on wooden background, by Salman Hossain Saif" />
+                        <img src="https://flexmeasures.github.io/website/media/posts/20/salman-hossain-saif-n6uLxWeCMao-unsplash.jpg" alt="AA batteries on wooden background, by Salman Hossain Saif" />
                     Version v0.8.0 of FlexMeasures (see changelog) improves scheduling &amp; helps to keep data safe. Behind the scenes, a big data model transition is taking form. We work with scheduling of&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="http://flexmeasures.io/media/posts/20/salman-hossain-saif-n6uLxWeCMao-unsplash.jpg" alt="AA batteries on wooden background, by Salman Hossain Saif" />
+                    <img src="https://flexmeasures.github.io/website/media/posts/20/salman-hossain-saif-n6uLxWeCMao-unsplash.jpg" alt="AA batteries on wooden background, by Salman Hossain Saif" />
                 <p>Version v0.8.0 of FlexMeasures (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-8-0-january-24-2022" target="_blank" rel="noopener noreferrer">see changelog</a>) improves scheduling &amp; helps to keep data safe. Behind the scenes, a big data model transition is taking form.</p>
 <h2>Better scheduling</h2>
 <p>We work with scheduling of batteries<a href="https://seita.nl/project/v2ghome-living-lab/" target="_blank" rel="noopener noreferrer"> in practice</a>, which is a great opportunity to find small and crucial improvements.</p>
@@ -125,7 +125,7 @@
 <p>This work was done in Pull Requests <a href="http://www.github.com/SeitaBV/flexmeasures/pull/291">291</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/267">267</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/270">270</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/300">300</a> and <a href="http://www.github.com/SeitaBV/flexmeasures/pull/291">291</a>.</p>
 <h2>Safer data</h2>
 <p>If several accounts (customers) sit in the same FlexMeasures server, it is all the more crucial that only the correctly authorized persons get to see or change data.</p>
-<p>v0.8.0 introduces the ability to protect data within users within one account, building on our multi-tenancy model from <a href="http://flexmeasures.io/v060-multi-tenancy-error-monitoring/">version 0.6.0</a>. This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/210">Pull Request 210</a>.</p>
+<p>v0.8.0 introduces the ability to protect data within users within one account, building on our multi-tenancy model from <a href="https://flexmeasures.github.io/website/v060-multi-tenancy-error-monitoring/">version 0.6.0</a>. This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/210">Pull Request 210</a>.</p>
 <p>When implementing authorization, it's highly important to do that in a developer-friendly way. What we mean with that is developers need to find it straightforward to make the correct decisions of who has permission to create/read/update/delete which data, and which API endpoints require the user to have which permissions.</p>
 <p>In v0.8.0, we implement an authorization model, where the first question is answered in one central place (on the data model) and with high granularity (object-level security). We also offer a new API endpoint decorator (<code class="docutils literal notranslate"><span class="pre">@permission_required_for_context</span></code>), so in-built endpoints, as well as API endpoints in plugins, can be protected easily.</p>
 <p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/234">Pull Request 234</a>.</p>
@@ -143,20 +143,20 @@
         <author>
             <name>SeitaBV</name>
         </author>
-        <link href="http://flexmeasures.io/070-professional-plugins/"/>
-        <id>http://flexmeasures.io/070-professional-plugins/</id>
+        <link href="https://flexmeasures.github.io/website/070-professional-plugins/"/>
+        <id>https://flexmeasures.github.io/website/070-professional-plugins/</id>
             <category term="FlexMeasures Blog"/>
 
         <updated>2022-01-21T12:55:01+01:00</updated>
             <summary>
                 <![CDATA[
-                        <img src="http://flexmeasures.io/media/posts/19/plugin-fender.png" alt="" />
+                        <img src="https://flexmeasures.github.io/website/media/posts/19/plugin-fender.png" alt="" />
                     Version v0.7.0 of FlexMeasures (see changelog) puts emphasis on plugins that are ready for actual productive use. Professional packaging, testing &amp; style! FlexMeasures plugins are a hugely important concept. Writing&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="http://flexmeasures.io/media/posts/19/plugin-fender.png" alt="" />
+                    <img src="https://flexmeasures.github.io/website/media/posts/19/plugin-fender.png" alt="" />
                 <p>Version v0.7.0 of FlexMeasures (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-7-0-october-26-2021" target="_blank" rel="noopener noreferrer">see changelog</a>) puts emphasis on plugins that are ready for actual productive use. Professional packaging, testing &amp; style! </p>
 <p class="msg msg--highlight "><a href="https://flexmeasures.readthedocs.io/en/latest/dev/plugins.html">FlexMeasures plugins</a> are a <span style="text-decoration: underline;">hugely</span> important concept. Writing data integrations for,  and <a href="https://seita.nl/services/" target="_blank" rel="noopener noreferrer">services</a> on top of FlexMeasures ― that's done with plugins.  To support getting started with them in the right way, we now provide <a href="https://github.com/SeitaBV/flexmeasures-plugin-template" target="_blank" rel="noopener noreferrer">a CookieCutter template</a> to get you started in 30 seconds. It also includes a few Blueprint examples and best practices like tests.</p>
 <h2>Python packages</h2>
@@ -185,8 +185,8 @@
         <author>
             <name>SeitaBV</name>
         </author>
-        <link href="http://flexmeasures.io/roadmap/"/>
-        <id>http://flexmeasures.io/roadmap/</id>
+        <link href="https://flexmeasures.github.io/website/roadmap/"/>
+        <id>https://flexmeasures.github.io/website/roadmap/</id>
 
         <updated>2022-02-09T18:22:17+01:00</updated>
             <summary>
@@ -216,20 +216,20 @@
         <author>
             <name>SeitaBV</name>
         </author>
-        <link href="http://flexmeasures.io/v060-multi-tenancy-error-monitoring/"/>
-        <id>http://flexmeasures.io/v060-multi-tenancy-error-monitoring/</id>
+        <link href="https://flexmeasures.github.io/website/v060-multi-tenancy-error-monitoring/"/>
+        <id>https://flexmeasures.github.io/website/v060-multi-tenancy-error-monitoring/</id>
             <category term="FlexMeasures Blog"/>
 
         <updated>2021-09-03T19:03:16+02:00</updated>
             <summary>
                 <![CDATA[
-                        <img src="http://flexmeasures.io/media/posts/17/landon-martin-_UQgnpzyVo0-unsplash.jpg" alt="Eggs, by Landon Martin" />
+                        <img src="https://flexmeasures.github.io/website/media/posts/17/landon-martin-_UQgnpzyVo0-unsplash.jpg" alt="Eggs, by Landon Martin" />
                     Version v0.6.0 of FlexMeasures is out (see changelog). The two most notable new features are that users and assets now belong to accounts (allowing for multi-tenancy setups), and that it's&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="http://flexmeasures.io/media/posts/17/landon-martin-_UQgnpzyVo0-unsplash.jpg" alt="Eggs, by Landon Martin" />
+                    <img src="https://flexmeasures.github.io/website/media/posts/17/landon-martin-_UQgnpzyVo0-unsplash.jpg" alt="Eggs, by Landon Martin" />
                 <p>Version v0.6.0 of FlexMeasures is out (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-6-0-september-3-2021" target="_blank" rel="noopener noreferrer">see changelog</a>). The two most notable new features are that users and assets now belong to accounts (allowing for multi-tenancy setups), and that it's now possible to monitor for things going wrong (and be able to react in time).</p>
 <h2>Multi-tenancy</h2>
 <p>We envision that there'll be one FlexMeasures server run per ESCO. However, they have multiple customers. Of course, we want to treat them differently in terms of what they see and also silo their data from other customers.</p>
@@ -258,20 +258,20 @@
         <author>
             <name>SeitaBV</name>
         </author>
-        <link href="http://flexmeasures.io/v050-openweathermap-plugin-customisation/"/>
-        <id>http://flexmeasures.io/v050-openweathermap-plugin-customisation/</id>
+        <link href="https://flexmeasures.github.io/website/v050-openweathermap-plugin-customisation/"/>
+        <id>https://flexmeasures.github.io/website/v050-openweathermap-plugin-customisation/</id>
             <category term="FlexMeasures Blog"/>
 
         <updated>2021-06-07T17:32:50+02:00</updated>
             <summary>
                 <![CDATA[
-                        <img src="http://flexmeasures.io/media/posts/16/OpenWeather-Logo.jpg" alt="OpenWeatherMap Logo" />
+                        <img src="https://flexmeasures.github.io/website/media/posts/16/OpenWeather-Logo.jpg" alt="OpenWeatherMap Logo" />
                     Version v0.5.0 of FlexMeasures is out (see changelog). Aside from great additions to the documentation (tutorials!) and some smaller things, there's new features for customisation of your project and an&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="http://flexmeasures.io/media/posts/16/OpenWeather-Logo.jpg" alt="OpenWeatherMap Logo" />
+                    <img src="https://flexmeasures.github.io/website/media/posts/16/OpenWeather-Logo.jpg" alt="OpenWeatherMap Logo" />
                 <p>Version v0.5.0 of FlexMeasures is out (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-5-0-june-4-2021" target="_blank" rel="noopener noreferrer">see changelog</a>). Aside from great additions to <a href="https://flexmeasures.readthedocs.io/en/latest">the documentation</a> (tutorials!) and some smaller things, there's new features for customisation of your project and an important switch to how you can retrieve weather forecasts!</p>
 <h2>OpenWeatherMap</h2>
 <p>FlexMeasures has a CLI command to retrieve weather forecasts from a third party. Very handy. We used DarkSky for this, but they got bought by Apple and <a href="https://www.macrumors.com/2020/07/01/dark-sky-android-app-shutdown-august-1/" target="_blank" rel="noopener noreferrer">will discontinue their open API in August 2021</a>. So we switched to OpenW<a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer"></a>eatherMap. IIf you were using this feature, there is not much you have to do. Create an account there and set ``OPENWEATHERMAP_API_KEY`` in the FlexMeasures config.</p>
@@ -293,20 +293,20 @@
         <author>
             <name>SeitaBV</name>
         </author>
-        <link href="http://flexmeasures.io/v040-plugin-support/"/>
-        <id>http://flexmeasures.io/v040-plugin-support/</id>
+        <link href="https://flexmeasures.github.io/website/v040-plugin-support/"/>
+        <id>https://flexmeasures.github.io/website/v040-plugin-support/</id>
             <category term="FlexMeasures Blog"/>
 
         <updated>2021-04-29T13:29:01+02:00</updated>
             <summary>
                 <![CDATA[
-                        <img src="http://flexmeasures.io/media/posts/15/plugin-fender.png" alt="" />
+                        <img src="https://flexmeasures.github.io/website/media/posts/15/plugin-fender.png" alt="" />
                     Version v0.4.0 of FlexMeasures is out (see changelog). Aside from improvements to the documentation and some smaller things, there's new features for customisation of your project! FlexMeasures can now be&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="http://flexmeasures.io/media/posts/15/plugin-fender.png" alt="" />
+                    <img src="https://flexmeasures.github.io/website/media/posts/15/plugin-fender.png" alt="" />
                 <p>Version v0.4.0 of FlexMeasures is out (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-4-0-april-29-2021" target="_blank" rel="noopener noreferrer">see changelog</a>). Aside from improvements to <a href="https://flexmeasures.readthedocs.io/en/latest">the documentation</a> and some smaller things, there's new features for customisation of your project!</p>
 <h2>Plugin pages and CLI functions</h2>
 <p>FlexMeasures can now be extended with custom UI pages and CLI functions. This is useful for custom dashboards or for custom data integration scripts which can both make use of FlexMeasures internals. For example, the CLI functions can make use of the <code>app.db</code> object,  which has models and a database session ready to use.</p>
@@ -328,20 +328,20 @@
         <author>
             <name>SeitaBV</name>
         </author>
-        <link href="http://flexmeasures.io/v030-pip-install-cli-commands-belief-time-api/"/>
-        <id>http://flexmeasures.io/v030-pip-install-cli-commands-belief-time-api/</id>
+        <link href="https://flexmeasures.github.io/website/v030-pip-install-cli-commands-belief-time-api/"/>
+        <id>https://flexmeasures.github.io/website/v030-pip-install-cli-commands-belief-time-api/</id>
             <category term="FlexMeasures Blog"/>
 
         <updated>2021-04-02T23:13:17+02:00</updated>
             <summary>
                 <![CDATA[
-                        <img src="http://flexmeasures.io/media/posts/14/Screenshot-from-2021-04-02-12-54-22.png" alt="" />
+                        <img src="https://flexmeasures.github.io/website/media/posts/14/Screenshot-from-2021-04-02-12-54-22.png" alt="" />
                     Version v0.3.0 of FlexMeasures is out (see changelog). Aside from improvements to the documentation and some smaller things, there's new features in the API and the dashboard map. FlexMeasures is&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="http://flexmeasures.io/media/posts/14/Screenshot-from-2021-04-02-12-54-22.png" alt="" />
+                    <img src="https://flexmeasures.github.io/website/media/posts/14/Screenshot-from-2021-04-02-12-54-22.png" alt="" />
                 <p>Version v0.3.0 of FlexMeasures is out (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-3-0-april-2-2021" target="_blank" rel="noopener noreferrer">see changelog</a>). Aside from improvements to <a href="https://flexmeasures.readthedocs.io/en/latest">the documentation</a> and some smaller things, there's new features in the API and the dashboard map.</p>
 <h2>pip install</h2>
 <p>FlexMeasures is on the <a href="https://pypi.org/project/flexmeasures/" target="_blank" rel="noopener noreferrer">Pypi index</a>! Installing can now be done with a simple</p>
@@ -375,8 +375,8 @@
         <author>
             <name>SeitaBV</name>
         </author>
-        <link href="http://flexmeasures.io/background/"/>
-        <id>http://flexmeasures.io/background/</id>
+        <link href="https://flexmeasures.github.io/website/background/"/>
+        <id>https://flexmeasures.github.io/website/background/</id>
 
         <updated>2021-03-01T16:56:36+01:00</updated>
             <summary>
