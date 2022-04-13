@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2022-03-25T17:18:20+01:00</updated>
+    <updated>2022-04-13T23:20:47+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -72,17 +72,17 @@
         <link href="https://flexmeasures.io/plugins/"/>
         <id>https://flexmeasures.io/plugins/</id>
 
-        <updated>2022-02-10T11:51:30+01:00</updated>
+        <updated>2022-04-13T22:34:30+02:00</updated>
             <summary>
                 <![CDATA[
-                    You can extend FlexMeasures with functionality like UI pages, API endpoints, CLI functions and eventually algorithms. This is eventually how energy flexibility services are built on top of FlexMeasures! Extensibility&hellip;
+                    You can extend the FlexMeasures EMS with functionality like UI pages, API endpoints, CLI functions and eventually algorithms. This is actually how energy flexibility apps &amp; services are built on&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>You can extend FlexMeasures with functionality like UI pages, API endpoints,  CLI functions and <a href="https://flexmeasures.io/roadmap/">eventually</a> algorithms. This is eventually how energy flexibility services are built on top of FlexMeasures!</p>
+                <p>You can extend the FlexMeasures EMS with functionality like UI pages, API endpoints,  CLI functions and <a href="https://flexmeasures.io/roadmap/">eventually</a> algorithms. This is actually how energy flexibility apps &amp; services are built on top of FlexMeasures!</p>
 <p>Extensibility is key to the open innovation we are going for here.  Read <a href="https://flexmeasures.readthedocs.io/en/latest/dev/plugins.html" target="_blank" rel="noopener noreferrer">here</a> how one builds a plugin. </p>
-<p>Solving a use case for a client often involves putting custom code for them in a plugin, so at Seita, we've made quite a few which are private.</p>
+<p>Solving a use case for a client often involves putting custom code for them in a plugin. So at Seita, we've made quite a few which are private.</p>
 <p>Here, let's list crucially useful and also open-source plugins which actually exist already ― this list should grow (<a href="https://www.seita.nl/contact" target="_blank" rel="noopener noreferrer">tell us</a> if there is one you made and want to add here):</p>
 <h3>OpenWeatherMap</h3>
 <p><a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">OpenWeatherMap</a> is one of the best services to get your weather forecasts these days. And these forecasts might be highly useful for deciding what the optimal schedule for the next few hours is. For instance, to maximise self-consumption of your solar panels.</p>
@@ -188,26 +188,30 @@
         <link href="https://flexmeasures.io/roadmap/"/>
         <id>https://flexmeasures.io/roadmap/</id>
 
-        <updated>2022-02-09T18:22:17+01:00</updated>
+        <updated>2022-04-13T23:20:47+02:00</updated>
             <summary>
                 <![CDATA[
-                    The roadmap for further development of FlexMeasures is a wishlist for the stakeholders in FlexMeasures. Are you a stakeholder? Then talk to us to influence these plans. [Q1 2022] Complete&hellip;
+                    The roadmap for further development of the FlexMeasures EMS is the wishlist of its stakeholders. Are you a stakeholder? Then talk to us to influence these plans. [Q2 2022] Allow&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>The roadmap for further development of FlexMeasures is a wishlist for the stakeholders in FlexMeasures.</p>
-<p>Are you a stakeholder? Then <a href="https://seita.nl/contact">talk to us</a> to influence these plans.</p>
+                <p>The roadmap for further development of the FlexMeasures EMS is the wishlist of its stakeholders.</p>
+<p>Are you a stakeholder? Then <a href="https://flexmeasures.readthedocs.io/en/latest/get-in-touch.html">talk to us</a> to influence these plans.</p>
+<p><strong>[Q2 2022]</strong> Allow for  <a href="https://github.com/FlexMeasures/flexmeasures/projects/15" target="_blank" rel="noopener noreferrer"><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">annotations on time se</span><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">ries</span></a><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">, e.g. to model processes and operator feedback. [work has started in Q1]</span></p>
+<p><strong>[Q2 2022]</strong> Better plotting <a href="https://github.com/FlexMeasures/flexmeasures/projects/10" target="_blank" rel="noopener noreferrer">support</a> (via API/vega-lite) for plugins.</p>
+<p><strong>[Q2 2022]</strong> <a href="https://github.com/FlexMeasures/flexmeasures/projects/5" target="_blank" rel="noopener noreferrer">Dockerization</a> – allow to start a FlexMeasures node to be deployed quickly.</p>
+<p><strong>[Q3 2022]</strong> Actuator &amp; sensor-dependency models for more customizable plugins. </p>
+<p><strong>[Q3 2022]</strong> Scheduler compatible with <a href="https://www.lfenergy.org/projects/shapeshifter/" target="_blank" rel="noopener noreferrer">ShapeShifter</a> (based on USEF flex trading protocol)</p>
+<p><strong>[Q3 2022]</strong> <a href="https://github.com/FlexMeasures/flexmeasures/projects/12" target="_blank" rel="noopener noreferrer">Smarter monitoring</a>.</p>
+<p><strong>[Q4 2022]</strong> Support process data model &amp; some analytics tools</p>
+<p><strong>[Q4 2022]</strong>  Build out the flexibility modelling, by supporting Fraunhofers Energy Flexibility Data Model (<a href="http://publica.fraunhofer.de/starweb/servlet.starweb?path=epub.web&amp;search=N-642370" target="_blank" rel="noopener noreferrer">EDFM</a>)</p>
+<p><strong>[Q4 2022] </strong>Better tooling to work well at scale (e.g. support load balancing, db sharding etc). Also using Docker to scale up more flexibly (e.g. in Kubernetes).</p>
 <p> </p>
-<p><strong>[Q1 2022]</strong> Complete the <a href="https://github.com/SeitaBV/flexmeasures/projects/3" target="_blank" rel="noopener noreferrer">ongoing</a> data model migration to support all kind of sensors (more than power, weather &amp; prices).</p>
-<p><strong>[Q1 2022]</strong> Allow for annotations on time series, e.g. to model processes and operator feedback.</p>
-<p><strong>[Q1 2022]</strong> Actuator &amp; sensor-dependency models for more customisable plugins</p>
-<p><strong>[Q1 2022]</strong> Better plotting <a href="https://github.com/SeitaBV/flexmeasures/issues/102" target="_blank" rel="noopener noreferrer">support</a> (via API/vega-lite) for plugins</p>
-<p><strong>[Q2 2022]</strong> Dockerization – allow to start a FlexMeasures-based service to be deployed quickly, <a href="https://github.com/SeitaBV/flexmeasures/issues/149" target="_blank" rel="noopener noreferrer">for development/demos</a> . </p>
-<p><strong>[Q2 2022]</strong> Scheduler compatible with <a href="https://www.lfenergy.org/projects/shapeshifter/" target="_blank" rel="noopener noreferrer">ShapeShifter</a> (based on USEF flex trading protocol)</p>
-<p><strong>[Q2 2022]</strong> Support process data model &amp; some analytics tools</p>
-<p><strong>[Q3 2022]</strong>  Build out the flexibility modelling, by supporting Fraunhofers Energy Flexibility Data Model (<a href="http://publica.fraunhofer.de/starweb/servlet.starweb?path=epub.web&amp;search=N-642370" target="_blank" rel="noopener noreferrer">EDFM</a>)</p>
-<p><strong>[Q4 2022] </strong>Better tooling to work well at scale (e.g. support load balancing, db sharding etc). Also using Docker to scale up more flexibly (e.g. in Kubernetes)</p>
+<h3>Historic achievements</h3>
+<p><strong>[Q1 2022]</strong> Complete the <a href="https://github.com/SeitaBV/flexmeasures/projects/3" target="_blank" rel="noopener noreferrer">ongoing</a> data model migration to support all kind of sensors (more than power, weather &amp; prices), as well as units.</p>
+<p> </p>
+<p> </p>
             ]]>
         </content>
     </entry>
