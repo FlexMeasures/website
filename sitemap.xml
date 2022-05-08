@@ -5,6 +5,22 @@
 <loc>https://flexmeasures.io/</loc>
 </url>
 <url>
+<loc>https://flexmeasures.io/010-docker-styling/</loc>
+<lastmod>2022-05-08T02:10:42+02:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/23/horizontal-logo-monochromatic-white.webp</image:loc>
+<image:title><![CDATA[Docker logo]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/23/gallery/screenshot_asset_oldstyle-thumbnail.png</image:loc>
+<image:title><![CDATA[Old layout]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/23/gallery/screenshot_asset-2-thumbnail.png</image:loc>
+<image:title><![CDATA[New layout]]></image:title>
+</image:image>
+</url>
+<url>
 <loc>https://flexmeasures.io/070-professional-plugins/</loc>
 <lastmod>2022-01-21T12:55:01+01:00</lastmod>
 <image:image>

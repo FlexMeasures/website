@@ -3,12 +3,56 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2022-04-14T17:09:00+02:00</updated>
+    <updated>2022-05-08T02:10:42+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>v0.10: Docker &amp; styling</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/010-docker-styling/"/>
+        <id>https://flexmeasures.io/010-docker-styling/</id>
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2022-05-08T02:10:42+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/23/horizontal-logo-monochromatic-white.webp" alt="Docker logo" />
+                    Version v0.10 of FlexMeasures (see changelog) adds the ability to run Flexmeasures inside a Docker container. Containerization is a big step towards easier installation and scaling in the cloud! We&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://flexmeasures.io/media/posts/23/horizontal-logo-monochromatic-white.webp" alt="Docker logo" />
+                <p>Version v0.10 of FlexMeasures (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-10-0-may-8-2022" target="_blank" rel="noopener noreferrer">see changelog</a>) adds the ability to run Flexmeasures inside a Docker container. Containerization is a big step towards easier installation and scaling in the cloud!</p>
+<p>We also gave the backoffice a nice styling update.</p>
+<h2>Dockerization</h2>
+<p>Docker is great for developer productivity and for running APIs in modern scalable clouds environments. We created <a href="https://hub.docker.com/repository/docker/lfenergy/flexmeasures" target="_blank" rel="noopener noreferrer">a Docker image for FlexMeasures</a>, so from now on, it's possible to run FlexMeasures in a Docker container.</p>
+<p>The great advantage is that running FM can happen on every computer or cloud server within minutes. We also offer a docker compose file. Check out the documentation (<a href="https://flexmeasures.readthedocs.io/en/latest/host/docker.html" target="_blank" rel="noopener noreferrer">docker</a>, <a href="https://flexmeasures.readthedocs.io/en/latest/dev/docker-compose.html" target="_blank" rel="noopener noreferrer">docker compose</a>). We also updated <a href="https://flexmeasures.readthedocs.io/en/latest/tut/toy-example-from-scratch.html" target="_blank" rel="noopener noreferrer">our main entry-level tutorial</a> with getting started using Docker.</p>
+<p>A nice part of the work that was done in the docker-compose part is that the FlexMeasures API now has a health endpoint, which tells us if FlexMeasures is ready to work on requests. Next to containerization, this is the type of preparation one needs to run a software inside Kubernetes :)</p>
+<p>This work was done in Pull Requests <a href="http://www.github.com/SeitaBV/flexmeasures/pull/416" target="_blank" rel="noopener noreferrer">416</a>.</p>
+<h2>New Style</h2>
+<p>With the FlexMeasures EMS, we believe in the API as a first-level citizen. But FM also shows you your assets and data out of the box, and the web design was in need of some love.</p>
+<p>We improved layout, font and general design. Check out the before and after impression :</p>
+<div class="gallery-wrapper gallery-wrapper--wide"><div class="gallery"  data-is-empty="false" data-columns="2">
+<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/23/gallery/screenshot_asset_oldstyle.png" data-size="1920x937"><img loading="lazy" src="https://flexmeasures.io/media/posts/23/gallery/screenshot_asset_oldstyle-thumbnail.png" alt="Old layout" width="720" height="351"></a>
+<figcaption>Old layout</figcaption>
+</figure>
+<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/23/gallery/screenshot_asset-2.png" data-size="1908x1338"><img loading="lazy" src="https://flexmeasures.io/media/posts/23/gallery/screenshot_asset-2-thumbnail.png" alt="New layout" width="720" height="505"></a>
+<figcaption>New layout</figcaption>
+</figure>
+</div></div>
+<p>We now define colors via CSS variables, which makes it easier to restyle the FM back-office to match other corporate branding (important for offering FM in a white label context).</p>
+<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/425" target="_blank" rel="noopener noreferrer">Pull Request 425</a>.</p>
+<h2> </h2>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v0.9.0: CLI &#x3D;&#x3D; developer power</title>
         <author>
@@ -374,29 +418,6 @@
 </blockquote>
 <p>Also, we retired the concept of denoting rolling (recurring) horizons, e.g. <code>R/PT6H</code>. We only allow <code>PT6H</code> now to denote a 6 hour horizon and all horizons are interpreted as rolling horizons if the context fits.</p>
 <p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/41">Pull Request 41</a>.</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Background</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/background/"/>
-        <id>https://flexmeasures.io/background/</id>
-
-        <updated>2021-03-01T16:56:36+01:00</updated>
-            <summary>
-                <![CDATA[
-                    We are in the middle of a crucial energy transition, from fossil to renewables. Three other large trends in this transition are decentralisation of energy supply, electrification of energy inputs&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>We are in the middle of a crucial energy transition, from fossil to renewables. Three other large trends in this transition are decentralisation of energy supply, electrification of energy inputs (e.g. transportation) and digitisation, i.e. smart metering.</p>
-<p>In addition, real-time energy flexibility optimisation is an essential part of our climate mitigation. Our CO<sub>2</sub> reduction targets depend on peak avoidance and optimal usage of renewable energy. While data is made available at high speed, the controllability of flexible devices is only now picking up.</p>
-<p>Interest in optimisation services within the energy community is increasing constantly, as demonstrated by the EU pushing regulation for dynamic pricing, smart grids and energy communities. Also, interoperability standards are maturing. As these regulations and standards land, and more assets are connected and made controllable, profitability will shortly follow suit.</p>
-<p>Meanwhile, non-Western parts of the world are not waiting for our results any more. Every continent is turning towards renewables, storage and digitisation, as purchasing costs plummet, whether they have strong grids, or favourable regulation, or none of the above.</p>
             ]]>
         </content>
     </entry>
