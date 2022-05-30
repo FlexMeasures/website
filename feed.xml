@@ -3,12 +3,137 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2022-05-08T02:10:42+02:00</updated>
+    <updated>2022-05-30T19:03:38+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>Get in touch</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/get-in-touch/"/>
+        <id>https://flexmeasures.io/get-in-touch/</id>
+
+        <updated>2022-05-30T17:51:17+02:00</updated>
+            <summary>
+                <![CDATA[
+                    We want you to succeed in using, hosting or extending FlexMeasures. For all your questions and ideas, you can join the FlexMeasures community in the following ways: Join the #flexmeasures&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>We want you to succeed in using, hosting or extending FlexMeasures. For all your questions and ideas, you can join the FlexMeasures community in the following ways:</p>
+<ul class="simple">
+<li>
+<p>Join the <code class="docutils literal notranslate"><span class="pre">#flexmeasures</span></code> channel over at <a class="reference external" href="https://lfenergy.slack.com">https://lfenergy.slack.com</a></p>
+</li>
+<li>
+<p>Write to us at <a class="reference external" href="mailto:flexmeasures%40lists.lfenergy.org">flexmeasures@lists.lfenergy.org</a> (you can join this mailing list <a class="reference external" href="https://lists.lfenergy.org/g/flexmeasures">here</a>).</p>
+</li>
+<li>
+<p>Follow <a class="reference external" href="https://twitter.com/flexmeasures">@flexmeasures</a> on Twitter.</p>
+</li>
+</ul>
+<p>You're also welcome to contribute with issues or pull requests on <a href="https://github.com/FlexMeasures/flexmeasures" target="_blank" rel="noopener noreferrer">Github</a>.</p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>FAQ</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/faq/"/>
+        <id>https://flexmeasures.io/faq/</id>
+
+        <updated>2022-05-30T19:03:38+02:00</updated>
+            <summary></summary>
+        <content type="html">
+            <![CDATA[
+                <div class="post__toc">
+<h3>Table of Contents</h3>
+<ul>
+<li><a href="#mcetoc_1g2pacnrh8">What does FlexMeasures do?</a></li>
+<li><a href="#mcetoc_1g2pahoqio">Why do you do this?</a></li>
+<li><a href="#mcetoc_1g2pagetfj">Why is FlexMeasures open source, and why is it part of the Linux Energy Foundation?</a></li>
+<li><a href="#mcetoc_1g2pagetfk">How do I use FlexMeasures / get started?</a></li>
+<li><a href="#mcetoc_1g2pagetfl">Can you give some real-world examples where FlexMeasures is used today?</a></li>
+<li><a href="#mcetoc_1g2pagetfm">How can FlexMeasures become a puzzle piece in large-scale solutions?</a></li>
+</ul>
+</div>
+<h2 id="mcetoc_1g2pacnrh8">What does FlexMeasures do?</h2>
+<div> </div>
+<div>FlexMeasures is an energy management system (EMS), but a specialized one. You can see it as a data-driven decision-support system for energy flexibility.</div>
+<div>The question FlexMeasures helps to solves is: What are the best times to run my flexible assets? For instance, when to (dis)charge my EV batteries? When should we run our heat pumps to warm up the office?</div>
+<div> </div>
+<div>Here is the simple version ― sensor data goes in, optimized schedules come out:</div>
+<h2><figure class="post__image post__image--center"><img loading="lazy"  src="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/simple-flexEMS-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-xs.png 300w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-sm.png 480w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-md.png 768w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-lg.png 1024w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-xl.png 1360w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-2xl.png 1600w"  alt="" width="750" height="191"></figure>Why do you do this?</h2>
+<div> </div>
+<div>See <a href="https://www.seita.nl/why" target="_blank" rel="noopener noreferrer">this mission statement</a> (from the original creators): We have to go green. Flexible demand has to be matched with green energy. Open innovation can get us to the speed we need for the global transition.</div>
+<h2>How does FlexMeasures add value?</h2>
+<div>
+<div> </div>
+<div>In the end, energy flexibility is about saving energy costs and CO₂. This is why we do this in the first place.</div>
+<div> </div>
+<div>Taking a more closer look, we believe that lowering the cost of software development can help a big deal. More organisations will be willing to make use of energy flexibility, if the initial costs of such smart systems are low enough. And software development (not even the machine learning parts) makes up a bigger part of the costs than people realize.</div>
+<div> </div>
+<div>We want developers to love building novel apps and services with FlexMeasures, and for them to focus on the context-specific dimensions: The configuration of how they want FlexMeasures to optimize outcomes, and how this gets presented to users/operators.</div>
+<div> </div>
+<div><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">Let's take a closer look at FlexMeasures' three core value drivers:</span>
+<div><br>
+<div>1. Real-time data intelligence and integration, with advice for the rest of the day. For example, forecasts and schedules are made available via API.</div>
+<div>2. Energy sensor and environment data have multiple sources and their forecasts are uncertain. FlexMeasures uses <a href="https://github.com/SeitaBV/timely-beliefs)" target="_blank" rel="noopener noreferrer">the timely-beliefs library</a> to model this well.</div>
+<div>3. Developer support ― building customer-facing apps &amp; services is where energy flexibility hits the road. FlexMeasures reduces developer workload with a well-documented API, data visualization and multi-tenancy, and it supports plugins to customize and extend the platform to your needs.</div>
+<div> </div>
+<div>Here is a more complete picture of how FlexMeasures fits into an advanced and configurable data-schedules loop:</div>
+<div> </div>
+<div><figure class="post__image post__image--center"><img loading="lazy"  src="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/overview-flexEMS.png" sizes="(max-width: 48em) 100vw, 768px" srcset="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-xs.png 300w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-sm.png 480w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-md.png 768w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-lg.png 1024w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-xl.png 1360w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-2xl.png 1600w"  alt="" width="800" height="457"></figure></div>
+</div>
+</div>
+<h2 id="mcetoc_1g2pagetfj">Why is FlexMeasures open source, and why is it part of the Linux Energy Foundation?</h2>
+<p>We saw two reasons to open source the code of FlexMeasures:</p>
+<ol>
+<li>Nowadays, open source is a great fit for the speed of innovation which we need, and also the spread of innovation. The energy transition has to go blazingly fast, everywhere. These days, open source projects are often able to innovate faster than closed source counterparts (once they've picked up momentum).</li>
+<li>From our many years of experience in designing smart energy solutions, we've come to realize that energy solutions often have multiple stakeholders (e.g. asset owner, user, network operator, energy service company). The transparency offered by open source, and the lack of lock-in, makes collaboration easier and agreements faster.</li>
+</ol>
+<p>The <a href="https://www.lfenergy.org/" target="_blank" rel="noopener noreferrer">Linux Energy Foundation</a> is a great place for the FlexMeasures project to be part of the growing community of people who understand the above reasoning.open source </p>
+<h2 id="mcetoc_1g2pagetfk">How do I use FlexMeasures / get started?</h2>
+<p>We make FlexMeasures, so that developers are as productive with energy optimization as possible. As we are developers ourselves, we know that it takes a couple smaller steps to engage with new technology.</p>
+<p>Your journey, from dipping your toes in the water towards being a happy FlexMeasures power user, could look like this:</p>
+<ol class="arabic simple">
+<li>
+<p>Quickstart ― Find an optimized schedule for your flexible asset, like a battery, with standard FlexMeasures tooling. This is basically what the from-scratch tutorial above does. All you need are 10 minutes and a CSV file with prices to optimise against.</p>
+</li>
+<li>
+<p>Automate ― get the prices from an open API, for instance <a class="reference external" href="https://transparency.entsoe.eu/">ENTSO-E</a> (using a plugin like <a class="reference external" href="https://github.com/SeitaBV/flexmeasures-entsoe">flexmeasures-entsoe</a>), and run the scheduler regularly in a cron job.</p>
+</li>
+<li>
+<p>Integrate ― Load the schedules via FlexMeasures’ API, so you can directly control your assets and/or show them within your own front-end.</p>
+</li>
+<li>
+<p>Customize ― Load other data (e.g. your solar production or weather forecasts via <a class="reference external" href="https://github.com/SeitaBV/flexmeasures-openweathermap/">flexmeasures-openweathermap</a>. Adapt the algorithms, e.g. do your own forecasting or tweak the standard scheduling algorithm so it optimizes what you care about. Or write a plugin for accessing a new kind of market. The opportunities are endless!</p>
+</li>
+</ol>
+<div> </div>
+<div>
+<h2 id="mcetoc_1g2pagetfl">Can you give some real-world examples where FlexMeasures is used today?</h2>
+<p>FlexMeasures is being used in a few industry projects (water sanitation, sludge burning), where we for instance help to run centrifuges to run during the greenest hours of the day.</p>
+<p>It is also used in projects with smaller assets, around the smart home setting (a vehicle-to-grid living lab and battery optimization). Here, FlexMeasures helps to buy cheap, and sell at high prices, for an optimal financial result.</p>
+<p>Much work currently goes into the integration of heat pumps.</p>
+<p>Of course, we might be missing some use cases. <a href="https://flexmeasures.io/get-in-touch/">We'd love to hear from you</a>.</p>
+<h2 id="mcetoc_1g2pagetfm">How can FlexMeasures become a puzzle piece in large-scale solutions?</h2>
+<p>The "data-driven" part is where we start! From our experience, data pipelines and dashboarding around energy-consuming assets now often exists.</p>
+<p>FlexMeasures works well as the single EMS, but also as an added smart back-end. Integrating the data often means to feed only the relevant parts to FlexMeasures (only relevant sensors, only the resolution needed for decision-making in schedules, e.g. 5 minutes).</p>
+<p>Once the right algorithms are connected, FlexMeasures provides optimized schedules via API. Its UI also shows sensor data and schedules and provides the ability for users/operators to annotate them.</p>
+<p>The schedules an thus be integrated into larger solutions, into user-facing apps etc. Just as the context requires.</p>
+</div>
+</div>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v0.10: Docker &amp; styling</title>
         <author>
@@ -336,88 +461,6 @@
 <p style="font-size: 18.4px;">Addressing entities (assets) in non-specific ways can lead to confusion and hard-to-detect data integration errors. We started a new entity addressing schema (`fm1`) which identifies any sensor (from assets, weather sensors, markets all the way to actuators we hope to add soon) with only their ID (<a href="https://flexmeasures.readthedocs.io/en/latest/api/introduction.html#connections-and-entity-addresses" target="_blank" rel="noopener noreferrer">see docs</a>). This prepares for our new data model where this is commonplace (see our log of the previous version 0.4.0).</p>
 <p style="font-size: 18.4px;">This work was also done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/81" style="border-bottom: 3px solid rgba(var(--yellow), 1);">Pull Request 81</a>.</p>
 <p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.4.0: Plugin support</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/v040-plugin-support/"/>
-        <id>https://flexmeasures.io/v040-plugin-support/</id>
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2021-04-29T13:29:01+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/15/plugin-fender.png" alt="" />
-                    Version v0.4.0 of FlexMeasures is out (see changelog). Aside from improvements to the documentation and some smaller things, there's new features for customisation of your project! FlexMeasures can now be&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <img src="https://flexmeasures.io/media/posts/15/plugin-fender.png" alt="" />
-                <p>Version v0.4.0 of FlexMeasures is out (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-4-0-april-29-2021" target="_blank" rel="noopener noreferrer">see changelog</a>). Aside from improvements to <a href="https://flexmeasures.readthedocs.io/en/latest">the documentation</a> and some smaller things, there's new features for customisation of your project!</p>
-<h2>Plugin pages and CLI functions</h2>
-<p>FlexMeasures can now be extended with custom UI pages and CLI functions. This is useful for custom dashboards or for custom data integration scripts which can both make use of FlexMeasures internals. For example, the CLI functions can make use of the <code>app.db</code> object,  which has models and a database session ready to use.</p>
-<p>We've <a href="https://flexmeasures.readthedocs.io/en/latest/dev/plugins.html">documented</a> plugin writing and will work further on this, with the goal that custom algorithms like forecasting models or scheduling optimisations can be plugged in.</p>
-<p>For now, this is already useful for ourselves, as we are able to add custom UI logic and UX to our customer projects, while keeping the FlexMeasures code generic.</p>
-<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/91">Pull Request 91</a>.</p>
-<h2>Configure the UI menu</h2>
-<p>If you create custom pages, you'd want them to be shown in the menu, as well. Or maybe you want to hide certain pages.</p>
-<p>We added the config setting <code>FLEXMEASURES_LISTED_VIEWS</code> to enable that. Its default value is <code>["dashboard", "analytics", "portfolio", "assets", "users"]</code>, but you can set this list to anything.</p>
-<p>This work was also done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/91">Pull Request 91</a>.</p>
-<h2>Future Features: time series data model refactoring</h2>
-<p>We've begun a longer trajectory of making our data model of sensors and measurements more flexible and more tightly integrated with the <a href="http://github.com/seitaBV/timely-beliefs/">timely-beliefs</a> model. We want to make the sensor representation more powerful with respect to aggregation and computation. Also, we believe timely-beliefs is a strong representation of time series data, where statements are made not just after the fact, but before and after, by multiple parties.</p>
-<p>For the time being, this new model is living next to the current data model as development features, but we plan to migrate current data over in the coming months. Pull Requests <a href="http://www.github.com/SeitaBV/flexmeasures/pull/79">79</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/85">85</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/99">99</a> and <a href="http://www.github.com/SeitaBV/flexmeasures/pull/103">103</a> are part of this effort. </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.3.0: pip-installable, CLI commands &amp; belief time communication in API</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/v030-pip-install-cli-commands-belief-time-api/"/>
-        <id>https://flexmeasures.io/v030-pip-install-cli-commands-belief-time-api/</id>
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2021-04-02T23:13:17+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/14/Screenshot-from-2021-04-02-12-54-22.png" alt="" />
-                    Version v0.3.0 of FlexMeasures is out (see changelog). Aside from improvements to the documentation and some smaller things, there's new features in the API and the dashboard map. FlexMeasures is&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <img src="https://flexmeasures.io/media/posts/14/Screenshot-from-2021-04-02-12-54-22.png" alt="" />
-                <p>Version v0.3.0 of FlexMeasures is out (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-3-0-april-2-2021" target="_blank" rel="noopener noreferrer">see changelog</a>). Aside from improvements to <a href="https://flexmeasures.readthedocs.io/en/latest">the documentation</a> and some smaller things, there's new features in the API and the dashboard map.</p>
-<h2>pip install</h2>
-<p>FlexMeasures is on the <a href="https://pypi.org/project/flexmeasures/" target="_blank" rel="noopener noreferrer">Pypi index</a>! Installing can now be done with a simple</p>
-<p><code>pip install flexmeasures</code></p>
-<p>Before, you'd have to clone the code from <a href="https://github.com/SeitaBV/flexmeasures/" target="_blank" rel="noopener noreferrer">Github</a> and run a make command. Just installing via pip should amplify the installation process and also make it easier to use on non-Unix platforms.</p>
-<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/54">Pull Request 54</a>.</p>
-<h2>CLI commands to get started</h2>
-<p>We are also continually working to make it easier to get started with a new project using FlexMeasures (which we also <a href="https://flexmeasures.readthedocs.io/en/latest/getting-started.html">documented</a> better).</p>
-<p>The command-line interface (CLI) is crucial for this. There are  now four  groups of commands:</p>
-<pre>$ flexmeasures --help<br>Usage: flexmeasures [OPTIONS] COMMAND [ARGS]...<br><br>  Management scripts for the FlexMeasures platform.<br><br>Commands:<br>  add     FlexMeasures: Add data.<br>  db-ops  FlexMeasures: Reset/Dump/Load/Restore/Save the DB.<br>  delete  FlexMeasures: Delete data.<br>  jobs    FlexMeasures: Job queueing.</pre>
-<p>Many of these FlexMeasures commands existed before and now it's easier to find them. There are two new ones:</p>
-<ul>
-<li><code>flexmeasures add asset</code></li>
-<li><code>flexmeasures add weather-sensor</code></li>
-</ul>
-<p>Now it's possible to add a user, assets and weather sensors right after installing FlexMeasures, so a new project has all necessary data so adding measurements, forecasts and schedules can begin (we also add a dummy market now as part of <code>flexmeasures add structure</code>).</p>
-<p>Finally, note that there are more useful commands available, from underlying libraries, for example for inspecting available API routes or to handle database migrations.</p>
-<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/74">Pull Request 74</a><a></a>.</p>
-<h2>Set belief time of data in API: "prior"</h2>
-<p>We increased clarity for a crucial aspect about time series data (we call them "beliefs"): When was the data recorded / known (the <a href="https://github.com/SeitaBV/timely-beliefs/blob/master/timely_beliefs/docs/timing.md/">"belief time"</a>)?  Next to <code>horizon</code>, the FlexMeasures now understands the new field <code>prior</code>, both for GETting and for POSTing beliefs through the API. I'll cite from the <a href="https://flexmeasures.readthedocs.io/en/latest/api/introduction.html#beliefs">FlexMeasures API documentation</a> about GETting beliefs using the two methods:</p>
-<blockquote>
-<p>The "prior" field (a timestamp) can be used to select beliefs recorded before some fixed moment in time. It can be used to "time-travel" to see the state of information at some moment in the past.<br>In contrast, the "horizon" field (a duration) can be used to select beliefs recorded before some moment in time, relative to each event.</p>
-</blockquote>
-<p>Also, we retired the concept of denoting rolling (recurring) horizons, e.g. <code>R/PT6H</code>. We only allow <code>PT6H</code> now to denote a 6 hour horizon and all horizons are interpreted as rolling horizons if the context fits.</p>
-<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/41">Pull Request 41</a>.</p>
             ]]>
         </content>
     </entry>
