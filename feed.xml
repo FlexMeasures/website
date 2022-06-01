@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2022-05-30T19:03:38+02:00</updated>
+    <updated>2022-06-01T17:39:20+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -49,7 +49,7 @@
         <link href="https://flexmeasures.io/faq/"/>
         <id>https://flexmeasures.io/faq/</id>
 
-        <updated>2022-05-30T19:03:38+02:00</updated>
+        <updated>2022-06-01T17:39:20+02:00</updated>
             <summary></summary>
         <content type="html">
             <![CDATA[
@@ -121,7 +121,7 @@
 <div>
 <h2 id="mcetoc_1g2pagetfl">Can you give some real-world examples where FlexMeasures is used today?</h2>
 <p>FlexMeasures is being used in a few industry projects (water sanitation, sludge burning), where we for instance help to run centrifuges to run during the greenest hours of the day.</p>
-<p>It is also used in projects with smaller assets, around the smart home setting (a vehicle-to-grid living lab and battery optimization). Here, FlexMeasures helps to buy cheap, and sell at high prices, for an optimal financial result.</p>
+<p>It is also used in projects with smaller assets, around the smart home setting (<a href="https://positive-design.nl/" target="_blank" rel="noopener noreferrer">a vehicle-to-grid living lab</a> and battery optimization). Here, FlexMeasures helps to buy cheap, and sell at high prices, for an optimal financial result.</p>
 <p>Much work currently goes into the integration of heat pumps.</p>
 <p>Of course, we might be missing some use cases. <a href="https://flexmeasures.io/get-in-touch/">We'd love to hear from you</a>.</p>
 <h2 id="mcetoc_1g2pagetfm">How can FlexMeasures become a puzzle piece in large-scale solutions?</h2>
