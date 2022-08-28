@@ -3,12 +3,55 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2022-08-24T17:26:19+02:00</updated>
+    <updated>2022-08-28T23:40:13+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>v0.11: Better data views</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/011-better-data-views/"/>
+        <id>https://flexmeasures.io/011-better-data-views/</id>
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2022-08-28T23:40:13+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/26/asset-page-prices-charging.png" alt="Docker logo" />
+                    Version v0.11 of FlexMeasures adds much more useful data views, which are also customisable. In addition, we completed the Docker-compose stack to include background job workers. This is very useful&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://flexmeasures.io/media/posts/26/asset-page-prices-charging.png" alt="Docker logo" />
+                <p>Version v0.11 of FlexMeasures adds much more useful data views, which are also customisable.</p>
+<p>In addition, we completed the Docker-compose stack to include background job workers. This is very useful for developers.</p>
+<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-11-0-august-28-2022" target="_blank" rel="noopener noreferrer">See changelog</a> or read on below to read what we added.</p>
+<h2>Data views</h2>
+<p>FlexMeasures is about optimising how your flexible assets are run. It's thus crucial to show the data in context. For instance, the charging schedule of an electric car should be shown together with what it's optimised against. In a project of ours, that is dynamic (hourly) prices. The asset page for the EV should show the prices, as well. The featured image of this blog entry shows this.</p>
+<p>Also, we believe users want to concentrate on the data, therefore we moved the controls (date-picker, editing of asset attributes) out of the way.</p>
+<figure ><figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/26/asset-page-011.gif" alt="A Gif showing the new asset page and the edit controls." width="750" height="359"></figure>
+<figcaption >An example of the new asset page and its controls which are only visible if needed.</figcaption>
+</figure>
+<p>There are numerous other additions for better data viewing, like better axis, tooltip and unit support in plots, remembering the selected date range across pages and  the dashboard being able to group assets by accounts (not just type).</p>
+<p>This work was done in Pull Requests  <a href="http://www.github.com/SeitaBV/flexmeasures/pull/449" target="_blank" rel="noopener noreferrer">449</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/467" target="_blank" rel="noopener noreferrer">467</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/423" target="_blank" rel="noopener noreferrer">423</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/446" target="_blank" rel="noopener noreferrer">446</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/447" target="_blank" rel="noopener noreferrer">447</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/474" target="_blank" rel="noopener noreferrer">474</a> and <a href="http://www.github.com/SeitaBV/flexmeasures/pull/475" target="_blank" rel="noopener noreferrer">475</a>.</p>
+<h2>Full docker compose stack</h2>
+<p>You could tell from the last releases that we want to Dockerize FlexMeasures, so it becomes a first-class cloud citizen, but also that developers can get it to run locally with the least installation hassle.</p>
+<p>The missing piece was that the Docker compose stack now also spins up a Redis database and a worker node for doing computations in a queue.</p>
+<p>The <a href="https://flexmeasures.readthedocs.io/en/latest/dev/docker-compose.html" target="_blank" rel="noopener noreferrer">docker-compose tutorial</a> reflects this now.</p>
+<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/455" target="_blank" rel="noopener noreferrer">Pull Request 455</a>.</p>
+<h2>Serving data in the resolution you need</h2>
+<p>When getting data out of FlexMeasures, you also might want a specific resolution. Hourly data is much lighter (if that is all you need) than 5-minute data, for instance. </p>
+<p>We added a resolution parameter to <a href="https://flexmeasures.readthedocs.io/en/latest/api/v3_0.html#get--api-v3_0-sensors-data">the <code class="notranslate">/sensors/data</code> (GET) endpoint.</a></p>
+<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/458" target="_blank" rel="noopener noreferrer">Pull Request 458</a>.</p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Get in touch</title>
         <author>
@@ -357,7 +400,7 @@
         <link href="https://flexmeasures.io/roadmap/"/>
         <id>https://flexmeasures.io/roadmap/</id>
 
-        <updated>2022-08-24T17:26:19+02:00</updated>
+        <updated>2022-08-24T17:40:27+02:00</updated>
             <summary>
                 <![CDATA[
                     The roadmap for further development of the FlexMeasures EMS is the wishlist of its stakeholders. Are you a stakeholder? Then talk to us to influence these plans. [Q2 2022] Allow&hellip;
@@ -368,7 +411,7 @@
                 <p>The roadmap for further development of the FlexMeasures EMS is the wishlist of its stakeholders.</p>
 <p>Are you a stakeholder? Then <a href="https://flexmeasures.readthedocs.io/en/latest/get-in-touch.html">talk to us</a> to influence these plans.</p>
 <p><strong>[Q2 2022]</strong> Allow for <a href="https://github.com/FlexMeasures/flexmeasures/projects/15" target="_blank" rel="noopener noreferrer"><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">annotations on time se</span><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">ries</span></a><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">, e.g. to model processes and operator feedback. [work has started in Q1]</span></p>
-<p><strong>[Q3 2022]</strong> More powerful algorithm configurations, to support more use cases and more custom situations (e.g. research) For <a href="https://github.com/FlexMeasures/flexmeasures/projects/6" target="_blank" rel="noopener noreferrer">scheduling</a>, as well as for <a href="https://github.com/FlexMeasures/flexmeasures/projects/8" target="_blank" rel="noopener noreferrer">forecasting</a>.  <span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">[work has started in Q2]</span></p>
+<p><strong>[Q3 2022]</strong> More powerful algorithm configurations, to support more use cases and more custom situations (e.g. research). For <a href="https://github.com/FlexMeasures/flexmeasures/projects/6" target="_blank" rel="noopener noreferrer">scheduling</a>, as well as for <a href="https://github.com/FlexMeasures/flexmeasures/projects/8" target="_blank" rel="noopener noreferrer">forecasting</a>.  <span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">[work has started in Q2]</span></p>
 <p><strong>[Q3 2022]</strong> <a href="https://github.com/FlexMeasures/flexmeasures/projects/10">Better data views</a> for sensor and assets. <span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">[work has started in Q2]</span></p>
 <p><strong>[tbd]</strong> Authorization model for <a href="https://github.com/FlexMeasures/flexmeasures/projects/17" target="_blank" rel="noopener noreferrer">allowing "super-accounts" to manage other accounts</a> (e.g. for ESCos) or add data to them (e.g. meter data companies).</p>
 <p><strong>[tbd]</strong> <a href="https://github.com/FlexMeasures/flexmeasures/projects/12" target="_blank" rel="noopener noreferrer">Smarter monitoring</a>.</p>
@@ -427,41 +470,6 @@
 <li>Analytics view offers grouping of all assets by location, see <a href="http://www.github.com/SeitaBV/flexmeasures/pull/148">Pull Request 148</a>.</li>
 <li>Allow plugins to register multiple Flask blueprints, see <a href="http://www.github.com/SeitaBV/flexmeasures/pull/171">Pull Request 171</a>.</li>
 </ul>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.5.0: OpenWeatherMap and plugin customisation</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/v050-openweathermap-plugin-customisation/"/>
-        <id>https://flexmeasures.io/v050-openweathermap-plugin-customisation/</id>
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2021-06-07T17:32:50+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/16/OpenWeather-Logo.jpg" alt="OpenWeatherMap Logo" />
-                    Version v0.5.0 of FlexMeasures is out (see changelog). Aside from great additions to the documentation (tutorials!) and some smaller things, there's new features for customisation of your project and an&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <img src="https://flexmeasures.io/media/posts/16/OpenWeather-Logo.jpg" alt="OpenWeatherMap Logo" />
-                <p>Version v0.5.0 of FlexMeasures is out (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-5-0-june-4-2021" target="_blank" rel="noopener noreferrer">see changelog</a>). Aside from great additions to <a href="https://flexmeasures.readthedocs.io/en/latest">the documentation</a> (tutorials!) and some smaller things, there's new features for customisation of your project and an important switch to how you can retrieve weather forecasts!</p>
-<h2>OpenWeatherMap</h2>
-<p>FlexMeasures has a CLI command to retrieve weather forecasts from a third party. Very handy. We used DarkSky for this, but they got bought by Apple and <a href="https://www.macrumors.com/2020/07/01/dark-sky-android-app-shutdown-august-1/" target="_blank" rel="noopener noreferrer">will discontinue their open API in August 2021</a>. So we switched to OpenW<a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer"></a>eatherMap. IIf you were using this feature, there is not much you have to do. Create an account there and set ``OPENWEATHERMAP_API_KEY`` in the FlexMeasures config.</p>
-<p style="font-size: 18.4px;">This work was also done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/113">Pull Request 113</a>.</p>
-<h2>Plugin customisation</h2>
-<p><a href="https://flexmeasures.readthedocs.io/en/latest/dev/plugins.html" target="_blank" rel="noopener noreferrer">Plugins in FlexMeasures</a> are crucial ― they allow a developer to create a customer-centric FlexMeasures solution. We at Seita are using them extensively now.</p>
-<p>It's important that the developer can control look&amp;feel. So this version of FlexMeasures allows to the URL routes and many smaller details in the UI.</p>
-<p>This work was done in Pull Requests <a href="http://www.github.com/SeitaBV/flexmeasures/pull/106">106</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/123" target="_blank" rel="noopener noreferrer">123</a> and <a href="http://www.github.com/SeitaBV/flexmeasures/pull/139" target="_blank" rel="noopener noreferrer">139</a>.</p>
-<h2>Entity addressing</h2>
-<p>This one is a deeper technical issue behind the scenes, but crucial for a setting in which FlexMeasures talks to other parties about the same assets, or even multiple FlexMeasures instances do that.</p>
-<p style="font-size: 18.4px;">Addressing entities (assets) in non-specific ways can lead to confusion and hard-to-detect data integration errors. We started a new entity addressing schema (`fm1`) which identifies any sensor (from assets, weather sensors, markets all the way to actuators we hope to add soon) with only their ID (<a href="https://flexmeasures.readthedocs.io/en/latest/api/introduction.html#connections-and-entity-addresses" target="_blank" rel="noopener noreferrer">see docs</a>). This prepares for our new data model where this is commonplace (see our log of the previous version 0.4.0).</p>
-<p style="font-size: 18.4px;">This work was also done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/81" style="border-bottom: 3px solid rgba(var(--yellow), 1);">Pull Request 81</a>.</p>
-<p> </p>
             ]]>
         </content>
     </entry>
