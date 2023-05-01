@@ -3,12 +3,61 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2023-01-04T17:17:46+01:00</updated>
+    <updated>2023-05-01T20:18:24+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>v0.13: Overlay charts </title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/013-overlay-charts/"/>
+        <id>https://flexmeasures.io/013-overlay-charts/</id>
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2023-05-01T20:18:24+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/29/v013-preview.png" alt="Overlaid charts" />
+                    Version v0.13 of FlexMeasures lets us create dashboards with multiple graphs from various sensors layered in one plot. In addition, FlexMeasures now includes a proper page for accounts. On the&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://flexmeasures.io/media/posts/29/v013-preview.png" alt="Overlaid charts" />
+                <p>Version v0.13 of FlexMeasures lets us create dashboards with multiple graphs from various sensors layered in one plot. In addition, FlexMeasures now includes a proper page for accounts.</p>
+<p>On the backend, we protect the CPU from re-computing the same schedule over and over again if a rogue client asks for that.</p>
+<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-13-0-april-28-2023" target="_blank" rel="noopener noreferrer">See changelog</a> for a complete list or read on below about the larger new features we added.</p>
+<h2>Overlay charts</h2>
+<p>With FlexMeasures, you can adapt the dashboard shown on the page for any asset. By default, you see a plot per sensor. With the <code>sensors_to_show</code> attribute, it was already possible to remove and even add plots (e.g. public price data), to create the dashboard with maximum information value.</p>
+<p>We wanted to make the dashboards more informative, as often users want to study effects of one sensor's data on others.</p>
+<p>Now, sensor numbers in <code>sensors_to_show</code> can be layered, e.g. <code>[1, [3,6]]</code> will lead to two plots, where the second shows two sensors together.</p>
+<p>As a bonus, plots are distinguished by source (different trace), sensor (different color) and source type (different stroke dash).</p>
+<p>Here is an example (see the overlay of EV charging and PV supply in the lower graph):</p>
+<figure ><figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/29/layered-chart.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/29/responsive/layered-chart-xs.png 300w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-sm.png 480w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-md.png 768w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-lg.png 1024w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-xl.png 1360w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-2xl.png 1600w"  alt="A layered chart from Seita's V2G living lab" width="800" height="375"></figure>
+<figcaption >A layered chart from Seita's V2G living lab</figcaption>
+</figure>
+<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This work was done in Pull Request </span><a href="http://www.github.com/flexmeasures/flexmeasures/pull/534" target="_blank" rel="noopener noreferrer">534</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></p>
+<h2>Account page</h2>
+<p>FlexMeasures is not just a single-purpose program ― it's a platform which can sit in the cloud and serve multiple sites. To manage these sites when they have different asset owners, the concept of accounts matters a lot. An account might for instance be a SME, with several local energy assets and also several employees (who might or might not have a FlexMeasures user account)</p>
+<p>That's why we worked on showing accounts better in the UI and API (in the CLI they are already represented well). The endpoints <code><cite>/accounts</cite></code> (to list accounts) and <code><cite>/accounts/&lt;id&gt;</cite></code> (to show one account) both work in the UI and (via <code>/api/v3_0/</code>) in the API.</p>
+<p>We tried to make this useful both for users (looking at their own account) and admins (looking at all accounts). In the future, we hope to work on "consulting accounts", who have the right to administer several other accounts (their clients), making FlexMeasures a potential B2B2B platform! </p>
+<p>This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/605">605</a>.</p>
+<h2>Avoid re-computing the same schedule</h2>
+<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">Computing schedules is where FlexMeasures creates its value, and also where it does the heavier CPU work. The more different sites we serve, the more we learn that it's crucial to protect this CPU work.</span></p>
+<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">Triggering schedules is easy, computing them is hard.<br>Here is an example scenario: A rogue client might trigger the same schedule multiple times ― a simple error, but overloading our server with work. In this feature, we enable FlexMeasures to notice that the same computation is already done or currently ongoing. This means not starting the computation again, and also informing the caller with the right status.</span></p>
+<p>Technically, we now cache the job, so that before FlexMeasures creates a new one, it can look up if the equivalent already exists somewhere in the queue. Interesting architectural work!</p>
+<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This work was done in Pull Request </span><a href="http://www.github.com/flexmeasures/flexmeasures/pull/616" target="null">616</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></p>
+<h2>API sunsetting</h2>
+<p>Finally, as <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html#note-on-datamodel-transition">our long journey to a more flexible datamodel</a> is coming close to completion, we are sunsetting (as we pre-announced in version 0.12) API versions below 3. Please help your users upgrade to API version 3 before you use FlexMeasures v0.13!</p>
+<p>We compiled <a href="https://flexmeasures.readthedocs.io/en/latest/api/introduction.html#deprecation-and-sunset" target="_blank" rel="noopener noreferrer">some helpful information for FlexMeasures hosts </a>to manage this transition well.  </p>
+<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/650">650</a>.</span></p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v0.12: Replay, custom scheduling</title>
         <author>
@@ -446,48 +495,6 @@
 <p>Behind the curtains, this version makes a huge step from our deprecated data model to a new, more flexible one. We describe this transition in detail <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html" target="_blank" rel="noopener noreferrer">here</a>, even with before &amp; after pictures.</p>
 <p>We are left with a few items on our TODO list, but in this version, we made a big effort. We moved a lot of structure over, as well as actual data and some UI (dashboard, assets). We believe that was the hardest part.</p>
 <p>We also took care so existing users feel as little blockage as possible. We wrote extra code so the old data model can still function in the new world, and that data is copied over in the background (don't forget to do the database migration, of course, see changelog).</p>
-<h2> </h2>
-<p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.7.0: Professional plugins</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/070-professional-plugins/"/>
-        <id>https://flexmeasures.io/070-professional-plugins/</id>
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2022-01-21T12:55:01+01:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/19/plugin-fender.png" alt="" />
-                    Version v0.7.0 of FlexMeasures (see changelog) puts emphasis on plugins that are ready for actual productive use. Professional packaging, testing &amp; style! FlexMeasures plugins are a hugely important concept. Writing&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <img src="https://flexmeasures.io/media/posts/19/plugin-fender.png" alt="" />
-                <p>Version v0.7.0 of FlexMeasures (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-7-0-october-26-2021" target="_blank" rel="noopener noreferrer">see changelog</a>) puts emphasis on plugins that are ready for actual productive use. Professional packaging, testing &amp; style! </p>
-<p class="msg msg--highlight "><a href="https://flexmeasures.readthedocs.io/en/latest/dev/plugins.html">FlexMeasures plugins</a> are a <span style="text-decoration: underline;">hugely</span> important concept. Writing data integrations for,  and <a href="https://seita.nl/services/" target="_blank" rel="noopener noreferrer">services</a> on top of FlexMeasures ― that's done with plugins.  To support getting started with them in the right way, we now provide <a href="https://github.com/SeitaBV/flexmeasures-plugin-template" target="_blank" rel="noopener noreferrer">a CookieCutter template</a> to get you started in 30 seconds. It also includes a few Blueprint examples and best practices like tests.</p>
-<h2>Python packages</h2>
-<p>Plugins can be complete Python packages now. Python code which can be installed on your system, e.g. with the pip package manager. You could even upload it to the Pypi index :)</p>
-<p>So what is professional about packages? It is more straightforward with a package to add code hygiene, version management and dependencies. You can imagine how much better you'll manage when your plugin can depend on a specific FlexMeasures version and other plugins can depend on yours.</p>
-<p>We envision that a top-level service plugin lists FlexMeasures, as well as one or two data integration plugins. You could install that plugin, and immediately run FlexMeasures and your service runs,</p>
-<p>If you use the packaging option, FlexMeasures still wants you to define the Blueprints for UI, CLI or API functionality at the top-level of the plugin. (If your plugin is just a folder with files, it still should be in the __init__.py file).</p>
-<p>To hit the ground running with the packaging approach,  try the CookieCutter template we mention above, where we give you a full package structure.</p>
-<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/182">Pull Request 182</a>.</p>
-<h2>Test automation support</h2>
-<p>If the plugin is used for serious stuff, its code also should be tested in automated fashion.</p>
-<p>Some tests test an integration of the behavior on top of an actual running app. That's of course a FlexMeasures app. So the plugin tests need to tell FlexMeasures to load the plugin. <a href="https://flexmeasures.readthedocs.io/en/latest/dev/plugins.html#notes-on-writing-tests-for-your-plugin">This is now possible</a> easily.</p>
-<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/220">Pull Request 220</a>.</p>
-<h2>Style your plugin</h2>
-<p>We believe that FlexMeasures shines as a backend, with a modern one-page JavaScript/HTML frontend for user-facing apps built on top of it.  That's why we provide a full API.</p>
-<p>However, a real quick way to provide a UI is to use the Jinja2 templating capabilities of  Flask (which FlexMeasures is built on). We do that in pilots when no frontend dev is available.</p>
-<p>Now we made it easier to impose your style on this UI. It's now possible to <a href="https://flexmeasures.readthedocs.io/en/latest/dev/plugins.html#adding-your-own-stylesheets" target="_blank" rel="noopener noreferrer">add your custom CSS spreadsheet</a> and <a href="https://flexmeasures.readthedocs.io/en/latest/dev/plugins.html#using-a-custom-favicon-icon" target="_blank" rel="noopener noreferrer">also show your own logo</a> for the top left corner. It made our ESCo customer happy to see their colors, font and logo in our pilot service's UI when we met their client :)</p>
-<p><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">This work was done in </span><a href="http://www.github.com/SeitaBV/flexmeasures/pull/184">Pull Request 184</a> and <span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);"> </span><a href="http://www.github.com/SeitaBV/flexmeasures/pull/185">Pull Request 185</a><span style="color: var(--text-editor-body-color); font-family: var(--font-base); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></p>
 <h2> </h2>
 <p> </p>
             ]]>
