@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2023-05-01T20:18:24+02:00</updated>
+    <updated>2023-05-01T20:26:21+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -18,7 +18,7 @@
         <id>https://flexmeasures.io/013-overlay-charts/</id>
             <category term="FlexMeasures Blog"/>
 
-        <updated>2023-05-01T20:18:24+02:00</updated>
+        <updated>2023-05-01T20:26:21+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/29/v013-preview.png" alt="Overlaid charts" />
@@ -30,7 +30,7 @@
                     <img src="https://flexmeasures.io/media/posts/29/v013-preview.png" alt="Overlaid charts" />
                 <p>Version v0.13 of FlexMeasures lets us create dashboards with multiple graphs from various sensors layered in one plot. In addition, FlexMeasures now includes a proper page for accounts.</p>
 <p>On the backend, we protect the CPU from re-computing the same schedule over and over again if a rogue client asks for that.</p>
-<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-13-0-april-28-2023" target="_blank" rel="noopener noreferrer">See changelog</a> for a complete list or read on below about the larger new features we added.</p>
+<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-13-0-may-1-2023" target="_blank" rel="noopener noreferrer">See changelog</a> for a complete list or read on below about the larger new features we added.</p>
 <h2>Overlay charts</h2>
 <p>With FlexMeasures, you can adapt the dashboard shown on the page for any asset. By default, you see a plot per sensor. With the <code>sensors_to_show</code> attribute, it was already possible to remove and even add plots (e.g. public price data), to create the dashboard with maximum information value.</p>
 <p>We wanted to make the dashboards more informative, as often users want to study effects of one sensor's data on others.</p>
