@@ -34,7 +34,9 @@
 <h2>Replay</h2>
 <p>FlexMeasures shines in keeping track <em>what was known at what time</em>. In both simulations and real time operation, we found that our partners want to see how the data situation progressed over time.</p>
 <p>That's why we decided to add a replay-button to asset dashboards. It travels through time for you: </p>
-<figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/27/ReplayWithRuler.gif" alt="Visualization of FlexMeasures data" width="1257" height="868"><figcaption>Data from Seita's V2G living lab, played back in FlexMeasures</figcaption></figure>
+<figure ><figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/27/ReplayWithRuler.gif" alt="Visualization of FlexMeasures data" width="1257" height="868"></figure>
+<figcaption >Data from Seita's V2G living lab, played back in FlexMeasures</figcaption>
+</figure>
 <p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">Where is this useful? We've seen this work very well in demos, and to explain why certain schedules were executed half-way, but then the rest got re-written. This happens because when new data arrives (e.g. prices change, an EV re-connects to the charger, etc.), FlexMeasures needs to re-compute the schedule. </span></p>
 <p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This <a href="https://twitter.com/flexmeasures/status/1551841500815695875" target="_blank" rel="noopener noreferrer">has been in the works</a> for a long time, and now finally released. This work was done in Pull Request </span><a href="http://www.github.com/SeitaBV/flexmeasures/pull/463" target="_blank" rel="noopener noreferrer">463</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></p>
 <h2>Custom scheduling</h2>
@@ -192,11 +194,7 @@
         <id>https://flexmeasures.io/faq/</id>
 
         <updated>2022-06-01T17:39:20+02:00</updated>
-            <summary>
-                <![CDATA[
-                    What does FlexMeasures do? FlexMeasures is an energy management system (EMS), but a specialized one. You can see it as a data-driven decision-support system for energy flexibility. The question FlexMeasures&hellip;
-                ]]>
-            </summary>
+            <summary></summary>
         <content type="html">
             <![CDATA[
                 <div class="post__toc">
