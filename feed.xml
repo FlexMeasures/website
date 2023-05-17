@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2023-05-01T20:26:21+02:00</updated>
+    <updated>2023-05-17T14:05:28+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>Blackout Testing in FlexMeasures API</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/blackout-testing-in-flexmeasures-api/"/>
+        <id>https://flexmeasures.io/blackout-testing-in-flexmeasures-api/</id>
+        <media:content url="https://flexmeasures.io/media/posts/30/simon-berger-87RXi_iC1xI-unsplash.jpg" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2023-05-17T14:05:28+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/30/simon-berger-87RXi_iC1xI-unsplash.jpg" alt="" />
+                    What is "Blackout testing"? A tool to provide stable #apidevelopment to your users in the long-term. By prescribed "shock therapy" :) Often, API endpoints change or are put out of use&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/30/simon-berger-87RXi_iC1xI-unsplash.jpg" class="type:primaryImage" alt="" /></p>
+                <p><span class="break-words"><span dir="ltr">What is "Blackout testing"? A tool to provide stable <a href="https://www.linkedin.com/feed/hashtag/?keywords=apidevelopment&amp;highlightedUpdateUrns=urn%3Ali%3Aactivity%3A7064556461237907456" data-attribute-index="0">#apidevelopment</a> to your users in the long-term. By prescribed "shock therapy" :)<br><br>Often, API endpoints change or are put out of use (becoming legacy part of the software, eventually not served anymore). However, users currently rely on them. And they hate upgrading. They might not all jump to upgrading their own systems, even if you suggest in time that they should. Why act now, right? Maybe tomorrow! This is a major problem for SaaS providers, who need to innovate and move on.<br><br>In FlexMeasures (v0.14, see <a href="https://github.com/flexMeasures/flexmeasures/pull/651">PR 651</a>), we adopted an industry standard called <a href="https://design.oftrust.net/api-migration-policies/blackout-testing">"Blackout Testing"</a>. This tool lets your users experience in a short &amp; planned "shock therapy" if they need to act.<br><br>Here is the usual how it fits into your process: First comes deprecation (API is now legacy code), then sunset (API stops being served). Both of these are pre-announced with clear dates. Both also give the using systems automated signals: HTTP headers label the stage implicitly (deprecation or sunset), and HTTP status codes do that explicitly (e.g. moving from 200 OK to 410 Gone and finally 404 NotFound).<br><br>In short, a blackout test would temporarily simulate the removal (return 410 instead of 200) for a pre-announced short while, maybe an hour. <br><br>That should really get everyone's attention :)<br><br>If you are hosting FlexMeasures, then from version 0.14 on, a blackout test can be activated by changing a simple setting (<a href="https://flexmeasures.readthedocs.io/en/latest/configuration.html#flexmeasures-api-sunset-active">FLEXMEASURES_API_SUNSET_ACTIVE</a>).<br><br>If you are a user connected to a FlexMeasures server, this simply means you will be served better. Fewer surprises, still innovation!</span></span></p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v0.13: Overlay charts </title>
         <author>
@@ -16,6 +40,7 @@
         </author>
         <link href="https://flexmeasures.io/013-overlay-charts/"/>
         <id>https://flexmeasures.io/013-overlay-charts/</id>
+        <media:content url="https://flexmeasures.io/media/posts/29/v013-preview.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
         <updated>2023-05-01T20:26:21+02:00</updated>
@@ -27,7 +52,7 @@
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="https://flexmeasures.io/media/posts/29/v013-preview.png" alt="Overlaid charts" />
+                    <p><img src="https://flexmeasures.io/media/posts/29/v013-preview.png" class="type:primaryImage" alt="Overlaid charts" /></p>
                 <p>Version v0.13 of FlexMeasures lets us create dashboards with multiple graphs from various sensors layered in one plot. In addition, FlexMeasures now includes a proper page for accounts.</p>
 <p>On the backend, we protect the CPU from re-computing the same schedule over and over again if a rogue client asks for that.</p>
 <p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-13-0-may-1-2023" target="_blank" rel="noopener noreferrer">See changelog</a> for a complete list or read on below about the larger new features we added.</p>
@@ -37,9 +62,7 @@
 <p>Now, sensor numbers in <code>sensors_to_show</code> can be layered, e.g. <code>[1, [3,6]]</code> will lead to two plots, where the second shows two sensors together.</p>
 <p>As a bonus, plots are distinguished by source (different trace), sensor (different color) and source type (different stroke dash).</p>
 <p>Here is an example (see the overlay of EV charging and PV supply in the lower graph):</p>
-<figure ><figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/29/layered-chart.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/29/responsive/layered-chart-xs.png 300w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-sm.png 480w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-md.png 768w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-lg.png 1024w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-xl.png 1360w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-2xl.png 1600w"  alt="A layered chart from Seita's V2G living lab" width="800" height="375"></figure>
-<figcaption >A layered chart from Seita's V2G living lab</figcaption>
-</figure>
+<figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/29/layered-chart.png" alt="A layered chart from Seita's V2G living lab" width="800" height="375" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/29/responsive/layered-chart-xs.png 300w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-sm.png 480w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-md.png 768w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-lg.png 1024w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-xl.png 1360w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-2xl.png 1600w"><figcaption>A layered chart from Seita's V2G living lab</figcaption></figure>
 <p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This work was done in Pull Request </span><a href="http://www.github.com/flexmeasures/flexmeasures/pull/534" target="_blank" rel="noopener noreferrer">534</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></p>
 <h2>Account page</h2>
 <p>FlexMeasures is not just a single-purpose program ― it's a platform which can sit in the cloud and serve multiple sites. To manage these sites when they have different asset owners, the concept of accounts matters a lot. An account might for instance be a SME, with several local energy assets and also several employees (who might or might not have a FlexMeasures user account)</p>
@@ -65,6 +88,7 @@
         </author>
         <link href="https://flexmeasures.io/012-replay-custom-scheduling/"/>
         <id>https://flexmeasures.io/012-replay-custom-scheduling/</id>
+        <media:content url="https://flexmeasures.io/media/posts/27/replay-button.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
         <updated>2023-01-04T17:17:46+01:00</updated>
@@ -76,16 +100,14 @@
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="https://flexmeasures.io/media/posts/27/replay-button.png" alt="Playback button" />
+                    <p><img src="https://flexmeasures.io/media/posts/27/replay-button.png" class="type:primaryImage" alt="Playback button" /></p>
                 <p>Version v0.12 of FlexMeasures adds a cool re-play feature and support for adding custom scheduling algorithms!</p>
 <p>Actually, this release is a big one with many small improvements, e.g. the CLI for data ingestions have taken a big leap.</p>
 <p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-11-0-august-28-2022" target="_blank" rel="noopener noreferrer">See changelog</a> or read on below to read what we added.</p>
 <h2>Replay</h2>
 <p>FlexMeasures shines in keeping track <em>what was known at what time</em>. In both simulations and real time operation, we found that our partners want to see how the data situation progressed over time.</p>
 <p>That's why we decided to add a replay-button to asset dashboards. It travels through time for you: </p>
-<figure ><figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/27/ReplayWithRuler.gif" alt="Visualization of FlexMeasures data" width="1257" height="868"></figure>
-<figcaption >Data from Seita's V2G living lab, played back in FlexMeasures</figcaption>
-</figure>
+<figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/27/ReplayWithRuler.gif" alt="Visualization of FlexMeasures data" width="1257" height="868"><figcaption>Data from Seita's V2G living lab, played back in FlexMeasures</figcaption></figure>
 <p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">Where is this useful? We've seen this work very well in demos, and to explain why certain schedules were executed half-way, but then the rest got re-written. This happens because when new data arrives (e.g. prices change, an EV re-connects to the charger, etc.), FlexMeasures needs to re-compute the schedule. </span></p>
 <p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This <a href="https://twitter.com/flexmeasures/status/1551841500815695875" target="_blank" rel="noopener noreferrer">has been in the works</a> for a long time, and now finally released. This work was done in Pull Request </span><a href="http://www.github.com/SeitaBV/flexmeasures/pull/463" target="_blank" rel="noopener noreferrer">463</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></p>
 <h2>Custom scheduling</h2>
@@ -125,6 +147,7 @@
         </author>
         <link href="https://flexmeasures.io/flexmeasures-featured-on-python-developer-podcast/"/>
         <id>https://flexmeasures.io/flexmeasures-featured-on-python-developer-podcast/</id>
+        <media:content url="https://flexmeasures.io/media/posts/28/podcast-init-logo.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
         <updated>2022-12-14T18:24:58+01:00</updated>
@@ -136,7 +159,7 @@
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="https://flexmeasures.io/media/posts/28/podcast-init-logo.png" alt="Podcast __init__ Logo" />
+                    <p><img src="https://flexmeasures.io/media/posts/28/podcast-init-logo.png" class="type:primaryImage" alt="Podcast __init__ Logo" /></p>
                 <p><span class="break-words"><span dir="ltr">Would an audio-introduction of our work on <a href="https://seita.nl/core-technology/flexmeasures/">FlexMeasures</a> help you get started with learning about it? Now there is one ― Listen below or check streaming options on <a href="https://www.pythonpodcast.com/flexmeasures-energy-management-system-episode-381/">the podcast website!</a></span></span></p>
 <div class="vc_row wpb_row vc_row-fluid">
 <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -166,6 +189,7 @@
         </author>
         <link href="https://flexmeasures.io/011-better-data-views/"/>
         <id>https://flexmeasures.io/011-better-data-views/</id>
+        <media:content url="https://flexmeasures.io/media/posts/26/asset-page-prices-charging.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
         <updated>2022-08-28T23:40:13+02:00</updated>
@@ -177,7 +201,7 @@
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="https://flexmeasures.io/media/posts/26/asset-page-prices-charging.png" alt="Docker logo" />
+                    <p><img src="https://flexmeasures.io/media/posts/26/asset-page-prices-charging.png" class="type:primaryImage" alt="Docker logo" /></p>
                 <p>Version v0.11 of FlexMeasures adds much more useful data views, which are also customisable.</p>
 <p>In addition, we completed the Docker-compose stack to include background job workers. This is very useful for developers.</p>
 <p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-11-0-august-28-2022" target="_blank" rel="noopener noreferrer">See changelog</a> or read on below to read what we added.</p>
@@ -243,7 +267,11 @@
         <id>https://flexmeasures.io/faq/</id>
 
         <updated>2022-06-01T17:39:20+02:00</updated>
-            <summary></summary>
+            <summary>
+                <![CDATA[
+                    What does FlexMeasures do? FlexMeasures is an energy management system (EMS), but a specialized one. You can see it as a data-driven decision-support system for energy flexibility. The question FlexMeasures&hellip;
+                ]]>
+            </summary>
         <content type="html">
             <![CDATA[
                 <div class="post__toc">
@@ -263,7 +291,7 @@
 <div>The question FlexMeasures helps to solves is: What are the best times to run my flexible assets? For instance, when to (dis)charge my EV batteries? When should we run our heat pumps to warm up the office?</div>
 <div> </div>
 <div>Here is the simple version ― sensor data goes in, optimized schedules come out:</div>
-<h2><figure class="post__image post__image--center"><img loading="lazy"  src="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/simple-flexEMS-2.png" sizes="(max-width: 48em) 100vw, 768px" srcset="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-xs.png 300w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-sm.png 480w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-md.png 768w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-lg.png 1024w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-xl.png 1360w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-2xl.png 1600w"  alt="" width="750" height="191"></figure>Why do you do this?</h2>
+<h2><figure class="post__image post__image--center"><img loading="lazy"  src="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/simple-flexEMS-2.png" alt="" width="750" height="191" sizes="(max-width: 48em) 100vw, 768px" srcset="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-xs.png 300w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-sm.png 480w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-md.png 768w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-lg.png 1024w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-xl.png 1360w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-2xl.png 1600w"></figure>Why do you do this?</h2>
 <div> </div>
 <div>See <a href="https://www.seita.nl/why" target="_blank" rel="noopener noreferrer">this mission statement</a> (from the original creators): We have to go green. Flexible demand has to be matched with green energy. Open innovation can get us to the speed we need for the global transition.</div>
 <h2>How does FlexMeasures add value?</h2>
@@ -283,7 +311,7 @@
 <div> </div>
 <div>Here is a more complete picture of how FlexMeasures fits into an advanced and configurable data-schedules loop:</div>
 <div> </div>
-<div><figure class="post__image post__image--center"><img loading="lazy"  src="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/overview-flexEMS.png" sizes="(max-width: 48em) 100vw, 768px" srcset="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-xs.png 300w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-sm.png 480w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-md.png 768w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-lg.png 1024w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-xl.png 1360w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-2xl.png 1600w"  alt="" width="800" height="457"></figure></div>
+<div><figure class="post__image post__image--center"><img loading="lazy"  src="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/overview-flexEMS.png" alt="" width="800" height="457" sizes="(max-width: 48em) 100vw, 768px" srcset="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-xs.png 300w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-sm.png 480w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-md.png 768w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-lg.png 1024w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-xl.png 1360w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-2xl.png 1600w"></figure></div>
 </div>
 </div>
 <h2 id="mcetoc_1g2pagetfj">Why is FlexMeasures open source, and why is it part of the Linux Energy Foundation?</h2>
@@ -334,6 +362,7 @@
         </author>
         <link href="https://flexmeasures.io/010-docker-styling/"/>
         <id>https://flexmeasures.io/010-docker-styling/</id>
+        <media:content url="https://flexmeasures.io/media/posts/23/horizontal-logo-monochromatic-white.webp" medium="image" />
             <category term="FlexMeasures Blog"/>
 
         <updated>2022-05-08T02:10:42+02:00</updated>
@@ -345,7 +374,7 @@
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="https://flexmeasures.io/media/posts/23/horizontal-logo-monochromatic-white.webp" alt="Docker logo" />
+                    <p><img src="https://flexmeasures.io/media/posts/23/horizontal-logo-monochromatic-white.webp" class="type:primaryImage" alt="Docker logo" /></p>
                 <p>Version v0.10 of FlexMeasures (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-10-0-may-8-2022" target="_blank" rel="noopener noreferrer">see changelog</a>) adds the ability to run Flexmeasures inside a Docker container. Containerization is a big step towards easier installation and scaling in the cloud!</p>
 <p>We also gave the backoffice a nice styling update.</p>
 <h2>Dockerization</h2>
@@ -378,6 +407,7 @@
         </author>
         <link href="https://flexmeasures.io/090-cli-developer-power/"/>
         <id>https://flexmeasures.io/090-cli-developer-power/</id>
+        <media:content url="https://flexmeasures.io/media/posts/22/florian-krumm-1osIUArK5oA-unsplash-2.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
         <updated>2022-03-25T17:18:20+01:00</updated>
@@ -389,7 +419,7 @@
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="https://flexmeasures.io/media/posts/22/florian-krumm-1osIUArK5oA-unsplash-2.jpg" alt="Computer keyboard, by Florian Krumm" />
+                    <p><img src="https://flexmeasures.io/media/posts/22/florian-krumm-1osIUArK5oA-unsplash-2.jpg" class="type:primaryImage" alt="Computer keyboard, by Florian Krumm" /></p>
                 <p>Version v0.9.0 of FlexMeasures (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-9-0-march-8-2022" target="_blank" rel="noopener noreferrer">see changelog</a>) adds many CLI commands to control FlexMeasures' data from the terminal. We hope this helps with reducing the onboarding time for new accounts!</p>
 <p>FlexMeasures will also now convert incoming data, if it has a different source unit than the required sensor unit.</p>
 <p>Finally, we added new tutorial on how to get started using FlexMeasures in just a few minutes and we began a new API version (v3) which is more REST-like than v2 and better supports <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html">the new data model. </a>  Do let us know if these things help you be more productive with FlexMeasures!</p>
@@ -409,7 +439,7 @@
 <p>This work was done in Pull Requests <a href="http://www.github.com/SeitaBV/flexmeasures/pull/328">328</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/341">341</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/337">337</a> , <a href="http://www.github.com/SeitaBV/flexmeasures/pull/291">339</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/343">343</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/360">360,</a> <a href="http://www.github.com/SeitaBV/flexmeasures/pull/368">368</a> and <a href="http://www.github.com/SeitaBV/flexmeasures/pull/395">395</a>.</p>
 <h2>Unit conversion</h2>
 <p>Units are a crucial topic in time series data. Only if you get them right, will your data also be correct (and you avoid the risk of incorrect data / lengthy debugging periods). Especially if you have to transform data. One example is of course power to energy, e.g. kW to kWh. There is many more examples.</p>
-<figure class="post__image post__image--center" ><img loading="lazy" src="https://imgs.xkcd.com/comics/rounding.png" data-is-external-image="true"  alt="XKCD on unit conversion" width="420" height="489">
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://imgs.xkcd.com/comics/rounding.png" alt="XKCD on unit conversion" width="420" height="489" data-is-external-image="true">
 <figcaption >The relevant XKCD cartoon</figcaption>
 </figure>
 <p>We use the excellent <a href="https://pint.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer">pint library</a> to help us with that. With version 0.9.0,  FlexMeasures will now convert incoming data, if it has a different source unit than the required sensor unit.</p>
@@ -448,55 +478,16 @@
 <p>Here, let's list crucially useful and also open-source plugins which actually exist already ― this list should grow (<a href="https://www.seita.nl/contact" target="_blank" rel="noopener noreferrer">tell us</a> if there is one you made and want to add here):</p>
 <h3>OpenWeatherMap</h3>
 <p><a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">OpenWeatherMap</a> is one of the best services to get your weather forecasts these days. And these forecasts might be highly useful for deciding what the optimal schedule for the next few hours is. For instance, to maximise self-consumption of your solar panels.</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/21/OpenWeather-Logo.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-xs.jpg 300w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-sm.jpg 480w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-md.jpg 768w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-lg.jpg 1024w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-xl.jpg 1360w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-2xl.jpg 1600w"  alt="OpenWeatherMap  Logo" width="432" height="149"></figure>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/21/OpenWeather-Logo.jpg" alt="OpenWeatherMap  Logo" width="432" height="149" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-xs.jpg 300w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-sm.jpg 480w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-md.jpg 768w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-lg.jpg 1024w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-xl.jpg 1360w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-2xl.jpg 1600w"></figure>
 <p>The source code of the plugin is <a href="https://github.com/SeitaBV/flexmeasures-openweathermap/" target="_blank" rel="noopener noreferrer">here</a>. It adds two CLI commands, one for registering weather sensors on desired locations, one for calling the API and gathering the forecasts for the upcoming hours.</p>
 <h3>ENTSO-E</h3>
 <p>Market data is crucial for planning ahead. Two examples we use are day-ahead prices (to optimize energy costs) and production forecasts (to estimate the CO2 content on the grid for the upcoming hours).</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/21/ENTSO-E_logo_sml.jpg" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-xs.jpg 300w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-sm.jpg 480w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-md.jpg 768w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-lg.jpg 1024w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-xl.jpg 1360w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-2xl.jpg 1600w"  alt="ENTSO-E logo" width="443" height="120"></figure>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/21/ENTSO-E_logo_sml.jpg" alt="ENTSO-E logo" width="443" height="120" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-xs.jpg 300w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-sm.jpg 480w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-md.jpg 768w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-lg.jpg 1024w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-xl.jpg 1360w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-2xl.jpg 1600w"></figure>
 <p>ENTSO-E is the association of European TSOs. <a href="https://transparency.entsoe.eu/" target="_blank" rel="noopener noreferrer">Their transparency platform</a> publishes different kind of data across European regions. </p>
 <p>The source code of the plugin is <a href="https://github.com/SeitaBV/flexmeasures-entsoe" target="_blank" rel="noopener noreferrer">here</a>. It currently supports importing day-ahead prices as well as generation. Based on generation, the CO2 content for the upcoming day can be computed.</p>
 <h3>Z-Info</h3>
 <p>A plugin for importing data from <a href="https://www.z-info.nl" rel="nofollow">Z-Info</a> into FlexMeasures. Z-Info is a sensor data service for the Dutch water industry. The source code is <a href="https://github.com/SeitaBV/flexmeasures-zinfo" target="_blank" rel="noopener noreferrer">here</a>.</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/21/Z-info-FC-RGB-188x300.png" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-xs.png 300w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-sm.png 480w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-md.png 768w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-lg.png 1024w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-xl.png 1360w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-2xl.png 1600w"  alt="Z-Info Logo" width="188" height="300"></figure>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.8.0: Better scheduling, safer data</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/080-better-scheduling-safer-data/"/>
-        <id>https://flexmeasures.io/080-better-scheduling-safer-data/</id>
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2022-01-24T14:02:16+01:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/20/salman-hossain-saif-n6uLxWeCMao-unsplash.jpg" alt="AA batteries on wooden background, by Salman Hossain Saif" />
-                    Version v0.8.0 of FlexMeasures (see changelog) improves scheduling &amp; helps to keep data safe. Behind the scenes, a big data model transition is taking form. We work with scheduling of&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <img src="https://flexmeasures.io/media/posts/20/salman-hossain-saif-n6uLxWeCMao-unsplash.jpg" alt="AA batteries on wooden background, by Salman Hossain Saif" />
-                <p>Version v0.8.0 of FlexMeasures (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-8-0-january-24-2022" target="_blank" rel="noopener noreferrer">see changelog</a>) improves scheduling &amp; helps to keep data safe. Behind the scenes, a big data model transition is taking form.</p>
-<h2>Better scheduling</h2>
-<p>We work with scheduling of batteries<a href="https://seita.nl/project/v2ghome-living-lab/" target="_blank" rel="noopener noreferrer"> in practice</a>, which is a great opportunity to find small and crucial improvements.</p>
-<p>For instance, we were able to improve the stability in edge cases. FlexMeasures also now can take into account the limited round trip efficiency of batteries, as well as asymmetric buy/sell prices.</p>
-<p>This work was done in Pull Requests <a href="http://www.github.com/SeitaBV/flexmeasures/pull/291">291</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/267">267</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/270">270</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/300">300</a> and <a href="http://www.github.com/SeitaBV/flexmeasures/pull/291">291</a>.</p>
-<h2>Safer data</h2>
-<p>If several accounts (customers) sit in the same FlexMeasures server, it is all the more crucial that only the correctly authorized persons get to see or change data.</p>
-<p>v0.8.0 introduces the ability to protect data within users within one account, building on our multi-tenancy model from <a href="https://flexmeasures.io/v060-multi-tenancy-error-monitoring/">version 0.6.0</a>. This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/210">Pull Request 210</a>.</p>
-<p>When implementing authorization, it's highly important to do that in a developer-friendly way. What we mean with that is developers need to find it straightforward to make the correct decisions of who has permission to create/read/update/delete which data, and which API endpoints require the user to have which permissions.</p>
-<p>In v0.8.0, we implement an authorization model, where the first question is answered in one central place (on the data model) and with high granularity (object-level security). We also offer a new API endpoint decorator (<code class="docutils literal notranslate"><span class="pre">@permission_required_for_context</span></code>), so in-built endpoints, as well as API endpoints in plugins, can be protected easily.</p>
-<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/234">Pull Request 234</a>.</p>
-<h2>Data model transition</h2>
-<p>Behind the curtains, this version makes a huge step from our deprecated data model to a new, more flexible one. We describe this transition in detail <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html" target="_blank" rel="noopener noreferrer">here</a>, even with before &amp; after pictures.</p>
-<p>We are left with a few items on our TODO list, but in this version, we made a big effort. We moved a lot of structure over, as well as actual data and some UI (dashboard, assets). We believe that was the hardest part.</p>
-<p>We also took care so existing users feel as little blockage as possible. We wrote extra code so the old data model can still function in the new world, and that data is copied over in the background (don't forget to do the database migration, of course, see changelog).</p>
-<h2> </h2>
-<p> </p>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/21/Z-info-FC-RGB-188x300.png" alt="Z-Info Logo" width="188" height="300" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-xs.png 300w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-sm.png 480w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-md.png 768w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-lg.png 1024w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-xl.png 1360w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-2xl.png 1600w"></figure>
             ]]>
         </content>
     </entry>
