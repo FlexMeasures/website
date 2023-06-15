@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2023-06-15T13:49:29+02:00</updated>
+    <updated>2023-06-15T16:50:53+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -19,7 +19,7 @@
         <media:content url="https://flexmeasures.io/media/posts/30/mike-tinnion-3ym6i13Y9LU-unsplash.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2023-06-15T13:49:29+02:00</updated>
+        <updated>2023-06-15T16:50:53+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/30/mike-tinnion-3ym6i13Y9LU-unsplash.jpg" alt="A notebook and pen" />
@@ -39,7 +39,7 @@
 <li>Post-calculations: To be able to show the customer value, we regularly want to compute things like money or CO2 saved.</li>
 </ol>
 <p>These calculations can be done with code, but there'll be many repetitions. </p>
-<p>We now added an infrastructure which allows us to define computation pipelines (see an example below) and CLI commands for developers to list a available reporters and trigger their computations regularly:</p>
+<p>We now added an infrastructure that allows us to define computation pipelines (see an example below) and CLI commands for developers to list available reporters and trigger their computations regularly:</p>
 <ul>
 <li><code><span class="blob-code-inner blob-code-marker js-code-nav-pass " data-code-marker="+"><span class="pl-c1">flexmeasures show reporters</span></span></code></li>
 <li><code><span class="blob-code-inner blob-code-marker js-code-nav-pass " data-code-marker="+"><span class="pl-c1">flexmeasures add report</span></span></code></li>
@@ -52,18 +52,18 @@
         {
             <span class="pl-ent">"sensor"</span>: <span class="pl-c1">1</span>,
             <span class="pl-ent">"source"</span> : <span class="pl-c1">1</span>,
-            <span class="pl-ent">"alias"</span> : <span class="pl-s"><span class="pl-pds">"</span>PV<span class="pl-pds">"</span></span>
+            <span class="pl-ent">"alias"</span> : <span class="pl-s"><span class="pl-pds">"</span>pv<span class="pl-pds">"</span></span>
         },
         {
             <span class="pl-ent">"sensor"</span>: 2,
             <span class="pl-ent">"source"</span> : <span class="pl-c1">2</span>,
-            <span class="pl-ent">"alias"</span> : <span class="pl-s"><span class="pl-pds">"</span>CONSUMPTION<span class="pl-pds">"</span></span>
+            <span class="pl-ent">"alias"</span> : <span class="pl-s"><span class="pl-pds">"<span class="pl-ent">consumption</span></span><span class="pl-pds">"</span></span>
         }
     ],
-    <span class="pl-ent">"method"</span> : <span class="pl-s"><span class="pl-pds">"</span>SUM<span class="pl-pds">"</span></span>,
+    <span class="pl-ent">"method"</span> : <span class="pl-s"><span class="pl-pds">"</span>sum<span class="pl-pds">"</span></span>,
     <span class="pl-ent">"weights"</span> : {
-        <span class="pl-ent">"PV"</span> : <span class="pl-c1">1.0</span>,
-        <span class="pl-ent">"CONSUMPTION"</span> : <span class="pl-c1">-1.0</span>
+        <span class="pl-ent">"pv"</span> : <span class="pl-c1">1.0</span>,
+        <span class="pl-ent">"consumption"</span> : <span class="pl-c1">-1.0</span>
     }
 }</pre>
 <p>Much more elaborate reporters are possible to be done this way, and we will showcase more later. </p>
@@ -75,7 +75,7 @@
 <p>The first action was to support the buffer-like behavior of heat storage, namely that energy (heat) is being lost over time. This lead to the new parameter <code>storage-efficiency</code>, which is now part of the <a href="https://flexmeasures.readthedocs.io/en/latest/api/notation.html#flex-model">flex model</a>. So now we can express that a hot water storage tank will lose around 1% of the stored heat per day. This will be reflected in what the scheduler finds to be optimal.</p>
 <p>This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/679">679</a>.</p>
 <h2>Developer support: docs, packaging</h2>
-<p>We extended the core team which works on FlexMeasures, and that is always an opportunity to spot problems in the support for developers. We added two main improvements:</p>
+<p>We extended the core team that works on FlexMeasures, and that is always an opportunity to spot problems in the support for developers. We added two main improvements:</p>
 <ul>
 <li>Better developer docs, making it easier to install FlexMeasures and understand what it's doing (Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/664">664</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/665">665</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/676">676</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/687">687</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/698">698</a>)</li>
 <li>Packaging improvements, making it easier to use FlexMeasures in deployments (Pull Requests: <a href="http://www.github.com/flexmeasures/flexmeasures/pull/670">670</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/671">671</a>)</li>
