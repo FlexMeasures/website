@@ -3,12 +3,72 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2023-06-15T16:50:53+02:00</updated>
+    <updated>2023-07-04T20:16:33+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>The FlexMeasures client is here!</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/fm-client-is-here/"/>
+        <id>https://flexmeasures.io/fm-client-is-here/</id>
+        <media:content url="https://flexmeasures.io/media/posts/31/bell-sign-on-registration-reception-preview.jpg" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2023-07-04T20:16:33+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/31/bell-sign-on-registration-reception-preview.jpg" alt="Person ringing hotel lobby desk bell" />
+                    We've taken a crucial step in making FlexMeasures even more developer-friendly! Last week, we released version 0.1 of the new FlexMeasures client. What is the use of a client library&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/31/bell-sign-on-registration-reception-preview.jpg" class="type:primaryImage" alt="Person ringing hotel lobby desk bell" /></p>
+                <p data-pm-slice="1 1 []">We've taken a crucial step in making FlexMeasures even more developer-friendly! Last week, we released version 0.1 of the new <a href="https://pypi.org/project/flexmeasures-client/&gt;" target="_blank" rel="noopener noreferrer">FlexMeasures client</a>.</p>
+<p>What is the use of a client library for the FlexMeasures platform? Well, FlexMeasures is foremost a web server ― it calculates optimal schedules for flexible energy assets in the cloud, according to price, CO2 output or other constraints. Its API is <a href="https://flexmeasures.readthedocs.io" target="_blank" rel="noopener noreferrer">well-documented</a>. Even though APIs are one of the web architecture's shining beacons, it's not really convenient for developers to use them directly. That's where developer-friendly tooling, like client libraries, come in!</p>
+<p>The FlexMeasures client wraps the most important interactions you need to add if you interact with FlexMeasures. For example, if you are connecting a local energy management system (EMS) to be optimized via FlexMeasures, you would need authentication, data I/O and the triggering of new computations. With the client, these functionalities are now as easy to use as calling a function. For instance, here we authorize to a FlexMeasures server, request a schedule for a battery charging sensor and retrieve it (once it's computed):</p>
+<pre><code>import asyncio
+
+from flexmeasures_client.client import FlexMeasuresClient
+
+EMAIL = "admin@admin.nl"
+PASSWORD = "admin"
+
+async def my_script():
+    schedule = await flexmeasures_client.trigger_and_get_schedule(
+        sensor_id=1,
+        start="2023-06-18T10:00:00+00:00",
+        duration="PT45M",
+        soc_unit="MWh",
+        soc_at_start=50,
+        soc_targets=[
+            {
+                "value": 100,
+                "datetime": "2023-06-20T11:00+02:00",
+            }
+        ],
+        consumption_price_sensor=3,
+    )<br>    print(schedule)
+
+client = FlexMeasuresClient(
+    email=EMAIL,
+    password=PASSWORD,
+    host="localhost:5000",
+)
+
+asyncio.run(my_script())</code></pre>
+<p>The FlexMeasures Client is written in Python, so it's most useful for Python developers. In principle, other languages could follow.</p>
+<p>At Seita, we first started using the client in a new service with <a href="https://projecten.topsectorenergie.nl/projecten/turbineketel-nestore-en-seita-ems-voor-het-aardgasvrij-maken-van-wijken-tunes-37596" target="_blank" rel="noopener noreferrer">smart heat storage control</a> and in <a href="https://v2g-liberty.eu/" target="_blank" rel="noopener noreferrer">our V2G project</a>. The FlexMeasures client will evolve together with the FlexMeasures API. For instance, adding sensors is <a href="https://github.com/FlexMeasures/flexmeasures/projects/18" target="_blank" rel="noopener noreferrer">a feature you can expect soon</a>.</p>
+<p>In addition, to the most important interactions, we're also adding an S2 layer (<a href="https://flexible-energy.eu/wpcms/wp-content/uploads/2022/12/Energy-Management-Opportunities-for-The-Home.pdf" target="_blank" rel="noopener noreferrer">S2</a> is a new flexible asset protocol, with explicit flexibility expression ability). We'll talk more about S2 in another blog post.</p>
+<p>If you're trying out the FlexMeasures Client, we'd love to hear from you. Is it useful? What can be improved? You can add issues on <a href="https://github.com/FlexMeasures/flexmeasures-client" target="_blank" rel="noopener noreferrer">the Github project page</a>. And of course, stars as well as pull requests are welcome :)</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v0.14: Reporting power</title>
         <author>
@@ -508,41 +568,6 @@
 <p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/381">Pull Request 381</a>.</p>
 <h2> </h2>
 <p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Plugins</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/plugins/"/>
-        <id>https://flexmeasures.io/plugins/</id>
-
-        <updated>2022-04-13T22:34:30+02:00</updated>
-            <summary>
-                <![CDATA[
-                    You can extend the FlexMeasures EMS with functionality like UI pages, API endpoints, CLI functions and eventually algorithms. This is actually how energy flexibility apps &amp; services are built on&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>You can extend the FlexMeasures EMS with functionality like UI pages, API endpoints,  CLI functions and <a href="https://flexmeasures.io/roadmap/">eventually</a> algorithms. This is actually how energy flexibility apps &amp; services are built on top of FlexMeasures!</p>
-<p>Extensibility is key to the open innovation we are going for here.  Read <a href="https://flexmeasures.readthedocs.io/en/latest/dev/plugins.html" target="_blank" rel="noopener noreferrer">here</a> how one builds a plugin. </p>
-<p>Solving a use case for a client often involves putting custom code for them in a plugin. So at Seita, we've made quite a few which are private.</p>
-<p>Here, let's list crucially useful and also open-source plugins which actually exist already ― this list should grow (<a href="https://www.seita.nl/contact" target="_blank" rel="noopener noreferrer">tell us</a> if there is one you made and want to add here):</p>
-<h3>OpenWeatherMap</h3>
-<p><a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">OpenWeatherMap</a> is one of the best services to get your weather forecasts these days. And these forecasts might be highly useful for deciding what the optimal schedule for the next few hours is. For instance, to maximise self-consumption of your solar panels.</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/21/OpenWeather-Logo.jpg" alt="OpenWeatherMap  Logo" width="432" height="149" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-xs.jpg 300w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-sm.jpg 480w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-md.jpg 768w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-lg.jpg 1024w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-xl.jpg 1360w ,https://flexmeasures.io/media/posts/21/responsive/OpenWeather-Logo-2xl.jpg 1600w"></figure>
-<p>The source code of the plugin is <a href="https://github.com/SeitaBV/flexmeasures-openweathermap/" target="_blank" rel="noopener noreferrer">here</a>. It adds two CLI commands, one for registering weather sensors on desired locations, one for calling the API and gathering the forecasts for the upcoming hours.</p>
-<h3>ENTSO-E</h3>
-<p>Market data is crucial for planning ahead. Two examples we use are day-ahead prices (to optimize energy costs) and production forecasts (to estimate the CO2 content on the grid for the upcoming hours).</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/21/ENTSO-E_logo_sml.jpg" alt="ENTSO-E logo" width="443" height="120" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-xs.jpg 300w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-sm.jpg 480w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-md.jpg 768w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-lg.jpg 1024w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-xl.jpg 1360w ,https://flexmeasures.io/media/posts/21/responsive/ENTSO-E_logo_sml-2xl.jpg 1600w"></figure>
-<p>ENTSO-E is the association of European TSOs. <a href="https://transparency.entsoe.eu/" target="_blank" rel="noopener noreferrer">Their transparency platform</a> publishes different kind of data across European regions. </p>
-<p>The source code of the plugin is <a href="https://github.com/SeitaBV/flexmeasures-entsoe" target="_blank" rel="noopener noreferrer">here</a>. It currently supports importing day-ahead prices as well as generation. Based on generation, the CO2 content for the upcoming day can be computed.</p>
-<h3>Z-Info</h3>
-<p>A plugin for importing data from <a href="https://www.z-info.nl" rel="nofollow">Z-Info</a> into FlexMeasures. Z-Info is a sensor data service for the Dutch water industry. The source code is <a href="https://github.com/SeitaBV/flexmeasures-zinfo" target="_blank" rel="noopener noreferrer">here</a>.</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/21/Z-info-FC-RGB-188x300.png" alt="Z-Info Logo" width="188" height="300" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-xs.png 300w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-sm.png 480w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-md.png 768w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-lg.png 1024w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-xl.png 1360w ,https://flexmeasures.io/media/posts/21/responsive/Z-info-FC-RGB-188x300-2xl.png 1600w"></figure>
             ]]>
         </content>
     </entry>
