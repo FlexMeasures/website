@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2023-07-04T20:16:33+02:00</updated>
+    <updated>2023-08-07T13:04:02+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -16,20 +16,21 @@
         </author>
         <link href="https://flexmeasures.io/fm-client-is-here/"/>
         <id>https://flexmeasures.io/fm-client-is-here/</id>
-        <media:content url="https://flexmeasures.io/media/posts/31/bell-sign-on-registration-reception-preview.jpg" medium="image" />
+        <media:content url="https://flexmeasures.io/media/posts/32/bell-sign-on-registration-reception-preview-xl.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2023-07-04T20:16:33+02:00</updated>
+        <updated>2023-08-07T13:04:02+02:00</updated>
             <summary>
                 <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/31/bell-sign-on-registration-reception-preview.jpg" alt="Person ringing hotel lobby desk bell" />
+                        <img src="https://flexmeasures.io/media/posts/32/bell-sign-on-registration-reception-preview-xl.jpg" alt="Bell on registration desk" />
                     We've taken a crucial step in making FlexMeasures even more developer-friendly! Last week, we released version 0.1 of the new FlexMeasures client. What is the use of a client library&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/31/bell-sign-on-registration-reception-preview.jpg" class="type:primaryImage" alt="Person ringing hotel lobby desk bell" /></p>
-                <p data-pm-slice="1 1 []">We've taken a crucial step in making FlexMeasures even more developer-friendly! Last week, we released version 0.1 of the new <a href="https://pypi.org/project/flexmeasures-client/&gt;" target="_blank" rel="noopener noreferrer">FlexMeasures client</a>.</p>
+                    <p><img src="https://flexmeasures.io/media/posts/32/bell-sign-on-registration-reception-preview-xl.jpg" class="type:primaryImage" alt="Bell on registration desk" /></p>
+                <div class="post__inner post__entry">
+<p data-pm-slice="1 1 []">We've taken a crucial step in making FlexMeasures even more developer-friendly! Last week, we released version 0.1 of the new <a href="https://pypi.org/project/flexmeasures-client/&gt;" target="_blank" rel="noopener noreferrer">FlexMeasures client</a>.</p>
 <p>What is the use of a client library for the FlexMeasures platform? Well, FlexMeasures is foremost a web server ― it calculates optimal schedules for flexible energy assets in the cloud, according to price, CO2 output or other constraints. Its API is <a href="https://flexmeasures.readthedocs.io" target="_blank" rel="noopener noreferrer">well-documented</a>. Even though APIs are one of the web architecture's shining beacons, it's not really convenient for developers to use them directly. That's where developer-friendly tooling, like client libraries, come in!</p>
 <p>The FlexMeasures client wraps the most important interactions you need to add if you interact with FlexMeasures. For example, if you are connecting a local energy management system (EMS) to be optimized via FlexMeasures, you would need authentication, data I/O and the triggering of new computations. With the client, these functionalities are now as easy to use as calling a function. For instance, here we authorize to a FlexMeasures server, request a schedule for a battery charging sensor and retrieve it (once it's computed):</p>
 <pre><code>import asyncio
@@ -66,6 +67,7 @@ asyncio.run(my_script())</code></pre>
 <p>At Seita, we first started using the client in a new service with <a href="https://projecten.topsectorenergie.nl/projecten/turbineketel-nestore-en-seita-ems-voor-het-aardgasvrij-maken-van-wijken-tunes-37596" target="_blank" rel="noopener noreferrer">smart heat storage control</a> and in <a href="https://v2g-liberty.eu/" target="_blank" rel="noopener noreferrer">our V2G project</a>. The FlexMeasures client will evolve together with the FlexMeasures API. For instance, adding sensors is <a href="https://github.com/FlexMeasures/flexmeasures/projects/18" target="_blank" rel="noopener noreferrer">a feature you can expect soon</a>.</p>
 <p>In addition, to the most important interactions, we're also adding an S2 layer (<a href="https://flexible-energy.eu/wpcms/wp-content/uploads/2022/12/Energy-Management-Opportunities-for-The-Home.pdf" target="_blank" rel="noopener noreferrer">S2</a> is a new flexible asset protocol, with explicit flexibility expression ability). We'll talk more about S2 in another blog post.</p>
 <p>If you're trying out the FlexMeasures Client, we'd love to hear from you. Is it useful? What can be improved? You can add issues on <a href="https://github.com/FlexMeasures/flexmeasures-client" target="_blank" rel="noopener noreferrer">the Github project page</a>. And of course, stars as well as pull requests are welcome :)</p>
+</div>
             ]]>
         </content>
     </entry>
@@ -76,20 +78,20 @@ asyncio.run(my_script())</code></pre>
         </author>
         <link href="https://flexmeasures.io/014-reporting-power/"/>
         <id>https://flexmeasures.io/014-reporting-power/</id>
-        <media:content url="https://flexmeasures.io/media/posts/30/mike-tinnion-3ym6i13Y9LU-unsplash.jpg" medium="image" />
+        <media:content url="https://flexmeasures.io/media/posts/31/mike-tinnion-3ym6i13Y9LU-unsplash-xl.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2023-06-15T16:50:53+02:00</updated>
+        <updated>2023-08-07T13:01:46+02:00</updated>
             <summary>
                 <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/30/mike-tinnion-3ym6i13Y9LU-unsplash.jpg" alt="A notebook and pen" />
+                        <img src="https://flexmeasures.io/media/posts/31/mike-tinnion-3ym6i13Y9LU-unsplash-xl.jpg" alt="Report / Notebook" />
                     Version v0.14 of FlexMeasures begins a major upgrade in reporting capability. Also, this version begins work to support scheduling of heat storage. Finally, we added a bunch of developer support&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/30/mike-tinnion-3ym6i13Y9LU-unsplash.jpg" class="type:primaryImage" alt="A notebook and pen" /></p>
-                <p>Version v0.14 of FlexMeasures begins a major upgrade in <span style="text-decoration: underline;">reporting capability</span>. Also, this version begins work to support scheduling of <span style="text-decoration: underline;">heat storage</span>. Finally, we added a bunch of <span style="text-decoration: underline;">developer support</span> features.</p>
+                    <p><img src="https://flexmeasures.io/media/posts/31/mike-tinnion-3ym6i13Y9LU-unsplash-xl.jpg" class="type:primaryImage" alt="Report / Notebook" /></p>
+                <p>Version v0.14 of FlexMeasures begins a major upgrade in <span style="text-decoration: underline;">reporting capability.</span> Also, this version begins work to support scheduling of <span style="text-decoration: underline;">heat storage</span>. Finally, we added a bunch of <span style="text-decoration: underline;">developer support</span> features.</p>
 <p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-14-0-june-15-2023" target="_blank" rel="noopener noreferrer">See changelog</a> for a complete list or read on below about the larger new features we added.</p>
 <h2>Reporting</h2>
 <p>FlexMeasures feeds upon raw measurement data (e.g. solar generation) and data from third parties (e.g. weather forecasts). They come together in the FlexMeasures scheduling algorithms.</p>
@@ -101,8 +103,8 @@ asyncio.run(my_script())</code></pre>
 <p>These calculations can be done with code, but there'll be many repetitions. </p>
 <p>We now added an infrastructure that allows us to define computation pipelines (see an example below) and CLI commands for developers to list available reporters and trigger their computations regularly:</p>
 <ul>
-<li><code><span class="blob-code-inner blob-code-marker js-code-nav-pass " data-code-marker="+"><span class="pl-c1">flexmeasures show reporters</span></span></code></li>
-<li><code><span class="blob-code-inner blob-code-marker js-code-nav-pass " data-code-marker="+"><span class="pl-c1">flexmeasures add report</span></span></code></li>
+<li><code><span class="blob-code-inner blob-code-marker js-code-nav-pass" data-code-marker="+"><span class="pl-c1">flexmeasures show reporters</span></span></code></li>
+<li><code><span class="blob-code-inner blob-code-marker js-code-nav-pass" data-code-marker="+"><span class="pl-c1">flexmeasures add report</span></span></code></li>
 </ul>
 <p>The reporter classes we are designing are using pandas under the hood and can be sub-classed, allowing us to build new reporters from stable simpler ones, and even pipelines. Remember: <em>re-use is developer power</em>!</p>
 <p>We believe this infrastructure will become very powerful and enable FlexMeasures hosters and plugin developers to implement exciting new features.</p>
@@ -127,7 +129,7 @@ asyncio.run(my_script())</code></pre>
     }
 }</pre>
 <p>Much more elaborate reporters are possible to be done this way, and we will showcase more later. </p>
-<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This work was done in Pull Requests </span><a href="http://www.github.com/flexmeasures/flexmeasures/pull/641" target="_blank" rel="noopener noreferrer">641</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/659" target="_blank" rel="noopener noreferrer">659</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/712" target="_blank" rel="noopener noreferrer">712</a> and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/686" target="_blank" rel="noopener noreferrer">686</a>. </span></p>
+<p>This work was done in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/641" target="_blank" rel="noopener noreferrer">641</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/659" target="_blank" rel="noopener noreferrer">659</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/712" target="_blank" rel="noopener noreferrer">712</a> and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/686" target="_blank" rel="noopener noreferrer">686</a>. </p>
 <p>P.S. We are not done. You are invited to follow along in <a href="https://github.com/FlexMeasures/flexmeasures/discussions/662">the current discussion</a>, where you'll find new ideas like the <code class="notranslate">EnergyBillReporter</code>or the <code>CO2Reporter</code>. We might even support YAML for even higher readability!</p>
 <h2>Working on heat scheduling: storage efficiency</h2>
 <p>Optimizing heat storage is our next big goal, after our work towards batteries. </p>
@@ -144,7 +146,32 @@ asyncio.run(my_script())</code></pre>
 <p>Finally, as <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html#note-on-datamodel-transition">our long journey to a more flexible datamodel</a> is coming close to completion, we are sunsetting (as we pre-announced in version 0.12) API versions below 3. Please help your users upgrade to API version 3 before you use FlexMeasures v0.14!</p>
 <p>While version 0.13 still allowed hosts to get the sunset endpoints back if needed, we now have sunsetted them and they return HTTP status code 410 by default.</p>
 <p>We compiled <a href="https://flexmeasures.readthedocs.io/en/latest/api/introduction.html#deprecation-and-sunset" target="_blank" rel="noopener noreferrer">some helpful information for FlexMeasures hosts </a>to manage this transition well.  </p>
-<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/667">667</a>.</span></p>
+<p>This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/667">667</a>.</p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Blackout Testing in FlexMeasures API</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/blackout-testing-in-flexmeasures-api/"/>
+        <id>https://flexmeasures.io/blackout-testing-in-flexmeasures-api/</id>
+        <media:content url="https://flexmeasures.io/media/posts/30/simon-berger-87RXi_iC1xI-unsplash.jpg" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2023-05-17T14:13:48+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/30/simon-berger-87RXi_iC1xI-unsplash.jpg" alt="" />
+                    What is "Blackout testing"? A tool to provide stable API development to your users in the long-term. By prescribed "shock therapy" :) FlexMeasures is already a few years in development, and&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/30/simon-berger-87RXi_iC1xI-unsplash.jpg" class="type:primaryImage" alt="" /></p>
+                <p><span class="break-words"><span dir="ltr">What is "Blackout testing"? A tool to provide stable API development to your users in the long-term. By prescribed "shock therapy" :)<br><br>FlexMeasures is already a few years in development, and therefore we are running into issues of longer-term support while innovation is still ongoing. As <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html#note-on-datamodel-transition">we have refactored the data model</a>, we also need to move forward with the API and stop supporting older versions.<br>For us as a team, this was an opportunity to adopt proper customer/user support, learning from other professionals who support APIs for the long run. This benefits hosters of FlexMeasures as well as our users.<br><br>Often, API endpoints change or are put out of use (becoming legacy part of the software, eventually not served anymore). However, users currently rely on them. And they hate upgrading. They might not all jump to upgrading their own systems, even if you suggest in time that they should. Why act now, right? Maybe tomorrow! This is a major problem for SaaS providers, who need to innovate and move on.<br><br>In FlexMeasures (v0.14, see <a href="https://github.com/flexMeasures/flexmeasures/pull/651">PR 651</a>), we adopted an industry standard called <a href="https://design.oftrust.net/api-migration-policies/blackout-testing">"Blackout Testing"</a>. This tool lets your users experience in a short &amp; planned "shock therapy" if they need to act.<br><br>Here is the usual how it fits into your process: First comes deprecation (API is now legacy code), then sunset (API stops being served). Both of these are pre-announced with clear dates. Both also give the using systems automated signals: HTTP headers label the stage implicitly (deprecation or sunset), and HTTP status codes do that explicitly (e.g. moving from 200 OK to 410 Gone and finally 404 NotFound).<br><br>In short, a blackout test would temporarily simulate the removal (return 410 instead of 200) for a pre-announced short while, maybe an hour. <br><br>That should really get everyone's attention :)<br><br>If you are hosting FlexMeasures, then from version 0.14 on, a blackout test can be activated by changing a simple setting (<a href="https://flexmeasures.readthedocs.io/en/latest/configuration.html#flexmeasures-api-sunset-active">FLEXMEASURES_API_SUNSET_ACTIVE</a>).<br><br>If you are a user connected to a FlexMeasures server, this simply means you will be served better. Fewer surprises, still innovation!</span></span></p>
             ]]>
         </content>
     </entry>
@@ -510,62 +537,6 @@ asyncio.run(my_script())</code></pre>
 </div></div>
 <p>We now define colors via CSS variables, which makes it easier to restyle the FM back-office to match other corporate branding (important for offering FM in a white label context).</p>
 <p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/425" target="_blank" rel="noopener noreferrer">Pull Request 425</a>.</p>
-<h2> </h2>
-<p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.9.0: CLI &#x3D;&#x3D; developer power</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/090-cli-developer-power/"/>
-        <id>https://flexmeasures.io/090-cli-developer-power/</id>
-        <media:content url="https://flexmeasures.io/media/posts/22/florian-krumm-1osIUArK5oA-unsplash-2.jpg" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2022-03-25T17:18:20+01:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/22/florian-krumm-1osIUArK5oA-unsplash-2.jpg" alt="Computer keyboard, by Florian Krumm" />
-                    Version v0.9.0 of FlexMeasures (see changelog) adds many CLI commands to control FlexMeasures' data from the terminal. We hope this helps with reducing the onboarding time for new accounts! FlexMeasures&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/22/florian-krumm-1osIUArK5oA-unsplash-2.jpg" class="type:primaryImage" alt="Computer keyboard, by Florian Krumm" /></p>
-                <p>Version v0.9.0 of FlexMeasures (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-9-0-march-8-2022" target="_blank" rel="noopener noreferrer">see changelog</a>) adds many CLI commands to control FlexMeasures' data from the terminal. We hope this helps with reducing the onboarding time for new accounts!</p>
-<p>FlexMeasures will also now convert incoming data, if it has a different source unit than the required sensor unit.</p>
-<p>Finally, we added new tutorial on how to get started using FlexMeasures in just a few minutes and we began a new API version (v3) which is more REST-like than v2 and better supports <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html">the new data model. </a>  Do let us know if these things help you be more productive with FlexMeasures!</p>
-<h2>CLI commands</h2>
-<p>Developers like to work from the terminal. This lets them interact quicker and more direct with a software platform. With the 0.9.0 release, FlexMeasures adds several commands to work with an instance.</p>
-<p>To have them available is especially useful when onboarding a new account or new assets (which is the time when the most developer attention is spent in a FlexMeasures project, or any enterprise software project). These commands are also useful to automate tasks like data ingestion or scheduling.</p>
-<p>Here is  a list of new commands:</p>
-<ul>
-<li>Showing data: <code>flexmeasures show accounts</code>, <code>flexmeasures show account</code>, <code>flexmeasures show roles</code>, <code>flexmeasures show asset-types</code>, <code>flexmeasures show asset</code>, <code>flexmeasures show data-sources</code>, and <code>flexmeasures show beliefs</code></li>
-<li>Resample sensor data to a different resolution: <code>flexmeasures db-ops resample-data</code></li>
-<li>Create a new schedule for a given power sensor: <code>flexmeasures add schedule</code></li>
-<li>Edit/add an attribute on an asset or sensor: <code>flexmeasures edit attribute</code></li>
-<li>Add a toy account with a battery and a market for trying FlexMeasures out quickly: <code>flexmeasures add toy-account</code></li>
-<li>Deleting data: <code> flexmeasures delete unchanged-beliefs</code>, <code>flexmeasures delete nan-beliefs</code>, <code>flexmeasures delete sensor</code>, <code>flexmeasures delete asset</code></li>
-</ul>
-<p>You can see all commands in <a href="https://flexmeasures.readthedocs.io/en/latest/cli/commands.html" target="_blank" rel="noopener noreferrer">FlexMeasures' CLI documentation</a>.</p>
-<p>This work was done in Pull Requests <a href="http://www.github.com/SeitaBV/flexmeasures/pull/328">328</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/341">341</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/337">337</a> , <a href="http://www.github.com/SeitaBV/flexmeasures/pull/291">339</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/343">343</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/360">360,</a> <a href="http://www.github.com/SeitaBV/flexmeasures/pull/368">368</a> and <a href="http://www.github.com/SeitaBV/flexmeasures/pull/395">395</a>.</p>
-<h2>Unit conversion</h2>
-<p>Units are a crucial topic in time series data. Only if you get them right, will your data also be correct (and you avoid the risk of incorrect data / lengthy debugging periods). Especially if you have to transform data. One example is of course power to energy, e.g. kW to kWh. There is many more examples.</p>
-<figure class="post__image post__image--center" ><img loading="lazy" src="https://imgs.xkcd.com/comics/rounding.png" alt="XKCD on unit conversion" width="420" height="489" data-is-external-image="true">
-<figcaption >The relevant XKCD cartoon</figcaption>
-</figure>
-<p>We use the excellent <a href="https://pint.readthedocs.io/en/stable/" target="_blank" rel="noopener noreferrer">pint library</a> to help us with that. With version 0.9.0,  FlexMeasures will now convert incoming data, if it has a different source unit than the required sensor unit.</p>
-<p>For instance, if the incoming data is kWh, and we know the sensor should store kW, and we also know the sensor's time resolution (e.g. it sends data once per 5 minutes), then we can store kWh data correctly as kW data.</p>
-<p>Another great example are percentages. We might receive data in percentages, but it should be permille.</p>
-<p>This is now done automatically in both the CLI (<code>flexmeasures add beliefs</code>) and the API (<code>POST /sensorData</code>) when adding data.</p>
-<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/341">Pull Request 341</a> and <a href="http://www.github.com/SeitaBV/flexmeasures/pull/359">Pull Request 359</a>.</p>
-<h2>Toy tutorial</h2>
-<p>We want many organisations to use FlexMeasures and drastically reduce the development time they need to get an energy flexibility app or service up and running. For this, we were missing a tutorial to show from scratch how FlexMeasures can be useful within minutes.</p>
-<p>We now have one where you install FlexMeasures and within a couple minutes you are optimizing the charging schedule of a battery. See it in action here.</p>
-<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/381">Pull Request 381</a>.</p>
 <h2> </h2>
 <p> </p>
             ]]>
