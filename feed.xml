@@ -3,12 +3,73 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2023-08-07T13:04:02+02:00</updated>
+    <updated>2023-08-10T11:58:57+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>v0.15: Process scheduling &amp; Heatmap</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/015-process-scheduling-heatmap/"/>
+        <id>https://flexmeasures.io/015-process-scheduling-heatmap/</id>
+        <media:content url="https://flexmeasures.io/media/posts/33/daily-activity-heatmap-2.png" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2023-08-10T11:58:57+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/33/daily-activity-heatmap-2.png" alt="Activity Heatmap example" />
+                    Version v0.15 of FlexMeasures brings the ability to schedule energy processes and adds a new data visualization: Daily activity heatmap. Finally, we add API support for managing sensors. See changelog&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/33/daily-activity-heatmap-2.png" class="type:primaryImage" alt="Activity Heatmap example" /></p>
+                <div class="post__inner post__entry">
+<p>Version v0.15 of FlexMeasures brings the ability to schedule energy processes and adds a new data visualization: Daily activity heatmap. Finally, we add API support for managing sensors.</p>
+<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-15-0-august-09-2023" target="_blank" rel="noopener noreferrer">See changelog</a> for a complete list or read on below about the larger new features we added.</p>
+<h2>Scheduling energy processes</h2>
+<p>FlexMeasures' <a href="https://flexmeasures.readthedocs.io/en/latest/concepts/device_scheduler.html" target="_blank" rel="noopener noreferrer">in-built device scheduler</a> works best for storage devices like batteries or heat buffers, which can have any flow. We sometimes encounter situations where the flexibility lies in a steady process, which has to happen during some time window. Usually, this is a feature in process-heavy industry settings like water purification or paper manufacturing.</p>
+<p>We have now added the process scheduler to be used in such scenarios. Let's say you need a process which takes 45 kW of power, and it needs to run 14 hours before tomorrow ― you have 10 hours of flexibility! Given some cost signal (like prices, or CO2), you can tell FlexMeasures to find the best running times. </p>
+<p>Here is an overview of what you can tell FlexMeasures about your process optimization needs (this is the flex model):</p>
+<ul>
+<li><span class="blob-code-inner blob-code-marker js-code-nav-pass" data-code-marker="+"><code><span class="pl-c1"><span class="pl-token">power</span></span></code>: <span class="pl-token">nominal</span> <span class="pl-token">power</span> <span class="pl-token">of</span> <span class="pl-token">the</span> <span class="pl-token">process</span></span></li>
+<li><span class="blob-code-inner blob-code-marker js-code-nav-pass" data-code-marker="+"><code><span class="pl-c1"><span class="pl-token">duration</span></span></code>: <span class="pl-token">time</span> <span class="pl-token">that</span> <span class="pl-token">the</span> <span class="pl-token">process</span> <span class="pl-token">lasts</span></span></li>
+<li><span class="blob-code-inner blob-code-marker js-code-nav-pass" data-code-marker="+"><code><span class="pl-c1"><span class="pl-token">optimization_sense</span></span></code>: <span class="pl-token">objective</span> <span class="pl-token">of</span> <span class="pl-token">the</span> <span class="pl-token">scheduler</span>, to <span class="pl-token">maximize</span> <span class="pl-token">or</span> <span class="pl-token">minimize</span></span></li>
+<li><span class="blob-code-inner blob-code-marker js-code-nav-pass" data-code-marker="+"><code><span class="pl-c1"><span class="pl-token">time_restrictions</span></span></code>: <span class="pl-token">time</span> <span class="pl-token">periods</span> <span class="pl-token">in</span> <span class="pl-token">which</span> <span class="pl-token">the</span> <span class="pl-token">load</span> <span class="pl-token">cannot</span> <span class="pl-token">be</span> <span class="pl-token">schedule</span> <span class="pl-token">to</span></span></li>
+<li><span class="blob-code-inner blob-code-marker js-code-nav-pass" data-code-marker="+"><code><span class="pl-c1"><span class="pl-token">load_type</span></span></code>: <span class="pl-token">Inflexible</span>, <span class="pl-token">Breakable</span> <span class="pl-token">or</span> <span class="pl-token">Shiftable</span></span></li>
+</ul>
+<p>Note the load_type:</p>
+<p>Plus, in <a href="https://flexmeasures.readthedocs.io/en/latest/api/notation.html#flex-context" target="_blank" rel="noopener noreferrer">the flexibility context</a>, you can (as usual) add a <code>consumption-price-sensor</code>.</p>
+<p>This scheduler is available through the API when you <a href="https://flexmeasures.readthedocs.io/en/latest/api/v3_0.html#post--api-v3_0-sensors-(id)-schedules-trigger">trigger a new schedule for a sensor</a> on an asset with type "process" or "load".</p>
+<p>We also made a CLI command for computing schedules like this:</p>
+<pre class="notranslate"><code class="notranslate">flexmeasures add schedule for-process <br>    --sensor-id 4 --process-type SHIFTABLE</code><code class="notranslate">    --start 2023-07-23T00:00:00+01:00 <br>    --duration PT24H --process-duration PT4H --process-power 0.4MW</code><code class="notranslate">    --consumption-price-sensor 2 <br>    --forbid '{"start": "${TOMORROW}T14:00:00+02:00", "duration" : "PT1H"}'</code></pre>
+<p>We documented usage of this new scheduler <a href="https://flexmeasures.readthedocs.io/en/latest/tut/toy-example-process.html" target="_blank" rel="noopener noreferrer">in a tutorial</a>.</p>
+<p>This work was done in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/729" target="_blank" rel="noopener noreferrer">729</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/768" target="_blank" rel="noopener noreferrer">768</a>, and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/777" target="_blank" rel="noopener noreferrer">777</a>. </p>
+<h2>New data visualization: Daily activity heatmap</h2>
+<p>Heatmaps are great ways to spot the hotspots of activity. Usually heatmaps are actually geographical maps. In our context, the most interesting background is time ― so we'd like to see activity hotspots on a map of time intervals.</p>
+<p>We chose the "time map" of weekdays. From our experience, this is where you see the most interesting activity hotspots at a glance. For instance, that mornings often experience peaks. Or that Tuesday afternoons have low energy use, for some reason.</p>
+<p>Here is how it looks like for one week of temperature data:</p>
+<figure class="post__image post__image--center"><figure class="post__image post__image--center"><img  src="https://flexmeasures.io/media/posts/33/Screenshot-from-2023-07-29-17-09-18.png" alt="Temperature data in new heatmap" width="800" height="239" loading="lazy" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/33/responsive/Screenshot-from-2023-07-29-17-09-18-xs.png 300w ,https://flexmeasures.io/media/posts/33/responsive/Screenshot-from-2023-07-29-17-09-18-sm.png 480w ,https://flexmeasures.io/media/posts/33/responsive/Screenshot-from-2023-07-29-17-09-18-md.png 768w ,https://flexmeasures.io/media/posts/33/responsive/Screenshot-from-2023-07-29-17-09-18-lg.png 1024w ,https://flexmeasures.io/media/posts/33/responsive/Screenshot-from-2023-07-29-17-09-18-xl.png 1360w ,https://flexmeasures.io/media/posts/33/responsive/Screenshot-from-2023-07-29-17-09-18-2xl.png 1600w"></figure>
+<figcaption>It's easy to see which days had milder temperatures.</figcaption>
+</figure>
+<p>And here are 4 days of (dis)-charging patterns in Seita's <a href="https://v2g-liberty.eu/" target="_blank" rel="noopener noreferrer">V2GLiberty</a> project:</p>
+<figure class="post__image post__image--center"><figure class="post__image post__image--center"><img  src="https://flexmeasures.io/media/posts/33/DailyMatrix-NissanLeaf.png" alt="" width="800" height="249" loading="lazy" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/33/responsive/DailyMatrix-NissanLeaf-xs.png 300w ,https://flexmeasures.io/media/posts/33/responsive/DailyMatrix-NissanLeaf-sm.png 480w ,https://flexmeasures.io/media/posts/33/responsive/DailyMatrix-NissanLeaf-md.png 768w ,https://flexmeasures.io/media/posts/33/responsive/DailyMatrix-NissanLeaf-lg.png 1024w ,https://flexmeasures.io/media/posts/33/responsive/DailyMatrix-NissanLeaf-xl.png 1360w ,https://flexmeasures.io/media/posts/33/responsive/DailyMatrix-NissanLeaf-2xl.png 1600w"></figure>
+<figcaption>Charging (blue) mostly happens in sunshine hours, discharging during high-price hours (morning &amp; evening)</figcaption>
+</figure>
+<p>So on a technical level, the daily heatmap is essentially a heatmap of the sensor's values, with dates on the y-axis and time of day on the x-axis. For individual devices, it gives an insight into the device's running times. A new button lets users switch between charts.</p>
+<p>This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/715" target="_blank" rel="noopener noreferrer">715</a>.</p>
+<h2>Manage sensors in API</h2>
+<p>Until now, it was possible to work on assets via the FlexMeasures API, but it had no CRUD capabilities for sensors. We now added GET, POST, PATCH and DELETE endpoints, so talking to FlexMeasures from the outside becomes more powerful. Custom frontends or installations using <a href="https://pypi.org/project/flexmeasures-client/" target="_blank" rel="noopener noreferrer">the FlexMeasures Client</a> can fully build up complete asset-sensor structures on their own (the client will be updated to reflect this soon).</p>
+<p>This work was done in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/759" target="_blank" rel="noopener noreferrer">759</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/767" target="_blank" rel="noopener noreferrer">767</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/773" target="_blank" rel="noopener noreferrer">773</a> and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/784" target="_blank" rel="noopener noreferrer">784</a>.</p>
+</div>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>The FlexMeasures client is here!</title>
         <author>
@@ -494,51 +555,6 @@ asyncio.run(my_script())</code></pre>
 <p>The schedules an thus be integrated into larger solutions, into user-facing apps etc. Just as the context requires.</p>
 </div>
 </div>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.10: Docker &amp; styling</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/010-docker-styling/"/>
-        <id>https://flexmeasures.io/010-docker-styling/</id>
-        <media:content url="https://flexmeasures.io/media/posts/23/horizontal-logo-monochromatic-white.webp" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2022-05-08T02:10:42+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/23/horizontal-logo-monochromatic-white.webp" alt="Docker logo" />
-                    Version v0.10 of FlexMeasures (see changelog) adds the ability to run Flexmeasures inside a Docker container. Containerization is a big step towards easier installation and scaling in the cloud! We&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/23/horizontal-logo-monochromatic-white.webp" class="type:primaryImage" alt="Docker logo" /></p>
-                <p>Version v0.10 of FlexMeasures (<a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-10-0-may-8-2022" target="_blank" rel="noopener noreferrer">see changelog</a>) adds the ability to run Flexmeasures inside a Docker container. Containerization is a big step towards easier installation and scaling in the cloud!</p>
-<p>We also gave the backoffice a nice styling update.</p>
-<h2>Dockerization</h2>
-<p>Docker is great for developer productivity and for running APIs in modern scalable clouds environments. We created <a href="https://hub.docker.com/repository/docker/lfenergy/flexmeasures" target="_blank" rel="noopener noreferrer">a Docker image for FlexMeasures</a>, so from now on, it's possible to run FlexMeasures in a Docker container.</p>
-<p>The great advantage is that running FM can happen on every computer or cloud server within minutes. We also offer a docker compose file. Check out the documentation (<a href="https://flexmeasures.readthedocs.io/en/latest/host/docker.html" target="_blank" rel="noopener noreferrer">docker</a>, <a href="https://flexmeasures.readthedocs.io/en/latest/dev/docker-compose.html" target="_blank" rel="noopener noreferrer">docker compose</a>). We also updated <a href="https://flexmeasures.readthedocs.io/en/latest/tut/toy-example-from-scratch.html" target="_blank" rel="noopener noreferrer">our main entry-level tutorial</a> with getting started using Docker.</p>
-<p>A nice part of the work that was done in the docker-compose part is that the FlexMeasures API now has a health endpoint, which tells us if FlexMeasures is ready to work on requests. Next to containerization, this is the type of preparation one needs to run a software inside Kubernetes :)</p>
-<p>This work was done in Pull Requests <a href="http://www.github.com/SeitaBV/flexmeasures/pull/416" target="_blank" rel="noopener noreferrer">416</a>.</p>
-<h2>New Style</h2>
-<p>With the FlexMeasures EMS, we believe in the API as a first-level citizen. But FM also shows you your assets and data out of the box, and the web design was in need of some love.</p>
-<p>We improved layout, font and general design. Check out the before and after impression :</p>
-<div class="gallery-wrapper gallery-wrapper--wide"><div class="gallery"  data-is-empty="false" data-columns="2">
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/23/gallery/screenshot_asset_oldstyle.png" data-size="1920x937"><img loading="lazy" src="https://flexmeasures.io/media/posts/23/gallery/screenshot_asset_oldstyle-thumbnail.png" alt="Old layout" width="720" height="351"></a>
-<figcaption>Old layout</figcaption>
-</figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/23/gallery/screenshot_asset-2.png" data-size="1908x1338"><img loading="lazy" src="https://flexmeasures.io/media/posts/23/gallery/screenshot_asset-2-thumbnail.png" alt="New layout" width="720" height="505"></a>
-<figcaption>New layout</figcaption>
-</figure>
-</div></div>
-<p>We now define colors via CSS variables, which makes it easier to restyle the FM back-office to match other corporate branding (important for offering FM in a white label context).</p>
-<p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/425" target="_blank" rel="noopener noreferrer">Pull Request 425</a>.</p>
-<h2> </h2>
-<p> </p>
             ]]>
         </content>
     </entry>
