@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2023-08-10T11:58:57+02:00</updated>
+    <updated>2023-08-26T23:59:47+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -19,7 +19,7 @@
         <media:content url="https://flexmeasures.io/media/posts/33/daily-activity-heatmap-2.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2023-08-10T11:58:57+02:00</updated>
+        <updated>2023-08-26T23:59:47+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/33/daily-activity-heatmap-2.png" alt="Activity Heatmap example" />
@@ -47,7 +47,7 @@
 <p>Plus, in <a href="https://flexmeasures.readthedocs.io/en/latest/api/notation.html#flex-context" target="_blank" rel="noopener noreferrer">the flexibility context</a>, you can (as usual) add a <code>consumption-price-sensor</code>.</p>
 <p>This scheduler is available through the API when you <a href="https://flexmeasures.readthedocs.io/en/latest/api/v3_0.html#post--api-v3_0-sensors-(id)-schedules-trigger">trigger a new schedule for a sensor</a> on an asset with type "process" or "load".</p>
 <p>We also made a CLI command for computing schedules like this:</p>
-<pre class="notranslate"><code class="notranslate">flexmeasures add schedule for-process <br>    --sensor-id 4 --process-type SHIFTABLE</code><code class="notranslate">    --start 2023-07-23T00:00:00+01:00 <br>    --duration PT24H --process-duration PT4H --process-power 0.4MW</code><code class="notranslate">    --consumption-price-sensor 2 <br>    --forbid '{"start": "${TOMORROW}T14:00:00+02:00", "duration" : "PT1H"}'</code></pre>
+<pre class="notranslate"><code class="notranslate">flexmeasures add schedule for-process <br>    --sensor-id 4 --process-type SHIFTABLE<br>    --start 2023-07-23T00:00:00+01:00 <br>    --duration PT24H --process-duration PT4H --process-power 0.4MW<br>    --consumption-price-sensor 2 <br>    --forbid '{"start": "${TOMORROW}T14:00:00+02:00", "duration" : "PT1H"}'</code></pre>
 <p>We documented usage of this new scheduler <a href="https://flexmeasures.readthedocs.io/en/latest/tut/toy-example-process.html" target="_blank" rel="noopener noreferrer">in a tutorial</a>.</p>
 <p>This work was done in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/729" target="_blank" rel="noopener noreferrer">729</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/768" target="_blank" rel="noopener noreferrer">768</a>, and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/777" target="_blank" rel="noopener noreferrer">777</a>. </p>
 <h2>New data visualization: Daily activity heatmap</h2>
