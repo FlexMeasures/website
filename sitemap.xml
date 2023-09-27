@@ -66,7 +66,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/015-process-scheduling-heatmap/</loc>
-<lastmod>2023-08-26T23:59:47+02:00</lastmod>
+<lastmod>2023-08-10T11:58:57+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/33/daily-activity-heatmap-2.png</image:loc>
 <image:title><![CDATA[Activity Heatmap example]]></image:title>
@@ -78,6 +78,18 @@
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/33/DailyMatrix-NissanLeaf.png</image:loc>
 <image:title><![CDATA[]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://flexmeasures.io/016-profitloss-reporter/</loc>
+<lastmod>2023-09-26T17:25:54+02:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/34/towfiqu-barbhuiya-joqWSI9u_XM-unsplash.jpg</image:loc>
+<image:title><![CDATA[Green profit, as a plant grows from coins in a jar ]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/34/sensor-data-inflexible.png</image:loc>
+<image:title><![CDATA[Simple profit reporter chart]]></image:title>
 </image:image>
 </url>
 <url>

@@ -3,12 +3,80 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2023-08-26T23:59:47+02:00</updated>
+    <updated>2023-09-26T17:25:54+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>v0.16: ProfitLoss Reporter</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/016-profitloss-reporter/"/>
+        <id>https://flexmeasures.io/016-profitloss-reporter/</id>
+        <media:content url="https://flexmeasures.io/media/posts/34/towfiqu-barbhuiya-joqWSI9u_XM-unsplash.jpg" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2023-09-26T17:25:54+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/34/towfiqu-barbhuiya-joqWSI9u_XM-unsplash.jpg" alt="Green profit, as a plant grows from coins in a jar " />
+                    Version v0.16 of FlexMeasures advances the state of art on reporting by offering a very useful implementation (and a tutorial how to bring it to practice). We also add a&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/34/towfiqu-barbhuiya-joqWSI9u_XM-unsplash.jpg" class="type:primaryImage" alt="Green profit, as a plant grows from coins in a jar " /></p>
+                <div class="post__inner post__entry">
+<p>Version v0.16 of FlexMeasures advances the state of art on reporting by offering a very useful implementation (and a tutorial how to bring it to practice). We also add a command to get charts via the CLI and add capacity limits as a field in the flex context.</p>
+<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-16-0-september-27-2023" target="_blank" rel="noopener noreferrer">See changelog</a> for a complete list or read on below about the larger new features we added.</p>
+<h2>ProfitLoss reporter &amp; Tutorial</h2>
+<p>Reporting capabilities were introduced in <a href="https://flexmeasures.io/014-reporting-power/" target="_blank" rel="noopener noreferrer">v0.14</a>. We are continuing to make it more useful. We already made it possible to have a reporter aggregate sensors (<code><cite>AggregatorReporter</cite></code>) or use Pandas methods on sensor data (<code><cite>PandasReporter</cite></code>) ― this had a lot of power so KPIs could be made.</p>
+<p>In this version, we added an implementation that should cover a use case right off the shelf for almost everyone using FlexMeasures: a reporter to compute how profitable your operation has been (<em><code>ProfitLossReporter</code></em>). Showing the results of optimization is a crucial feature, and now easier than ever.</p>
+<p>We also wrote <a href="https://flexmeasures.readthedocs.io/en/latest/tut/toy-example-reporter.html" target="_blank" rel="noopener noreferrer">a tutorial</a> for using it in your installation. Here are some excerpts (note that that tutorial also shows other reporting types).</p>
+<p>First, reporters can now be stored as data sources, so they are easy to be used repeatedly and the data they generate can reference them. Our data source has "ProfitLossReporter" as Model and these attributes (the least a ProfitLossReporter needs to know is a price): </p>
+<pre id="codecell2"><span class="o">{</span>
+<span class="s2">   "data_generator"</span>: <span class="o">{</span>
+<span class="s2">     "config"</span>: <span class="o">{</span>
+<span class="s2">       "consumption_price_sensor"</span>: <span class="m">1<br></span>     <span class="o">}<br></span><span class="o">   }<br></span><span class="o">}</span></pre>
+<p>And here is excerpts from the tutorial in how to configure and create a report:</p>
+<div class="highlight-bash notranslate">
+<div class="highlight">
+<pre>$ <span class="nb">echo</span> <span class="s2">"</span>
+$<span class="s2"> {</span>
+$<span class="s2">     'input' : [{'sensor' : 4}],</span>
+$<span class="s2">     'output' : [{'sensor' : 9}]</span>
+$<span class="s2"> }"</span> &gt; inflexible-parameters.json</pre>
+</div>
+<div>
+<p><cite>The input</cite> sensor stores the power/energy flow, and the <cite>output</cite> sensor will store the report.</p>
+</div>
+</div>
+<div class="highlight-bash notranslate">
+<div class="highlight">
+<pre id="codecell7">$ flexmeasures add report --source <span class="m">6</span> <span class="se">\</span>
+   --parameters inflexible-parameters.json <span class="se">\</span>
+   --start-offset DB,1D --end-offset DB,2D
+</pre>
+</div>
+</div>
+<p>With these offsets, we indicate that we want the report to encompass the day of tomorrow (see Pandas offset strings). The chart below then shows all costs which we know will be made tomorrow by the simple process scheduler in the tutorial.</p>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/34/sensor-data-inflexible.png" alt="Simple profit reporter chart" width="750" height="314" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/34/responsive/sensor-data-inflexible-xs.png 300w ,https://flexmeasures.io/media/posts/34/responsive/sensor-data-inflexible-sm.png 480w ,https://flexmeasures.io/media/posts/34/responsive/sensor-data-inflexible-md.png 768w ,https://flexmeasures.io/media/posts/34/responsive/sensor-data-inflexible-lg.png 1024w ,https://flexmeasures.io/media/posts/34/responsive/sensor-data-inflexible-xl.png 1360w ,https://flexmeasures.io/media/posts/34/responsive/sensor-data-inflexible-2xl.png 1600w"></figure>
+<p>This work was done in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/808" target="_blank" rel="noopener noreferrer">808</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/825" target="_blank" rel="noopener noreferrer">825</a>, and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/818" target="_blank" rel="noopener noreferrer">818</a>. </p>
+<h2>Charts via the CLI</h2>
+<p>For documentation purposes, generating charts is sometimes very useful. For instance, we might want to send a chart to a client (in lieu of them having an account set up and us sending a link to the chart). Or we are supposed to create a Word document.</p>
+<p>The new command <code class="notranslate">flexmeasures show chart</code> can export sensor and asset charts. <br>Here is an example:</p>
+<p><code>flexmeasures show chart --start 2023-08-15T00:00:00+02:00 --end 2023-08-16T00:00:00+02:00 --asset 1 --sensor 14 --sensor 15 --filename 'chart-$now-$entity_type-$id.png'</code></p>
+<p>This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/833" target="_blank" rel="noopener noreferrer">833</a>.</p>
+<h2>Capacity limits as a field in the flex context</h2>
+<p>The limit to a storage device or the grid connection are crucial information for FlexMeasures' algorithm. The way this could be encoded before was not very user-friendly (as asset or sensor attribute). We have now added the fields <code class="notranslate">storage_power_capacity_in_mw</code> and <code class="notranslate">ems_power_capacity_in_mw</code>, respectively, so that the flex model can encode this explicitly (the flex model can be sent to the API when triggering schedules and soon be stored on the asset itself).</p>
+<p>This work was done in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/850" target="_blank" rel="noopener noreferrer">850</a>.</p>
+</div>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v0.15: Process scheduling &amp; Heatmap</title>
         <author>
@@ -19,7 +87,7 @@
         <media:content url="https://flexmeasures.io/media/posts/33/daily-activity-heatmap-2.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2023-08-26T23:59:47+02:00</updated>
+        <updated>2023-08-10T11:58:57+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/33/daily-activity-heatmap-2.png" alt="Activity Heatmap example" />
@@ -47,7 +115,7 @@
 <p>Plus, in <a href="https://flexmeasures.readthedocs.io/en/latest/api/notation.html#flex-context" target="_blank" rel="noopener noreferrer">the flexibility context</a>, you can (as usual) add a <code>consumption-price-sensor</code>.</p>
 <p>This scheduler is available through the API when you <a href="https://flexmeasures.readthedocs.io/en/latest/api/v3_0.html#post--api-v3_0-sensors-(id)-schedules-trigger">trigger a new schedule for a sensor</a> on an asset with type "process" or "load".</p>
 <p>We also made a CLI command for computing schedules like this:</p>
-<pre class="notranslate"><code class="notranslate">flexmeasures add schedule for-process <br>    --sensor-id 4 --process-type SHIFTABLE<br>    --start 2023-07-23T00:00:00+01:00 <br>    --duration PT24H --process-duration PT4H --process-power 0.4MW<br>    --consumption-price-sensor 2 <br>    --forbid '{"start": "${TOMORROW}T14:00:00+02:00", "duration" : "PT1H"}'</code></pre>
+<pre class="notranslate"><code class="notranslate">flexmeasures add schedule for-process <br>    --sensor-id 4 --process-type SHIFTABLE</code><code class="notranslate">    --start 2023-07-23T00:00:00+01:00 <br>    --duration PT24H --process-duration PT4H --process-power 0.4MW</code><code class="notranslate">    --consumption-price-sensor 2 <br>    --forbid '{"start": "${TOMORROW}T14:00:00+02:00", "duration" : "PT1H"}'</code></pre>
 <p>We documented usage of this new scheduler <a href="https://flexmeasures.readthedocs.io/en/latest/tut/toy-example-process.html" target="_blank" rel="noopener noreferrer">in a tutorial</a>.</p>
 <p>This work was done in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/729" target="_blank" rel="noopener noreferrer">729</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/768" target="_blank" rel="noopener noreferrer">768</a>, and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/777" target="_blank" rel="noopener noreferrer">777</a>. </p>
 <h2>New data visualization: Daily activity heatmap</h2>
@@ -458,103 +526,6 @@ asyncio.run(my_script())</code></pre>
 </li>
 </ul>
 <p>You're also welcome to contribute with issues or pull requests on <a href="https://github.com/FlexMeasures/flexmeasures" target="_blank" rel="noopener noreferrer">Github</a>.</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>FAQ</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/faq/"/>
-        <id>https://flexmeasures.io/faq/</id>
-
-        <updated>2022-06-01T17:39:20+02:00</updated>
-            <summary>
-                <![CDATA[
-                    What does FlexMeasures do? FlexMeasures is an energy management system (EMS), but a specialized one. You can see it as a data-driven decision-support system for energy flexibility. The question FlexMeasures&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <div class="post__toc">
-<h3>Table of Contents</h3>
-<ul>
-<li><a href="#mcetoc_1g2pacnrh8">What does FlexMeasures do?</a></li>
-<li><a href="#mcetoc_1g2pahoqio">Why do you do this?</a></li>
-<li><a href="#mcetoc_1g2pagetfj">Why is FlexMeasures open source, and why is it part of the Linux Energy Foundation?</a></li>
-<li><a href="#mcetoc_1g2pagetfk">How do I use FlexMeasures / get started?</a></li>
-<li><a href="#mcetoc_1g2pagetfl">Can you give some real-world examples where FlexMeasures is used today?</a></li>
-<li><a href="#mcetoc_1g2pagetfm">How can FlexMeasures become a puzzle piece in large-scale solutions?</a></li>
-</ul>
-</div>
-<h2 id="mcetoc_1g2pacnrh8">What does FlexMeasures do?</h2>
-<div> </div>
-<div>FlexMeasures is an energy management system (EMS), but a specialized one. You can see it as a data-driven decision-support system for energy flexibility.</div>
-<div>The question FlexMeasures helps to solves is: What are the best times to run my flexible assets? For instance, when to (dis)charge my EV batteries? When should we run our heat pumps to warm up the office?</div>
-<div> </div>
-<div>Here is the simple version ― sensor data goes in, optimized schedules come out:</div>
-<h2><figure class="post__image post__image--center"><img loading="lazy"  src="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/simple-flexEMS-2.png" alt="" width="750" height="191" sizes="(max-width: 48em) 100vw, 768px" srcset="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-xs.png 300w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-sm.png 480w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-md.png 768w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-lg.png 1024w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-xl.png 1360w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/3/responsive/simple-flexEMS-2-2xl.png 1600w"></figure>Why do you do this?</h2>
-<div> </div>
-<div>See <a href="https://www.seita.nl/why" target="_blank" rel="noopener noreferrer">this mission statement</a> (from the original creators): We have to go green. Flexible demand has to be matched with green energy. Open innovation can get us to the speed we need for the global transition.</div>
-<h2>How does FlexMeasures add value?</h2>
-<div>
-<div> </div>
-<div>In the end, energy flexibility is about saving energy costs and CO₂. This is why we do this in the first place.</div>
-<div> </div>
-<div>Taking a more closer look, we believe that lowering the cost of software development can help a big deal. More organisations will be willing to make use of energy flexibility, if the initial costs of such smart systems are low enough. And software development (not even the machine learning parts) makes up a bigger part of the costs than people realize.</div>
-<div> </div>
-<div>We want developers to love building novel apps and services with FlexMeasures, and for them to focus on the context-specific dimensions: The configuration of how they want FlexMeasures to optimize outcomes, and how this gets presented to users/operators.</div>
-<div> </div>
-<div><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">Let's take a closer look at FlexMeasures' three core value drivers:</span>
-<div><br>
-<div>1. Real-time data intelligence and integration, with advice for the rest of the day. For example, forecasts and schedules are made available via API.</div>
-<div>2. Energy sensor and environment data have multiple sources and their forecasts are uncertain. FlexMeasures uses <a href="https://github.com/SeitaBV/timely-beliefs)" target="_blank" rel="noopener noreferrer">the timely-beliefs library</a> to model this well.</div>
-<div>3. Developer support ― building customer-facing apps &amp; services is where energy flexibility hits the road. FlexMeasures reduces developer workload with a well-documented API, data visualization and multi-tenancy, and it supports plugins to customize and extend the platform to your needs.</div>
-<div> </div>
-<div>Here is a more complete picture of how FlexMeasures fits into an advanced and configurable data-schedules loop:</div>
-<div> </div>
-<div><figure class="post__image post__image--center"><img loading="lazy"  src="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/overview-flexEMS.png" alt="" width="800" height="457" sizes="(max-width: 48em) 100vw, 768px" srcset="file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-xs.png 300w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-sm.png 480w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-md.png 768w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-lg.png 1024w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-xl.png 1360w ,file:///home/nicolas/Seitacloud/Internal/FlexMeasures/Website/flexmeasures/flexmeasures/input/media/posts/6/responsive/overview-flexEMS-2xl.png 1600w"></figure></div>
-</div>
-</div>
-<h2 id="mcetoc_1g2pagetfj">Why is FlexMeasures open source, and why is it part of the Linux Energy Foundation?</h2>
-<p>We saw two reasons to open source the code of FlexMeasures:</p>
-<ol>
-<li>Nowadays, open source is a great fit for the speed of innovation which we need, and also the spread of innovation. The energy transition has to go blazingly fast, everywhere. These days, open source projects are often able to innovate faster than closed source counterparts (once they've picked up momentum).</li>
-<li>From our many years of experience in designing smart energy solutions, we've come to realize that energy solutions often have multiple stakeholders (e.g. asset owner, user, network operator, energy service company). The transparency offered by open source, and the lack of lock-in, makes collaboration easier and agreements faster.</li>
-</ol>
-<p>The <a href="https://www.lfenergy.org/" target="_blank" rel="noopener noreferrer">Linux Energy Foundation</a> is a great place for the FlexMeasures project to be part of the growing community of people who understand the above reasoning.open source </p>
-<h2 id="mcetoc_1g2pagetfk">How do I use FlexMeasures / get started?</h2>
-<p>We make FlexMeasures, so that developers are as productive with energy optimization as possible. As we are developers ourselves, we know that it takes a couple smaller steps to engage with new technology.</p>
-<p>Your journey, from dipping your toes in the water towards being a happy FlexMeasures power user, could look like this:</p>
-<ol class="arabic simple">
-<li>
-<p>Quickstart ― Find an optimized schedule for your flexible asset, like a battery, with standard FlexMeasures tooling. This is basically what the from-scratch tutorial above does. All you need are 10 minutes and a CSV file with prices to optimise against.</p>
-</li>
-<li>
-<p>Automate ― get the prices from an open API, for instance <a class="reference external" href="https://transparency.entsoe.eu/">ENTSO-E</a> (using a plugin like <a class="reference external" href="https://github.com/SeitaBV/flexmeasures-entsoe">flexmeasures-entsoe</a>), and run the scheduler regularly in a cron job.</p>
-</li>
-<li>
-<p>Integrate ― Load the schedules via FlexMeasures’ API, so you can directly control your assets and/or show them within your own front-end.</p>
-</li>
-<li>
-<p>Customize ― Load other data (e.g. your solar production or weather forecasts via <a class="reference external" href="https://github.com/SeitaBV/flexmeasures-openweathermap/">flexmeasures-openweathermap</a>. Adapt the algorithms, e.g. do your own forecasting or tweak the standard scheduling algorithm so it optimizes what you care about. Or write a plugin for accessing a new kind of market. The opportunities are endless!</p>
-</li>
-</ol>
-<div> </div>
-<div>
-<h2 id="mcetoc_1g2pagetfl">Can you give some real-world examples where FlexMeasures is used today?</h2>
-<p>FlexMeasures is being used in a few industry projects (water sanitation, sludge burning), where we for instance help to run centrifuges to run during the greenest hours of the day.</p>
-<p>It is also used in projects with smaller assets, around the smart home setting (<a href="https://positive-design.nl/" target="_blank" rel="noopener noreferrer">a vehicle-to-grid living lab</a> and battery optimization). Here, FlexMeasures helps to buy cheap, and sell at high prices, for an optimal financial result.</p>
-<p>Much work currently goes into the integration of heat pumps.</p>
-<p>Of course, we might be missing some use cases. <a href="https://flexmeasures.io/get-in-touch/">We'd love to hear from you</a>.</p>
-<h2 id="mcetoc_1g2pagetfm">How can FlexMeasures become a puzzle piece in large-scale solutions?</h2>
-<p>The "data-driven" part is where we start! From our experience, data pipelines and dashboarding around energy-consuming assets now often exists.</p>
-<p>FlexMeasures works well as the single EMS, but also as an added smart back-end. Integrating the data often means to feed only the relevant parts to FlexMeasures (only relevant sensors, only the resolution needed for decision-making in schedules, e.g. 5 minutes).</p>
-<p>Once the right algorithms are connected, FlexMeasures provides optimized schedules via API. Its UI also shows sensor data and schedules and provides the ability for users/operators to annotate them.</p>
-<p>The schedules an thus be integrated into larger solutions, into user-facing apps etc. Just as the context requires.</p>
-</div>
-</div>
             ]]>
         </content>
     </entry>
