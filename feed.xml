@@ -3,14 +3,55 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2023-09-28T14:38:07+02:00</updated>
+    <updated>2023-11-08T15:34:36+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
     <entry>
-        <title>v0.16: Profit-Loss Reporter</title>
+        <title>v0.17: Consultancy</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/017-consultancy/"/>
+        <id>https://flexmeasures.io/017-consultancy/</id>
+        <media:content url="https://flexmeasures.io/media/posts/35/charlesdeluvio-Lks7vei-eAg-unsplash.jpg" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2023-11-08T15:34:36+01:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/35/charlesdeluvio-Lks7vei-eAg-unsplash.jpg" alt="Consulting clients" />
+                    Version v0.17 of FlexMeasures lets you elevate some accounts to be consultants of other accounts. It also increases robustness of scheduling, by using fallbacks. And a new favicon! See changelog&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/35/charlesdeluvio-Lks7vei-eAg-unsplash.jpg" class="type:primaryImage" alt="Consulting clients" /></p>
+                <div class="post__inner post__entry">
+<p>Version v0.17 of FlexMeasures lets you elevate some accounts to be consultants of other accounts. It also increases robustness of scheduling, by using fallbacks. And a new favicon!</p>
+<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-17-0-november-8-2023" target="_blank" rel="noopener noreferrer">See changelog</a> for a complete list or read on below about the larger new features we added.</p>
+<h2>Consultancy</h2>
+<p>FlexMeasures is a good fit for ESCos - energy service companies who work for clients like businesses or households, and optimize their energy management.</p>
+<p>Both the ESCo and the client should have distinct accounts in FlexMeasures. And the ESCo should be able to consult their clients, for instance for servicing questions and problems. And this means to see their data.</p>
+<p>We now enabled that. This unlocks using FlexMeasures in more powerful hosting scenarios.</p>
+<p>Each account can now have a consultant account linked. Users in that account who have the role <code>consultant</code> will now be able to see the client's asset and data. In the UI, each client's account page shows who their consultant is, and consultants will see who their client accounts are and can access them from there. The API also allows read access for consultants.</p>
+<p>This work was done in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/877" target="_blank" rel="noopener noreferrer">877</a> and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/892" target="_blank" rel="noopener noreferrer">892</a>. </p>
+<p>Future work might add the ability to also add or edit assets and sensors.</p>
+<h2>Fallback schedulers<code></code></h2>
+<p>Sometimes a schedule might not be feasible. This happens for example when a strict state-of-charge target for a storage was set, but can't be reached in time. In FlexMeasures, a fallback scheduler can then try to reach as close to that target as possible. But it's crucial to deal with this situation and visualize it.</p>
+<p>We enabled for FlexMasures hosts that they separate background jobs in this case (e.g. one run by <code>StorageScheduler</code> and one run by <code>FallbackStorageScheduler</code>). By giving them distinct data sources, it can also be visualized better in the UI that the schedules are somewhat different (a "perfect" one and a "good enough" one).</p>
+<p>This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/846" target="_blank" rel="noopener noreferrer">846</a>,  <a href="http://www.github.com/flexmeasures/flexmeasures/pull/841" target="_blank" rel="noopener noreferrer">841</a>, <a href="http://www.github.com/flexmeasures/flexmeasures/pull/888" target="_blank" rel="noopener noreferrer">888</a> and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/891" target="_blank" rel="noopener noreferrer">891</a>.</p>
+<h2>New favicon: <figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/35/favicon.ico" alt="" width="32" height="32"></figure></h2>
+<p>We noticed that the FlexMeasures UI was not using a favicon which represents its logo (within LF Energy). Pull request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/895" target="_blank" rel="noopener noreferrer">895</a> adds it!</p>
+<p> </p>
+</div>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>v0.16: ProfitLoss Reporter</title>
         <author>
             <name>SeitaBV</name>
         </author>
@@ -19,7 +60,7 @@
         <media:content url="https://flexmeasures.io/media/posts/34/towfiqu-barbhuiya-joqWSI9u_XM-unsplash.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2023-09-28T14:38:07+02:00</updated>
+        <updated>2023-09-26T17:25:54+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/34/towfiqu-barbhuiya-joqWSI9u_XM-unsplash.jpg" alt="Green profit, as a plant grows from coins in a jar " />
@@ -71,7 +112,7 @@ $<span class="s2"> }"</span> &gt; inflexible-parameters.json</pre>
 <p><code>flexmeasures show chart --start 2023-08-15T00:00:00+02:00 --end 2023-08-16T00:00:00+02:00 --asset 1 --sensor 14 --sensor 15 --filename 'chart-$now-$entity_type-$id.png'</code></p>
 <p>This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/833" target="_blank" rel="noopener noreferrer">833</a>.</p>
 <h2>Capacity limits as a field in the flex context</h2>
-<p>The limit to a storage device or the grid connection are crucial information for FlexMeasures' algorithm. The way this could be encoded before was not very user-friendly (as asset or sensor attribute). We have now added the fields <code class="notranslate">power_capacity</code> (on the flex-model) and <code class="notranslate">site_power_capacity</code>(on the flex context), respectively, so that the flex model can encode this explicitly (the flex model can be sent to the API when triggering schedules and soon be stored on the asset itself).</p>
+<p>The limit to a storage device or the grid connection are crucial information for FlexMeasures' algorithm. The way this could be encoded before was not very user-friendly (as asset or sensor attribute). We have now added the fields <code class="notranslate">storage_power_capacity_in_mw</code> and <code class="notranslate">ems_power_capacity_in_mw</code>, respectively, so that the flex model can encode this explicitly (the flex model can be sent to the API when triggering schedules and soon be stored on the asset itself).</p>
 <p>This work was done in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/850" target="_blank" rel="noopener noreferrer">850</a>.</p>
 </div>
             ]]>
@@ -494,38 +535,6 @@ asyncio.run(my_script())</code></pre>
 <p>We added a resolution parameter to <a href="https://flexmeasures.readthedocs.io/en/latest/api/v3_0.html#get--api-v3_0-sensors-data">the <code class="notranslate">/sensors/data</code> (GET) endpoint.</a></p>
 <p>This work was done in <a href="http://www.github.com/SeitaBV/flexmeasures/pull/458" target="_blank" rel="noopener noreferrer">Pull Request 458</a>.</p>
 <p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Get in touch</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/get-in-touch/"/>
-        <id>https://flexmeasures.io/get-in-touch/</id>
-
-        <updated>2022-05-30T17:51:17+02:00</updated>
-            <summary>
-                <![CDATA[
-                    We want you to succeed in using, hosting or extending FlexMeasures. For all your questions and ideas, you can join the FlexMeasures community in the following ways: Join the #flexmeasures&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>We want you to succeed in using, hosting or extending FlexMeasures. For all your questions and ideas, you can join the FlexMeasures community in the following ways:</p>
-<ul class="simple">
-<li>
-<p>Join the <code class="docutils literal notranslate"><span class="pre">#flexmeasures</span></code> channel over at <a class="reference external" href="https://lfenergy.slack.com">https://lfenergy.slack.com</a></p>
-</li>
-<li>
-<p>Write to us at <a class="reference external" href="mailto:flexmeasures%40lists.lfenergy.org">flexmeasures@lists.lfenergy.org</a> (you can join this mailing list <a class="reference external" href="https://lists.lfenergy.org/g/flexmeasures">here</a>).</p>
-</li>
-<li>
-<p>Follow <a class="reference external" href="https://twitter.com/flexmeasures">@flexmeasures</a> on Twitter.</p>
-</li>
-</ul>
-<p>You're also welcome to contribute with issues or pull requests on <a href="https://github.com/FlexMeasures/flexmeasures" target="_blank" rel="noopener noreferrer">Github</a>.</p>
             ]]>
         </content>
     </entry>
