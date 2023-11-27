@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2023-11-08T15:34:36+01:00</updated>
+    <updated>2023-11-27T17:33:26+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -189,7 +189,7 @@ $<span class="s2"> }"</span> &gt; inflexible-parameters.json</pre>
         <media:content url="https://flexmeasures.io/media/posts/32/bell-sign-on-registration-reception-preview-xl.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2023-08-07T13:04:02+02:00</updated>
+        <updated>2023-11-27T17:33:26+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/32/bell-sign-on-registration-reception-preview-xl.jpg" alt="Bell on registration desk" />
@@ -200,7 +200,7 @@ $<span class="s2"> }"</span> &gt; inflexible-parameters.json</pre>
             <![CDATA[
                     <p><img src="https://flexmeasures.io/media/posts/32/bell-sign-on-registration-reception-preview-xl.jpg" class="type:primaryImage" alt="Bell on registration desk" /></p>
                 <div class="post__inner post__entry">
-<p data-pm-slice="1 1 []">We've taken a crucial step in making FlexMeasures even more developer-friendly! Last week, we released version 0.1 of the new <a href="https://pypi.org/project/flexmeasures-client/&gt;" target="_blank" rel="noopener noreferrer">FlexMeasures client</a>.</p>
+<p data-pm-slice="1 1 []">We've taken a crucial step in making FlexMeasures even more developer-friendly! Last week, we released version 0.1 of the new <a href="https://pypi.org/project/flexmeasures-client" target="_blank" rel="noopener noreferrer">FlexMeasures client</a>.</p>
 <p>What is the use of a client library for the FlexMeasures platform? Well, FlexMeasures is foremost a web server ― it calculates optimal schedules for flexible energy assets in the cloud, according to price, CO2 output or other constraints. Its API is <a href="https://flexmeasures.readthedocs.io" target="_blank" rel="noopener noreferrer">well-documented</a>. Even though APIs are one of the web architecture's shining beacons, it's not really convenient for developers to use them directly. That's where developer-friendly tooling, like client libraries, come in!</p>
 <p>The FlexMeasures client wraps the most important interactions you need to add if you interact with FlexMeasures. For example, if you are connecting a local energy management system (EMS) to be optimized via FlexMeasures, you would need authentication, data I/O and the triggering of new computations. With the client, these functionalities are now as easy to use as calling a function. For instance, here we authorize to a FlexMeasures server, request a schedule for a battery charging sensor and retrieve it (once it's computed):</p>
 <pre><code>import asyncio
