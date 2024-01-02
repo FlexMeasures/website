@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2023-12-23T01:27:48+01:00</updated>
+    <updated>2024-01-02T23:29:58+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -19,7 +19,7 @@
         <media:content url="https://flexmeasures.io/media/posts/36/drew-beamer-xU5Mqq0Chck-unsplash.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2023-12-23T01:27:48+01:00</updated>
+        <updated>2024-01-02T23:29:58+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/36/drew-beamer-xU5Mqq0Chck-unsplash.jpg" alt="A better view of the future" />
@@ -35,18 +35,18 @@
 <p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-18-0-december-21-2023" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list. Read on below about the larger new features we added.</p>
 <h2>Future knowledge in scheduling</h2>
 <p>FlexMeasures lets you describe the underlying flexibility problem, so that the internal scheduler knows within what limits to work to find the best solution for the upcoming hours. Earlier, we introduced two data specifications for this, the <code>flex-model</code> (what are the limits and goal around this asset, e.g. maximal state of charge?) and the <code>flex-context</code> (what is also relevant, e.g. prices?). We wrote <a href="https://flexmeasures.readthedocs.io/en/latest/api/v2g.html" target="_blank" rel="noopener noreferrer">a tutorial with nice examples</a> around the V2G use case.</p>
-<p>Now. we have enhanced the flex-model with three new (or more nuanced) types of information, which lets FlexMeasures handle a wider range of modern energy flexibility problems. We also let them be sensors, instead of just one constant value. But more about that later, first let me introduce the new kinds of flex-model information:</p>
+<p>Now, we have enhanced the flex-model with three new (or more nuanced) types of information, which lets FlexMeasures handle a wider range of modern energy flexibility problems. We also let them be sensors, instead of just one constant value. But more about that later, first let me introduce the new kinds of flex-model information:</p>
 <h3>External in- and output for storage</h3>
 <p>We can model storage assets which only serve the flexibility of the main system, e.g. a battery which only exists to simply buffer solar energy for self-consumption at some later time. The battery has no strict dependencies outside of our energy flexibility asset model.</p>
-<p>But often, storage (also) serves an external and crucial purpose. A good example is a hot water tank. Comfort of the home occupants is the main goal, consuming energy to create heat at the best time is also important, but secondary.</p>
+<p>But often, storage (also) serves an external and crucial purpose. A good example is a hot water tank. Comfort of the home occupants is the main goal ― consuming energy to create heat at the best time is also important, but secondary.</p>
 <p>Thus, the expected extraction of energy (as heat) from the storage is an important input to the modeling problem ― it will form a constraint. In this example, the input of energy (as electricity) is dynamic, and can be timed optimally to lower the energy costs and/pr CO2.</p>
 <p>To handle these situations optimally, we introduced fields in the flex model to represent an expected extraction of stored energy (e.g. when we know the occupants are at home), or even addition (e.g. when an industrial process will add heat) ― we called them <span class="blob-code-inner blob-code-marker js-code-nav-pass " data-code-marker="+"><code><span class="pl-c1">soc-usage</span></code> and <span class="pl-c1"><code><span class="pl-token">soc</span>-gain</code><span class="pl-token">. This makes the flex model much more expressive. Obviously, these fields only work with the <code>StorageScheduler</code>.</span></span></span></p>
 <h3>Energy conversion efficiency</h3>
 <div>We noticed that the efficiency of turning electricity into usable energy is a crucial modelling factor, especially when modeling smart heating problems. <br>in earlier version, we supported conversion losses with a constant <span class="blob-code-inner blob-code-marker js-code-nav-pass " data-code-marker="+"><span class="pl-en"><span class="pl-s"><code>roundtrip-efficiency</code></span></span></span> value. Used as a percentage, this works well enough for batteries or even for heat losses that happen in an inverter.</div>
 <div> </div>
-<div>As an example where that breaks down, consider that the COP of Heat Pumps typically depends <em>strongly</em> on the outside temperature. To be able to model this more precisely within the optimization problem (losses are a crucial detail here), you can now use <span class="blob-code-inner blob-code-marker js-code-nav-pass " data-code-marker="+"><span class="pl-en"><span class="pl-s"><code>charging-efficiency</code> and <code>discharging-efficiency</code> separately, <span style="text-decoration: underline;">and</span> they can be time series (more about that below). The latter feature is what you need if the conditions for energy conversion efficiency are not constant, like outside temperature.</span></span></span></div>
+<div>As an example where that breaks down, consider that the COP of Heat Pumps typically depends strongly on the outside temperature. To be able to model this more precisely within the optimization problem (losses are a crucial detail here), you can now use <span class="blob-code-inner blob-code-marker js-code-nav-pass " data-code-marker="+"><span class="pl-en"><span class="pl-s"><code>charging-efficiency</code> and <code>discharging-efficiency</code> separately, <span style="text-decoration: underline;">and</span> they can be time series (more about that below). The latter feature is what you need if the conditions for energy conversion efficiency are not constant, like outside temperature.</span></span></span></div>
 <h3>Consumption and production capacities</h3>
-<p>Until now, only one kind of maximal capacity was possible (for example, to describe a limit to the grid connection). We used the field <code>power-capacity</code>, and it had to have one constant value, e.g. 25 kW.</p>
+<p>Until now, only one kind of maximal capacity was possible (for example, to describe a limit to the grid connection). We used the field <code>power-capacity</code>, and it had to have <span style="text-decoration: underline;">one</span> constant value, e.g. 25 kW.</p>
 </div>
 <div><br>We made this more expressive. Look at the example below. </div>
 <div class="post__inner post__entry">
