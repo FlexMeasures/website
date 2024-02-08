@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2024-02-08T16:09:00+01:00</updated>
+    <updated>2024-02-08T16:12:54+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -129,7 +129,7 @@ We can now differentiate between limits on production and consumption. <code>pow
         <media:content url="https://flexmeasures.io/media/posts/34/towfiqu-barbhuiya-joqWSI9u_XM-unsplash.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2023-09-26T17:25:54+02:00</updated>
+        <updated>2024-02-08T16:12:54+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/34/towfiqu-barbhuiya-joqWSI9u_XM-unsplash.jpg" alt="Green profit, as a plant grows from coins in a jar " />
@@ -142,11 +142,11 @@ We can now differentiate between limits on production and consumption. <code>pow
                 <div class="post__inner post__entry">
 <p>Version v0.16 of FlexMeasures advances the state of art on reporting by offering a very useful implementation (and a tutorial how to bring it to practice). We also add a command to get charts via the CLI and add capacity limits as a field in the flex context.</p>
 <p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-16-0-september-27-2023" target="_blank" rel="noopener noreferrer">See changelog</a> for a complete list or read on below about the larger new features we added.</p>
-<h2>ProfitLoss reporter &amp; Tutorial</h2>
+<h2>ProfitOrLoss reporter &amp; Tutorial</h2>
 <p>Reporting capabilities were introduced in <a href="https://flexmeasures.io/014-reporting-power/" target="_blank" rel="noopener noreferrer">v0.14</a>. We are continuing to make it more useful. We already made it possible to have a reporter aggregate sensors (<code><cite>AggregatorReporter</cite></code>) or use Pandas methods on sensor data (<code><cite>PandasReporter</cite></code>) ― this had a lot of power so KPIs could be made.</p>
-<p>In this version, we added an implementation that should cover a use case right off the shelf for almost everyone using FlexMeasures: a reporter to compute how profitable your operation has been (<em><code>ProfitLossReporter</code></em>). Showing the results of optimization is a crucial feature, and now easier than ever.</p>
+<p>In this version, we added an implementation that should cover a use case right off the shelf for almost everyone using FlexMeasures: a reporter to compute how profitable your operation has been (<em><code>ProfitOrLossReporter</code></em>). Showing the results of optimization is a crucial feature, and now easier than ever.</p>
 <p>We also wrote <a href="https://flexmeasures.readthedocs.io/en/latest/tut/toy-example-reporter.html" target="_blank" rel="noopener noreferrer">a tutorial</a> for using it in your installation. Here are some excerpts (note that that tutorial also shows other reporting types).</p>
-<p>First, reporters can now be stored as data sources, so they are easy to be used repeatedly and the data they generate can reference them. Our data source has "ProfitLossReporter" as Model and these attributes (the least a ProfitLossReporter needs to know is a price): </p>
+<p>First, reporters can now be stored as data sources, so they are easy to be used repeatedly and the data they generate can reference them. Our data source has "ProfitOrLossReporter" as <code>model</code> attribute and these <code>attributes</code> (the least a ProfitOrLossReporter needs to know is a price): </p>
 <pre id="codecell2"><span class="o">{</span>
 <span class="s2">   "data_generator"</span>: <span class="o">{</span>
 <span class="s2">     "config"</span>: <span class="o">{</span>
@@ -158,7 +158,7 @@ We can now differentiate between limits on production and consumption. <code>pow
 $<span class="s2"> {</span>
 $<span class="s2">     'input' : [{'sensor' : 4}],</span>
 $<span class="s2">     'output' : [{'sensor' : 9}]</span>
-$<span class="s2"> }"</span> &gt; inflexible-parameters.json</pre>
+$<span class="s2"> }"</span> &gt; profitorloss-parameters.json</pre>
 </div>
 <div>
 <p><cite>The input</cite> sensor stores the power/energy flow, and the <cite>output</cite> sensor will store the report.</p>
@@ -167,7 +167,7 @@ $<span class="s2"> }"</span> &gt; inflexible-parameters.json</pre>
 <div class="highlight-bash notranslate">
 <div class="highlight">
 <pre id="codecell7">$ flexmeasures add report --source <span class="m">6</span> <span class="se">\</span>
-   --parameters inflexible-parameters.json <span class="se">\</span>
+   --parameters profitorloss-parameters.json <span class="se">\</span>
    --start-offset DB,1D --end-offset DB,2D
 </pre>
 </div>
