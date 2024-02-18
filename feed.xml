@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2024-02-18T14:10:52+01:00</updated>
+    <updated>2024-02-18T15:17:19+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -19,18 +19,18 @@
         <media:content url="https://flexmeasures.io/media/posts/37/edvard-alexander-rolvaag-E75ZuAIpCzo-unsplash.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2024-02-18T14:10:52+01:00</updated>
+        <updated>2024-02-18T15:17:19+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/37/edvard-alexander-rolvaag-E75ZuAIpCzo-unsplash.jpg" alt="Stacked pebbles" />
-                    Version v0.18 of FlexMeasures has a few minor improvements, each of which might mean a lot to someone. We'll focus on our first steps into nested asset structures, as it&hellip;
+                    Version v0.19 of FlexMeasures has a few minor improvements, each of which might mean a lot to someone. We'll focus on our first steps into nested asset structures, as it&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                     <p><img src="https://flexmeasures.io/media/posts/37/edvard-alexander-rolvaag-E75ZuAIpCzo-unsplash.jpg" class="type:primaryImage" alt="Stacked pebbles" /></p>
                 <div class="post__inner post__entry">
-<p>Version v0.18 of FlexMeasures has a few minor improvements, each of which might mean a lot to someone. We'll focus on our first steps into nested asset structures, as it is visual and part of FlexMeasures' strategic roadmap. </p>
+<p>Version v0.19 of FlexMeasures has a few minor improvements, each of which might mean a lot to someone. We'll focus on our first steps into nested asset structures, as it is visual and part of FlexMeasures' strategic roadmap. </p>
 <p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-19-0-februari-18-2024" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list. Read on below about the larger new features we added.</p>
 </div>
 <div class="post__inner post__entry">
