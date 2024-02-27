@@ -3,12 +3,49 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2024-02-18T15:17:19+01:00</updated>
+    <updated>2024-02-27T13:48:05+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>FOSDEM 2024: a hands-on integration tutorial (video)</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/fosdem-2024-a-hands-on-integration-tutorial-video/"/>
+        <id>https://flexmeasures.io/fosdem-2024-a-hands-on-integration-tutorial-video/</id>
+        <media:content url="https://flexmeasures.io/media/posts/38/1708007402053.jpeg" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2024-02-27T13:48:05+01:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/38/1708007402053.jpeg" alt="Nicolas giving the tutorial at FOSDEM 2024" />
+                    At FOSDEM 2024, there was an energy devroom again (2nd time). As we talked about using FlexMeasures in an open vehicle-to-grid (V2G) stack last time, we wanted to be a&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/38/1708007402053.jpeg" class="type:primaryImage" alt="Nicolas giving the tutorial at FOSDEM 2024" /></p>
+                <p>At <a href="https://fosdem.org/2024/">FOSDEM 2024</a>, there was an <a href="https://fosdem.org/2024/schedule/track/energy/">energy devroom</a> again (2nd time). As <a href="https://archive.fosdem.org/2023/schedule/event/energy_v2gliberty/">we talked about using FlexMeasures in an open vehicle-to-grid (V2G) stack last time</a>, we wanted to be a bit more hands-on this time. After all, FOSDEM is a developer conference.</p>
+<p>So we designed a quick 15-minute tutorial which gives you a tour of how to integrate with FlexMeasures if you were to build your own smart heating startup (and use FlexMeasures as a smart backend). The video is right here, enjoy:</p>
+<figure class="post__video"><video loading="lazy" width="650" height="300" controls="controls" data-mce-fragment="1">
+<source src="https://video.fosdem.org/2024/h2214/fosdem-2024-2509-using-flexmeasures-to-build-a-climate-tech-startup-in-15-minutes.av1.webm" type="video/webm" type="video/webm" /><source src="https://fosdem.org/2024/schedule/event/fosdem-2024-2509-using-flexmeasures-to-build-a-climate-tech-startup-in-15-minutes/" /></video></figure>
+<p>We covered these steps:</p>
+<ul>
+<li>create a new customer account with the relevant asset models for this use case (via a new API endpoint, e.g. called from your CRM)</li>
+<li>feed local measurements (e.g. temperature) regularly into your FlexMeasures server, using the FlexMeasures Python client</li>
+<li>get the latest price and weather forecast data from third-party-APIs (regularly via cron jobs), using existing FlexMeasures plugins</li>
+<li>call the FlexMeasures scheduler to compute when to draw green &amp; cheap electricity for heating (via the FlexMeasures API) which you can out to use in the building</li>
+<li>define a cost reporter and let it run (regularly via cron jobs)</li>
+<li>configure a FlexMeasures dashboard to show the relevant data in one place</li>
+</ul>
+<p>A lot for 15 minutes, and we didn't even touch all possibilities. A big thank you to the volunteer staff at FOSDEM, who made sure you can re-watch this now.<br><br>If you have questions about these presented topics, do make sure to <a href="https://flexmeasures.io/get-in-touch/">contact us</a>.</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v0.19: asset nesting</title>
         <author>
@@ -496,65 +533,6 @@ asyncio.run(my_script())</code></pre>
 <p>Finally, as <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html#note-on-datamodel-transition">our long journey to a more flexible datamodel</a> is coming close to completion, we are sunsetting (as we pre-announced in version 0.12) API versions below 3. Please help your users upgrade to API version 3 before you use FlexMeasures v0.13!</p>
 <p>We compiled <a href="https://flexmeasures.readthedocs.io/en/latest/api/introduction.html#deprecation-and-sunset" target="_blank" rel="noopener noreferrer">some helpful information for FlexMeasures hosts </a>to manage this transition well.  </p>
 <p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/650">650</a>.</span></p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.12: Replay, custom scheduling</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/012-replay-custom-scheduling/"/>
-        <id>https://flexmeasures.io/012-replay-custom-scheduling/</id>
-        <media:content url="https://flexmeasures.io/media/posts/27/replay-button.png" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2023-01-04T17:17:46+01:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/27/replay-button.png" alt="Playback button" />
-                    Version v0.12 of FlexMeasures adds a cool re-play feature and support for adding custom scheduling algorithms! Actually, this release is a big one with many small improvements, e.g. the CLI&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/27/replay-button.png" class="type:primaryImage" alt="Playback button" /></p>
-                <p>Version v0.12 of FlexMeasures adds a cool re-play feature and support for adding custom scheduling algorithms!</p>
-<p>Actually, this release is a big one with many small improvements, e.g. the CLI for data ingestions have taken a big leap.</p>
-<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-11-0-august-28-2022" target="_blank" rel="noopener noreferrer">See changelog</a> or read on below to read what we added.</p>
-<h2>Replay</h2>
-<p>FlexMeasures shines in keeping track <em>what was known at what time</em>. In both simulations and real time operation, we found that our partners want to see how the data situation progressed over time.</p>
-<p>That's why we decided to add a replay-button to asset dashboards. It travels through time for you: </p>
-<figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/27/ReplayWithRuler.gif" alt="Visualization of FlexMeasures data" width="1257" height="868"><figcaption>Data from Seita's V2G living lab, played back in FlexMeasures</figcaption></figure>
-<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">Where is this useful? We've seen this work very well in demos, and to explain why certain schedules were executed half-way, but then the rest got re-written. This happens because when new data arrives (e.g. prices change, an EV re-connects to the charger, etc.), FlexMeasures needs to re-compute the schedule. </span></p>
-<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This <a href="https://twitter.com/flexmeasures/status/1551841500815695875" target="_blank" rel="noopener noreferrer">has been in the works</a> for a long time, and now finally released. This work was done in Pull Request </span><a href="http://www.github.com/SeitaBV/flexmeasures/pull/463" target="_blank" rel="noopener noreferrer">463</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></p>
-<h2>Custom scheduling</h2>
-<p>To schedule flexible assets is the main premise of FlexMeasures. More concretely, the mission of FlexMeasures is to drastically cut down the development time on any flexibility solution, no matter if an in-built scheduler already is applicable.</p>
-<p>Together with the plugin support released in <a href="https://flexmeasures.io/070-professional-plugins/">v0.7</a>, this release comes with support for people writing their own schedulers.</p>
-<p>This is relevant to researchers and startups who are innovating in the realm of algorithms, but still would like to save development time (and use FlexMeasures as a framework and web application in which to embed their logic).</p>
-<p>We will use this internally as well, as it makes any new project easier. Usually, we don't work on new schedulers in the open ― we prefer to iterate in a plugin first. If the result is great, then it'll enter FlexMeasures core.</p>
-<p>Up until now, schedulers were an internal feature, accessible by an API, but focused on storage flexibility for the main part (we worked on shiftable flexibility in other projects). Opening a core feature up for other use cases is really helpful to arrive at a better design. We've completely refactored how schedulers are implemented and how to give them the necessary information (the <code>flex-model</code> and the <code>flex-context</code>), and we're very excited how this will empower our own work and that of FlexMeasures users.</p>
-<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">The <a href="https://flexmeasures.readthedocs.io/en/latest/plugin/customisation.html#adding-your-own-scheduling-algorithm" target="_blank" rel="noopener noreferrer">plugin developer tutorial</a> and <a href="https://flexmeasures.readthedocs.io/en/latest/api/notation.html#describing-flexibility" target="_blank" rel="noopener noreferrer">this part of the API notation docs</a> tell you more.</span></p>
-<p>This work was done in Pull Requests <a href="http://www.github.com/SeitaBV/flexmeasures/pull/505">505</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/511">511,</a> <a href="http://www.github.com/SeitaBV/flexmeasures/pull/537">537</a>,  <a href="http://www.github.com/SeitaBV/flexmeasures/pull/568">568</a> and <a href="http://www.github.com/SeitaBV/flexmeasures/pull/566">566</a>.</p>
-<h2>Ingesting data on the CLI</h2>
-<p>Almost every project involves getting some historical data read in (e.g. from CSV or Excel files), be it because one uses FlexMeasures to run simulations, or to have a base data set for machine learning purposes (e.g. a forecasting algorithm). This is tough and iterative engineering work.</p>
-<p>FlexMeasures has CLI support for this (<code>flexmeasures add beliefs</code>). We tackled several issues to make this work even more developer-friendly:</p>
-<ol>
-<li>drop duplicate records with warning</li>
-<li>allow configuring which column contains explicit recording times for each data point (use case: import forecasts) </li>
-<li>localize timezone naive data</li>
-<li>support reading in datetime and timedelta values</li>
-<li>remove rows with NaN values</li>
-<li>filter by values in specific columns</li>
-</ol>
-<p>We also improved its counterpart, <code class="docutils literal notranslate"><span class="pre">flexmeasures</span> <span class="pre">show</span> <span class="pre">beliefs</span></code>. We now support:</p>
-<ol>
-<li>showing beliefs data in a custom resolution and/or timezone</li>
-<li>saving the shown beliefs data to a CSV file</li>
-<li>handle showing (and saving) instantaneous sensor data and non-instantaneous sensor data together</li>
-</ol>
-<p>This work was done in Pull Requests <a href="http://www.github.com/SeitaBV/flexmeasures/pull/501">501</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/521" target="_blank" rel="noopener noreferrer">521</a>, <a href="http://www.github.com/SeitaBV/flexmeasures/pull/519" target="_blank" rel="noopener noreferrer">519</a> and <a href="http://www.github.com/SeitaBV/flexmeasures/pull/542" target="null">542</a>.</p>
-<p> </p>
             ]]>
         </content>
     </entry>
