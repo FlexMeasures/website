@@ -3,12 +3,74 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2024-02-27T13:48:05+01:00</updated>
+    <updated>2024-03-26T17:48:42+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>v0.20: Faster data reads</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/020-faster-data-reads/"/>
+        <id>https://flexmeasures.io/020-faster-data-reads/</id>
+        <media:content url="https://flexmeasures.io/media/posts/39/julian-hochgesang-3-y9vq8uoxk-unsplash.jpg" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2024-03-26T17:48:42+01:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/39/julian-hochgesang-3-y9vq8uoxk-unsplash.jpg" alt="highway with long exposure" />
+                    Version v0.20 of FlexMeasures brings a major speed improvement when reading times series data, which makes loading graphs much faster than before. Other than that, there are power tools for&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/39/julian-hochgesang-3-y9vq8uoxk-unsplash.jpg" class="type:primaryImage" alt="highway with long exposure" /></p>
+                <div class="post__inner post__entry">
+<p>Version v0.20 of FlexMeasures brings a major speed improvement when reading times series data, which makes loading graphs much faster than before. Other than that, there are power tools for FlexMeasures hosts, more work on flexibility modelling with dynamic times series data and some smaller fixes and improvements.</p>
+<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-20-0-march-26-2024" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list. Read on below about the larger new features we added.</p>
+</div>
+<div class="post__inner post__entry">
+<h2>Speed</h2>
+<p>Loading data has been too slow, which was mostly visible when loading charts in the asset and sensor UIs. We found two issues and addressed both, which has led to a major speed improvement. Loading charts now feels more natural.</p>
+<p>The improvements actually happened in the data model library timely-beliefs at <a href="https://pypi.org/project/timely-beliefs/2.1.0/">version 2.1.0</a>, see PRs <a href="https://github.com/SeitaBV/timely-beliefs/pull/166">here</a> and <a href="https://github.com/SeitaBV/timely-beliefs/pull/167">here</a>. We also have been patched this version into FlexMeasures 0.19.2</p>
+<h2>Power-user tooling for hosts to move assets &amp; data around</h2>
+<p>Hosting FlexMeasures means to manage accounts, their assets and their data. Sometimes you need some powerful tooling to move things.</p>
+<ul>
+<li>We introduce a new command to transfer the ownership of an asset and its children to a different account. Example: 
+<pre class="notranslate"><code class="notranslate">flexmeasures edit transfer-ownership --asset 1 --account 2</code></pre>
+ See Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/983" target="_blank" rel="noopener noreferrer">983</a>.</li>
+<li>And it is now simple to delete time series data for an entire site (i.e. with child assets) while keeping its structure, including asset and sensor IDs, intact. We added the <code class="notranslate" style="font-weight: var(--font-weight-normal);">--offspring</code><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);"> flag to the command </span><code class="notranslate" style="font-weight: var(--font-weight-normal);">flexmeasures delete beliefs</code><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);"> which will include the beliefs of the offspring assets' sensors to the list of to-be-removed beliefs. See Pull Request </span><a href="http://www.github.com/flexmeasures/flexmeasures/pull/1003" target="_blank" rel="noopener noreferrer" style="font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">1003</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></li>
+<li>Also, deleting time series data via the CLI command <code class="notranslate" style="font-weight: var(--font-weight-normal);">flexmeasures delete beliefs</code><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);"> </span>is much faster now, too. See Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1005" target="_blank" rel="noopener noreferrer">1005</a>.</li>
+</ul>
+<h2>Flex info as sensors</h2>
+In our <a href="https://github.com/FlexMeasures/flexmeasures/discussions/957">ongoing effort</a> to describe (most of) our <a href="https://flexmeasures.readthedocs.io/en/latest/features/scheduling.html#the-flex-context">flex-model</a> and <a href="https://flexmeasures.readthedocs.io/en/latest/features/scheduling.html#the-flex-context">flex-context</a> in dynamic settings (instead only constant values), we are still plowing ahead:</div>
+<ul>
+<li class="post__inner post__entry">FlexMeasures now supports the <code>site-consumption-capacity</code> and <code>site-production-capacity</code> fields in the flex-context to be sensors (and thus represent time series) - an interesting use case from (Dutch) reality is a contract with the DSO where your capacity is higher for some hours, e.g. during the night. See Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/985" target="_blank" rel="noopener noreferrer">985</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">. </span><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">Here is an example:</span>
+<pre class="notranslate">{
+    <span class="pl-ent">"flex-context"</span>: {
+        <span class="pl-ent">"site-power-capacity"</span>: <span class="pl-s"><span class="pl-pds">"</span>500 kVA<span class="pl-pds">"</span></span>,
+        <span class="pl-ent">"site-consumption-capacity"</span>: {<span class="pl-ent">"sensor"</span>: <span class="pl-c1">8</span>},
+        <span class="pl-ent">"site-production-capacity"</span>: <span class="pl-s"><span class="pl-pds">"</span>400 kW<span class="pl-pds">"</span></span>,
+    }
+}</pre>
+</li>
+<li>We added the possibility to define SOC (State of Charge) Targets, SOC Maxima and SOC Minima as sensors. For example: <code><span class="blob-code-inner blob-code-marker js-code-nav-pass " data-code-marker="+"><span class="pl-s">"soc-minima": {"sensor" : 300}</span></span></code> The existing way of defining those (within API calls) is still supported.<br>Why is this useful? Well, these flex-model fields are quite powerful in defining the storage boundaries within which FlexMeasures shall compute the best schedules. Ans these storage boundaries usually come from the user's environment, e.g. as targets for EVs to be charged, comfort-optimized settings for heating or from production planning in an industry setting. Thus, this data is important enough to be stored in its own sensor ― then it can easily be updated from a different data source (e.g. EV logistics system) and be displayed on its own. We believe this makes for a more powerful FlexMeasures :) <br>See Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/996" target="_blank" rel="noopener noreferrer">996</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></li>
+</ul>
+<h2>Miscellaneous</h2>
+<p>As we mentioned, there were several smaller but crucial improvements. Some highlights:</p>
+<ul>
+<li>The unit of non-schedulable (inflexible) sensors had to be MW. Now it can be any power unit, e.g. kW, kWh or MWh, which ever you represent it as. FlexMeasures converts the data when reading it from the database and feeding it to the scheduler. See Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1007" target="_blank" rel="noopener noreferrer">1007</a>. </li>
+<li>FlexMeasures can now be run on MacOS. There were some package installation troubles. This might be quite crucial for developers on MacOS (although they could have used docker compose). See Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1000" target="_blank" rel="noopener noreferrer">1000</a>. </li>
+</ul>
+<p> </p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>FOSDEM 2024: a hands-on integration tutorial (video)</title>
         <author>
@@ -485,54 +547,6 @@ asyncio.run(my_script())</code></pre>
             <![CDATA[
                     <p><img src="https://flexmeasures.io/media/posts/30/simon-berger-87RXi_iC1xI-unsplash.jpg" class="type:primaryImage" alt="" /></p>
                 <p><span class="break-words"><span dir="ltr">What is "Blackout testing"? A tool to provide stable API development to your users in the long-term. By prescribed "shock therapy" :)<br><br>FlexMeasures is already a few years in development, and therefore we are running into issues of longer-term support while innovation is still ongoing. As <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html#note-on-datamodel-transition">we have refactored the data model</a>, we also need to move forward with the API and stop supporting older versions.<br>For us as a team, this was an opportunity to adopt proper customer/user support, learning from other professionals who support APIs for the long run. This benefits hosters of FlexMeasures as well as our users.<br><br>Often, API endpoints change or are put out of use (becoming legacy part of the software, eventually not served anymore). However, users currently rely on them. And they hate upgrading. They might not all jump to upgrading their own systems, even if you suggest in time that they should. Why act now, right? Maybe tomorrow! This is a major problem for SaaS providers, who need to innovate and move on.<br><br>In FlexMeasures (v0.14, see <a href="https://github.com/flexMeasures/flexmeasures/pull/651">PR 651</a>), we adopted an industry standard called <a href="https://design.oftrust.net/api-migration-policies/blackout-testing">"Blackout Testing"</a>. This tool lets your users experience in a short &amp; planned "shock therapy" if they need to act.<br><br>Here is the usual how it fits into your process: First comes deprecation (API is now legacy code), then sunset (API stops being served). Both of these are pre-announced with clear dates. Both also give the using systems automated signals: HTTP headers label the stage implicitly (deprecation or sunset), and HTTP status codes do that explicitly (e.g. moving from 200 OK to 410 Gone and finally 404 NotFound).<br><br>In short, a blackout test would temporarily simulate the removal (return 410 instead of 200) for a pre-announced short while, maybe an hour. <br><br>That should really get everyone's attention :)<br><br>If you are hosting FlexMeasures, then from version 0.14 on, a blackout test can be activated by changing a simple setting (<a href="https://flexmeasures.readthedocs.io/en/latest/configuration.html#flexmeasures-api-sunset-active">FLEXMEASURES_API_SUNSET_ACTIVE</a>).<br><br>If you are a user connected to a FlexMeasures server, this simply means you will be served better. Fewer surprises, still innovation!</span></span></p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.13: Overlay charts </title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/013-overlay-charts/"/>
-        <id>https://flexmeasures.io/013-overlay-charts/</id>
-        <media:content url="https://flexmeasures.io/media/posts/29/v013-preview.png" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2023-05-01T20:26:21+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/29/v013-preview.png" alt="Overlaid charts" />
-                    Version v0.13 of FlexMeasures lets us create dashboards with multiple graphs from various sensors layered in one plot. In addition, FlexMeasures now includes a proper page for accounts. On the&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/29/v013-preview.png" class="type:primaryImage" alt="Overlaid charts" /></p>
-                <p>Version v0.13 of FlexMeasures lets us create dashboards with multiple graphs from various sensors layered in one plot. In addition, FlexMeasures now includes a proper page for accounts.</p>
-<p>On the backend, we protect the CPU from re-computing the same schedule over and over again if a rogue client asks for that.</p>
-<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-13-0-may-1-2023" target="_blank" rel="noopener noreferrer">See changelog</a> for a complete list or read on below about the larger new features we added.</p>
-<h2>Overlay charts</h2>
-<p>With FlexMeasures, you can adapt the dashboard shown on the page for any asset. By default, you see a plot per sensor. With the <code>sensors_to_show</code> attribute, it was already possible to remove and even add plots (e.g. public price data), to create the dashboard with maximum information value.</p>
-<p>We wanted to make the dashboards more informative, as often users want to study effects of one sensor's data on others.</p>
-<p>Now, sensor numbers in <code>sensors_to_show</code> can be layered, e.g. <code>[1, [3,6]]</code> will lead to two plots, where the second shows two sensors together.</p>
-<p>As a bonus, plots are distinguished by source (different trace), sensor (different color) and source type (different stroke dash).</p>
-<p>Here is an example (see the overlay of EV charging and PV supply in the lower graph):</p>
-<figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/29/layered-chart.png" alt="A layered chart from Seita's V2G living lab" width="800" height="375" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/29/responsive/layered-chart-xs.png 300w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-sm.png 480w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-md.png 768w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-lg.png 1024w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-xl.png 1360w ,https://flexmeasures.io/media/posts/29/responsive/layered-chart-2xl.png 1600w"><figcaption>A layered chart from Seita's V2G living lab</figcaption></figure>
-<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This work was done in Pull Request </span><a href="http://www.github.com/flexmeasures/flexmeasures/pull/534" target="_blank" rel="noopener noreferrer">534</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></p>
-<h2>Account page</h2>
-<p>FlexMeasures is not just a single-purpose program ― it's a platform which can sit in the cloud and serve multiple sites. To manage these sites when they have different asset owners, the concept of accounts matters a lot. An account might for instance be a SME, with several local energy assets and also several employees (who might or might not have a FlexMeasures user account)</p>
-<p>That's why we worked on showing accounts better in the UI and API (in the CLI they are already represented well). The endpoints <code><cite>/accounts</cite></code> (to list accounts) and <code><cite>/accounts/&lt;id&gt;</cite></code> (to show one account) both work in the UI and (via <code>/api/v3_0/</code>) in the API.</p>
-<p>We tried to make this useful both for users (looking at their own account) and admins (looking at all accounts). In the future, we hope to work on "consulting accounts", who have the right to administer several other accounts (their clients), making FlexMeasures a potential B2B2B platform! </p>
-<p>This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/605">605</a>.</p>
-<h2>Avoid re-computing the same schedule</h2>
-<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">Computing schedules is where FlexMeasures creates its value, and also where it does the heavier CPU work. The more different sites we serve, the more we learn that it's crucial to protect this CPU work.</span></p>
-<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">Triggering schedules is easy, computing them is hard.<br>Here is an example scenario: A rogue client might trigger the same schedule multiple times ― a simple error, but overloading our server with work. In this feature, we enable FlexMeasures to notice that the same computation is already done or currently ongoing. This means not starting the computation again, and also informing the caller with the right status.</span></p>
-<p>Technically, we now cache the job, so that before FlexMeasures creates a new one, it can look up if the equivalent already exists somewhere in the queue. Interesting architectural work!</p>
-<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This work was done in Pull Request </span><a href="http://www.github.com/flexmeasures/flexmeasures/pull/616" target="null">616</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></p>
-<h2>API sunsetting</h2>
-<p>Finally, as <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html#note-on-datamodel-transition">our long journey to a more flexible datamodel</a> is coming close to completion, we are sunsetting (as we pre-announced in version 0.12) API versions below 3. Please help your users upgrade to API version 3 before you use FlexMeasures v0.13!</p>
-<p>We compiled <a href="https://flexmeasures.readthedocs.io/en/latest/api/introduction.html#deprecation-and-sunset" target="_blank" rel="noopener noreferrer">some helpful information for FlexMeasures hosts </a>to manage this transition well.  </p>
-<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/650">650</a>.</span></p>
             ]]>
         </content>
     </entry>
