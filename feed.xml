@@ -3,12 +3,61 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2024-04-11T23:46:28+02:00</updated>
+    <updated>2024-05-15T17:55:25+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>v0.21: Service better with status page&amp; audit log</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/021-service-better-status-and-audit/"/>
+        <id>https://flexmeasures.io/021-service-better-status-and-audit/</id>
+        <media:content url="https://flexmeasures.io/media/posts/40/berkeley-communications-WEDDt-u3q3o-unsplash.jpg" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2024-05-15T17:55:25+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/40/berkeley-communications-WEDDt-u3q3o-unsplash.jpg" alt="Man using phone" />
+                    Version v0.21 of FlexMeasures adds business value which comes through happy customers. Why does this matter? An app which deals with real-time complexities like energy optimization needs to an excellent&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/40/berkeley-communications-WEDDt-u3q3o-unsplash.jpg" class="type:primaryImage" alt="Man using phone" /></p>
+                <div class="post__inner post__entry">
+<p>Version v0.21 of FlexMeasures adds business value which comes through happy customers. Why does this matter? An app which deals with real-time complexities like energy optimization needs to an excellent help desk ― next to getting optimal scheduling right, it's crucial to find out quickly why something is not going according to expectations.</p>
+<p>Imagine the customer on the phone with your service or technical staff. How to start investigating where it went wrong?</p>
+<p>To help with this situation, version v0.21 of FlexMeasures brings two major features that can help you provide better support for your customers ― a status page for assets and an audit log for accounts &amp; users.</p>
+<p>Other than that, there are some smaller improvements, notably to link to specific date ranges on the asset page. <a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-21-0-may-16-2024" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list (link will work on May 16, day of release). </p>
+</div>
+<div class="post__inner post__entry">
+<h2>Status page</h2>
+<p>A site which is being optimized with FlexMeasures usually has a few assets (some flexible, some not) from which recent data is required. This data sometimes comes from different sources, e.g. sent through the API by the monitoring partner, and gotten through a third-party API. We need to be able to see if all of this data is coming in correctly. If not, scheduling will probably fail due to missing data.</p>
+<p>We created a status page which lets you see if the necessary data connectivity is given. Also, we show the recent forecasting jobs and whether they succeeded or failed.</p>
+<p> </p>
+This work happened in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/941" target="_blank" rel="noopener noreferrer">941</a> <span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/996" target="_blank" rel="noopener noreferrer"></a><a href="http://www.github.com/flexmeasures/flexmeasures/pull/1035" target="_blank" rel="noopener noreferrer">1035</a>.</span><br>
+<p>We are still improving the status page. It will become <a href="https://github.com/SeitaBV/timely-beliefs/pull/179" target="_blank" rel="noopener noreferrer">faster</a> in the next version, and we might add even more information. </p>
+<h2>Audit log</h2>
+<p>Next to the raw data and scheduling, an important part of the user experience are accounts. Has a user been created correctly, or set to being inactive, or has a password been rest? And who did that?</p>
+<p>Answering such questions can be an important building block in providing good service without big hassle.</p>
+<p>We will also soon extend the audit log for other important events, like important changes on the asset attributes (which would also influence how scheduling goes) or additions of new assets.</p>
+<p>You can of course also make use of the audit log in your own plugin logic. Put in here what is important to you and your help desk.</p>
+<p>See Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1042" target="_blank" rel="noopener noreferrer">1042</a>.</p>
+<h2>Linking to a custom time range of data</h2>
+<p>It is also useful to point someone to a specific point in the data. "This specific Saturday shows scheduling behavior that seems off to me". </p>
+<p>We now support linking to the asset page (where a dashboard shows data) with the date range contained in the URL. The date range picker adds start and end date to the URL. You can also click a link symbol beneath the dashboard to copy the URL to your clipboard.</p>
+<br>See Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1030" target="_blank" rel="noopener noreferrer">1030</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);"> and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1046" target="_blank" rel="noopener noreferrer">1046</a>.</span></div>
+<p> </p>
+<p> </p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v0.20: Faster data reads</title>
         <author>
@@ -523,30 +572,6 @@ asyncio.run(my_script())</code></pre>
 <p>We compiled <a href="https://flexmeasures.readthedocs.io/en/latest/api/introduction.html#deprecation-and-sunset" target="_blank" rel="noopener noreferrer">some helpful information for FlexMeasures hosts </a>to manage this transition well.  </p>
 <p>This work was done in Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/667">667</a>.</p>
 <p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Blackout Testing in FlexMeasures API</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/blackout-testing-in-flexmeasures-api/"/>
-        <id>https://flexmeasures.io/blackout-testing-in-flexmeasures-api/</id>
-        <media:content url="https://flexmeasures.io/media/posts/30/simon-berger-87RXi_iC1xI-unsplash.jpg" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2023-05-17T14:13:48+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/30/simon-berger-87RXi_iC1xI-unsplash.jpg" alt="" />
-                    What is "Blackout testing"? A tool to provide stable API development to your users in the long-term. By prescribed "shock therapy" :) FlexMeasures is already a few years in development, and&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/30/simon-berger-87RXi_iC1xI-unsplash.jpg" class="type:primaryImage" alt="" /></p>
-                <p><span class="break-words"><span dir="ltr">What is "Blackout testing"? A tool to provide stable API development to your users in the long-term. By prescribed "shock therapy" :)<br><br>FlexMeasures is already a few years in development, and therefore we are running into issues of longer-term support while innovation is still ongoing. As <a href="https://flexmeasures.readthedocs.io/en/latest/dev/note-on-datamodel-transition.html#note-on-datamodel-transition">we have refactored the data model</a>, we also need to move forward with the API and stop supporting older versions.<br>For us as a team, this was an opportunity to adopt proper customer/user support, learning from other professionals who support APIs for the long run. This benefits hosters of FlexMeasures as well as our users.<br><br>Often, API endpoints change or are put out of use (becoming legacy part of the software, eventually not served anymore). However, users currently rely on them. And they hate upgrading. They might not all jump to upgrading their own systems, even if you suggest in time that they should. Why act now, right? Maybe tomorrow! This is a major problem for SaaS providers, who need to innovate and move on.<br><br>In FlexMeasures (v0.14, see <a href="https://github.com/flexMeasures/flexmeasures/pull/651">PR 651</a>), we adopted an industry standard called <a href="https://design.oftrust.net/api-migration-policies/blackout-testing">"Blackout Testing"</a>. This tool lets your users experience in a short &amp; planned "shock therapy" if they need to act.<br><br>Here is the usual how it fits into your process: First comes deprecation (API is now legacy code), then sunset (API stops being served). Both of these are pre-announced with clear dates. Both also give the using systems automated signals: HTTP headers label the stage implicitly (deprecation or sunset), and HTTP status codes do that explicitly (e.g. moving from 200 OK to 410 Gone and finally 404 NotFound).<br><br>In short, a blackout test would temporarily simulate the removal (return 410 instead of 200) for a pre-announced short while, maybe an hour. <br><br>That should really get everyone's attention :)<br><br>If you are hosting FlexMeasures, then from version 0.14 on, a blackout test can be activated by changing a simple setting (<a href="https://flexmeasures.readthedocs.io/en/latest/configuration.html#flexmeasures-api-sunset-active">FLEXMEASURES_API_SUNSET_ACTIVE</a>).<br><br>If you are a user connected to a FlexMeasures server, this simply means you will be served better. Fewer surprises, still innovation!</span></span></p>
             ]]>
         </content>
     </entry>
