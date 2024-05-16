@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2024-05-15T17:55:25+02:00</updated>
+    <updated>2024-05-16T14:10:43+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -19,7 +19,7 @@
         <media:content url="https://flexmeasures.io/media/posts/40/berkeley-communications-WEDDt-u3q3o-unsplash.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2024-05-15T17:55:25+02:00</updated>
+        <updated>2024-05-16T14:10:43+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/40/berkeley-communications-WEDDt-u3q3o-unsplash.jpg" alt="Man using phone" />
@@ -39,12 +39,15 @@
 <h2>Status page</h2>
 <p>A site which is being optimized with FlexMeasures usually has a few assets (some flexible, some not) from which recent data is required. This data sometimes comes from different sources, e.g. sent through the API by the monitoring partner, and gotten through a third-party API. We need to be able to see if all of this data is coming in correctly. If not, scheduling will probably fail due to missing data.</p>
 <p>We created a status page which lets you see if the necessary data connectivity is given. Also, we show the recent forecasting jobs and whether they succeeded or failed.</p>
-<p> </p>
-This work happened in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/941" target="_blank" rel="noopener noreferrer">941</a> <span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/996" target="_blank" rel="noopener noreferrer"></a><a href="http://www.github.com/flexmeasures/flexmeasures/pull/1035" target="_blank" rel="noopener noreferrer">1035</a>.</span><br>
+<figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/40/status-page.png" alt="" width="750" height="390" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/40/responsive/status-page-xs.png 300w ,https://flexmeasures.io/media/posts/40/responsive/status-page-sm.png 480w ,https://flexmeasures.io/media/posts/40/responsive/status-page-md.png 768w ,https://flexmeasures.io/media/posts/40/responsive/status-page-lg.png 1024w ,https://flexmeasures.io/media/posts/40/responsive/status-page-xl.png 1360w ,https://flexmeasures.io/media/posts/40/responsive/status-page-2xl.png 1600w"></figure>
+</div>
+<div> </div>
+<div class="post__inner post__entry">This work happened in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/941" target="_blank" rel="noopener noreferrer">941</a> <span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/996" target="_blank" rel="noopener noreferrer"></a><a href="http://www.github.com/flexmeasures/flexmeasures/pull/1035" target="_blank" rel="noopener noreferrer">1035</a>.</span><br>
 <p>We are still improving the status page. It will become <a href="https://github.com/SeitaBV/timely-beliefs/pull/179" target="_blank" rel="noopener noreferrer">faster</a> in the next version, and we might add even more information. </p>
 <h2>Audit log</h2>
 <p>Next to the raw data and scheduling, an important part of the user experience are accounts. Has a user been created correctly, or set to being inactive, or has a password been rest? And who did that?</p>
 <p>Answering such questions can be an important building block in providing good service without big hassle.</p>
+<figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/40/audit-log.png" alt="" width="750" height="236" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/40/responsive/audit-log-xs.png 300w ,https://flexmeasures.io/media/posts/40/responsive/audit-log-sm.png 480w ,https://flexmeasures.io/media/posts/40/responsive/audit-log-md.png 768w ,https://flexmeasures.io/media/posts/40/responsive/audit-log-lg.png 1024w ,https://flexmeasures.io/media/posts/40/responsive/audit-log-xl.png 1360w ,https://flexmeasures.io/media/posts/40/responsive/audit-log-2xl.png 1600w"></figure>
 <p>We will also soon extend the audit log for other important events, like important changes on the asset attributes (which would also influence how scheduling goes) or additions of new assets.</p>
 <p>You can of course also make use of the audit log in your own plugin logic. Put in here what is important to you and your help desk.</p>
 <p>See Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1042" target="_blank" rel="noopener noreferrer">1042</a>.</p>
