@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-01-06T15:27:44+01:00</updated>
+    <updated>2025-01-06T16:27:28+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -19,7 +19,7 @@
         <media:content url="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2025-01-06T15:27:44+01:00</updated>
+        <updated>2025-01-06T16:27:28+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png" alt="Distribution of power values in EV charging over time" />
@@ -48,7 +48,7 @@
 </ul>
 <figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio-2.png" alt="Illustration of possible options for the FlexMeasures scheduler after v0.24 (not exhaustive, e.g. set points are not shown)" width="879" height="546" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/45/responsive/v0.24-commitments.drawio-2-xs.png 300w ,https://flexmeasures.io/media/posts/45/responsive/v0.24-commitments.drawio-2-sm.png 480w ,https://flexmeasures.io/media/posts/45/responsive/v0.24-commitments.drawio-2-md.png 768w ,https://flexmeasures.io/media/posts/45/responsive/v0.24-commitments.drawio-2-lg.png 1024w ,https://flexmeasures.io/media/posts/45/responsive/v0.24-commitments.drawio-2-xl.png 1360w ,https://flexmeasures.io/media/posts/45/responsive/v0.24-commitments.drawio-2-2xl.png 1600w"><figcaption></figcaption></figure>
 <p>That last point seems counter-intuitive (allow breaching contracted capacity, but penalize it), but during simulations with different battery sizes, we found it invaluable that the contractual limits are not hard constraints, so we still get the best schedules, even on days where the battery cannot on its own keep the consumption within limits. Note that the <em>physical limits</em> can also be added, and should be hard constraints. </p>
-<p>The scheduler will take all these goals into consideration, using existing and new flex-context fields like <code class="notranslate">site-peak-consumption-price</code>, <code class="notranslate">site-peak-consumption-breach</code>and <code class="docutils literal notranslate"><span class="pre">site-peak-consumption-price</span></code> (check <a href="https://flexmeasures.readthedocs.io/en/latest/features/scheduling.html#the-flex-context" target="_blank" rel="noopener noreferrer">the documentation</a> for details).</p>
+<p>The scheduler will take all these goals into consideration, using existing and new flex-context fields like <code class="notranslate">site-peak-consumption-price</code>, <code class="notranslate">site-peak-consumption-breach</code>and <code class="docutils literal notranslate"><span class="pre">site-peak-consumption</span></code> (check <a href="https://flexmeasures.readthedocs.io/en/latest/features/scheduling.html#the-flex-context" target="_blank" rel="noopener noreferrer">the documentation</a> for details).</p>
 <p>Note that after the fact, the actual reporting of costs can represent what will actually be invoiced, e.g. energy purchasing (dynamic tariff) and peak costs by the DSO, but not the penalty used to avoid peak breaches.</p>
 <p>This work was done in Pull Requests <a href="https://github.com/FlexMeasures/flexmeasures/pull/1144" target="_blank" rel="noopener noreferrer">1144</a> and <a href="https://github.com/FlexMeasures/flexmeasures/pull/1254" target="_blank" rel="noopener noreferrer">1254</a>.</p>
 <h2>Editing your own graph dashboard in the UI</h2>
