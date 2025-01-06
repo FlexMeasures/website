@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-01-06T15:22:42+01:00</updated>
+    <updated>2025-01-06T15:27:44+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -14,12 +14,12 @@
         <author>
             <name>SeitaBV</name>
         </author>
-        <link href="https://flexmeasures.io/023-data-insights-and-white-labelling-2/"/>
-        <id>https://flexmeasures.io/023-data-insights-and-white-labelling-2/</id>
+        <link href="https://flexmeasures.io/024-more-expressive-congestion-modeling-data-dashboards/"/>
+        <id>https://flexmeasures.io/024-more-expressive-congestion-modeling-data-dashboards/</id>
         <media:content url="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2025-01-06T15:22:42+01:00</updated>
+        <updated>2025-01-06T15:27:44+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png" alt="Distribution of power values in EV charging over time" />
