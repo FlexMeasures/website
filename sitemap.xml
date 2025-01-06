@@ -201,6 +201,22 @@
 </image:image>
 </url>
 <url>
+<loc>https://flexmeasures.io/023-data-insights-and-white-labelling-2/</loc>
+<lastmod>2025-01-06T15:22:42+01:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png</image:loc>
+<image:title><![CDATA[Distribution of power values in EV charging over time]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio-2.png</image:loc>
+<image:title><![CDATA[Illustration of possible options for the FlexMeasures scheduler after v0.24 (not exhaustive, e.g. set points are not shown)]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/45/screenshot-asset-editgraph.png</image:loc>
+<image:title><![CDATA[Editing the graph dashboard]]></image:title>
+</image:image>
+</url>
+<url>
 <loc>https://flexmeasures.io/070-professional-plugins/</loc>
 <lastmod>2022-01-21T12:55:01+01:00</lastmod>
 <image:image>
