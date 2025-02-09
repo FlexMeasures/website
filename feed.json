@@ -10,8 +10,8 @@
     },
     "items": [
         {
-            "id": "https://flexmeasures.io/fosdem-2024-a-hands-on-integration-tutorial-video-2/",
-            "url": "https://flexmeasures.io/fosdem-2024-a-hands-on-integration-tutorial-video-2/",
+            "id": "https://flexmeasures.io/talk-at-fosdem-2025-open-protocols-and-s2-support/",
+            "url": "https://flexmeasures.io/talk-at-fosdem-2025-open-protocols-and-s2-support/",
             "title": "Talk at FOSDEM 2025: Open protocols and S2 support",
             "summary": "At FOSDEM 2025, there was an energy devroom again (3rd time!). We got a talk accepted again, and this time, we talked about open protocols in the EMS world, and&hellip;",
             "content_html": "<p>At <a href=\"https://fosdem.org/2025/\">FOSDEM 2025</a>, there was an <a href=\"https://fosdem.org/2025/schedule/track/energy/\">energy devroom</a> again (3rd time!). We got a talk accepted again, and this time, we talked about open protocols in the EMS world, and in particular ongoing work on supporting one of the upcoming energy flexibility standards, <a href=\"https://www.s2standard.org/\">S2</a>.</p>\n<figure class=\"post__video\"><video loading=\"lazy\" width=\"650\" height=\"300\" controls=\"controls\" data-mce-fragment=\"1\">\n<source src=\"https://video.fosdem.org/2025/h2214/fosdem-2025-6109-overcoming-the-chicken-and-egg-problem-from-the-battlelines-of-the-s2-energy-flexibility-protocol-adoption.av1.webm\" type=\"video/webm\" type=\"video/webm\" /><source src=\"https://fosdem.org/2024/schedule/event/fosdem-2024-2509-using-flexmeasures-to-build-a-climate-tech-startup-in-15-minutes/\" /></video></figure>\n<p>There are several standards for connecting information about energy within buildings, and making devices controllable. There are some to connect them to external parties like aggregators and DSOs. All of this is interesting, but it is a wide field. It's unsure if and what FlexMeasures should implement here.</p>\n<p>But some open protocols deal with what FlexMeasures is about: How to make joint decisions about energy sites, based on flexibility of the devices present?</p>\n<p>S2 is one of those, and at Seita we are working towards supporting it from within FlexMeasures in several R&amp;D projects. This talk will mention them.</p>\n<p>We also like <a href=\"https://www.openadr.org/\">OpenADR</a>, and we will watch <a href=\"https://lfenergy.org/projects/shapeshifter/\">ShapeShifter</a>. Hopefully the future will let us support those, as well ― we think they are complementary.</p>\n<p>If you have questions about these presented topics, do make sure to <a href=\"https://flexmeasures.io/get-in-touch/\">contact us</a>.</p>",
@@ -23,7 +23,7 @@
                    "FlexMeasures Blog"
             ],
             "date_published": "2025-02-09T22:54:17+01:00",
-            "date_modified": "2025-02-09T23:07:51+01:00"
+            "date_modified": "2025-02-09T23:12:41+01:00"
         },
         {
             "id": "https://flexmeasures.io/024-more-expressive-congestion-modeling-data-dashboards/",
