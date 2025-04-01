@@ -202,7 +202,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/024-more-expressive-congestion-modeling-data-dashboards/</loc>
-<lastmod>2025-01-06T16:27:28+01:00</lastmod>
+<lastmod>2025-03-22T21:52:49+01:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png</image:loc>
 <image:title><![CDATA[Distribution of power values in EV charging over time]]></image:title>
@@ -535,6 +535,22 @@
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/10/asset-icon-screenshot.png</image:loc>
 <image:title><![CDATA[Improved asset icons]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://flexmeasures.io/v025-flex-context-fully-editable-nicer-status-page/</loc>
+<lastmod>2025-04-01T18:42:21+02:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/48/flex-context-editing-field.png</image:loc>
+<image:title><![CDATA[Setting a value for site power capacity in the new flex-context editing dialogue]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/48/screenshot-asset-editflexcontext.png</image:loc>
+<image:title><![CDATA[Editing the flex context in the new modal dialogue]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/48/asset-status-source-type.png</image:loc>
+<image:title><![CDATA[Status page, now differentiated by data source type]]></image:title>
 </image:image>
 </url>
 <url>

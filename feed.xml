@@ -3,12 +3,60 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-03-14T19:16:55+01:00</updated>
+    <updated>2025-04-01T18:42:21+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>v0.25: flex context fully editable, nicer status page </title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/v025-flex-context-fully-editable-nicer-status-page/"/>
+        <id>https://flexmeasures.io/v025-flex-context-fully-editable-nicer-status-page/</id>
+        <media:content url="https://flexmeasures.io/media/posts/48/flex-context-editing-field.png" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2025-04-01T18:42:21+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/48/flex-context-editing-field.png" alt="Setting a value for site power capacity in the new flex-context editing dialogue" />
+                    Version v0.25 of FlexMeasures supports editing the flex-context on an asset (instead of sending it each time a schedule is triggered). This can improve interactions for developers, but also service&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/48/flex-context-editing-field.png" class="type:primaryImage" alt="Setting a value for site power capacity in the new flex-context editing dialogue" /></p>
+                <div class="post__inner post__entry">
+<p>Version v0.25 of FlexMeasures supports editing the flex-context on an asset (instead of sending it each time a schedule is triggered). This can improve interactions for developers, but also service desk personnel! Also, we improved the status page.</p>
+<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-25-0-april-01-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements.</p>
+<p>Let's dive int the two main features!</p>
+</div>
+<div class="post__inner post__entry">
+<h2>Fully editable flex context</h2>
+<p>Behind-the-meter orchestration can become a complex problem, with multiple optimization goals potentially competing. We talked about this in <a href="https://flexmeasures.io/024-more-expressive-congestion-modeling-data-dashboards/" target="_blank" rel="noopener noreferrer">the blog post about the 0.24 release</a>, as well.</p>
+<p><a href="https://flexmeasures.readthedocs.io/stable/features/scheduling.html#the-flex-context">The flex-context</a> is very important way to describe contraints and optimization goals (and is accompanied by <a href="https://flexmeasures.readthedocs.io/stable/features/scheduling.html#the-flex-models-corresponding-schedulers">the flex-model</a>).</p>
+<figure ><figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/48/screenshot-asset-editflexcontext.png" alt="Editing the flex context in the new modal dialogue" width="800" height="652" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/48/responsive/screenshot-asset-editflexcontext-xs.png 300w ,https://flexmeasures.io/media/posts/48/responsive/screenshot-asset-editflexcontext-sm.png 480w ,https://flexmeasures.io/media/posts/48/responsive/screenshot-asset-editflexcontext-md.png 768w ,https://flexmeasures.io/media/posts/48/responsive/screenshot-asset-editflexcontext-lg.png 1024w ,https://flexmeasures.io/media/posts/48/responsive/screenshot-asset-editflexcontext-xl.png 1360w ,https://flexmeasures.io/media/posts/48/responsive/screenshot-asset-editflexcontext-2xl.png 1600w"></figure>
+<figcaption >Editing the flex context in the new dialogue</figcaption>
+</figure>
+<p>We extended the flex-model and now it is time to make it possible to add it to the data model. The current only way to specify this information is with every call to API or CLI when requesting FlexMeasures to compute a new schedule.</p>
+<p>For developers, this might make it easier (less work on coding requests), but also this opens possibilities for maintaining this information by somebody else than developers. Maybe service personnel can now update these fields (which will be logged in the audit log :), or installers do that by themselves?</p>
+<p>This work was done in Pull Requests <a href="https://github.com/FlexMeasures/flexmeasures/pull/1293" target="_blank" rel="noopener noreferrer">1293</a> and <a href="https://github.com/FlexMeasures/flexmeasures/pull/1320" target="_blank" rel="noopener noreferrer">1320</a>, and several smaller follow-ups..</p>
+<h2>Nicer status page</h2>
+<p>The status page is also a feature meant to increase the serviceability of FlexMeasures. You can see when the latest data entries for sensors came in, what jobs (scheduling, forecasting) happend recently and if they failed.</p>
+<p>However, the page could be more useful. The first iteration on this since more than six months cleans the page visually, and separates the rows per data source types.</p>
+<p>Forecasts and schedules for a power sensor are about the future, after all, while the measurements are about the past. Obviously, the traffic light needs to reflect what kind of source the data comes from - we expect forecasts to always be available into the future, while measurements (which are used in forecasts and schedules) are not, but should also not be too old.</p>
+<figure class="post__image post__image--center" ><img loading="lazy" src="https://flexmeasures.io/media/posts/48/asset-status-source-type.png" alt="Status page, now differentiated by data source type" width="800" height="467" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/48/responsive/asset-status-source-type-xs.png 300w ,https://flexmeasures.io/media/posts/48/responsive/asset-status-source-type-sm.png 480w ,https://flexmeasures.io/media/posts/48/responsive/asset-status-source-type-md.png 768w ,https://flexmeasures.io/media/posts/48/responsive/asset-status-source-type-lg.png 1024w ,https://flexmeasures.io/media/posts/48/responsive/asset-status-source-type-xl.png 1360w ,https://flexmeasures.io/media/posts/48/responsive/asset-status-source-type-2xl.png 1600w">
+<figcaption >Status page, now differentiated by data source type</figcaption>
+</figure>
+<p>Next work on the status page will address its speed, which still seems underwhelming if there is much data, and enable to select which sensors should be shown.</p>
+<p>This work was done in Pull Request <a href="https://github.com/FlexMeasures/flexmeasures/pull/1022" target="_blank" rel="noopener noreferrer">1022</a>.</p>
+</div>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>FlexMeasures: The Open Source Toolkit for Smart Energy Flexibility Services</title>
         <author>
@@ -131,7 +179,7 @@
         <media:content url="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2025-01-06T16:27:28+01:00</updated>
+        <updated>2025-03-22T21:52:49+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png" alt="Distribution of power values in EV charging over time" />
@@ -507,49 +555,6 @@ In our <a href="https://github.com/FlexMeasures/flexmeasures/discussions/957">on
 </ul>
 <p> </p>
 <p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>FOSDEM 2024: a hands-on integration tutorial (video)</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/fosdem-2024-a-hands-on-integration-tutorial-video/"/>
-        <id>https://flexmeasures.io/fosdem-2024-a-hands-on-integration-tutorial-video/</id>
-        <media:content url="https://flexmeasures.io/media/posts/38/1708007402053.jpeg" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2025-03-14T19:16:55+01:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/38/1708007402053.jpeg" alt="Nicolas giving the tutorial at FOSDEM 2024" />
-                    At FOSDEM 2024, there was an energy devroom again (2nd time). As we talked about using FlexMeasures in an open vehicle-to-grid (V2G) stack last time, we wanted to be a&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/38/1708007402053.jpeg" class="type:primaryImage" alt="Nicolas giving the tutorial at FOSDEM 2024" /></p>
-                <p>At <a href="https://fosdem.org/2024/">FOSDEM 2024</a>, there was an <a href="https://fosdem.org/2024/schedule/track/energy/">energy devroom</a> again (2nd time). As <a href="https://archive.fosdem.org/2023/schedule/event/energy_v2gliberty/">we talked about using FlexMeasures in an open vehicle-to-grid (V2G) stack last time</a>, we wanted to be a bit more hands-on this time. After all, FOSDEM is a developer conference.</p>
-<p>So we designed a quick 15-minute tutorial which gives you a tour of how to integrate with FlexMeasures if you were to build your own smart heating startup (and use FlexMeasures as a smart backend). The video is right here, enjoy:</p>
-<figure class="post__video"><video loading="lazy" width="650" height="300" controls="controls" data-mce-fragment="1">
-<source src="https://video.fosdem.org/2024/h2214/fosdem-2024-2509-using-flexmeasures-to-build-a-climate-tech-startup-in-15-minutes.av1.webm" type="video/webm" type="video/webm" /><source src="https://fosdem.org/2024/schedule/event/fosdem-2024-2509-using-flexmeasures-to-build-a-climate-tech-startup-in-15-minutes/" /></video></figure>
-<p>You can get the slides <a href="https://archive.fosdem.org/2024/events/attachments/fosdem-2024-2509-using-flexmeasures-to-build-a-climate-tech-startup-in-15-minutes/slides/22093/Nicolas-FlexMeasures-FOSDEM2024_vH7R3C7.pdf">here</a>.</p>
-<figure ><figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/38/Screenshot-from-2025-03-14-19-14-19.png" alt="The app built in this tutorial" width="800" height="355" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/38/responsive/Screenshot-from-2025-03-14-19-14-19-xs.png 300w ,https://flexmeasures.io/media/posts/38/responsive/Screenshot-from-2025-03-14-19-14-19-sm.png 480w ,https://flexmeasures.io/media/posts/38/responsive/Screenshot-from-2025-03-14-19-14-19-md.png 768w ,https://flexmeasures.io/media/posts/38/responsive/Screenshot-from-2025-03-14-19-14-19-lg.png 1024w ,https://flexmeasures.io/media/posts/38/responsive/Screenshot-from-2025-03-14-19-14-19-xl.png 1360w ,https://flexmeasures.io/media/posts/38/responsive/Screenshot-from-2025-03-14-19-14-19-2xl.png 1600w"></figure>
-<figcaption >The app being built in the tutorial</figcaption>
-</figure>
-<p> </p>
-<p>We covered these steps:</p>
-<ul>
-<li>create a new customer account with the relevant asset models for this use case (via a new API endpoint, e.g. called from your CRM)</li>
-<li>feed local measurements (e.g. temperature) regularly into your FlexMeasures server, using the FlexMeasures Python client</li>
-<li>get the latest price and weather forecast data from third-party-APIs (regularly via cron jobs), using existing FlexMeasures plugins</li>
-<li>call the FlexMeasures scheduler to compute when to draw green &amp; cheap electricity for heating (via the FlexMeasures API) which you can put to use in the building</li>
-<li>define a cost reporter and let it run (regularly via cron jobs)</li>
-<li>configure a FlexMeasures dashboard to show the relevant data in one place</li>
-</ul>
-<p>A lot for 15 minutes, and we didn't even touch all possibilities. A big thank you to the volunteer staff at FOSDEM, who made sure you can re-watch this now.</p>
-<p>See also<a href="https://archive.fosdem.org/2024/schedule/event/fosdem-2024-2509-using-flexmeasures-to-build-a-climate-tech-startup-in-15-minutes/"> the FOSDEM page for this talk</a>.<br><br>If you have questions about these presented topics, do make sure to <a href="https://flexmeasures.io/get-in-touch/">contact us</a>.</p>
             ]]>
         </content>
     </entry>
