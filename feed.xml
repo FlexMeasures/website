@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-04-01T18:48:48+02:00</updated>
+    <updated>2025-04-01T18:50:57+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -19,7 +19,7 @@
         <media:content url="https://flexmeasures.io/media/posts/48/flex-context-editing-field.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2025-04-01T18:48:48+02:00</updated>
+        <updated>2025-04-01T18:49:19+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/48/flex-context-editing-field.png" alt="Setting a value for site power capacity in the new flex-context editing dialogue" />
@@ -31,7 +31,7 @@
                     <p><img src="https://flexmeasures.io/media/posts/48/flex-context-editing-field.png" class="type:primaryImage" alt="Setting a value for site power capacity in the new flex-context editing dialogue" /></p>
                 <div class="post__inner post__entry">
 <p>Version v0.25 of FlexMeasures supports editing the flex-context on an asset (instead of sending it each time a schedule is triggered). This can improve interactions for developers, but also service desk personnel! Also, we improved the status page.</p>
-<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-25-0-april-01-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements.</p>
+<p><a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-25-0-april-01-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements.</p>
 <p>Let's dive int the two main features!</p>
 </div>
 <div class="post__inner post__entry">
@@ -179,7 +179,7 @@
         <media:content url="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2025-03-22T21:52:49+01:00</updated>
+        <updated>2025-04-01T18:50:24+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png" alt="Distribution of power values in EV charging over time" />
@@ -191,7 +191,7 @@
                     <p><img src="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png" class="type:primaryImage" alt="Distribution of power values in EV charging over time" /></p>
                 <div class="post__inner post__entry">
 <p>Version v0.24 of FlexMeasures adds more expressive power for behind-the-meter scheduling constraints, and it also lets you design your graph dashboard. And we completed pagination in the UI.</p>
-<p>This was actually a larger release (~70 PRs, three new committers). <a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-24-0-january-06-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list.</p>
+<p>This was actually a larger release (~70 PRs, three new committers). <a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-24-0-january-07-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list.</p>
 <p>Let's dive in!</p>
 </div>
 <div class="post__inner post__entry">
@@ -263,7 +263,7 @@
         <media:content url="https://flexmeasures.io/media/posts/43/histogram-visualisation-2.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2024-09-18T15:17:42+02:00</updated>
+        <updated>2025-04-01T18:50:37+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/43/histogram-visualisation-2.png" alt="Distribution of power values in EV charging over time" />
@@ -275,7 +275,7 @@
                     <p><img src="https://flexmeasures.io/media/posts/43/histogram-visualisation-2.png" class="type:primaryImage" alt="Distribution of power values in EV charging over time" /></p>
                 <div class="post__inner post__entry">
 <p>Version v0.23 of FlexMeasures adds more data insights on the sensor page, so you can understand faster what datasets you are working on. We also added white-labelling, so you can automatically style the UI in the branding of customers. Finally, the flex-context and flex-model are (still) growing more powerful in terms of expressing dynamic information.</p>
-<p>This was actually a lager release. For anything else, <a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-23-0-september-18-2024" target="_blank" rel="noopener noreferrer">see the changelog</a> for a complete list.</p>
+<p>This was actually a lager release. For anything else, <a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-23-0-september-18-2024" target="_blank" rel="noopener noreferrer">see the changelog</a> for a complete list.</p>
 <p>Let's dive in!</p>
 </div>
 <div class="post__inner post__entry">
@@ -454,7 +454,7 @@
         <media:content url="https://flexmeasures.io/media/posts/40/berkeley-communications-WEDDt-u3q3o-unsplash.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2024-05-16T14:10:43+02:00</updated>
+        <updated>2025-04-01T18:50:48+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/40/berkeley-communications-WEDDt-u3q3o-unsplash.jpg" alt="Man using phone" />
@@ -468,7 +468,7 @@
 <p>Version v0.21 of FlexMeasures adds business value which comes through happy customers. Why does this matter? An app which deals with real-time complexities like energy optimization needs to an excellent help desk ― next to getting optimal scheduling right, it's crucial to find out quickly why something is not going according to expectations.</p>
 <p>Imagine the customer on the phone with your service or technical staff. How to start investigating where it went wrong?</p>
 <p>To help with this situation, version v0.21 of FlexMeasures brings two major features that can help you provide better support for your customers ― a status page for assets and an audit log for accounts &amp; users.</p>
-<p>Other than that, there are some smaller improvements, notably to link to specific date ranges on the asset page. <a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-21-0-may-16-2024" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list (link will work on May 16, day of release). </p>
+<p>Other than that, there are some smaller improvements, notably to link to specific date ranges on the asset page. <a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-21-0-may-16-2024" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list (link will work on May 16, day of release). </p>
 </div>
 <div class="post__inner post__entry">
 <h2>Status page</h2>
@@ -506,7 +506,7 @@
         <media:content url="https://flexmeasures.io/media/posts/39/julian-hochgesang-3-y9vq8uoxk-unsplash.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2024-03-26T17:48:42+01:00</updated>
+        <updated>2025-04-01T18:50:57+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/39/julian-hochgesang-3-y9vq8uoxk-unsplash.jpg" alt="highway with long exposure" />
@@ -518,7 +518,7 @@
                     <p><img src="https://flexmeasures.io/media/posts/39/julian-hochgesang-3-y9vq8uoxk-unsplash.jpg" class="type:primaryImage" alt="highway with long exposure" /></p>
                 <div class="post__inner post__entry">
 <p>Version v0.20 of FlexMeasures brings a major speed improvement when reading times series data, which makes loading graphs much faster than before. Other than that, there are power tools for FlexMeasures hosts, more work on flexibility modelling with dynamic times series data and some smaller fixes and improvements.</p>
-<p><a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-20-0-march-26-2024" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list. Read on below about the larger new features we added.</p>
+<p><a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-20-0-march-26-2024" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list. Read on below about the larger new features we added.</p>
 </div>
 <div class="post__inner post__entry">
 <h2>Speed</h2>

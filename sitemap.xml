@@ -46,7 +46,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/013-overlay-charts/</loc>
-<lastmod>2023-05-01T20:26:21+02:00</lastmod>
+<lastmod>2025-04-01T18:52:14+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/29/v013-preview.png</image:loc>
 <image:title><![CDATA[Overlaid charts]]></image:title>
@@ -58,7 +58,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/014-reporting-power/</loc>
-<lastmod>2024-02-08T16:09:00+01:00</lastmod>
+<lastmod>2025-04-01T18:52:02+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/31/mike-tinnion-3ym6i13Y9LU-unsplash-xl.jpg</image:loc>
 <image:title><![CDATA[Report / Notebook]]></image:title>
@@ -66,7 +66,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/015-process-scheduling-heatmap/</loc>
-<lastmod>2023-08-10T11:58:57+02:00</lastmod>
+<lastmod>2025-04-01T18:51:50+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/33/daily-activity-heatmap-2.png</image:loc>
 <image:title><![CDATA[Activity Heatmap example]]></image:title>
@@ -82,7 +82,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/016-profitloss-reporter/</loc>
-<lastmod>2024-02-08T16:12:54+01:00</lastmod>
+<lastmod>2025-04-01T18:51:40+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/34/towfiqu-barbhuiya-joqWSI9u_XM-unsplash.jpg</image:loc>
 <image:title><![CDATA[Green profit, as a plant grows from coins in a jar ]]></image:title>
@@ -94,7 +94,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/017-consultancy/</loc>
-<lastmod>2023-11-08T15:34:36+01:00</lastmod>
+<lastmod>2025-04-01T18:51:29+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/35/charlesdeluvio-Lks7vei-eAg-unsplash.jpg</image:loc>
 <image:title><![CDATA[Consulting clients]]></image:title>
@@ -106,7 +106,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/018-better-use-of-future-knowledge/</loc>
-<lastmod>2024-01-02T23:29:58+01:00</lastmod>
+<lastmod>2025-04-01T18:51:19+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/36/drew-beamer-xU5Mqq0Chck-unsplash.jpg</image:loc>
 <image:title><![CDATA[A better view of the future]]></image:title>
@@ -118,7 +118,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/019-asset-nesting/</loc>
-<lastmod>2024-02-18T15:17:19+01:00</lastmod>
+<lastmod>2025-04-01T18:51:07+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/37/edvard-alexander-rolvaag-E75ZuAIpCzo-unsplash.jpg</image:loc>
 <image:title><![CDATA[Stacked pebbles]]></image:title>
@@ -138,7 +138,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/020-faster-data-reads/</loc>
-<lastmod>2024-03-26T17:48:42+01:00</lastmod>
+<lastmod>2025-04-01T18:50:57+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/39/julian-hochgesang-3-y9vq8uoxk-unsplash.jpg</image:loc>
 <image:title><![CDATA[highway with long exposure]]></image:title>
@@ -146,7 +146,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/021-service-better-status-and-audit/</loc>
-<lastmod>2024-05-16T14:10:43+02:00</lastmod>
+<lastmod>2025-04-01T18:50:48+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/40/berkeley-communications-WEDDt-u3q3o-unsplash.jpg</image:loc>
 <image:title><![CDATA[Man using phone]]></image:title>
@@ -178,7 +178,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/023-data-insights-and-white-labelling/</loc>
-<lastmod>2024-09-18T15:17:42+02:00</lastmod>
+<lastmod>2025-04-01T18:50:37+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/43/histogram-visualisation-2.png</image:loc>
 <image:title><![CDATA[Distribution of power values in EV charging over time]]></image:title>
@@ -202,7 +202,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/024-more-expressive-congestion-modeling-data-dashboards/</loc>
-<lastmod>2025-03-22T21:52:49+01:00</lastmod>
+<lastmod>2025-04-01T18:50:24+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png</image:loc>
 <image:title><![CDATA[Distribution of power values in EV charging over time]]></image:title>
@@ -539,7 +539,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/v025-flex-context-fully-editable-nicer-status-page/</loc>
-<lastmod>2025-04-01T18:48:48+02:00</lastmod>
+<lastmod>2025-04-01T18:49:19+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/48/flex-context-editing-field.png</image:loc>
 <image:title><![CDATA[Setting a value for site power capacity in the new flex-context editing dialogue]]></image:title>
