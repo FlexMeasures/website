@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-04-01T18:50:57+02:00</updated>
+    <updated>2025-05-25T19:01:18+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -351,7 +351,7 @@
         <media:content url="https://flexmeasures.io/media/posts/42/lfesummit24-black.svg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2024-09-09T00:02:08+02:00</updated>
+        <updated>2025-05-25T19:01:18+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/42/lfesummit24-black.svg" alt="Logo of the LF Energy Summit 2024" />
@@ -362,7 +362,7 @@
             <![CDATA[
                     <p><img src="https://flexmeasures.io/media/posts/42/lfesummit24-black.svg" class="type:primaryImage" alt="Logo of the LF Energy Summit 2024" /></p>
                 <p>The <a href="https://events.linuxfoundation.org/lfenergysummit/" target="_blank" rel="noopener noreferrer">LF Energy Summit 2024</a> was a great event, with lots of good ideas, demos and socializing between energy &amp; open source enthusiasts. Yes, the socializing happened with Belgian beer :)</p>
-<p>We also gave a 45-minute demo about FlexMeasures. I believe we have seldom gotten so into depth in a public session. Usually, like in Sterring Committee oeetings or other public settings, we only take a few minutes to outline what FlexMeasures is and what features it has. And we got a lot of interesting questions back, thank you everyone for the great disucssion, which lasted another 20 minutes or so. </p>
+<p>We also gave a 45-minute demo about FlexMeasures. I believe we have seldom gotten so into depth in a public session. Usually, like in Steering Committee meetings or other public settings, we only take a few minutes to outline what FlexMeasures is and what features it has. And we got a lot of interesting questions back, thank you everyone for the great discussion, which lasted another 20 minutes or so. </p>
 <p>Sadly, there is no video, but here are the slides:</p>
 <div class="gallery-wrapper gallery-wrapper--full"><div class="gallery"  data-is-empty="false" data-translation="Add images" data-columns="3">
 <figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img0.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img0-thumbnail.png" alt="" width="640" height="360"></a></figure>
