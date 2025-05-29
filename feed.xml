@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-05-25T19:01:18+02:00</updated>
+    <updated>2025-05-29T14:17:39+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -232,7 +232,7 @@
         <media:content url="https://flexmeasures.io/media/posts/44/Screenshot-from-2024-11-29-12-14-17.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2024-12-19T16:22:44+01:00</updated>
+        <updated>2025-05-29T14:17:39+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/44/Screenshot-from-2024-11-29-12-14-17.png" alt="Reflex Dashboard" />
@@ -246,7 +246,7 @@
 <p>In short, it is a dynamic programming approach, which sets a goal to flexibly divert a fleet of assets from its aggregated consumption and then asks all assets to add contributions to this goal until it is reached. This is a different approach to <a href="https://flexmeasures.readthedocs.io/en/latest/concepts/device_scheduler.html">the existing storage scheduler in FlexMeasures</a>, which does a good job on a site-level with economic optimization.</p>
 <p>In the R&amp;D project (called "KIFLIN") we will work on the seamless integration of that algorithm into FlexMeasures' existing strengths - namely giving software developers a robust tool to build energy services. The way APIs and UIs work should be the same, no matter which of the schedulers you choose to use.</p>
 <p><span class="break-words
-          tvm-parent-container"><span dir="ltr">Nicolas spoke about this collaboration at the <a href="https://events.linuxfoundation.org/lfenergysummit/">LF Energy summit in Brussels</a> recently (5 Sep). This project is special for several reasons:<br><br>- it can be seen as a win-win between past and future R&amp;D projects, by transferring knowledge into a more re-usable form. FlexMeasures gets an algorithm donated which was developed by <a href="http://www.tno.nl" target="_blank" rel="noopener noreferrer">TNO</a> - this is the aspect highlighted in the lightning talk below (~10 minutes)<br>- it will progress <a href="https://s2standard.org/">S2</a> standard implementation in FlexMeasures and also a heat pump ORM (Itho Daalderop) is on board - S2 is an exciting open standard for assets and EMS to exchange information on what is possible w.r.t. energy flexibility. <br>- FlexMeasures will get (even nicer) tutorials for other organizations to get started with using it as HEMS</span></span></p>
+          tvm-parent-container"><span dir="ltr">Nicolas spoke about this collaboration at the <a href="https://events.linuxfoundation.org/lfenergysummit/">LF Energy summit in Brussels</a> recently (5 Sep). This project is special for several reasons:<br><br>- it can be seen as a win-win between past and future R&amp;D projects, by transferring knowledge into a more re-usable form. FlexMeasures gets an algorithm donated which was developed by <a href="http://www.tno.nl" target="_blank" rel="noopener noreferrer">TNO</a> - this is the aspect highlighted in the lightning talk below (~10 minutes)<br>- it will progress <a href="https://s2standard.org/">S2</a> standard implementation in FlexMeasures and also a heat pump OEM (Itho Daalderop) is on board - S2 is an exciting open standard for assets and EMS to exchange information on what is possible w.r.t. energy flexibility. <br>- FlexMeasures will get (even nicer) tutorials for other organizations to get started with using it as HEMS</span></span></p>
 <figure class="post__video"><iframe loading="lazy" width="560" height="314" src="https://www.youtube.com/embed/nyvg6rSnZHI" allowfullscreen="allowfullscreen" data-mce-fragment="1"></iframe></figure>
 <p><span class="break-words
           tvm-parent-container"><span dir="ltr"><br><br>Looking forward to working on this! 🥸 🎉 KIFLIN is an R&amp;D project funded by TKI Urban Energy. It was also mentioned last week at FlexCon2024 by <a href="https://www.linkedin.com/in/mente-konsman-b0a1711/" id="ember37" class="ember-view">Mente Konsman</a> and <a href="https://www.linkedin.com/in/wilco-wijbrandi-3994ab4b/" id="ember38" class="ember-view">Wilco Wijbrandi</a> ("Unlocking flexibility from heat pumps with S2 in practice").</span></span></p>
