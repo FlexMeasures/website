@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-06-04T00:08:30+02:00</updated>
+    <updated>2025-06-04T00:27:00+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -19,7 +19,7 @@
         <media:content url="https://flexmeasures.io/media/posts/49/Screenshot-from-2025-06-03-23-06-33.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2025-06-04T00:08:30+02:00</updated>
+        <updated>2025-06-04T00:27:00+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/49/Screenshot-from-2025-06-03-23-06-33.png" alt="Our dashboard with " />
@@ -32,7 +32,7 @@
                 <div class="post__inner post__entry">
 <p>Version v0.26 of FlexMeasures makes the scheduler more flexible for edge situations (in which the target might be just out of reach, or not all targets can be satisfied). This is an important step in scheduling that behaves according to the priorities of each site.</p>
 <p>Also, the UI for showing assets got an important update - we split the overloaded asset page into several pages. This improves browsing and loading times.</p>
-<p><a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-26-0-june-03-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements (50 PRs!).</p>
+<p><a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-26-0-june-03-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements (49 PRs!).</p>
 <p>Let's dive int the two main features!</p>
 </div>
 <div class="post__inner post__entry">
