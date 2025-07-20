@@ -3,12 +3,94 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-06-04T00:27:00+02:00</updated>
+    <updated>2025-07-20T17:41:54+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>v0.27: multi-asset scheduling &amp; 2FA</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/v027-multi-asset-and-2fa/"/>
+        <id>https://flexmeasures.io/v027-multi-asset-and-2fa/</id>
+        <media:content url="https://flexmeasures.io/media/posts/50/Screenshot-from-2025-07-14-18-03-02.png" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2025-07-20T17:41:54+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/50/Screenshot-from-2025-07-14-18-03-02.png" alt="Snippet from the 2FA form" />
+                    Version v0.27 of FlexMeasures brings a long-overdue feature: ability to schedule multiple flexible assets in one go 👯. Also, a major step towards modern cyber-security 🔐 standards: two-factor authentication. And&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/50/Screenshot-from-2025-07-14-18-03-02.png" class="type:primaryImage" alt="Snippet from the 2FA form" /></p>
+                <div class="post__inner post__entry">
+<p>Version v0.27 of FlexMeasures brings a long-overdue feature: ability to schedule multiple flexible assets in one go 👯. Also, a major step towards modern cyber-security 🔐 standards: two-factor authentication.</p>
+<p>And there is even more: upload data per file, edit users, ...</p>
+<p><a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-27-0-july-16-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements (&gt;40 PRs!).</p>
+<p>Let's dive int the two main features!</p>
+</div>
+<div class="post__inner post__entry">
+<h2>Multi-asset scheduling</h2>
+<p>Until now, you can tell FlexMeasures to find an optimal schedule for a device (e.g. a battery). We already have used FlexMeasures to schedule sites with more than one flexible device (e.g. also EVs), but with one caveat: we scheduled one flexible device after the other (sequentially - we'll add a short explanation below).</p>
+<p>Anyway, we were lacking an endpoint to run one simultaneuous optimization for a combined schedule, and after several preparation steps and testing in the last few months, we added <a href="https://flexmeasures.readthedocs.io/latest/api/v3_0.html#post--api-v3_0-assets-(id)-schedules-trigger">this one</a>:</p>
+<p><code><span class="sig-name descname"><span class="pre">POST</span> </span><span class="sig-name descname"><span class="pre">/api/v3_0/assets/</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">id</span></em><span class="sig-paren">)</span><span class="sig-name descname"><span class="pre">/schedules/trigger</span></span></code></p>
+<p>"Trigger FlexMeasures to create a schedule for a collection of flexible and inflexible devices."</p>
+<p>Of course, we stay true to the ambition that each device can be steered so that the schedule fits its unique constraints, and thus telling FlexMeasures about the flex-models can look like this:</p>
+<pre id="codecell6"><span class="p">{</span>
+    <span class="nt">"start"</span><span class="p">:</span> <span class="s2">"2015-06-02T10:00:00+00:00"</span><span class="p">,</span>
+    <span class="nt">"flex-model"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">"sensor"</span><span class="p">:</span> <span class="mi">931</span><span class="p">,</span>
+            <span class="nt">"soc-at-start"</span><span class="p">:</span> <span class="mf">12.1</span><span class="p">,</span>
+            <span class="nt">"soc-unit"</span><span class="p">:</span> <span class="s2">"kWh"</span><span class="p">,</span>
+            <span class="nt">"power-capacity"</span><span class="p">:</span> <span class="s2">"25kW"</span><span class="p">,</span>
+            <span class="nt">"consumption-capacity"</span> <span class="p">:</span> <span class="p">{</span><span class="nt">"sensor"</span><span class="p">:</span> <span class="mi">42</span><span class="p">},</span>
+            <span class="nt">"production-capacity"</span> <span class="p">:</span> <span class="s2">"30 kW"</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">"sensor"</span><span class="p">:</span> <span class="mi">932</span><span class="p">,</span>
+            <span class="nt">"consumption-capacity"</span><span class="p">:</span> <span class="s2">"0 kW"</span><span class="p">,</span>
+            <span class="nt">"production-capacity"</span><span class="p">:</span> <span class="p">{</span><span class="nt">"sensor"</span><span class="p">:</span> <span class="mi">760</span><span class="p">},</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">"flex-context"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">"consumption-price-sensor"</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+        <span class="nt">"production-price-sensor"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="nt">"inflexible-device-sensors"</span><span class="p">:</span> <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
+        <span class="nt">"site-power-capacity"</span><span class="p">:</span> <span class="s2">"100kW"</span><span class="p">,</span>
+        <span class="nt">"site-production-capacity"</span><span class="p">:</span> <span class="s2">"80kW"</span><span class="p">,</span>
+        <span class="nt">"site-consumption-capacity"</span><span class="p">:</span> <span class="p">{</span><span class="nt">"sensor"</span><span class="p">:</span> <span class="mi">32</span><span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></pre>
+<p>This is for two devices (see the endpoint docs for more explanation of this example). For more flexible devices, the body becomes longer.  Luckily, we are also working on letting you specify all flex-model fields on the asset data models (for flex-context, that already is the case). </p>
+<p>We are really happy that this finally is in place. This work was done in Pull Request <a href="https://github.com/FlexMeasures/flexmeasures/pull/1065" target="_blank" rel="noopener noreferrer">1065</a> , but actually you'll find preparation steps going back more than 6 months. </p>
+<p>Now, how does "sequential" scheduling work? After each device we scheduled, we were adding the already scheduled ones to the list of inflexible devices, so the next schedule would take them into account. This approach might scale better with a large number of devices, but we found that the new simultaneous approach also works well with ~100 devices. However, it is still an interesting approach, so the new endpoint offers it, as well (just pass<code class="docutils literal notranslate"><span class="pre">sequential=true</span></code>).</p>
+<h2>Two-factor authentication</h2>
+<p>Cyber-security is more and more crucial when running a serious service - and that is what we aim FlexMeasures to be.</p>
+<p>That means we had to increase the level of security. A lot of that happens in anybody's cloud environment, but FlexMeasures itself needs to also be hardened. </p>
+<p>So version 0.27 adds Two-factor Authentication, the mechanism where only one factor (your password) is not enough to log into the service. In this first implementation, users need a separate token, as well, which is sent to their email address. We can expand this to support QR codes (for security apps) or SMS.</p>
+<figure ><figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/50/Screenshot-from-2025-07-20-17-40-40.png" alt="Second login step if 2FA is enabled - form for the 2nd factor code" width="500" height="528" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-20-17-40-40-xs.png 300w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-20-17-40-40-sm.png 480w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-20-17-40-40-md.png 768w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-20-17-40-40-lg.png 1024w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-20-17-40-40-xl.png 1360w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-20-17-40-40-2xl.png 1600w"></figure>
+<figcaption >Second login step if 2FA is enabled - form for the 2nd factor code</figcaption>
+</figure>
+<p> </p>
+<p>TFA is off by default, so anyone hosting FlexMeasures should <a href="https://flexmeasures.readthedocs.io/latest/host/installation.html#two-factor-authentication">consider turning it on</a>.</p>
+<p>This work was done in Pull Requests <a href="https://github.com/FlexMeasures/flexmeasures/pull/1555" target="_blank" rel="noopener noreferrer">1555</a>,<a href="https://github.com/FlexMeasures/flexmeasures/pull/1562" target="_blank" rel="noopener noreferrer"> 1562</a> and<a href="https://github.com/FlexMeasures/flexmeasures/pull/1564" target="_blank" rel="noopener noreferrer"> 1564</a>.</p>
+<p>A final note on security in FlexMeasures: we take this seriously on a few fronts: We are upgrading our dependencies with every minor version, we use GitHub's Dependabot and are now starting to scan its code regularly for any potential issues.</p>
+<h2>Upload data</h2>
+<p>To get any data into FlexMeasures, you needed to use the API or CLI. Now there is another way: Sometimes, all you need is to get data from a file into the platform (e.g. to add history for forecasting, or tomorrow's prices). And this is possible now:</p>
+<h2><figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/50/Screenshot-from-2025-07-14-17-57-04.png" alt="Upload form on the sensor page" width="336" height="385" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-14-17-57-04-xs.png 300w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-14-17-57-04-sm.png 480w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-14-17-57-04-md.png 768w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-14-17-57-04-lg.png 1024w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-14-17-57-04-xl.png 1360w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-14-17-57-04-2xl.png 1600w"></figure>User editing</h2>
+<p>User editing was possible via the API, but the UI was missing. We finally got around to do this. Now you can even add/remove roles:</p>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/50/Screenshot-from-2025-07-14-15-56-17.png" alt="Editing a user in the UI" width="650" height="516" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-14-15-56-17-xs.png 300w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-14-15-56-17-sm.png 480w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-14-15-56-17-md.png 768w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-14-15-56-17-lg.png 1024w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-14-15-56-17-xl.png 1360w ,https://flexmeasures.io/media/posts/50/responsive/Screenshot-from-2025-07-14-15-56-17-2xl.png 1600w"></figure>
+</div>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v0.26: relaxed scheduling, cleaner asset pages</title>
         <author>
@@ -19,7 +101,7 @@
         <media:content url="https://flexmeasures.io/media/posts/49/Screenshot-from-2025-06-03-23-06-33.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2025-06-04T00:27:00+02:00</updated>
+        <updated>2025-07-14T17:25:09+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/49/Screenshot-from-2025-06-03-23-06-33.png" alt="Our dashboard with " />
@@ -37,7 +119,7 @@
 </div>
 <div class="post__inner post__entry">
 <h2>Relaxed scheduling</h2>
-<p>You can tell FlexMeasures to find an optimal schedule within a list of contraints (e.g. grid constraints, minimum fill level of EV batteries etc.). Sometimes the perfect solution does not exist. FlexMeasures should still present a schedule that is the best it can do. But which goal/constraint is most important? We are working on letting the user decide.</p>
+<p>You can tell FlexMeasures to find an optimal schedule within a list of constraints (e.g. grid constraints, minimum fill level of EV batteries etc.). Sometimes the perfect solution does not exist. FlexMeasures should still present a schedule that is the best it can do. But which goal/constraint is most important? We are working on letting the user decide.</p>
 <p>Let us consider a simple example: In the V2G Liberty project (which uses FlexMeasures as a scheduling backend), the user can give a minimal charge level, for when they plan longer trips. FlexMeasure should attempt to reach this target, but sometimes the user might have given FlexMeasures too little time to accomplish that.</p>
 <p>Here is a visualization:</p>
 <figure ><figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/49/V2GLiberty-Screenshot.png" alt="" width="700" height="549" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/49/responsive/V2GLiberty-Screenshot-xs.png 300w ,https://flexmeasures.io/media/posts/49/responsive/V2GLiberty-Screenshot-sm.png 480w ,https://flexmeasures.io/media/posts/49/responsive/V2GLiberty-Screenshot-md.png 768w ,https://flexmeasures.io/media/posts/49/responsive/V2GLiberty-Screenshot-lg.png 1024w ,https://flexmeasures.io/media/posts/49/responsive/V2GLiberty-Screenshot-xl.png 1360w ,https://flexmeasures.io/media/posts/49/responsive/V2GLiberty-Screenshot-2xl.png 1600w"></figure>
@@ -535,58 +617,6 @@
 <li><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/brownlenox/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/brownlenox">@brownlenox</a> made their first contribution in <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2287669623" data-permission-text="Title is private" data-url="https://github.com/FlexMeasures/flexmeasures/issues/1058" data-hovercard-type="pull_request" data-hovercard-url="/FlexMeasures/flexmeasures/pull/1058/hovercard" href="https://github.com/FlexMeasures/flexmeasures/pull/1058">#1058</a></li>
 <li><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/BelhsanHmida/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/BelhsanHmida">@BelhsanHmida</a> made their first contribution in <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2359256218" data-permission-text="Title is private" data-url="https://github.com/FlexMeasures/flexmeasures/issues/1099" data-hovercard-type="pull_request" data-hovercard-url="/FlexMeasures/flexmeasures/pull/1099/hovercard" href="https://github.com/FlexMeasures/flexmeasures/pull/1099">#1099</a></li>
 </ul>
-<p> </p>
-<p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.21: Service better with status page&amp; audit log</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/021-service-better-status-and-audit/"/>
-        <id>https://flexmeasures.io/021-service-better-status-and-audit/</id>
-        <media:content url="https://flexmeasures.io/media/posts/40/berkeley-communications-WEDDt-u3q3o-unsplash.jpg" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2025-04-01T18:50:48+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/40/berkeley-communications-WEDDt-u3q3o-unsplash.jpg" alt="Man using phone" />
-                    Version v0.21 of FlexMeasures adds business value which comes through happy customers. Why does this matter? An app which deals with real-time complexities like energy optimization needs to an excellent&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/40/berkeley-communications-WEDDt-u3q3o-unsplash.jpg" class="type:primaryImage" alt="Man using phone" /></p>
-                <div class="post__inner post__entry">
-<p>Version v0.21 of FlexMeasures adds business value which comes through happy customers. Why does this matter? An app which deals with real-time complexities like energy optimization needs to an excellent help desk ― next to getting optimal scheduling right, it's crucial to find out quickly why something is not going according to expectations.</p>
-<p>Imagine the customer on the phone with your service or technical staff. How to start investigating where it went wrong?</p>
-<p>To help with this situation, version v0.21 of FlexMeasures brings two major features that can help you provide better support for your customers ― a status page for assets and an audit log for accounts &amp; users.</p>
-<p>Other than that, there are some smaller improvements, notably to link to specific date ranges on the asset page. <a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-21-0-may-16-2024" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list (link will work on May 16, day of release). </p>
-</div>
-<div class="post__inner post__entry">
-<h2>Status page</h2>
-<p>A site which is being optimized with FlexMeasures usually has a few assets (some flexible, some not) from which recent data is required. This data sometimes comes from different sources, e.g. sent through the API by the monitoring partner, and gotten through a third-party API. We need to be able to see if all of this data is coming in correctly. If not, scheduling will probably fail due to missing data.</p>
-<p>We created a status page which lets you see if the necessary data connectivity is given. Also, we show the recent forecasting jobs and whether they succeeded or failed.</p>
-<figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/40/status-page.png" alt="" width="750" height="390" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/40/responsive/status-page-xs.png 300w ,https://flexmeasures.io/media/posts/40/responsive/status-page-sm.png 480w ,https://flexmeasures.io/media/posts/40/responsive/status-page-md.png 768w ,https://flexmeasures.io/media/posts/40/responsive/status-page-lg.png 1024w ,https://flexmeasures.io/media/posts/40/responsive/status-page-xl.png 1360w ,https://flexmeasures.io/media/posts/40/responsive/status-page-2xl.png 1600w"></figure>
-</div>
-<div> </div>
-<div class="post__inner post__entry">This work happened in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/941" target="_blank" rel="noopener noreferrer">941</a> <span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/996" target="_blank" rel="noopener noreferrer"></a><a href="http://www.github.com/flexmeasures/flexmeasures/pull/1035" target="_blank" rel="noopener noreferrer">1035</a>.</span><br>
-<p>We are still improving the status page. It will become <a href="https://github.com/SeitaBV/timely-beliefs/pull/179" target="_blank" rel="noopener noreferrer">faster</a> in the next version, and we might add even more information. </p>
-<h2>Audit log</h2>
-<p>Next to the raw data and scheduling, an important part of the user experience are accounts. Has a user been created correctly, or set to being inactive, or has a password been rest? And who did that?</p>
-<p>Answering such questions can be an important building block in providing good service without big hassle.</p>
-<figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/40/audit-log.png" alt="" width="750" height="236" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/40/responsive/audit-log-xs.png 300w ,https://flexmeasures.io/media/posts/40/responsive/audit-log-sm.png 480w ,https://flexmeasures.io/media/posts/40/responsive/audit-log-md.png 768w ,https://flexmeasures.io/media/posts/40/responsive/audit-log-lg.png 1024w ,https://flexmeasures.io/media/posts/40/responsive/audit-log-xl.png 1360w ,https://flexmeasures.io/media/posts/40/responsive/audit-log-2xl.png 1600w"></figure>
-<p>We will also soon extend the audit log for other important events, like important changes on the asset attributes (which would also influence how scheduling goes) or additions of new assets.</p>
-<p>You can of course also make use of the audit log in your own plugin logic. Put in here what is important to you and your help desk.</p>
-<p>See Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1042" target="_blank" rel="noopener noreferrer">1042</a>.</p>
-<h2>Linking to a custom time range of data</h2>
-<p>It is also useful to point someone to a specific point in the data. "This specific Saturday shows scheduling behavior that seems off to me". </p>
-<p>We now support linking to the asset page (where a dashboard shows data) with the date range contained in the URL. The date range picker adds start and end date to the URL. You can also click a link symbol beneath the dashboard to copy the URL to your clipboard.</p>
-<br>See Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1030" target="_blank" rel="noopener noreferrer">1030</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);"> and <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1046" target="_blank" rel="noopener noreferrer">1046</a>.</span></div>
-<p> </p>
 <p> </p>
 <p> </p>
             ]]>
