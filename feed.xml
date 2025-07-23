@@ -3,12 +3,40 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-07-20T17:41:54+02:00</updated>
+    <updated>2025-07-23T23:43:22+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>Video: Inspecting sensor data in FlexMeasures</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/video-inspecting-sensor-data/"/>
+        <id>https://flexmeasures.io/video-inspecting-sensor-data/</id>
+        <media:content url="https://flexmeasures.io/media/posts/51/Screenshot-from-2025-07-23-22-13-32.png" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2025-07-23T23:43:22+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/51/Screenshot-from-2025-07-23-22-13-32.png" alt="Vlad presenting at FOSDEM 2025" />
+                    You cannot do excellent energy optimization without understanding the data you work with. We have developed a lot of features recently, so that you can inspect your data ― with&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/51/Screenshot-from-2025-07-23-22-13-32.png" class="type:primaryImage" alt="Vlad presenting at FOSDEM 2025" /></p>
+                <p>You cannot do excellent energy optimization without understanding the data you work with. </p>
+<p>We have developed a lot of features recently, so that you can inspect your data ― with basic stats, the Playback feature, bar charts &amp;heat maps and even manual data upload!</p>
+<p>In this 2.5 minute video, we walk you through all of it.</p>
+<figure class="post__video"><iframe loading="lazy" width="688" height="330" src="https://player.vimeo.com/video/1103226505?title=0&amp;amp;byline=0" allowfullscreen="allowfullscreen" data-mce-fragment="1"></iframe></figure>
+<p>If you have questions about sensor data capabilities in FlexMeasures, make sure to <a href="https://flexmeasures.io/get-in-touch/">contact us</a>.</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v0.27: multi-asset scheduling &amp; 2FA</title>
         <author>
@@ -565,60 +593,6 @@
 <figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img19.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img19-thumbnail.png" alt="" width="640" height="360"></a></figure>
 </div></div>
 <p>Looking forward to next year! As always, if you have questions about FlexMeasures, do make sure to <a href="https://flexmeasures.io/get-in-touch/">contact us</a>. Usually, you will find someone happy to explain.</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.22: Editing flex context</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/022-editing-flex-context/"/>
-        <id>https://flexmeasures.io/022-editing-flex-context/</id>
-        <media:content url="https://flexmeasures.io/media/posts/41/IMG_20240627_130208-2.jpg" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2025-01-07T17:41:23+01:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/41/IMG_20240627_130208-2.jpg" alt="Editing pricing signals and inflexible devices to use" />
-                    Version v0.22 of FlexMeasures adds many smaller improvements - the most interesting being that price sensors (part of the flex-context) can now be edited in the UI. For anything else,&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/41/IMG_20240627_130208-2.jpg" class="type:primaryImage" alt="Editing pricing signals and inflexible devices to use" /></p>
-                <div class="post__inner post__entry">
-<p>Version v0.22 of FlexMeasures adds many smaller improvements - the most interesting being that price sensors (part of the flex-context) can now be edited in the UI.</p>
-<p>For anything else, <a href="https://flexmeasures.readthedocs.io/en/latest/changelog.html#v0-22-0-june-29-2024" target="_blank" rel="noopener noreferrer">see the changelog</a> for a complete list (link will work on May 16, day of release).</p>
-<p>Let's dive in!</p>
-</div>
-<div class="post__inner post__entry">
-<h2>Editing flex-context</h2>
-<p>Within FlexMeasures, the <a href="https://flexmeasures.readthedocs.io/en/latest/features/scheduling.html#the-flex-context">flex-context</a> is crucial: it tells us site-relevant parameters such as pricing and grid capacity limits.</p>
-<p>As of now, both the flex-model and the flex-context need to be supplied when <a href="https://flexmeasures.readthedocs.io/en/latest/api/v3_0.html#post--api-v3_0-sensors-(id)-schedules-trigger">triggering the computation of a new schedule</a>. The future needs to be that such configuration can be made by everyone, not just developers. Maybe installers change the <code>soc-min</code> setting for the battery. Or there is a letter from the DSO that the <code class="docutils literal notranslate"><span class="pre">site-production-capacity</span></code>for the site can now go up to 50kW. Several non-developer roles should be able to make these changes.</p>
-<p>Here, we made the first step towards this. The screenshot shows how you can select which sensors contain the pricing data that will be relevant, plus which devices the scheduler needs to take into account.</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/41/IMG_20240627_130208.jpg" alt="" width="435" height="580" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/41/responsive/IMG_20240627_130208-xs.jpg 300w ,https://flexmeasures.io/media/posts/41/responsive/IMG_20240627_130208-sm.jpg 480w ,https://flexmeasures.io/media/posts/41/responsive/IMG_20240627_130208-md.jpg 768w ,https://flexmeasures.io/media/posts/41/responsive/IMG_20240627_130208-lg.jpg 1024w ,https://flexmeasures.io/media/posts/41/responsive/IMG_20240627_130208-xl.jpg 1360w ,https://flexmeasures.io/media/posts/41/responsive/IMG_20240627_130208-2xl.jpg 1600w"> </figure>
-</div>
-<div> </div>
-<div class="post__inner post__entry">This work happened in Pull Requests <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1059" target="_blank" rel="noopener noreferrer">1059</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span>
-<h2>Boostrap 3 -&gt; 5</h2>
-<p><a href="https://getbootstrap.com/">Bootstrap</a> is our styling and layout library. When we started working on FlexMeasures a few years ago, version 3 was the latest. Now, it has version 5, which looks a little more slick but also has some newer features. It was time to make this move. Which sounds boring, but this is where we believe we can show actual dedication to long-time support. </p>
-<p>See Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1058" target="_blank" rel="noopener noreferrer">1058</a>, plus some follow-up PRs for fixes.</p>
-<h2>Asset audit log</h2>
-<p>In version 0.21 we introduced audit logs for users and accounts, so servicing them gets more support (e.g. to track when somebody reset a password). We also added audit log support to assets. This will for instance track when changes were made to an asset.</p>
-<p>This can be handy for instance in combination with flex-context changes like discussed above.</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/41/screenshot-auditlog.PNG" alt="" width="600" height="161" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/41/responsive/screenshot-auditlog-xs.PNG 300w ,https://flexmeasures.io/media/posts/41/responsive/screenshot-auditlog-sm.PNG 480w ,https://flexmeasures.io/media/posts/41/responsive/screenshot-auditlog-md.PNG 768w ,https://flexmeasures.io/media/posts/41/responsive/screenshot-auditlog-lg.PNG 1024w ,https://flexmeasures.io/media/posts/41/responsive/screenshot-auditlog-xl.PNG 1360w ,https://flexmeasures.io/media/posts/41/responsive/screenshot-auditlog-2xl.PNG 1600w"></figure>
-<br>See Pull Request <a href="http://www.github.com/flexmeasures/flexmeasures/pull/1072" target="_blank" rel="noopener noreferrer">1072</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></div>
-<h2>Three new contributors</h2>
-<p>This release has a record number of first-time contributors :)</p>
-<ul>
-<li><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/rhpijnacker/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/rhpijnacker">@rhpijnacker</a> made their first contribution in <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2283970990" data-permission-text="Title is private" data-url="https://github.com/FlexMeasures/flexmeasures/issues/1057" data-hovercard-type="pull_request" data-hovercard-url="/FlexMeasures/flexmeasures/pull/1057/hovercard" href="https://github.com/FlexMeasures/flexmeasures/pull/1057">#1057</a></li>
-<li><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/brownlenox/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/brownlenox">@brownlenox</a> made their first contribution in <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2287669623" data-permission-text="Title is private" data-url="https://github.com/FlexMeasures/flexmeasures/issues/1058" data-hovercard-type="pull_request" data-hovercard-url="/FlexMeasures/flexmeasures/pull/1058/hovercard" href="https://github.com/FlexMeasures/flexmeasures/pull/1058">#1058</a></li>
-<li><a class="user-mention notranslate" data-hovercard-type="user" data-hovercard-url="/users/BelhsanHmida/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/BelhsanHmida">@BelhsanHmida</a> made their first contribution in <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="2359256218" data-permission-text="Title is private" data-url="https://github.com/FlexMeasures/flexmeasures/issues/1099" data-hovercard-type="pull_request" data-hovercard-url="/FlexMeasures/flexmeasures/pull/1099/hovercard" href="https://github.com/FlexMeasures/flexmeasures/pull/1099">#1099</a></li>
-</ul>
-<p> </p>
-<p> </p>
             ]]>
         </content>
     </entry>
