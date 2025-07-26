@@ -14,7 +14,7 @@
             "url": "https://flexmeasures.io/video-inspecting-sensor-data/",
             "title": "Video: Inspecting sensor data in FlexMeasures",
             "summary": "You cannot do excellent energy optimization without understanding the data you work with. We have developed a lot of features recently, so that you can inspect your data ― with&hellip;",
-            "content_html": "<p>You cannot do excellent energy optimization without understanding the data you work with. </p>\n<p>We have developed a lot of features recently, so that you can inspect your data ― with basic stats, the Playback feature, bar charts &amp;heat maps and even manual data upload!</p>\n<p>In this 2.5 minute video, we walk you through all of it.</p>\n<figure class=\"post__video\"><iframe loading=\"lazy\" width=\"688\" height=\"330\" src=\"https://player.vimeo.com/video/1103226505?title=0&amp;amp;byline=0\" allowfullscreen=\"allowfullscreen\" data-mce-fragment=\"1\"></iframe></figure>\n<p>If you have questions about sensor data capabilities in FlexMeasures, make sure to <a href=\"https://flexmeasures.io/get-in-touch/\">contact us</a>.</p>",
+            "content_html": "<p>You cannot do excellent energy optimization without understanding the data you work with. </p>\n<p>We have developed a lot of features recently, so that you can inspect your data ― with basic stats, the Playback feature, bar charts &amp; heat maps and even manual data upload!</p>\n<p>In this 3-minute video, we walk you through all of it.</p>\n<figure class=\"post__video\">\n<div style=\"padding: 56.25% 0 0 0; position: relative;\"><iframe loading=\"lazy\" width=\"688\" height=\"330\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%;\" src=\"https://player.vimeo.com/video/1104764816?h=44252a2999&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" title=\"Seita: Sensor data inspection in FlexMeasures\" data-mce-fragment=\"1\"></iframe></div>\n<script src=\"https://player.vimeo.com/api/player.js\"></script>\n</figure>\n<p>If you have questions about sensor data capabilities in FlexMeasures, make sure to <a href=\"https://flexmeasures.io/get-in-touch/\">contact us</a>.</p>",
             "image": "https://flexmeasures.io/media/posts/51/Screenshot-from-2025-07-23-22-13-32.png",
             "author": {
                 "name": "SeitaBV"
@@ -23,7 +23,7 @@
                    "FlexMeasures Blog"
             ],
             "date_published": "2025-07-23T22:15:19+02:00",
-            "date_modified": "2025-07-23T23:43:22+02:00"
+            "date_modified": "2025-07-26T18:53:11+02:00"
         },
         {
             "id": "https://flexmeasures.io/v027-multi-asset-and-2fa/",
