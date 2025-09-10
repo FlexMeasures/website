@@ -3,12 +3,54 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-07-26T18:53:11+02:00</updated>
+    <updated>2025-09-10T23:36:45+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>v0.28: Daily KPIs, faster graphs</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/v028-daily-kpis/"/>
+        <id>https://flexmeasures.io/v028-daily-kpis/</id>
+        <media:content url="https://flexmeasures.io/media/posts/52/KPI-preview.png" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2025-09-10T23:36:45+02:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/52/KPI-preview.png" alt="a KPI widget" />
+                    Version v0.28 of FlexMeasures brings the ability to show daily KPIs above the graphs. Also, we improved the performance of viewing graphs. Plus, a lot of small tweaks have happened!&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/52/KPI-preview.png" class="type:primaryImage" alt="a KPI widget" /></p>
+                <div class="post__inner post__entry">
+<p>Version v0.28 of FlexMeasures brings the ability to show daily KPIs above the graphs. Also, we improved the performance of viewing graphs.</p>
+<p>Plus, a lot of small tweaks have happened!</p>
+<p><a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-28-0-september-10-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements.</p>
+</div>
+<div class="post__inner post__entry">
+<h2>Daily KPIs</h2>
+<p>Until now, FlexMeasures would only let you see graphs data. We do have a reporting engine, but you have to know it is there (one tutorial does help you use it) and showing that data is your own job.</p>
+<p>Now, we make the first step for such data to step into the light - daily KPIs (e.g. daily energy costs) can be shown above the graphs:</p>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/52/KPIs-full.png" alt="KPIs shown on top of graphs" width="800" height="429" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/52/responsive/KPIs-full-xs.png 300w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-sm.png 480w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-md.png 768w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-lg.png 1024w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-xl.png 1360w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-2xl.png 1600w"></figure>
+<p>This is the way to configure such KPI widgets at the moment:</p>
+<p><code>[</code><br><code>    {"title": "My KPI", "sensor": 2, "function": "sum"},</code><br><code>    {"title": "Raw Power KPI", "sensor": 3, "function": "sum"}</code><br><code>]</code></p>
+<p>The function setting can be either "sum", "mean", "max" or "min". We are working on a graphical way to set these soon.</p>
+<p>This work was done in Pull Request <a href="https://github.com/FlexMeasures/flexmeasures/pull/1608" target="_blank" rel="noopener noreferrer">1608</a>,  <a href="https://github.com/FlexMeasures/flexmeasures/pull/1656" target="_blank" rel="noopener noreferrer">1656</a> , <a href="https://github.com/FlexMeasures/flexmeasures/pull/1633" target="_blank" rel="noopener noreferrer">1633</a> and <a href="https://github.com/FlexMeasures/flexmeasures/pull/1634" target="_blank" rel="noopener noreferrer">1634</a></p>
+<h2>Faster graphs page</h2>
+<p>The graphs page is very important to check in on a site, especially if it is new. It had some UX problems, which we fixed in JavaScript, as well as some data processing problems in the backend when loading graph data, which we fixed there.</p>
+<p>As a result. waiting for data to load should be taking less time, and larger data set can be viewed.</p>
+<p>This work was done in Pull Requests <a href="https://github.com/FlexMeasures/flexmeasures/pull/1641" target="_blank" rel="noopener noreferrer">1641</a>,<a href="https://github.com/FlexMeasures/flexmeasures/pull/1645" target="_blank" rel="noopener noreferrer"> 1645</a> and<a href="https://github.com/FlexMeasures/flexmeasures/pull/1596" target="_blank" rel="noopener noreferrer"> 1596</a>.</p>
+</div>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Video: Inspecting sensor data in FlexMeasures</title>
         <author>
@@ -547,55 +589,6 @@
 <p>The graphs on the asset page are the go-to place for watching schedules next to the underlying data. Basically, there we find the data dashboard in FlexMeasures. <a href="https://flexmeasures.readthedocs.io/en/latest/views/asset-data.html#the-asset-page-as-data-dashboard" target="_blank" rel="noopener noreferrer">The sensor_to_show attribute</a> which directs the setup of this dashbaord became more powerful. </p>
 <figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/43/Screenshot-from-2024-09-17-17-11-47.png" alt="" width="850" height="540" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/43/responsive/Screenshot-from-2024-09-17-17-11-47-xs.png 300w ,https://flexmeasures.io/media/posts/43/responsive/Screenshot-from-2024-09-17-17-11-47-sm.png 480w ,https://flexmeasures.io/media/posts/43/responsive/Screenshot-from-2024-09-17-17-11-47-md.png 768w ,https://flexmeasures.io/media/posts/43/responsive/Screenshot-from-2024-09-17-17-11-47-lg.png 1024w ,https://flexmeasures.io/media/posts/43/responsive/Screenshot-from-2024-09-17-17-11-47-xl.png 1360w ,https://flexmeasures.io/media/posts/43/responsive/Screenshot-from-2024-09-17-17-11-47-2xl.png 1600w"></figure>The image above now not only shows the plots (with one or two sensor each), but has titles for two plots, and this is the configuration for that:<br><br><code>"sensors_to_show":[</code><br><code>    {"title": "Prices", "sensors":[58, 70]},</code><br><code>    16,</code><br><code>    {"title": "Battery activity", "sensors": [5, 4]},</code><br><code>    15</code><br><code>]</code></p>
 <p>See Pull Request <a href="https://github.com/FlexMeasures/flexmeasures/issues/1125" target="_blank" rel="noopener noreferrer">1125</a>.</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>LF Energy Summit 2024: FlexMeasures Demo</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/lf-energy-summit-2024/"/>
-        <id>https://flexmeasures.io/lf-energy-summit-2024/</id>
-        <media:content url="https://flexmeasures.io/media/posts/42/lfesummit24-black.svg" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2025-05-25T19:01:18+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/42/lfesummit24-black.svg" alt="Logo of the LF Energy Summit 2024" />
-                    The LF Energy Summit 2024 was a great event, with lots of good ideas, demos and socializing between energy &amp; open source enthusiasts. Yes, the socializing happened with Belgian beer&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/42/lfesummit24-black.svg" class="type:primaryImage" alt="Logo of the LF Energy Summit 2024" /></p>
-                <p>The <a href="https://events.linuxfoundation.org/lfenergysummit/" target="_blank" rel="noopener noreferrer">LF Energy Summit 2024</a> was a great event, with lots of good ideas, demos and socializing between energy &amp; open source enthusiasts. Yes, the socializing happened with Belgian beer :)</p>
-<p>We also gave a 45-minute demo about FlexMeasures. I believe we have seldom gotten so into depth in a public session. Usually, like in Steering Committee meetings or other public settings, we only take a few minutes to outline what FlexMeasures is and what features it has. And we got a lot of interesting questions back, thank you everyone for the great discussion, which lasted another 20 minutes or so. </p>
-<p>Sadly, there is no video, but here are the slides:</p>
-<div class="gallery-wrapper gallery-wrapper--full"><div class="gallery"  data-is-empty="false" data-translation="Add images" data-columns="3">
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img0.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img0-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img1.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img1-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img2.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img2-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img3.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img3-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img4.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img4-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img5.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img5-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img6.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img6-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img7.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img7-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img8.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img8-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img9.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img9-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img10.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img10-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img11.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img11-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img12.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img12-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img13.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img13-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img14.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img14-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img15.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img15-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img16.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img16-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img17.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img17-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img18.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img18-thumbnail.png" alt="" width="640" height="360"></a></figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/42/gallery/img19.png" data-size="640x360"><img loading="lazy" src="https://flexmeasures.io/media/posts/42/gallery/img19-thumbnail.png" alt="" width="640" height="360"></a></figure>
-</div></div>
-<p>Looking forward to next year! As always, if you have questions about FlexMeasures, do make sure to <a href="https://flexmeasures.io/get-in-touch/">contact us</a>. Usually, you will find someone happy to explain.</p>
             ]]>
         </content>
     </entry>

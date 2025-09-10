@@ -462,7 +462,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/roadmap/</loc>
-<lastmod>2025-06-23T17:54:32+02:00</lastmod>
+<lastmod>2025-09-10T15:13:08+02:00</lastmod>
 </url>
 <url>
 <loc>https://flexmeasures.io/scheduling/</loc>
@@ -614,6 +614,18 @@
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/50/Screenshot-from-2025-07-14-15-56-17.png</image:loc>
 <image:title><![CDATA[Editing a user in the UI]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://flexmeasures.io/v028-daily-kpis/</loc>
+<lastmod>2025-09-10T23:36:45+02:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/52/KPI-preview.png</image:loc>
+<image:title><![CDATA[a KPI widget]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/52/KPIs-full.png</image:loc>
+<image:title><![CDATA[KPIs shown on top of graphs]]></image:title>
 </image:image>
 </url>
 <url>
