@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-09-10T23:36:45+02:00</updated>
+    <updated>2025-09-11T09:56:52+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -19,7 +19,7 @@
         <media:content url="https://flexmeasures.io/media/posts/52/KPI-preview.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2025-09-10T23:36:45+02:00</updated>
+        <updated>2025-09-11T09:56:52+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/52/KPI-preview.png" alt="a KPI widget" />
@@ -41,7 +41,7 @@
 <figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/52/KPIs-full.png" alt="KPIs shown on top of graphs" width="800" height="429" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/52/responsive/KPIs-full-xs.png 300w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-sm.png 480w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-md.png 768w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-lg.png 1024w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-xl.png 1360w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-2xl.png 1600w"></figure>
 <p>This is the way to configure such KPI widgets at the moment:</p>
 <p><code>[</code><br><code>    {"title": "My KPI", "sensor": 2, "function": "sum"},</code><br><code>    {"title": "Raw Power KPI", "sensor": 3, "function": "sum"}</code><br><code>]</code></p>
-<p>The function setting can be either "sum", "mean", "max" or "min". We are working on a graphical way to set these soon.</p>
+<p>The function setting can be either "sum", "mean", "max" or "min". We are working on a graphical way to set these soon. Until then, see <a href="https://flexmeasures.readthedocs.io/latest/views/asset-data.html#showing-daily-kpis">this documentation</a> on how to use htis feature.</p>
 <p>This work was done in Pull Request <a href="https://github.com/FlexMeasures/flexmeasures/pull/1608" target="_blank" rel="noopener noreferrer">1608</a>,  <a href="https://github.com/FlexMeasures/flexmeasures/pull/1656" target="_blank" rel="noopener noreferrer">1656</a> , <a href="https://github.com/FlexMeasures/flexmeasures/pull/1633" target="_blank" rel="noopener noreferrer">1633</a> and <a href="https://github.com/FlexMeasures/flexmeasures/pull/1634" target="_blank" rel="noopener noreferrer">1634</a></p>
 <h2>Faster graphs page</h2>
 <p>The graphs page is very important to check in on a site, especially if it is new. It had some UX problems, which we fixed in JavaScript, as well as some data processing problems in the backend when loading graph data, which we fixed there.</p>
