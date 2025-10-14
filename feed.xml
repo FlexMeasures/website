@@ -3,14 +3,14 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-10-14T21:29:43+02:00</updated>
+    <updated>2025-10-14T21:32:47+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
     <entry>
-        <title>v0.28: Flex-model &amp; SwaggerUI</title>
+        <title>v0.29: Flex-model &amp; SwaggerUI</title>
         <author>
             <name>SeitaBV</name>
         </author>
@@ -19,7 +19,7 @@
         <media:content url="https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-10-11-23-51-2.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2025-10-14T21:29:43+02:00</updated>
+        <updated>2025-10-14T21:32:47+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-10-11-23-51-2.png" alt="a KPI widget" />
