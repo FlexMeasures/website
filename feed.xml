@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-10-14T21:32:47+02:00</updated>
+    <updated>2025-10-14T21:33:52+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -19,7 +19,7 @@
         <media:content url="https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-10-11-23-51-2.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2025-10-14T21:32:47+02:00</updated>
+        <updated>2025-10-14T21:33:52+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-10-11-23-51-2.png" alt="a KPI widget" />
@@ -35,7 +35,7 @@
 </div>
 <div class="post__inner post__entry">
 <h2>Flex-model</h2>
-<p>s you might know, FlexMeasures has ways to configure flexibility in the given assets - the <a href="https://flexmeasures.readthedocs.io/latest/features/scheduling.html#describing-flexibility">flex-model and flex-context</a> . The flex-context has been configurable on the asset via a UI dialogue since version 0.25 (and not only via the API when scheduling). Now, the flex-model also is supported.<br><br>This screenshot probably says more than a thousand words:</p>
+<p>As you might know, FlexMeasures has ways to configure flexibility in the given assets - the <a href="https://flexmeasures.readthedocs.io/latest/features/scheduling.html#describing-flexibility">flex-model and flex-context</a> . The flex-context has been configurable on the asset via a UI dialogue since version 0.25 (and not only via the API when scheduling). Now, the flex-model also is supported.<br><br>This screenshot probably says more than a thousand words:</p>
 <figure class="post__image" ><img loading="lazy" src="https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-13-14-16-45.png" alt="Editing the flex-model of an asset" width="750" height="327" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/53/responsive/Screenshot-from-2025-10-13-14-16-45-xs.png 300w ,https://flexmeasures.io/media/posts/53/responsive/Screenshot-from-2025-10-13-14-16-45-sm.png 480w ,https://flexmeasures.io/media/posts/53/responsive/Screenshot-from-2025-10-13-14-16-45-md.png 768w ,https://flexmeasures.io/media/posts/53/responsive/Screenshot-from-2025-10-13-14-16-45-lg.png 1024w ,https://flexmeasures.io/media/posts/53/responsive/Screenshot-from-2025-10-13-14-16-45-xl.png 1360w ,https://flexmeasures.io/media/posts/53/responsive/Screenshot-from-2025-10-13-14-16-45-2xl.png 1600w">
 <figcaption >Editing the flex-model of an asset</figcaption>
 </figure>
