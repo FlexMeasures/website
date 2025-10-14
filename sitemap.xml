@@ -629,6 +629,26 @@
 </image:image>
 </url>
 <url>
+<loc>https://flexmeasures.io/v029-flex-model-swaggerui/</loc>
+<lastmod>2025-10-14T21:22:58+02:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-10-11-23-51-2.png</image:loc>
+<image:title><![CDATA[a KPI widget]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-13-14-16-45.png</image:loc>
+<image:title><![CDATA[Editing the flex-model of an asset]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/53/gallery/Screenshot-from-2025-10-10-11-23-51-thumbnail.png</image:loc>
+<image:title><![CDATA[List of endpoints]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/53/gallery/Screenshot-from-2025-10-13-14-43-23-thumbnail.png</image:loc>
+<image:title><![CDATA[Trying out an endpoint from SwaggerUI]]></image:title>
+</image:image>
+</url>
+<url>
 <loc>https://flexmeasures.io/v030-pip-install-cli-commands-belief-time-api/</loc>
 <lastmod>2021-04-02T23:13:17+02:00</lastmod>
 <image:image>
