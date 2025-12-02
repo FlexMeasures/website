@@ -630,7 +630,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/v029-flex-model-swaggerui/</loc>
-<lastmod>2025-10-15T09:13:34+02:00</lastmod>
+<lastmod>2025-10-16T10:03:36+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-10-11-23-51-2.png</image:loc>
 <image:title><![CDATA[a KPI widget]]></image:title>
@@ -646,6 +646,26 @@
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/53/gallery/Screenshot-from-2025-10-13-14-43-23-thumbnail.png</image:loc>
 <image:title><![CDATA[Trying out an endpoint from SwaggerUI]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://flexmeasures.io/v030-forecasting-revamped/</loc>
+<lastmod>2025-12-02T22:18:35+01:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/54/Forecasting.png</image:loc>
+<image:title><![CDATA[Forecasting in the FlexMeasures UI]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/54/Screenshot-from-2025-11-30-17-03-32.png</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/54/Screenshot-from-2025-11-30-18-44-22.png</image:loc>
+<image:title><![CDATA[A plot of PV power (uncurtailed) and battery power]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/54/consultants-dashboard.png</image:loc>
+<image:title><![CDATA[Better consultant for consultants and admins]]></image:title>
 </image:image>
 </url>
 <url>

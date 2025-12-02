@@ -3,12 +3,92 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-10-15T09:13:34+02:00</updated>
+    <updated>2025-12-02T22:18:35+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>v0.30: Forecasting revamped</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/v030-forecasting-revamped/"/>
+        <id>https://flexmeasures.io/v030-forecasting-revamped/</id>
+        <media:content url="https://flexmeasures.io/media/posts/54/Forecasting.png" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2025-12-02T22:18:35+01:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/54/Forecasting.png" alt="Forecasting in the FlexMeasures UI" />
+                    Version v0.30 of FlexMeasures revamps forecasting - in short, we now support fixed- viewpoint forecasting, which is much better suited to real-life usage than the previous implementation, and use more&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/54/Forecasting.png" class="type:primaryImage" alt="Forecasting in the FlexMeasures UI" /></p>
+                <div class="post__inner post__entry">
+<p>Version v0.30 of FlexMeasures revamps forecasting - in short, we now support fixed- viewpoint forecasting, which is much better suited to real-life usage than the previous implementation, and use more modern tooling.</p>
+<p>Three other notable features:</p>
+<ul>
+<li>Expose prior commitments as part of the flex-model (and costs for schedules deviating from them) ― a powerful modeling feature</li>
+<li>Two big improvements in documentation: Flex-config fields and a new tutorial</li>
+<li>Consultants can now see client assets on dashboard ― supporting these kind of users is good for a scaled, multi-tenant platform.</li>
+</ul>
+<p>Plus, as always, a lot of small tweaks have happened! <a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-30-0-december-02-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements.</p>
+</div>
+<h2>Fixed view-point forecasting</h2>
+<p>Forecasting is crucial to FlexMeasures' main purpose (which is scheduling). We need to have an idea about energy consumption in the near future, so we can plan it.</p>
+<p>There was a way for doing that in FlexMeasures, but we rewrote that completely.</p>
+<p>The biggest change is that we went from rolling-viewpoint forecasting to fixed-viewpoint forecasting.</p>
+<p>Before, when we made forecasts for some time range (e.g. covering 24 hours), each prediction covered the same relative forecast horizon. So, let's say we made 24 forecasts, and each one had a six-hour horizon - basically this represents a simulation of moving an hour at a time and making one forecast each time, for six hours ahead.</p>
+<p>More realistic for simulations, but also much more usable in real-time scenarios, is to make multiple forecasts each time. So, for one fixed view point (e.g. now), we make several forecasts, maybe even 24, covering each hour of the time period. We'd overwrite each existing forecasts with the most recent (and most likely more accurate forecast).</p>
+<p>Weather forecasts services are already delivered like that - you ask their API for a forecast, and you get 24 hourly forecasts― the best for each hour that are known right now. The forecast for one hour from now will be highly accurate, and the one for 22 hours from now less so. Forecasts always get much more accurate the smaller the forecasting horizon becomes. However, having a forecast with a 22-hour horizon is nice to have for a planning platform like FlexMeasures, much better than having none.</p>
+<p>We also improved on periodic re-training, so even in larger forecasting jobs, covering longer time windows, we can keep accuracy high.</p>
+<p>Also, the forecasts work out-of-the box as historic forecasts (with some in-built support for columns like time of day or day of the week and year), but we made it straightforward to add more regressors - basically sensors where valuable information is stored (like forecasted outdoor temperatures).</p>
+<p>Finally, we updated which underlying models are used. We use an <a href="https://en.wikipedia.org/wiki/LightGBM" target="_blank" rel="noopener noreferrer">LGBM</a> model via <a href="https://unit8co.github.io/darts/" target="_blank" rel="noopener noreferrer">Darts</a>, but it is also easy to use others.</p>
+<p>The new forecasting is now available as CLI command (<code>flexmeasures add forecasts</code>), but we are also building an API endpoint for triggering forecasts.</p>
+<p>Read <a href="https://flexmeasures.readthedocs.io/latest/features/forecasting.html" target="_blank" rel="noopener noreferrer">more in the docs</a>. This work was done in Pull Request <a href="https://github.com/FlexMeasures/flexmeasures/pull/1546" target="_blank" rel="noopener noreferrer">1546</a> (the lower PR ID tells you this has been long cooking), and more are following. </p>
+<h2>Commitments</h2>
+<p>The flex-context in FlexMeasures can include prior commitments. One example of a prior commitment might be how a large consumer buys a profile on the day-ahead market and wants that FlexMeasures schedules help to stay close to it (to avoid imbalance prices).</p>
+<p>Each commitment has a baseline value (which can also be a sensor, i.e. a profile), and can have prices for deviating up- or downwards (which are applied inside the optimization problem to steer the schedule).</p>
+<p>Here is an example to see how it looks like with one commitment:</p>
+<pre class="notranslate"><code class="notranslate">{
+  "flex_context":<br>  {<br>    "commitments":<br>    [<br>      {<br>        "baseline": "400 kW",<br>        "up-price": "304 EUR/MWh",<br>        "down-price": "530 EUR/MWh",<br>      }<br>    ]<br>  }
+}</code></pre>
+<p>So this says we committed to using 400 kW consistently (this could also be a time series, like a sensor or time blocks). And deviating from that has certain costs for the scheduler to take into consideration.</p>
+<p>Actually, prior commitments have been part of the scheduler for some time, and we use them as a generic way to encode capacity limits as soft constraints. Soft constraints do not break the scheduler if they are breached, which returns a zero-schedule (which happens with hard constraints). Also, this allows us to stack several such commitments or constraints into one problem in a generic way.</p>
+<p>So until now commitments basically were some "magic", happening when a user selected a few certain flex-context fields. Now they are also usable for anything one might build.</p>
+<p>Other ideas:</p>
+<ul>
+<li>PPAs (baseline is the agreed consumption or production, prices denote prices if it is not met)</li>
+<li>modeling savings in gas usage (baseline is 0, meaning gas is used to satisfy all heat demand - every deviation is a good thing, as electricity replaced some heat. Upward price models the actual price of gas)  </li>
+<li>Nudging to lower CO₂ intensity (the main objective might remain to optimize electricity prices, but a commitment can model a penalty on CO₂ - either CO₂ taxes explicitly, or an internal weight)</li>
+</ul>
+<p>We still have to support them in the UI, but the principle is there, and can be quite powerful. This work was done in Pull Request <a href="https://github.com/FlexMeasures/flexmeasures/pull/1754" target="_blank" rel="noopener noreferrer">1754</a> and <a href="https://github.com/FlexMeasures/flexmeasures/pull/1793" target="_blank" rel="noopener noreferrer">1793</a>.  </p>
+<h2>Documentation</h2>
+<p>We take documentation seriously, as the key ingredient to building an eco-system around a project. </p>
+<p>We spent considerable effort in improving this, again.</p>
+<p>First, the flex configuration is the key ingredient to building many distinct smart energy services using FlexMeasures. We improved the documentation of each field in flex-context and flex-model, and we made sure this is replicated in 3 places: ReadTheDocs, SwaggerDocs and the UI dialogues where you can set fields.</p>
+<p>Now there is unprecented wealth of customization knowledge at your fingertips. the picture below from SwaggerDocs, I only opened the schema information about the consumption price setting in the flex-context (available in the docs of the schedule-triggering API endpoint):</p>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/54/Screenshot-from-2025-11-30-17-03-32.png" alt="" width="750" height="513" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/54/responsive/Screenshot-from-2025-11-30-17-03-32-xs.png 300w ,https://flexmeasures.io/media/posts/54/responsive/Screenshot-from-2025-11-30-17-03-32-sm.png 480w ,https://flexmeasures.io/media/posts/54/responsive/Screenshot-from-2025-11-30-17-03-32-md.png 768w ,https://flexmeasures.io/media/posts/54/responsive/Screenshot-from-2025-11-30-17-03-32-lg.png 1024w ,https://flexmeasures.io/media/posts/54/responsive/Screenshot-from-2025-11-30-17-03-32-xl.png 1360w ,https://flexmeasures.io/media/posts/54/responsive/Screenshot-from-2025-11-30-17-03-32-2xl.png 1600w"></figure>
+<p>Second, we added <a href="https://flexmeasures.readthedocs.io/latest/tut/toy-example-multiasset-curtailment.html" target="_blank" rel="noopener noreferrer">a new tutorial</a>: "PV curtailment and Multi-asset scheduling". It explains how to add a new type of flexible asset (curtailable PV), in combination with a battery, as well.</p>
+<p>Here is one of the graphs, as shown in the CLI:</p>
+<figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/54/Screenshot-from-2025-11-30-18-44-22.png" alt="A plot of PV power (uncurtailed) and battery power" width="751" height="463" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/54/responsive/Screenshot-from-2025-11-30-18-44-22-xs.png 300w ,https://flexmeasures.io/media/posts/54/responsive/Screenshot-from-2025-11-30-18-44-22-sm.png 480w ,https://flexmeasures.io/media/posts/54/responsive/Screenshot-from-2025-11-30-18-44-22-md.png 768w ,https://flexmeasures.io/media/posts/54/responsive/Screenshot-from-2025-11-30-18-44-22-lg.png 1024w ,https://flexmeasures.io/media/posts/54/responsive/Screenshot-from-2025-11-30-18-44-22-xl.png 1360w ,https://flexmeasures.io/media/posts/54/responsive/Screenshot-from-2025-11-30-18-44-22-2xl.png 1600w"></figure>
+<h2>Improved dashboard for consultants and clients</h2>
+<p>We made the dashboard more useful for users who have access to several accounts. This is true for admins but also consultants. Admins saw a list of all possible accounts, consultants saw only their own assets.</p>
+<ul>
+<li>Consultants see their client accounts below the map, and the assets can be filtered by those.</li>
+<li>Admins see only accounts that are not "end-nodes", i.e. clients - only consultants.</li>
+</ul>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/54/consultants-dashboard.png" alt="Better consultant for consultants and admins" width="750" height="292" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/54/responsive/consultants-dashboard-xs.png 300w ,https://flexmeasures.io/media/posts/54/responsive/consultants-dashboard-sm.png 480w ,https://flexmeasures.io/media/posts/54/responsive/consultants-dashboard-md.png 768w ,https://flexmeasures.io/media/posts/54/responsive/consultants-dashboard-lg.png 1024w ,https://flexmeasures.io/media/posts/54/responsive/consultants-dashboard-xl.png 1360w ,https://flexmeasures.io/media/posts/54/responsive/consultants-dashboard-2xl.png 1600w"></figure>
+<p>This work was done in Pull Request <a href="https://github.com/FlexMeasures/flexmeasures/pull/1763" target="_blank" rel="noopener noreferrer">1763</a>.</p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v0.29: Flex-model &amp; SwaggerUI</title>
         <author>
@@ -19,7 +99,7 @@
         <media:content url="https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-10-11-23-51-2.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2025-10-15T09:13:34+02:00</updated>
+        <updated>2025-10-16T10:03:36+02:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-10-11-23-51-2.png" alt="a KPI widget" />
@@ -517,37 +597,6 @@
 <p>When a lot of data is being shown, FlexMeasures' pages could get slow. In <a href="https://flexmeasures.io/023-data-insights-and-white-labelling/">v0.23</a>, we already started adding pagination parameters to API endpoints for assets and users. This now includes also accounts and audit logs, and we finished our work on all FlexMeasures UI pages, so that they now only load small batches of entries at a time.</p>
 <p>This work was done in Pull Requests <a href="https://github.com/FlexMeasures/flexmeasures/pull/1115" target="_blank" rel="noopener noreferrer">1115</a>, <a href="https://github.com/FlexMeasures/flexmeasures/pull/1116" target="_blank" rel="noopener noreferrer">1116</a>, <a href="https://github.com/FlexMeasures/flexmeasures/pull/1143" target="_blank" rel="noopener noreferrer">1143</a>, <a href="https://github.com/FlexMeasures/flexmeasures/pull/1201" target="_blank" rel="noopener noreferrer">1201</a>, <a href="https://github.com/FlexMeasures/flexmeasures/pull/1274" target="_blank" rel="noopener noreferrer">1274</a> and <a href="https://github.com/FlexMeasures/flexmeasures/pull/1282" target="_blank" rel="noopener noreferrer">1282</a>.</p>
 </div>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>A new VPP algorithm: The KIFLIN project</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/a-new-vpp-algorithm-the-kiflin-project/"/>
-        <id>https://flexmeasures.io/a-new-vpp-algorithm-the-kiflin-project/</id>
-        <media:content url="https://flexmeasures.io/media/posts/44/Screenshot-from-2024-11-29-12-14-17.png" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2025-05-29T14:17:39+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/44/Screenshot-from-2024-11-29-12-14-17.png" alt="Reflex Dashboard" />
-                    Great news - FlexMeasures receives another scheduling algorithm, which is more suitable for VPP (Virtual Power Plant) applications. It has been developed by TNO earlier, and the transfer into FlexMeasures&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/44/Screenshot-from-2024-11-29-12-14-17.png" class="type:primaryImage" alt="Reflex Dashboard" /></p>
-                <p>Great news - FlexMeasures receives another scheduling algorithm, which is more suitable for VPP (Virtual Power Plant) applications. It has been developed by TNO earlier, and the transfer into FlexMeasures is part of another R&amp;D project.</p>
-<p>In short, it is a dynamic programming approach, which sets a goal to flexibly divert a fleet of assets from its aggregated consumption and then asks all assets to add contributions to this goal until it is reached. This is a different approach to <a href="https://flexmeasures.readthedocs.io/en/latest/concepts/device_scheduler.html">the existing storage scheduler in FlexMeasures</a>, which does a good job on a site-level with economic optimization.</p>
-<p>In the R&amp;D project (called "KIFLIN") we will work on the seamless integration of that algorithm into FlexMeasures' existing strengths - namely giving software developers a robust tool to build energy services. The way APIs and UIs work should be the same, no matter which of the schedulers you choose to use.</p>
-<p><span class="break-words
-          tvm-parent-container"><span dir="ltr">Nicolas spoke about this collaboration at the <a href="https://events.linuxfoundation.org/lfenergysummit/">LF Energy summit in Brussels</a> recently (5 Sep). This project is special for several reasons:<br><br>- it can be seen as a win-win between past and future R&amp;D projects, by transferring knowledge into a more re-usable form. FlexMeasures gets an algorithm donated which was developed by <a href="http://www.tno.nl" target="_blank" rel="noopener noreferrer">TNO</a> - this is the aspect highlighted in the lightning talk below (~10 minutes)<br>- it will progress <a href="https://s2standard.org/">S2</a> standard implementation in FlexMeasures and also a heat pump OEM (Itho Daalderop) is on board - S2 is an exciting open standard for assets and EMS to exchange information on what is possible w.r.t. energy flexibility. <br>- FlexMeasures will get (even nicer) tutorials for other organizations to get started with using it as HEMS</span></span></p>
-<figure class="post__video"><iframe loading="lazy" width="560" height="314" src="https://www.youtube.com/embed/nyvg6rSnZHI" allowfullscreen="allowfullscreen" data-mce-fragment="1"></iframe></figure>
-<p><span class="break-words
-          tvm-parent-container"><span dir="ltr"><br><br>Looking forward to working on this! 🥸 🎉 KIFLIN is an R&amp;D project funded by TKI Urban Energy. It was also mentioned last week at FlexCon2024 by <a href="https://www.linkedin.com/in/mente-konsman-b0a1711/" id="ember37" class="ember-view">Mente Konsman</a> and <a href="https://www.linkedin.com/in/wilco-wijbrandi-3994ab4b/" id="ember38" class="ember-view">Wilco Wijbrandi</a> ("Unlocking flexibility from heat pumps with S2 in practice").</span></span></p>
             ]]>
         </content>
     </entry>
