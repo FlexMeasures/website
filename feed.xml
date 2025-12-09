@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-12-02T22:18:35+01:00</updated>
+    <updated>2025-12-09T14:14:26+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -19,7 +19,7 @@
         <media:content url="https://flexmeasures.io/media/posts/54/Forecasting.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2025-12-02T22:18:35+01:00</updated>
+        <updated>2025-12-09T14:14:26+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/54/Forecasting.png" alt="Forecasting in the FlexMeasures UI" />
@@ -52,7 +52,7 @@
 <p>The new forecasting is now available as CLI command (<code>flexmeasures add forecasts</code>), but we are also building an API endpoint for triggering forecasts.</p>
 <p>Read <a href="https://flexmeasures.readthedocs.io/latest/features/forecasting.html" target="_blank" rel="noopener noreferrer">more in the docs</a>. This work was done in Pull Request <a href="https://github.com/FlexMeasures/flexmeasures/pull/1546" target="_blank" rel="noopener noreferrer">1546</a> (the lower PR ID tells you this has been long cooking), and more are following. </p>
 <h2>Commitments</h2>
-<p>The flex-context in FlexMeasures can include prior commitments. One example of a prior commitment might be how a large consumer buys a profile on the day-ahead market and wants that FlexMeasures schedules help to stay close to it (to avoid imbalance prices).</p>
+<p>The flex-context in FlexMeasures can include prior commitments. One example of a prior commitment might be how a large consumer buys a profile on the day-ahead market and wants FlexMeasures to compute schedules that stay close to that profile (to avoid imbalance prices).</p>
 <p>Each commitment has a baseline value (which can also be a sensor, i.e. a profile), and can have prices for deviating up- or downwards (which are applied inside the optimization problem to steer the schedule).</p>
 <p>Here is an example to see how it looks like with one commitment:</p>
 <pre class="notranslate"><code class="notranslate">{
