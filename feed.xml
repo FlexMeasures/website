@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2026-02-17T11:27:55+01:00</updated>
+    <updated>2026-02-17T12:04:46+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -19,7 +19,7 @@
         <media:content url="https://flexmeasures.io/media/posts/55/20260131-Nico_Rikken-IMG_5923-cropped.jpg" medium="image" />
             <category term="FlexMeasures Blog"/>
 
-        <updated>2026-02-17T11:27:55+01:00</updated>
+        <updated>2026-02-17T12:04:46+01:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/55/20260131-Nico_Rikken-IMG_5923-cropped.jpg" alt="Nicolas presenting at FOSDEM 2025" />
@@ -41,7 +41,7 @@
 <figcaption >Pictured: The energy devroom at FOSDEM 2026</figcaption>
 </figure>
 <p><span class="break-words
-          tvm-parent-container"><span dir="ltr">This work is currently being worked out in the "FleXeD" project with (among others) <a class="hlqCFDLyHXLwyvzqLMNyNEwjuUIkmaWY " target="_self" href="https://www.linkedin.com/company/tno/" data-test-app-aware-link="" tabindex="0">TNO</a>. The specific motivation for FleXeD is that new neighbourhoods do not get approved unless it can be shown that the connections can collectively stay below a given capacity limit.</span></span></p>
+          tvm-parent-container"><span dir="ltr">This work is currently being worked out in the "FleXeD" project with (among others) TNO. The specific motivation for FleXeD is that new neighbourhoods do not get approved unless it can be shown that the connections can collectively stay below a given capacity limit.</span></span></p>
 <p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">If you have questions about these presented topics, do make sure to </span><a href="https://flexmeasures.io/get-in-touch/" style="font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">contact us</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></p>
             ]]>
         </content>
