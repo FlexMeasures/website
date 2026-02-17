@@ -3,12 +3,49 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2025-12-09T14:14:26+01:00</updated>
+    <updated>2026-02-17T11:27:55+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>Talk at FOSDEM 2026: Community Energy Management (CEMS)</title>
+        <author>
+            <name>SeitaBV</name>
+        </author>
+        <link href="https://flexmeasures.io/talk-at-fosdem-2026-cems/"/>
+        <id>https://flexmeasures.io/talk-at-fosdem-2026-cems/</id>
+        <media:content url="https://flexmeasures.io/media/posts/55/20260131-Nico_Rikken-IMG_5923-cropped.jpg" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2026-02-17T11:27:55+01:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/55/20260131-Nico_Rikken-IMG_5923-cropped.jpg" alt="Nicolas presenting at FOSDEM 2025" />
+                    At FOSDEM 2026, there was an energy devroom again (4th time!). This time, we got to present a proof-of-concept of Community Energy Management. You can see the talk here (and&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/55/20260131-Nico_Rikken-IMG_5923-cropped.jpg" class="type:primaryImage" alt="Nicolas presenting at FOSDEM 2025" /></p>
+                <p>At <a href="https://fosdem.org/2026/">FOSDEM 2026</a>, there was an <a href="https://fosdem.org/2026/schedule/track/energy/">energy devroom</a> again (4th time!). This time, we got to present a proof-of-concept of Community Energy Management.</p>
+<p>You can see the talk here (and the slides are on <a href="https://fosdem.org/2026/schedule/event/ACPYNR-community_energy_management_with_flexmeasures_fully_scriptable/">the talk page</a>):</p>
+<figure class="post__video"><video loading="lazy" width="750" height="346" controls="controls" data-mce-fragment="1">
+<source src="https://video.fosdem.org/2026/aw1126/ACPYNR-community_energy_management_with_flexmeasures_fully_scriptable.av1.webm" type="video/webm" type="video/webm" /><source src="https://fosdem.org/2024/schedule/event/fosdem-2024-2509-using-flexmeasures-to-build-a-climate-tech-startup-in-15-minutes/" /></video></figure>
+<p><span class="break-words
+          tvm-parent-container"><span dir="ltr">Community energy management systems (CEMS) are a hot topic. A CEMS makes sure that an energy community (of households and/or SMEs) behaves in a concerted way (to the grid, to a flex market).<br><br>For our approach with FlexMeasures, we made a design choice (which I also explain in the talk): We decided to keep buildings as autonomous as possible.<br><br>FlexMeasures is built for making buildings orchestrate their assets. We decided to keep that aspect in FlexMeasures - and when FlexMeasures also acts as a CEMS, it will not dictate each and every asset what to do, but will signal the problematic time slots and ask the local building HEMS (also FlexMeasures in our PoC, can be different ones later) to recompute their schedules.</span></span></p>
+<p><span class="break-words
+          tvm-parent-container"><span dir="ltr">The language for this nudging are prices. This can also mean that in principle other HEMS could be in the mix.</span></span></p>
+<figure ><figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/55/20260131-Nico_Rikken-IMG_5925.jpg" alt="The energy devroom at FOSDEM 2026" width="750" height="500" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/55/responsive/20260131-Nico_Rikken-IMG_5925-xs.jpg 300w ,https://flexmeasures.io/media/posts/55/responsive/20260131-Nico_Rikken-IMG_5925-sm.jpg 480w ,https://flexmeasures.io/media/posts/55/responsive/20260131-Nico_Rikken-IMG_5925-md.jpg 768w ,https://flexmeasures.io/media/posts/55/responsive/20260131-Nico_Rikken-IMG_5925-lg.jpg 1024w ,https://flexmeasures.io/media/posts/55/responsive/20260131-Nico_Rikken-IMG_5925-xl.jpg 1360w ,https://flexmeasures.io/media/posts/55/responsive/20260131-Nico_Rikken-IMG_5925-2xl.jpg 1600w"></figure>
+<figcaption >Pictured: The energy devroom at FOSDEM 2026</figcaption>
+</figure>
+<p><span class="break-words
+          tvm-parent-container"><span dir="ltr">This work is currently being worked out in the "FleXeD" project with (among others) <a class="hlqCFDLyHXLwyvzqLMNyNEwjuUIkmaWY " target="_self" href="https://www.linkedin.com/company/tno/" data-test-app-aware-link="" tabindex="0">TNO</a>. The specific motivation for FleXeD is that new neighbourhoods do not get approved unless it can be shown that the connections can collectively stay below a given capacity limit.</span></span></p>
+<p><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">If you have questions about these presented topics, do make sure to </span><a href="https://flexmeasures.io/get-in-touch/" style="font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">contact us</a><span style="color: var(--text-primary-color); font-family: var(--editor-font-family); font-size: inherit; font-weight: var(--font-weight-normal);">.</span></p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v0.30: Forecasting revamped</title>
         <author>
@@ -544,59 +581,6 @@
 <p>S2 is one of those, and at Seita we are working towards supporting it from within FlexMeasures in several R&amp;D projects. This talk will mention them.</p>
 <p>We also like <a href="https://www.openadr.org/">OpenADR</a>, and we will watch <a href="https://lfenergy.org/projects/shapeshifter/">ShapeShifter</a>. Hopefully the future will let us support those, as well ― we think they are complementary.</p>
 <p>If you have questions about these presented topics, do make sure to <a href="https://flexmeasures.io/get-in-touch/">contact us</a>.</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.24: more expressive congestion modeling, edit data dashboards</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/024-more-expressive-congestion-modeling-data-dashboards/"/>
-        <id>https://flexmeasures.io/024-more-expressive-congestion-modeling-data-dashboards/</id>
-        <media:content url="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2025-04-01T18:50:24+02:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png" alt="Distribution of power values in EV charging over time" />
-                    Version v0.24 of FlexMeasures adds more expressive power for behind-the-meter scheduling constraints, and it also lets you design your graph dashboard. And we completed pagination in the UI. This was&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio.png" class="type:primaryImage" alt="Distribution of power values in EV charging over time" /></p>
-                <div class="post__inner post__entry">
-<p>Version v0.24 of FlexMeasures adds more expressive power for behind-the-meter scheduling constraints, and it also lets you design your graph dashboard. And we completed pagination in the UI.</p>
-<p>This was actually a larger release (~70 PRs, three new committers). <a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-24-0-january-07-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list.</p>
-<p>Let's dive in!</p>
-</div>
-<div class="post__inner post__entry">
-<h2>Combine economic modelling options (e.g. peak costs &amp; prices)</h2>
-<p>Behind-the-meter orchestration can become a complex problem, with multiple optimization goals potentially competing. So far, FlexMeasures could model hard constraints (e.g. consumption limit) and an optimization signal, usually a price per kWh. Both of these examples are penalties or rewards for energy commitments, that influence in distinct ways how the FlexMeasures scheduler will optimize the aggregated energy profile of the site.</p>
-<p>But behind the meter, there are more intricate constraints, penalties and rewards, as different parties (e.g. the DSO, the day ahead market operator and the local business) have different ideas about how energy should be used. Especially the modeling of the congestion problem inspired us to extend how FlexMeasures can model the different needs.</p>
-<p>With 0.24, any number of commitments which have their own reward or penalties can be modeled in the same optimization, and the scheduler will try to get the best overall profile.</p>
-<p>This is a big step towards capturing more goals of behind-the-meter orchestration. It was not trivial to model this extension. From here on, FlexMeasures has much more expressive power!</p>
-<p>Here is an example, which is inspired from a situation with a highly congested grid (as we experience in The Netherlands). Note that in the main PR you find a test which models this example, as well). Suppose that within the same optimization of schedules, we want to:</p>
-<ul>
-<li>use a day-ahead tariff for pricing our energy purchasing -&gt; buy low, sell high</li>
-<li>model the DSO costs, as well (the DSO's monthly invoice depends on the highest peak) -&gt; modulate how high peaks get within the contracted capacity</li>
-<li>allow breaching the contracted consumption capacity, but incentivize the scheduler (with a penalty) to attempt avoiding this as much as possible</li>
-</ul>
-<figure class="post__image"><img loading="lazy"  src="https://flexmeasures.io/media/posts/45/v0.24-commitments.drawio-2.png" alt="Illustration of possible options for the FlexMeasures scheduler after v0.24 (not exhaustive, e.g. set points are not shown)" width="879" height="546" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/45/responsive/v0.24-commitments.drawio-2-xs.png 300w ,https://flexmeasures.io/media/posts/45/responsive/v0.24-commitments.drawio-2-sm.png 480w ,https://flexmeasures.io/media/posts/45/responsive/v0.24-commitments.drawio-2-md.png 768w ,https://flexmeasures.io/media/posts/45/responsive/v0.24-commitments.drawio-2-lg.png 1024w ,https://flexmeasures.io/media/posts/45/responsive/v0.24-commitments.drawio-2-xl.png 1360w ,https://flexmeasures.io/media/posts/45/responsive/v0.24-commitments.drawio-2-2xl.png 1600w"><figcaption></figcaption></figure>
-<p>That last point seems counter-intuitive (allow breaching contracted capacity, but penalize it), but during simulations with different battery sizes, we found it invaluable that the contractual limits are not hard constraints, so we still get the best schedules, even on days where the battery cannot on its own keep the consumption within limits. Note that the <em>physical limits</em> can also be added, and should be hard constraints. </p>
-<p>The scheduler will take all these goals into consideration, using existing and new flex-context fields like <code class="notranslate">site-peak-consumption-price</code>, <code class="notranslate">site-peak-consumption-breach</code>and <code class="docutils literal notranslate"><span class="pre">site-peak-consumption</span></code> (check <a href="https://flexmeasures.readthedocs.io/en/latest/features/scheduling.html#the-flex-context" target="_blank" rel="noopener noreferrer">the documentation</a> for details).</p>
-<p>Note that after the fact, the actual reporting of costs can represent what will actually be invoiced, e.g. energy purchasing (dynamic tariff) and peak costs by the DSO, but not the penalty used to avoid peak breaches.</p>
-<p>This work was done in Pull Requests <a href="https://github.com/FlexMeasures/flexmeasures/pull/1144" target="_blank" rel="noopener noreferrer">1144</a> and <a href="https://github.com/FlexMeasures/flexmeasures/pull/1254" target="_blank" rel="noopener noreferrer">1254</a>.</p>
-<h2>Editing your own graph dashboard in the UI</h2>
-<p>The asset page is where FlexMeasures shows you data (measurements, schedules, etc) in graphs. As your use cases and sites differ, your needs for this graph dashboard will differ. Previously, it was possible to configure different graphs and plots, but it required editing a JSON field. As of version 0.24, you can edit what you want to see right in the UI:</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/45/screenshot-asset-editgraph.png" alt="Editing the graph dashboard" width="750" height="550" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/45/responsive/screenshot-asset-editgraph-xs.png 300w ,https://flexmeasures.io/media/posts/45/responsive/screenshot-asset-editgraph-sm.png 480w ,https://flexmeasures.io/media/posts/45/responsive/screenshot-asset-editgraph-md.png 768w ,https://flexmeasures.io/media/posts/45/responsive/screenshot-asset-editgraph-lg.png 1024w ,https://flexmeasures.io/media/posts/45/responsive/screenshot-asset-editgraph-xl.png 1360w ,https://flexmeasures.io/media/posts/45/responsive/screenshot-asset-editgraph-2xl.png 1600w"></figure>
-<p>This work was done in Pull Requests <a href="https://github.com/FlexMeasures/flexmeasures/pull/1212" target="_blank" rel="noopener noreferrer">1212</a>, <a href="https://github.com/FlexMeasures/flexmeasures/pull/1145" target="_blank" rel="noopener noreferrer">1145</a> and <a href="https://github.com/FlexMeasures/flexmeasures/pull/1152" target="_blank" rel="noopener noreferrer">1152</a>.</p>
-<h2>More pagination in UI for faster browsing</h2>
-<p>When a lot of data is being shown, FlexMeasures' pages could get slow. In <a href="https://flexmeasures.io/023-data-insights-and-white-labelling/">v0.23</a>, we already started adding pagination parameters to API endpoints for assets and users. This now includes also accounts and audit logs, and we finished our work on all FlexMeasures UI pages, so that they now only load small batches of entries at a time.</p>
-<p>This work was done in Pull Requests <a href="https://github.com/FlexMeasures/flexmeasures/pull/1115" target="_blank" rel="noopener noreferrer">1115</a>, <a href="https://github.com/FlexMeasures/flexmeasures/pull/1116" target="_blank" rel="noopener noreferrer">1116</a>, <a href="https://github.com/FlexMeasures/flexmeasures/pull/1143" target="_blank" rel="noopener noreferrer">1143</a>, <a href="https://github.com/FlexMeasures/flexmeasures/pull/1201" target="_blank" rel="noopener noreferrer">1201</a>, <a href="https://github.com/FlexMeasures/flexmeasures/pull/1274" target="_blank" rel="noopener noreferrer">1274</a> and <a href="https://github.com/FlexMeasures/flexmeasures/pull/1282" target="_blank" rel="noopener noreferrer">1282</a>.</p>
-</div>
             ]]>
         </content>
     </entry>
