@@ -425,6 +425,9 @@
 <lastmod>2022-02-09T17:42:03+01:00</lastmod>
 </url>
 <url>
+<loc>https://flexmeasures.io/page/10/</loc>
+</url>
+<url>
 <loc>https://flexmeasures.io/page/2/</loc>
 </url>
 <url>
@@ -689,6 +692,26 @@
 <lastmod>2021-04-02T23:13:17+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/14/Screenshot-from-2021-04-02-12-54-22.png</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://flexmeasures.io/v031-forecasting-api-annotations/</loc>
+<lastmod>2026-02-28T21:49:23+01:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/56/Screenshot-from-2026-02-23-20-04-05.png</image:loc>
+<image:title><![CDATA[Annotations on prices in the FlexMeasures UI]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/56/Screenshot-from-2026-02-23-20-18-55.png</image:loc>
+<image:title><![CDATA[Forecasting API as shown in Swagger UI]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/56/Screenshot-from-2026-02-23-20-04-05-2.png</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/56/168248640-15f546db-b1df-4373-bade-315f59180019.gif</image:loc>
 <image:title><![CDATA[]]></image:title>
 </image:image>
 </url>
