@@ -410,7 +410,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/mission/</loc>
-<lastmod>2026-02-13T14:58:17+01:00</lastmod>
+<lastmod>2026-03-19T13:51:02+01:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/3/simple-flexEMS-2.png</image:loc>
 <image:title><![CDATA[]]></image:title>
@@ -453,10 +453,14 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/plugins/</loc>
-<lastmod>2022-04-13T22:34:30+02:00</lastmod>
+<lastmod>2026-03-19T14:05:40+01:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/21/OpenWeather-Logo.jpg</image:loc>
 <image:title><![CDATA[OpenWeatherMap  Logo]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/21/weather-api-logo.png</image:loc>
+<image:title><![CDATA[]]></image:title>
 </image:image>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/21/ENTSO-E_logo_sml.jpg</image:loc>
@@ -749,6 +753,6 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/why-is-the-code-of-flexmeasures-open-for-everyone/</loc>
-<lastmod>2022-02-10T12:04:23+01:00</lastmod>
+<lastmod>2026-03-19T13:59:09+01:00</lastmod>
 </url>
 </urlset>
