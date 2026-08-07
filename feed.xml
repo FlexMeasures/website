@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2026-08-07T23:54:43+02:00</updated>
+    <updated>2026-08-08T00:45:37+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -32,7 +32,7 @@
                 <p class="b6439155 d6ccb5ca _7e18ff20 b14f8610 e039d632 c41cfe70 b6f5dc85 _7851829c _57561673 _1735088d _292c9533 _11b345ff _79b27b60 a8c606cd"><span class="f5fb6543 _1bc7ee53 _12fe6c88" tabindex="-1" data-testid="expandable-text-box">From our journey to build forecasting as a feature within FlexMeasures: Good forecasting models are usually the result of small iterations. <br><br>Here is one of those iterations: the image shows the improvement from telling your model during training (and in production) what days are public holidays.</span></p>
 <div>
 <figure class="post__image post__image--center"><figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/62/Forecasting-annotations-slide.png" alt="The difference made in forecasts with holiday annotations" width="800" height="454" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/62/responsive/Forecasting-annotations-slide-xs.png 300w ,https://flexmeasures.io/media/posts/62/responsive/Forecasting-annotations-slide-sm.png 480w ,https://flexmeasures.io/media/posts/62/responsive/Forecasting-annotations-slide-md.png 768w ,https://flexmeasures.io/media/posts/62/responsive/Forecasting-annotations-slide-lg.png 1024w ,https://flexmeasures.io/media/posts/62/responsive/Forecasting-annotations-slide-xl.png 1360w ,https://flexmeasures.io/media/posts/62/responsive/Forecasting-annotations-slide-2xl.png 1600w"></figure>
-<figcaption>Caption</figcaption>
+<figcaption>The difference made in forecasts with holiday annotations</figcaption>
 </figure>
 <p><span class="f5fb6543 _1bc7ee53 _12fe6c88" tabindex="-1" data-testid="expandable-text-box">In this example, energy prices are much lower than on a normal Thursday afternoon. That's because it is Ascension Day's afternoon (and thus much lower energy demand).<br><br>The model we trained with knowledge on what a holiday is caught this correctly.<br><br>Now, integrating a correct list of holidays for all regions of the world (or maybe Europe, to start with), is of course needed. But we already solved that, too :) FlexMeasures can automatically import public holidays (per country) using the specific <code class="docutils literal notranslate"><span class="pre">flexmeasures</span> <span class="pre">add</span> <span class="pre">holidays</span></code> command.<br><br>In FlexMeasures, training a forecaster with holidays as regressor is shipping soon (already on main). Here is the CLI command:<br></span></p>
 <div class="rich-text--wrapper rich-text--wrapper-markdown" dir="auto" data-v-a47e4ba7="" data-v-ef6053da="">
