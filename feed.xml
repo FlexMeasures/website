@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2026-08-26T23:50:14+02:00</updated>
+    <updated>2026-08-27T10:02:23+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -43,7 +43,7 @@
 </ol>
 </div>
 <h2>Modelling commercial &amp; Industrial sites</h2>
-<p>A lot of our work had been centered around batteries, EVs and heat pumps - the prime flexible assets during electrification. In current projects, use cases with more complexity kept popping up, like assets with more than output (like CHPs), e-boiler vs. heat pump, heat storage with (inputs from both of these), multiple energy carriers (like electricity <em>and</em> gas) and local witch-boarding (e.g. all EV chargers on a separate group, multiple buildings with each their own connection capacity).</p>
+<p>A lot of our work had been centered around batteries, EVs and heat pumps - the prime flexible assets during electrification. In current projects, use cases with more complexity kept popping up, like assets with more than output (like CHPs), e-boiler vs. heat pump, heat storage with (inputs from both of these), multiple energy carriers (like electricity <em>and</em> gas) and local switch-boarding (e.g. all EV chargers on a separate group, multiple buildings with each their own connection capacity).</p>
 <figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/63/Screenshot-from-2026-08-15-23-50-06.png" alt="A campus with multiple buildings shown in FlexMeasures" width="700" height="349" sizes="(max-width: 48em) 100vw, 768px" srcset="https://flexmeasures.io/media/posts/63/responsive/Screenshot-from-2026-08-15-23-50-06-xs.png 300w ,https://flexmeasures.io/media/posts/63/responsive/Screenshot-from-2026-08-15-23-50-06-sm.png 480w ,https://flexmeasures.io/media/posts/63/responsive/Screenshot-from-2026-08-15-23-50-06-md.png 768w ,https://flexmeasures.io/media/posts/63/responsive/Screenshot-from-2026-08-15-23-50-06-lg.png 1024w ,https://flexmeasures.io/media/posts/63/responsive/Screenshot-from-2026-08-15-23-50-06-xl.png 1360w ,https://flexmeasures.io/media/posts/63/responsive/Screenshot-from-2026-08-15-23-50-06-2xl.png 1600w"></figure>
 <p>This happens even in single households (think of an hybrid heat pump, as an example), but mostly this is what Commercial &amp; Industrial (C&amp;I) sites demand.</p>
 <p>Version 1.0 added all these modeling capabilities:</p>
