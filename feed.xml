@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2026-08-27T10:02:23+02:00</updated>
+    <updated>2026-09-16T00:28:01+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -16,19 +16,19 @@
         </author>
         <link href="https://flexmeasures.io/v100-commercial-industrial-sites/"/>
         <id>https://flexmeasures.io/v100-commercial-industrial-sites/</id>
-        <media:content url="https://flexmeasures.io/media/posts/63/declan-sun-5OvIgxlLlxs-unsplash-cropped.jpg" medium="image" />
+        <media:content url="https://flexmeasures.io/media/posts/63/Screenshot-from-2026-09-16-00-27-17.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
         <updated>2026-08-25T19:32:00+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/63/declan-sun-5OvIgxlLlxs-unsplash-cropped.jpg" alt="Industrial site" />
+                        <img src="https://flexmeasures.io/media/posts/63/Screenshot-from-2026-09-16-00-27-17.png" alt="Industrial site" />
                     Version v1.0.0 of FlexMeasures is a big milestone 🎉 - for one, it contains a little more than 100 PRs and adds huge abilities to schedule industry assets! Second, we&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/63/declan-sun-5OvIgxlLlxs-unsplash-cropped.jpg" class="type:primaryImage" alt="Industrial site" /></p>
+                    <p><img src="https://flexmeasures.io/media/posts/63/Screenshot-from-2026-09-16-00-27-17.png" class="type:primaryImage" alt="Industrial site" /></p>
                 <div class="post__inner post__entry">
 <p>Version v1.0.0 of FlexMeasures is a big milestone 🎉  - for one, it contains a little more than 100 PRs and adds huge abilities to schedule industry assets! Second, we decided that FlexMeasures is now mature enough to rip off the band-aid and move to major versions.</p>
 <p><a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v1-0-0-august-25-2026" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements. Here, we cannot talk about everything that happened. But we will talk about:</p>
