@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2026-10-08T15:40:16+02:00</updated>
+    <updated>2026-10-08T17:59:24+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -58,9 +58,9 @@
 <li><span style="font-weight: 400;"><strong>The forecasts. </strong>Consumption, PV production and the price curve ahead all come out of our own pipeline, on the same small computer. A time-series foundation model that looks at the site's own history and the weather, with a plain empirical fallback for a site that was switched on yesterday and has nothing to look back on. A new install has to behave on day one, so the cold start is not a research nicety, it is a requirement. FlexMeasures is the database underneath it. The models are ours.</span></li>
 <li><span style="font-weight: 400;"><strong>Everything between the plan and the hardware.</strong> Drivers for every brand of inverter and charge point, because we tell customers they are not locked in and that promise gets paid for in driver work. The control loop that turns a 15-minute plan into setpoints. And what happens when a site does something nobody predicted: someone puts the oven on, the plan from ten minutes ago is wrong, we notice and ask for a new one, handing the error back as a sensor so the solver can see it. That part is ours. The solver stays FlexMeasures.</span></li>
 </ul>
-<h2>Would we do it again</h2>
+<h2>Would we do it again?</h2>
 <p>Yes. Open source got FlexMeasures onto our list; what decided it was no licence on hardware we own, and that it already handled many sites.</p>
-<p><span style="font-weight: 400;">When we started we knew EMHASS, and went looking for what else was out there. What we could not find was anyone who had already put FlexMeasures inside a product they sell, and who would say plainly where the joins are: what it does for you, what you still have to build yourself, and what it takes to run it on real hardware in someone's meter cabinet.</span></p>
+<p><span style="font-weight: 400;">When we started we knew EMHASS, and went looking for what else was out there. What we could not find was anyone who had already put FlexMeasures inside a product they sell, and who would say plainly where the joints are: what it does for you, what you still have to build yourself, and what it takes to run it on real hardware in someone's meter cabinet.</span></p>
 <p><span style="font-weight: 400;">That is what this case study is for. We stay close to upstream and extend the storage scheduler by sub-classing it instead of forking, which keeps upgrades cheap. If you are making the same call now, <a href="https://luo.be/contact" target="_blank" rel="noopener noreferrer">come and ask us</a>.</span></p>
             ]]>
         </content>
@@ -139,12 +139,12 @@
 <p>Let's say your customers have multiple sites with the same design - same devices, similar situation. When you have figured out in your pilot how to forecast &amp; optimize this setup, you want to repeat it. At scale, if possible.</p>
 <figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/63/Screenshot-from-2026-08-16-17-19-59.png" alt="Copy dialogue" width="650" height="221" sizes="(min-width: 37.5em) 1600px, 80vw" srcset="https://flexmeasures.io/media/posts/63/responsive/Screenshot-from-2026-08-16-17-19-59-xs.png 384w ,https://flexmeasures.io/media/posts/63/responsive/Screenshot-from-2026-08-16-17-19-59-sm.png 600w ,https://flexmeasures.io/media/posts/63/responsive/Screenshot-from-2026-08-16-17-19-59-md.png 768w ,https://flexmeasures.io/media/posts/63/responsive/Screenshot-from-2026-08-16-17-19-59-lg.png 1200w ,https://flexmeasures.io/media/posts/63/responsive/Screenshot-from-2026-08-16-17-19-59-xl.png 1600w"></figure>
 <p>In FlexMeasures, you can copy a whole asset (e.g. a site asset with sub-assets, plus sensor and flex-config setup), already since v0.33. In v1.0 we also add UI support for this in the asset creation dialogue. Search for an asset, copy it - you might be 95% done to get a new site online!</p>
-<h1>Storing encrypted secrets &amp; tokens</h1>
+<h2>Storing encrypted secrets &amp; tokens</h2>
 <p>A final feature we want to mention is somewhat under the hood. But for authors of FlexMeasures plugins, it can be important.</p>
 <p>Many plugins are about integrations with other platforms. For energy prices, for weather forecasts, to DSOs - you name it. And these days, getting cyber-security right is paramount.</p>
 <p>Until now, you would store an access token or password in the FlexMeasures config file. That works. Here are a few reason it falls short:</p>
 <ul>
-<li>cybersecurityYou are potentially exposing too many secrets.</li>
+<li>Cybersecurity: You are potentially exposing too many secrets.</li>
 <li>It doesn't scale, if you are integrating using not just your own account, but one per client. For instance, when you integrate with the smart gateways that your customers buy and authorize with separately.</li>
 <li>The modern workflow of using passwords only to get access tokens, and even storing refresh tokens for periodical renewal of these access tokens also is not possible.</li>
 </ul>
