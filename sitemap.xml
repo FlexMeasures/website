@@ -249,6 +249,14 @@
 </image:image>
 </url>
 <url>
+<loc>https://flexmeasures.io/a-platform-for-behind-the-meter-orchestration/</loc>
+<lastmod>2026-04-11T17:22:32+02:00</lastmod>
+</url>
+<url>
+<loc>https://flexmeasures.io/about/</loc>
+<lastmod>2026-10-08T15:18:40+02:00</lastmod>
+</url>
+<url>
 <loc>https://flexmeasures.io/background/</loc>
 <lastmod>2021-03-01T16:56:36+01:00</lastmod>
 </url>
@@ -262,9 +270,9 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/case-study-flexmeasures-in-the-meter-cabinet/</loc>
-<lastmod>2026-10-08T13:56:49+02:00</lastmod>
+<lastmod>2026-10-08T15:38:30+02:00</lastmod>
 <image:image>
-<image:loc>https://flexmeasures.io/media/posts/65/Screenshot-from-2026-10-08-13-08-08.png</image:loc>
+<image:loc>https://flexmeasures.io/media/posts/65/luo-logo-black.svg</image:loc>
 <image:title><![CDATA[Luo logo]]></image:title>
 </image:image>
 </url>
@@ -294,7 +302,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/flexmeasures-a-platform-for-behind-the-meter-orchestration/</loc>
-<lastmod>2026-10-08T13:52:48+02:00</lastmod>
+<lastmod>2026-10-08T15:43:28+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/3/simple-flexEMS-2.png</image:loc>
 <image:title><![CDATA[]]></image:title>
@@ -469,9 +477,6 @@
 <lastmod>2022-02-09T17:42:03+01:00</lastmod>
 </url>
 <url>
-<loc>https://flexmeasures.io/page/10/</loc>
-</url>
-<url>
 <loc>https://flexmeasures.io/page/2/</loc>
 </url>
 <url>
@@ -491,9 +496,6 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/page/8/</loc>
-</url>
-<url>
-<loc>https://flexmeasures.io/page/9/</loc>
 </url>
 <url>
 <loc>https://flexmeasures.io/plugins/</loc>
@@ -542,6 +544,10 @@
 <image:loc>https://flexmeasures.io/media/posts/4/schedule.jpeg</image:loc>
 <image:title><![CDATA[Schedule w.r.t. value]]></image:title>
 </image:image>
+</url>
+<url>
+<loc>https://flexmeasures.io/scripting-flexmeasures-2/</loc>
+<lastmod>2026-04-11T17:17:43+02:00</lastmod>
 </url>
 <url>
 <loc>https://flexmeasures.io/talk-at-fosdem-2025-open-protocols-and-s2-support/</loc>
@@ -833,7 +839,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/v100-commercial-industrial-sites/</loc>
-<lastmod>2026-10-08T13:17:41+02:00</lastmod>
+<lastmod>2026-10-08T15:40:16+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/63/Screenshot-from-2026-09-16-00-27-17.png</image:loc>
 <image:title><![CDATA[Industrial site]]></image:title>
