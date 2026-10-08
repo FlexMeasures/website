@@ -3,12 +3,68 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2026-09-23T09:27:44+02:00</updated>
+    <updated>2026-10-08T13:09:31+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>Case study: FlexMeasures in the meter cabinet</title>
+        <author>
+            <name>Sam Aerts</name>
+        </author>
+        <link href="https://flexmeasures.io/v100-commercial-industrial-sites-2/"/>
+        <id>https://flexmeasures.io/v100-commercial-industrial-sites-2/</id>
+        <media:content url="https://flexmeasures.io/media/posts/65/Screenshot-from-2026-10-08-13-08-08.png" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2026-10-08T12:30:14+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/65/Screenshot-from-2026-10-08-13-08-08.png" alt="Luo logo" />
+                    "FlexMeasures does the part that is hard to get right and easy to get wrong without noticing. That left us free to spend our time on the part customers actually&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/65/Screenshot-from-2026-10-08-13-08-08.png" class="type:primaryImage" alt="Luo logo" /></p>
+                <blockquote>
+<p><span style="font-weight: 400;">"FlexMeasures does the part that is hard to get right and easy to get wrong without noticing. That left us free to spend our time on the part customers actually see."</span></p>
+<p><span style="font-weight: 400;">Sam Aerts, co-founder, </span><span style="font-weight: 400;">Luo (Belgium).</span></p>
+</blockquote>
+<p><span style="font-weight: 400;">Luo</span><span style="font-weight: 400;"> builds an energy management system, Helios, for European households and SMEs. FlexMeasures is the optimisation engine inside it, running on the device in the meter cabinet rather than in a data centre.</span></p>
+<p><span style="font-weight: 400;">Helios at a glance: 200+ sites live. On the market since April 2026. One instance per site, on-premise. Plan resolution 15 minutes. PV, battery and EV charger per site.</span></p>
+<h2><span style="font-weight: 400;">The product: Every brand wants to be the brain</span></h2>
+<p><span style="font-weight: 400;">Most sites have solar, a battery and, increasingly often, an EV charger. Almost never all from the same maker. Each one comes with its own EMS that handles its own gear and ignores the rest. So when a customer adds something, you get two systems pulling in different directions, or you rip out what is already on the wall. Either way the payback gets worse.</span></p>
+<p><span style="font-weight: 400;">Helios sits above all of it and belongs to none of them. The installer can fit whichever brand they like next to what is already there. We do the commissioning and the support for the EMS ourselves, so their electricians can stay on electrical work instead of on network settings, integrations and the phone calls that come after.</span></p>
+<p><span style="font-weight: 400;">Our partners each put in around eight new sites a day. An electrician sets one up in an afternoon and then walks away. So nothing here can need an engineer to tune it per site, and nothing can need weeks of data before it starts doing something sensible.</span></p>
+<h2>Deployment: Where FlexMeasures runs</h2>
+<p><span style="font-weight: 400;">Not in our cloud. Each site gets a small computer in the meter cabinet, wired into the installation, and FlexMeasures runs on it. One instance per site, sitting next to the drivers that talk to the inverter and the charge point. Decisions get madetaken in seconds, not in a round trip to a data centre.</span></p>
+<p><span style="font-weight: 400;">Having our own hardware on site is what lets us promise things we could not promise otherwise. The logic that steers the assets is on the same side of the connection as the assets, which is what electrical safety needs. Site data and credentials never have to leave the building. And when the internet drops, nothing stops: the site keeps measuring, planning and steering until the line comes back.</span></p>
+<p><span style="font-weight: 400;">What we pay for that is room. The whole optimisation has to run on that little computer, and it has to come up with something sensible on the day the electrician leaves, with no history to go on.</span></p>
+<h2>What FlexMeasures does for us</h2>
+<p><span style="font-weight: 400;">The data model. Assets, sensors and beliefs that know where a value came from and how far ahead it was made. We would have had to build something like it anyway: a way to keep "this is what the meter read", </span><span style="font-weight: 400;">"this is what we predicted at 10:00"</span><span style="font-weight: 400;"> and "this is what we intend to do" next to each other, and to know which one wins when they disagree. Get that wrong and an EMS quietly stops making sense. It was already there.</span></p>
+<p><span style="font-weight: 400;">The scheduler. We describe a site as a tree. Grid connection at the top, with the battery, the charge point and the PV array underneath, each with its own flex model. Anything we cannot steer goes in as an inflexible device sensor. FlexMeasures turns that into a linear program and hands back a plan in 15-minute steps, as far ahead as our price data reaches.</span></p>
+<ul>
+<li><span style="font-weight: 400;"><strong>Costs that are not the grid price.</strong> A battery wears out a little every cycle. An EV charging at the office may be paid for by the employer. We hand those over as commitments and the solver weighs them against the grid price. We did not write a line of asset-specific code for it.</span></li>
+<li><strong>Curtailment as a storage problem.</strong> We gave the array a production capacity that points at its own forecast sensor, and that was enough to make negative prices behave. When Belgian prices hit -0.50 EUR/kWh, sites curtailed by themselves. Nobody touched anything.</li>
+<li><strong>One limit for the whole site.</strong> The connection limit and the capacity tariff are the same constraint as far as the solver is concerned. It holds both while the assets underneath fight over what is left.</li>
+</ul>
+<h2>What it doesn't do</h2>
+<p><span style="font-weight: 400;">If you are weighing up FlexMeasures for your own product, this is the part to read. It gives you a well-posed optimisation problem. It does not give you good numbers to put into it, and the numbers are where the money is.</span></p>
+<ul>
+<li><span style="font-weight: 400;"><strong>A Belgian bill is not the market price.</strong> It is the market price plus network tariffs, excise, VAT and a capacity tariff, and the order you stack them in decides which quarter hour is actually the cheapest. Software written for another market gets this slightly wrong and then steers with great confidence on a wrong number. Working out what a kilowatt-hour really costs at 14:15 is our job. Once it is a sensor, FlexMeasures optimises against it.</span></li>
+<li><span style="font-weight: 400;"><strong>The forecasts. </strong>Consumption, PV production and the price curve ahead all come out of our own pipeline, on the same small computer. A time-series foundation model that looks at the site's own history and the weather, with a plain empirical fallback for a site that was switched on yesterday and has nothing to look back on. A new install has to behave on day one, so the cold start is not a research nicety, it is a requirement. FlexMeasures is the database underneath it. The models are ours.</span></li>
+<li><span style="font-weight: 400;"><strong>Everything between the plan and the hardware.</strong> Drivers for every brand of inverter and charge point, because we tell customers they are not locked in and that promise gets paid for in driver work. The control loop that turns a 15-minute plan into setpoints. And what happens when a site does something nobody predicted: someone puts the oven on, the plan from ten minutes ago is wrong, we notice and ask for a new one, handing the error back as a sensor so the solver can see it. That part is ours. The solver stays FlexMeasures.</span></li>
+</ul>
+<h2>Would we do it again</h2>
+<p>Yes. Open source got FlexMeasures onto our list; what decided it was no licence on hardware we own, and that it already handled many sites.</p>
+<p><span style="font-weight: 400;">When we started we knew EMHASS, and went looking for what else was out there. What we could not find was anyone who had already put FlexMeasures inside a product they sell, and who would say plainly where the joins are: what it does for you, what you still have to build yourself, and what it takes to run it on real hardware in someone's meter cabinet.</span></p>
+<p><span style="font-weight: 400;">That is what this case study is for. We stay close to upstream and extend the storage scheduler by sub-classing it instead of forking, which keeps upgrades cheap. If you are making the same call now, <a href="https://luo.be/contact" target="_blank" rel="noopener noreferrer">come and ask us</a>.</span></p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>v1.0.0: Commercial &amp; Industrial sites</title>
         <author>
@@ -504,37 +560,6 @@
 <p>As a result. waiting for data to load should be taking less time, and larger data set can be viewed.</p>
 <p>This work was done in Pull Requests <a href="https://github.com/FlexMeasures/flexmeasures/pull/1641" target="_blank" rel="noopener noreferrer">1641</a>,<a href="https://github.com/FlexMeasures/flexmeasures/pull/1645" target="_blank" rel="noopener noreferrer"> 1645</a> and<a href="https://github.com/FlexMeasures/flexmeasures/pull/1596" target="_blank" rel="noopener noreferrer"> 1596</a>.</p>
 </div>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Video: Inspecting sensor data in FlexMeasures</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/video-inspecting-sensor-data/"/>
-        <id>https://flexmeasures.io/video-inspecting-sensor-data/</id>
-        <media:content url="https://flexmeasures.io/media/posts/51/Screenshot-from-2025-07-23-22-13-32.png" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2025-07-23T22:15:19+02:00</updated>
-            <summary type="html">
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/51/Screenshot-from-2025-07-23-22-13-32.png" alt="Vlad presenting at FOSDEM 2025" />
-                    You cannot do excellent energy optimization without understanding the data you work with. We have developed a lot of features recently, so that you can inspect your data ― with&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/51/Screenshot-from-2025-07-23-22-13-32.png" class="type:primaryImage" alt="Vlad presenting at FOSDEM 2025" /></p>
-                <p>You cannot do excellent energy optimization without understanding the data you work with. </p>
-<p>We have developed a lot of features recently, so that you can inspect your data ― with basic stats, the Playback feature, bar charts &amp; heat maps and even manual data upload!</p>
-<p>In this 3-minute video, we walk you through all of it.</p>
-<figure class="post__video">
-<div style="padding: 56.25% 0 0 0; position: relative;"><iframe loading="lazy" width="688" height="330" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://player.vimeo.com/video/1104764816?h=44252a2999&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Seita: Sensor data inspection in FlexMeasures" data-mce-fragment="1"></iframe></div>
-<script src="https://player.vimeo.com/api/player.js"></script>
-</figure>
-<p>If you have questions about sensor data capabilities in FlexMeasures, make sure to <a href="https://flexmeasures.io/get-in-touch/">contact us</a>.</p>
             ]]>
         </content>
     </entry>
