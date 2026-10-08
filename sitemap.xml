@@ -261,6 +261,14 @@
 </image:image>
 </url>
 <url>
+<loc>https://flexmeasures.io/case-study-flexmeasures-in-the-meter-cabinet/</loc>
+<lastmod>2026-10-08T13:18:54+02:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/65/Screenshot-from-2026-10-08-13-08-08.png</image:loc>
+<image:title><![CDATA[Luo logo]]></image:title>
+</image:image>
+</url>
+<url>
 <loc>https://flexmeasures.io/documentation/</loc>
 <lastmod>2025-01-23T09:14:43+01:00</lastmod>
 </url>
@@ -286,7 +294,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/flexmeasures-a-platform-for-behind-the-meter-orchestration/</loc>
-<lastmod>2026-10-08T13:14:48+02:00</lastmod>
+<lastmod>2026-10-08T13:19:18+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/3/simple-flexEMS-2.png</image:loc>
 <image:title><![CDATA[]]></image:title>
@@ -513,7 +521,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/providing-public-holidays-as-regressors-to-forecasting-it-makes-a-difference/</loc>
-<lastmod>2026-08-08T00:45:37+02:00</lastmod>
+<lastmod>2026-10-08T13:17:50+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/62/Forecasting-annotations-slide-2.png</image:loc>
 <image:title><![CDATA[]]></image:title>
@@ -545,7 +553,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/talk-at-fosdem-2026-cems/</loc>
-<lastmod>2026-02-17T12:04:46+01:00</lastmod>
+<lastmod>2026-10-08T13:17:57+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/55/20260131-Nico_Rikken-IMG_5923-cropped.jpg</image:loc>
 <image:title><![CDATA[Nicolas presenting at FOSDEM 2025]]></image:title>
@@ -825,7 +833,7 @@
 </url>
 <url>
 <loc>https://flexmeasures.io/v100-commercial-industrial-sites/</loc>
-<lastmod>2026-09-16T00:28:01+02:00</lastmod>
+<lastmod>2026-10-08T13:17:41+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/63/Screenshot-from-2026-09-16-00-27-17.png</image:loc>
 <image:title><![CDATA[Industrial site]]></image:title>
@@ -844,16 +852,8 @@
 </image:image>
 </url>
 <url>
-<loc>https://flexmeasures.io/v100-commercial-industrial-sites-2/</loc>
-<lastmod>2026-10-08T13:09:31+02:00</lastmod>
-<image:image>
-<image:loc>https://flexmeasures.io/media/posts/65/Screenshot-from-2026-10-08-13-08-08.png</image:loc>
-<image:title><![CDATA[Luo logo]]></image:title>
-</image:image>
-</url>
-<url>
 <loc>https://flexmeasures.io/video-inspecting-sensor-data/</loc>
-<lastmod>2025-07-26T18:53:11+02:00</lastmod>
+<lastmod>2026-10-08T13:18:05+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/51/Screenshot-from-2025-07-23-22-13-32.png</image:loc>
 <image:title><![CDATA[Vlad presenting at FOSDEM 2025]]></image:title>
