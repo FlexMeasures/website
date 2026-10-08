@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2026-10-08T13:18:54+02:00</updated>
+    <updated>2026-10-08T13:56:49+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -33,14 +33,14 @@
 <p><span style="font-weight: 400;">"FlexMeasures does the part that is hard to get right and easy to get wrong without noticing. That left us free to spend our time on the part customers actually see."</span></p>
 <p><span style="font-weight: 400;">Sam Aerts, co-founder, </span><span style="font-weight: 400;">Luo (Belgium).</span></p>
 </blockquote>
-<p><span style="font-weight: 400;">Luo</span><span style="font-weight: 400;"> builds an energy management system, Helios, for European households and SMEs. FlexMeasures is the optimisation engine inside it, running on the device in the meter cabinet rather than in a data centre.</span></p>
+<p><span style="font-weight: 400;"><a href="https://luo.be">Luo</a></span><span style="font-weight: 400;"> builds an energy management system, Helios, for European households and SMEs. FlexMeasures is the optimisation engine inside it, running on the device in the meter cabinet rather than in a data centre.</span></p>
 <p><span style="font-weight: 400;">Helios at a glance: 200+ sites live. On the market since April 2026. One instance per site, on-premise. Plan resolution 15 minutes. PV, battery and EV charger per site.</span></p>
 <h2><span style="font-weight: 400;">The product: Every brand wants to be the brain</span></h2>
 <p><span style="font-weight: 400;">Most sites have solar, a battery and, increasingly often, an EV charger. Almost never all from the same maker. Each one comes with its own EMS that handles its own gear and ignores the rest. So when a customer adds something, you get two systems pulling in different directions, or you rip out what is already on the wall. Either way the payback gets worse.</span></p>
-<p><span style="font-weight: 400;">Helios sits above all of it and belongs to none of them. The installer can fit whichever brand they like next to what is already there. We do the commissioning and the support for the EMS ourselves, so their electricians can stay on electrical work instead of on network settings, integrations and the phone calls that come after.</span></p>
+<p><span style="font-weight: 400;"><a href="https://luo.be/discover-helios">Helios</a> sits above all of it and belongs to none of them. The installer can fit whichever brand they like next to what is already there. We do the commissioning and the support for the EMS ourselves, so their electricians can stay on electrical work instead of on network settings, integrations and the phone calls that come after.</span></p>
 <p><span style="font-weight: 400;">Our partners each put in around eight new sites a day. An electrician sets one up in an afternoon and then walks away. So nothing here can need an engineer to tune it per site, and nothing can need weeks of data before it starts doing something sensible.</span></p>
 <h2>Deployment: Where FlexMeasures runs</h2>
-<p><span style="font-weight: 400;">Not in our cloud. Each site gets a small computer in the meter cabinet, wired into the installation, and FlexMeasures runs on it. One instance per site, sitting next to the drivers that talk to the inverter and the charge point. Decisions get madetaken in seconds, not in a round trip to a data centre.</span></p>
+<p><span style="font-weight: 400;">Not in our cloud. Each site gets a small computer in the meter cabinet, wired into the installation, and FlexMeasures runs on it. One instance per site, sitting next to the drivers that talk to the inverter and the charge point. Decisions get made in seconds, not in a round trip to a data centre.</span></p>
 <p><span style="font-weight: 400;">Having our own hardware on site is what lets us promise things we could not promise otherwise. The logic that steers the assets is on the same side of the connection as the assets, which is what electrical safety needs. Site data and credentials never have to leave the building. And when the internet drops, nothing stops: the site keeps measuring, planning and steering until the line comes back.</span></p>
 <p><span style="font-weight: 400;">What we pay for that is room. The whole optimisation has to run on that little computer, and it has to come up with something sensible on the day the electrician leaves, with no history to go on.</span></p>
 <h2>What FlexMeasures does for us</h2>
