@@ -301,48 +301,8 @@
 <lastmod>2022-02-09T17:47:06+01:00</lastmod>
 </url>
 <url>
-<loc>https://flexmeasures.io/flexmeasures-featured-on-python-developer-podcast/</loc>
-<lastmod>2026-02-13T14:55:49+01:00</lastmod>
-<image:image>
-<image:loc>https://flexmeasures.io/media/posts/28/podcast-init-logo.png</image:loc>
-<image:title><![CDATA[Podcast __init__ Logo]]></image:title>
-</image:image>
-</url>
-<url>
-<loc>https://flexmeasures.io/flexmeasures-the-open-source-toolkit-for-smart-energy-flexibility-services/</loc>
-<lastmod>2025-02-17T16:44:05+01:00</lastmod>
-<image:image>
-<image:loc>https://flexmeasures.io/media/posts/47/Flexmeasures-Fig-1.png</image:loc>
-<image:title><![CDATA[]]></image:title>
-</image:image>
-</url>
-<url>
-<loc>https://flexmeasures.io/fm-client-is-here/</loc>
-<lastmod>2023-11-27T17:33:26+01:00</lastmod>
-<image:image>
-<image:loc>https://flexmeasures.io/media/posts/32/bell-sign-on-registration-reception-preview-xl.jpg</image:loc>
-<image:title><![CDATA[Bell on registration desk]]></image:title>
-</image:image>
-</url>
-<url>
-<loc>https://flexmeasures.io/fosdem-2024-a-hands-on-integration-tutorial-video/</loc>
-<lastmod>2025-03-14T19:16:55+01:00</lastmod>
-<image:image>
-<image:loc>https://flexmeasures.io/media/posts/38/1708007402053.jpeg</image:loc>
-<image:title><![CDATA[Nicolas giving the tutorial at FOSDEM 2024]]></image:title>
-</image:image>
-<image:image>
-<image:loc>https://flexmeasures.io/media/posts/38/Screenshot-from-2025-03-14-19-14-19.png</image:loc>
-<image:title><![CDATA[The app built in this tutorial]]></image:title>
-</image:image>
-</url>
-<url>
-<loc>https://flexmeasures.io/get-in-touch/</loc>
-<lastmod>2025-06-28T15:04:50+02:00</lastmod>
-</url>
-<url>
-<loc>https://flexmeasures.io/home/</loc>
-<lastmod>2026-10-08T16:36:28+02:00</lastmod>
+<loc>https://flexmeasures.io/flexmeasures-a-platform-for-behind-the-meter-orchestration/</loc>
+<lastmod>2026-10-08T16:45:53+02:00</lastmod>
 <image:image>
 <image:loc>https://flexmeasures.io/media/posts/3/simple-flexEMS-2.png</image:loc>
 <image:title><![CDATA[]]></image:title>
@@ -383,6 +343,46 @@
 <image:loc>https://flexmeasures.io/media/posts/3/gallery/cropped-cropped-v2g_liberty-200-thumbnail.png</image:loc>
 <image:title><![CDATA[V2G Liberty (NL)]]></image:title>
 </image:image>
+</url>
+<url>
+<loc>https://flexmeasures.io/flexmeasures-featured-on-python-developer-podcast/</loc>
+<lastmod>2026-02-13T14:55:49+01:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/28/podcast-init-logo.png</image:loc>
+<image:title><![CDATA[Podcast __init__ Logo]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://flexmeasures.io/flexmeasures-the-open-source-toolkit-for-smart-energy-flexibility-services/</loc>
+<lastmod>2025-02-17T16:44:05+01:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/47/Flexmeasures-Fig-1.png</image:loc>
+<image:title><![CDATA[]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://flexmeasures.io/fm-client-is-here/</loc>
+<lastmod>2023-11-27T17:33:26+01:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/32/bell-sign-on-registration-reception-preview-xl.jpg</image:loc>
+<image:title><![CDATA[Bell on registration desk]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://flexmeasures.io/fosdem-2024-a-hands-on-integration-tutorial-video/</loc>
+<lastmod>2025-03-14T19:16:55+01:00</lastmod>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/38/1708007402053.jpeg</image:loc>
+<image:title><![CDATA[Nicolas giving the tutorial at FOSDEM 2024]]></image:title>
+</image:image>
+<image:image>
+<image:loc>https://flexmeasures.io/media/posts/38/Screenshot-from-2025-03-14-19-14-19.png</image:loc>
+<image:title><![CDATA[The app built in this tutorial]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://flexmeasures.io/get-in-touch/</loc>
+<lastmod>2025-06-28T15:04:50+02:00</lastmod>
 </url>
 <url>
 <loc>https://flexmeasures.io/lf-energy-summit-2024/</loc>
