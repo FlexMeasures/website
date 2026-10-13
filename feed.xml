@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2026-10-13T00:35:15+02:00</updated>
+    <updated>2026-10-13T21:48:21+02:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -16,30 +16,30 @@
         </author>
         <link href="https://flexmeasures.io/case-study-flexmeasures-in-belgian-meter-cabinets/"/>
         <id>https://flexmeasures.io/case-study-flexmeasures-in-belgian-meter-cabinets/</id>
-        <media:content url="https://flexmeasures.io/media/posts/65/Screenshot-from-2026-10-13-00-11-52.png" medium="image" />
+        <media:content url="https://flexmeasures.io/media/posts/65/Helios-Frame.png" medium="image" />
             <category term="FlexMeasures Blog"/>
 
         <updated>2026-10-08T12:30:14+02:00</updated>
             <summary type="html">
                 <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/65/Screenshot-from-2026-10-13-00-11-52.png" alt="Helios app, built (among others) with FlexMeasures" />
+                        <img src="https://flexmeasures.io/media/posts/65/Helios-Frame.png" alt="The Helios app is built (among others) with FlexMeasures" />
                     "FlexMeasures does the part that is hard to get right and easy to get wrong without noticing. That left us&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/65/Screenshot-from-2026-10-13-00-11-52.png" class="type:primaryImage" alt="Helios app, built (among others) with FlexMeasures" /></p>
+                    <p><img src="https://flexmeasures.io/media/posts/65/Helios-Frame.png" class="type:primaryImage" alt="The Helios app is built (among others) with FlexMeasures" /></p>
                 <blockquote>
 <p><span style="font-weight: 400;">"FlexMeasures does the part that is hard to get right and easy to get wrong without noticing. That left us free to spend our time on the part customers actually see."</span></p>
 <p><span style="font-weight: 400;">Sam Aerts, co-founder, </span><span style="font-weight: 400;">Luo (Belgium).</span></p>
 </blockquote>
 <p><span style="font-weight: 400;"><a href="https://luo.be">Luo</a></span><span style="font-weight: 400;"> builds an energy management system, Helios, for European households and SMEs. FlexMeasures is the optimisation engine inside it, running on the device in the meter cabinet, rather than in a data centre.</span></p>
-<div class="gallery-wrapper gallery-wrapper--wide"><div class="gallery" data-is-empty="false" data-translation="Add images" data-columns="2">
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/65/gallery/helios-app-2.png" data-size="x"><img loading="lazy" src="https://flexmeasures.io/media/posts/65/gallery/helios-app-2-thumbnail.png" alt="The Helios app"></a>
-<figcaption>The Helios app</figcaption>
+<div class="gallery-wrapper"><div class="gallery" data-is-empty="false" data-translation="Add images" data-columns="2">
+<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/65/gallery/helios-box-website-16x9.jpg" data-size="2400x1350"><img loading="lazy" src="https://flexmeasures.io/media/posts/65/gallery/helios-box-website-16x9-thumbnail.jpg" alt="The Helios box with Luo's local EMS" width="768" height="432"></a>
+<figcaption>The Helios box with Luo's local EMS</figcaption>
 </figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/65/gallery/Luo-Logo-2-padded.png" data-size="1883x697"><img loading="lazy" src="https://flexmeasures.io/media/posts/65/gallery/Luo-Logo-2-padded-thumbnail.png" alt="Luo is the company behind Helios" width="768" height="284"></a>
-<figcaption>Luo is the company behind Helios</figcaption>
+<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/65/gallery/helios-app-2.png" data-size="x"><img loading="lazy" src="https://flexmeasures.io/media/posts/65/gallery/helios-app-2-thumbnail.png" alt="The Helios app, made by Luo"></a>
+<figcaption>The Helios app, made by Luo</figcaption>
 </figure>
 </div></div>
 <p><span style="font-weight: 400;">Helios at a glance: 200+ sites live. On the market since April 2026. One instance per site, on-premise. Plan resolution 15 minutes. PV, battery and EV charger per site.</span></p>
