@@ -3,7 +3,7 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2026-11-05T20:42:23+01:00</updated>
+    <updated>2026-11-05T20:48:07+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
@@ -23,14 +23,14 @@
             <summary type="html">
                 <![CDATA[
                         <img src="https://flexmeasures.io/media/posts/67/ally-griffin-VD7cu7bKHmk-unsplash.jpg" alt="Beautiful repitition" />
-                    Version v1.1.0 of FlexMeasures has 163 PRs and one overarching addition: automations. With automations, we upgrade FlexMeasures to become a&hellip;
+                    Version v1.1.0 of FlexMeasures has 177 PRs and one overarching addition: automations. With automations, we upgrade FlexMeasures to become a&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                     <p><img src="https://flexmeasures.io/media/posts/67/ally-griffin-VD7cu7bKHmk-unsplash.jpg" class="type:primaryImage" alt="Beautiful repitition" /></p>
                 <div class="post__inner post__entry">
-<p>Version v1.1.0 of FlexMeasures has 163 PRs and one overarching addition: automations. With automations, we upgrade FlexMeasures to become a data pipeline platform.</p>
+<p>Version v1.1.0 of FlexMeasures has 177 PRs and one overarching addition: automations. With automations, we upgrade FlexMeasures to become a data pipeline platform.</p>
 <p><a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v1-1-0-november-4-2026" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements. Here, we cannot talk about everything that happened. We focus on automations. Honorable mentions:</p>
 <ol>
 <li>Keeping better track of data sources</li>
