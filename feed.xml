@@ -3,12 +3,66 @@
     <title>FlexMeasures</title>
     <link href="https://flexmeasures.io/feed.xml" rel="self" />
     <link href="https://flexmeasures.io" />
-    <updated>2026-10-13T21:48:21+02:00</updated>
+    <updated>2026-11-05T20:42:23+01:00</updated>
     <author>
         <name>SeitaBV</name>
     </author>
     <id>https://flexmeasures.io</id>
 
+    <entry>
+        <title>v1.1.0: Automations</title>
+        <author>
+            <name>Nicolas Höning</name>
+        </author>
+        <link href="https://flexmeasures.io/v110-automations/"/>
+        <id>https://flexmeasures.io/v110-automations/</id>
+        <media:content url="https://flexmeasures.io/media/posts/67/ally-griffin-VD7cu7bKHmk-unsplash.jpg" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2026-11-03T15:33:16+01:00</updated>
+            <summary type="html">
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/67/ally-griffin-VD7cu7bKHmk-unsplash.jpg" alt="Beautiful repitition" />
+                    Version v1.1.0 of FlexMeasures has 163 PRs and one overarching addition: automations. With automations, we upgrade FlexMeasures to become a&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/67/ally-griffin-VD7cu7bKHmk-unsplash.jpg" class="type:primaryImage" alt="Beautiful repitition" /></p>
+                <div class="post__inner post__entry">
+<p>Version v1.1.0 of FlexMeasures has 163 PRs and one overarching addition: automations. With automations, we upgrade FlexMeasures to become a data pipeline platform.</p>
+<p><a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v1-1-0-november-4-2026" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements. Here, we cannot talk about everything that happened. We focus on automations. Honorable mentions:</p>
+<ol>
+<li>Keeping better track of data sources</li>
+<li>Rate limits: more usable (after first real-life tests)</li>
+<li>add annotations on sensor data in the UI</li>
+<li>3x speed increase in test suite</li>
+<li>more usable status page (focus on jobs first)</li>
+<li>various bug, perfomance and UX fixes</li>
+</ol>
+</div>
+<h2>Automations</h2>
+<p>For recurring tasks, e.g. refresh PV generation forecasts in the morning and around noon, or schedule a site (at least) every 4 hours, we used cron jobs. Another alternative was that an outside system (e.g. a local EMS) would take this recurrence over and call the FlexMeasures API regularly. However, that does not work for every use case.</p>
+<p>Enter: automations. Using FlexMeasures queuing system as a backbone, users can now automate recurrent runs of forecasts, schedules and reports via the UI:</p>
+<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/67/screenshot_asset_automations.png" alt="Start page of automations" width="850" height="362" sizes="(min-width: 37.5em) 1600px, 80vw" srcset="https://flexmeasures.io/media/posts/67/responsive/screenshot_asset_automations-xs.png 384w ,https://flexmeasures.io/media/posts/67/responsive/screenshot_asset_automations-sm.png 600w ,https://flexmeasures.io/media/posts/67/responsive/screenshot_asset_automations-md.png 768w ,https://flexmeasures.io/media/posts/67/responsive/screenshot_asset_automations-lg.png 1200w ,https://flexmeasures.io/media/posts/67/responsive/screenshot_asset_automations-xl.png 1600w"></figure>
+<p>You can edit re-occurrence patterns and configuration. You can also see whether an automation is active (green light), short statistics of recent jobs and the next run time. You can even run an automation right away.</p>
+<p>This is great as management of sites moves out of cron jobs - less command line hacking and log file reading. And: more users can manage how a site runs daily (not just the admins who are allowed on the cron server). This includes not just hosts. Consultants can manage their client's sites, or users manage their own. They can inspect automations together and delegate the management and monitoring of it.<br>And a cron server is now not a CPU bottleneck. If a host needs to scale, they concentrate on their worker CPUs.</p>
+<p>There is a lot of functionality we already worked out under the hood, for instance that FlexMeasures plugins can also add automations for their custom commands - an example would be retrieving data from a 3rd party API. In fact, <a href="https://github.com/FlexMeasures/flexmeasures-weather/" target="_blank" rel="noopener noreferrer">flexmeasures-weather</a> and <a href="https://github.com/seitabv/flexmeasures-entsoe" target="_blank" rel="noopener noreferrer">flexmeasures-entsoe</a> will soon allow you to automate weather forecast and price retrieval this way!<br><br>And, as usual, automations can be managed fully via the FlexMeasures API (and to a big extent in the CLI).<br><br>What will we do in v1.2?</p>
+<ul>
+<li>Monitoring - failures need to become alerts (via email), to the right people, in the right amount. <a href="https://github.com/FlexMeasures/flexmeasures/pull/2671" target="_blank" rel="noopener noreferrer">Work has started</a>.</li>
+<li>Editable automations - You can only edit the recurrence pattern as of now, but <a href="https://github.com/FlexMeasures/flexmeasures/pull/2779" target="_blank" rel="noopener noreferrer">soon also the configuration itself.</a></li>
+<li>Configuration via forms - now many configuration and parameter details need to be entered as JSON. As we use schemas to validate those in all data generators, we can start to offer UI forms. For reporting templates, we already are <a href="https://github.com/FlexMeasures/flexmeasures/pull/2797" target="_blank" rel="noopener noreferrer">working</a> on this.</li>
+<li>Dependencies - some jobs are dependent on others. The queuing supports this, but our automation layer still needs that. For instance: retrieve price data, and if that worked, schedule. This also already has <a href="https://github.com/FlexMeasures/flexmeasures/pull/2706" target="_blank" rel="noopener noreferrer">a PR</a>, see screenshot below for proposed UI.</li>
+</ul>
+<figure class="post__image post__image--center"><img loading="lazy" src="https://flexmeasures.io/media/posts/67/automation-report-templates.png" alt="Editing a report in forms, as an automation" width="500" height="1129" sizes="(min-width: 37.5em) 1600px, 80vw" srcset="https://flexmeasures.io/media/posts/67/responsive/automation-report-templates-xs.png 384w ,https://flexmeasures.io/media/posts/67/responsive/automation-report-templates-sm.png 600w ,https://flexmeasures.io/media/posts/67/responsive/automation-report-templates-md.png 768w ,https://flexmeasures.io/media/posts/67/responsive/automation-report-templates-lg.png 1200w ,https://flexmeasures.io/media/posts/67/responsive/automation-report-templates-xl.png 1600w">
+<figcaption>Editing a report in forms, as an automation</figcaption>
+</figure>
+<figure class="post__image post__image--center"><img loading="lazy" src="https://flexmeasures.io/media/posts/67/automation-dependency.png" alt="Editing dependencies between automations" width="750" height="450" sizes="(min-width: 37.5em) 1600px, 80vw" srcset="https://flexmeasures.io/media/posts/67/responsive/automation-dependency-xs.png 384w ,https://flexmeasures.io/media/posts/67/responsive/automation-dependency-sm.png 600w ,https://flexmeasures.io/media/posts/67/responsive/automation-dependency-md.png 768w ,https://flexmeasures.io/media/posts/67/responsive/automation-dependency-lg.png 1200w ,https://flexmeasures.io/media/posts/67/responsive/automation-dependency-xl.png 1600w">
+<figcaption>Editing dependencies between automations</figcaption>
+</figure>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Case study: FlexMeasures in Belgian meter cabinets</title>
         <author>
@@ -70,6 +124,37 @@
 <p>Yes. Open source got FlexMeasures onto our list; what decided it was no licence on hardware we own, and that it already handled many sites.</p>
 <p><span style="font-weight: 400;">When we started we knew EMHASS, and went looking for what else was out there. What we could not find was anyone who had already put FlexMeasures inside a product they sell, and who would say plainly where the joints are: what it does for you, what you still have to build yourself, and what it takes to run it on real hardware in someone's meter cabinet.</span></p>
 <p><span style="font-weight: 400;">That is what this case study is for. We stay close to upstream and extend the storage scheduler by sub-classing it instead of forking, which keeps upgrades cheap. If you are making the same call now, <a href="https://luo.be/contact" target="_blank" rel="noopener noreferrer">come and ask us</a>.</span></p>
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>OpenADR Integration</title>
+        <author>
+            <name>Nicolas Höning</name>
+        </author>
+        <link href="https://flexmeasures.io/openadr-integration/"/>
+        <id>https://flexmeasures.io/openadr-integration/</id>
+        <media:content url="https://flexmeasures.io/media/posts/68/openadrlogo347x75.png" medium="image" />
+            <category term="FlexMeasures Blog"/>
+
+        <updated>2026-09-21T22:01:00+02:00</updated>
+            <summary type="html">
+                <![CDATA[
+                        <img src="https://flexmeasures.io/media/posts/68/openadrlogo347x75.png" alt="" />
+                    Local congestion support is one of the next big things in European grids, and the OpenADR protocol seems to be&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <p><img src="https://flexmeasures.io/media/posts/68/openadrlogo347x75.png" class="type:primaryImage" alt="" /></p>
+                <p>Local congestion support is one of the next big things in European grids, and the <a href="https://www.openadr.org/" target="_blank" rel="noopener noreferrer">OpenADR</a> protocol seems to be in favour by many DSOs. (it's already widely-used in the U.S.) In The Netherlands, 3 DSOs are piloting it with charging hubs.</p>
+<p>In The Netherlands, ELaad (innovation lab of Dutch DSOs) is using FlexMeasures and contributed a new plugin: <a href="https://github.com/FlexMeasures/flexmeasures-openadr3" target="_blank" rel="noopener noreferrer">flexmeasures-openadr3</a> 🎉</p>
+<p>Thanks to <span class="djegm5 djel3k"><span class="djel3k" data-sdui-anchor-id="commentary-jRjNjdIk_OQq270lHDHKtU5-Ugais4t9eVvEE2w4Ljc-05d54cad-bccf-413f-95d1-0824cc45dab5::937">ElaadNL</span></span> for the code contribution. And I'm excited we are now connecting LFEnergy projects to form full-stack open solutions! (this connects <span class="djegm5 djel3k">FlexMeasures</span> and <span class="djegm5 djel3k"><a href="https://lfenergy.org/projects/openleadr/" target="_blank" rel="noopener noreferrer">OpenLeadr</a></span> - the OpenADR project focusing more on the DSO side).</p>
+<p>If you want to see a full demo of integrating a top-level node (the DSO side) with an end-level node (the EMS side), using the two projects and the new plugin, you are in luck, as we showcased that on the LF Energy Summit Europe 2026:</p>
+<figure class="post__video"><iframe loading="lazy" width="650" height="364" src="https://www.youtube.com/embed/6EIzbBUffJc?list=PLDE13Lw0b5KY" allowfullscreen="allowfullscreen"></iframe></figure>
+<p>With <span class="djegm5 djel3k"><span class="djel3k" data-sdui-anchor-id="commentary-jRjNjdIk_OQq270lHDHKtU5-Ugais4t9eVvEE2w4Ljc-05d54cad-bccf-413f-95d1-0824cc45dab5::489">ElaadNL</span></span>'s <span class="djegm5 djel3k"><span class="djel3k" data-sdui-anchor-id="commentary-jRjNjdIk_OQq270lHDHKtU5-Ugais4t9eVvEE2w4Ljc-05d54cad-bccf-413f-95d1-0824cc45dab5::499">N</span><span class="djel3k" data-sdui-anchor-id="commentary-jRjNjdIk_OQq270lHDHKtU5-Ugais4t9eVvEE2w4Ljc-05d54cad-bccf-413f-95d1-0824cc45dab5::499">i</span><span class="djel3k" data-sdui-anchor-id="commentary-jRjNjdIk_OQq270lHDHKtU5-Ugais4t9eVvEE2w4Ljc-05d54cad-bccf-413f-95d1-0824cc45dab5::499">ck</span><span class="djel3k" data-sdui-anchor-id="commentary-jRjNjdIk_OQq270lHDHKtU5-Ugais4t9eVvEE2w4Ljc-05d54cad-bccf-413f-95d1-0824cc45dab5::499"> Van </span><span class="djel3k" data-sdui-anchor-id="commentary-jRjNjdIk_OQq270lHDHKtU5-Ugais4t9eVvEE2w4Ljc-05d54cad-bccf-413f-95d1-0824cc45dab5::499">Der Burgt</span></span>, I presented how you can not only use an open protocol between DSO and EMS/aggregator, but also use <span class="djegm5 djel3k">opensource</span> technology for your local site optimization - which plays nice with the DSO's dynamic requests.</p>
+<p>Nick's demo covers entering and broadcasting dynamic congestion signals for the upcoming day. Plus, on the aggregator/EMS side, he shows how to subscribe to these signals and how a new one will influence the BTM planning of FlexMeasures.</p>
+<p> </p>
             ]]>
         </content>
     </entry>
@@ -210,7 +295,7 @@
     <entry>
         <title>v0.33: copy assets, account sources</title>
         <author>
-            <name>SeitaBV</name>
+            <name>Nicolas Höning</name>
         </author>
         <link href="https://flexmeasures.io/v033-copy-asset-account-sources/"/>
         <id>https://flexmeasures.io/v033-copy-asset-account-sources/</id>
@@ -260,7 +345,7 @@
     <entry>
         <title>v0.32: Flex-config on graphs</title>
         <author>
-            <name>SeitaBV</name>
+            <name>Nicolas Höning</name>
         </author>
         <link href="https://flexmeasures.io/v032-flex-config-on-graphs/"/>
         <id>https://flexmeasures.io/v032-flex-config-on-graphs/</id>
@@ -479,95 +564,6 @@
 <figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/54/consultants-dashboard.png" alt="Better consultant for consultants and admins" width="750" height="292" sizes="(min-width: 37.5em) 1600px, 80vw" srcset="https://flexmeasures.io/media/posts/54/responsive/consultants-dashboard-xs.png 384w ,https://flexmeasures.io/media/posts/54/responsive/consultants-dashboard-sm.png 600w ,https://flexmeasures.io/media/posts/54/responsive/consultants-dashboard-md.png 768w ,https://flexmeasures.io/media/posts/54/responsive/consultants-dashboard-lg.png 1200w ,https://flexmeasures.io/media/posts/54/responsive/consultants-dashboard-xl.png 1600w"></figure>
 <p>This work was done in Pull Request <a href="https://github.com/FlexMeasures/flexmeasures/pull/1763" target="_blank" rel="noopener noreferrer">1763</a>.</p>
 <p> </p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.29: Flex-model &amp; SwaggerUI</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/v029-flex-model-swaggerui/"/>
-        <id>https://flexmeasures.io/v029-flex-model-swaggerui/</id>
-        <media:content url="https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-10-11-23-51-2.png" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2025-10-14T17:45:08+02:00</updated>
-            <summary type="html">
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-10-11-23-51-2.png" alt="a KPI widget" />
-                    Version v0.29 of FlexMeasures moves the flex-model of assets on the data model and adds a UI to edit it.
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-10-11-23-51-2.png" class="type:primaryImage" alt="a KPI widget" /></p>
-                <div class="post__inner post__entry">
-<p>Version v0.29 of FlexMeasures moves the flex-model of assets on the data model and adds a UI to edit it. Also, the API docs are moving to OpenAPI format, and developers can interact with it via SwaggerUI!<br><br>Both of these larger features make FlexMeasures much more applicable to real-world integrations. FlexMeasures not only needs to do smart things, it needs to be interactive and configurable.<br><br>Plus, as always, a lot of small tweaks have happened!</p>
-<p><a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-29-0-october-14-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements.</p>
-</div>
-<div class="post__inner post__entry">
-<h2>Flex-model</h2>
-<p>As you might know, FlexMeasures has ways to configure flexibility in the given assets - the <a href="https://flexmeasures.readthedocs.io/latest/features/scheduling.html#describing-flexibility">flex-model and flex-context</a> . The flex-context has been configurable on the asset via a UI dialogue since version 0.25 (and not only via the API when scheduling). Now, the flex-model also is supported.<br><br>This screenshot probably says more than a thousand words:</p>
-<figure class="post__image" ><img loading="lazy" src="https://flexmeasures.io/media/posts/53/Screenshot-from-2025-10-13-14-16-45.png" alt="Editing the flex-model of an asset" width="750" height="327" sizes="(min-width: 37.5em) 1600px, 80vw" srcset="https://flexmeasures.io/media/posts/53/responsive/Screenshot-from-2025-10-13-14-16-45-xs.png 384w ,https://flexmeasures.io/media/posts/53/responsive/Screenshot-from-2025-10-13-14-16-45-sm.png 600w ,https://flexmeasures.io/media/posts/53/responsive/Screenshot-from-2025-10-13-14-16-45-md.png 768w ,https://flexmeasures.io/media/posts/53/responsive/Screenshot-from-2025-10-13-14-16-45-lg.png 1200w ,https://flexmeasures.io/media/posts/53/responsive/Screenshot-from-2025-10-13-14-16-45-xl.png 1600w">
-<figcaption >Editing the flex-model of an asset</figcaption>
-</figure>
-<p>You can specify in this dialogue how any schedule needs to treat this asset. Here, state of charge (SoC) settings matter a lot - it is a heat buffer. Charging Efficiency is 300% ― a COP of 3.<br><br>As with the flex-context, many settings can be dynamic. In essence, they can be sensors. For example, the SoC Min setting can be a sensor, so you can plan different flexibility headrooms for different days of the week (an office can be cold in the weekend, so the heat storage has more flex to "play" with in the scheduling). Often, forecasts are instrumental in such dynamic settings, and we will have a major update on those in v0.30!<br><br>This work was done in Pull Requests <a href="https://github.com/FlexMeasures/flexmeasures/pull/1429">1429</a>, <a href="https://github.com/FlexMeasures/flexmeasures/pull/1565">1565</a> and <a href="https://github.com/FlexMeasures/flexmeasures/pull/1713">1713</a>. (the PR IDs tell you that we needed to work on this a long time, as it touches the core of scheduling, and we took care of migrating older attributes that were used for similar things beforehand, for backwards compatibility)</p>
-<h2>Open API / SwaggerUI</h2>
-<p>The FlexMeasures API is rather rich (and has grown!). It is crucial for integrating FlexMeasures into other systems, i.e. IoT gateways that send data and pull schedules, or custom UIs / dashboards. Or custom client scripts which setup new assets and sensors, for automating the addition and control of sites.<br><br>We document the API endpoints via Sphinx, but it would be much more developer-friendly to do that with the OpenAPI standard. In particular, developers want to browse available endpoints on a host, and even try them out live - this is possible with SwaggerUI, which was the originator for what is now OpenAPI, and still the most-used API UI.</p>
-<div class="gallery-wrapper gallery-wrapper--wide"><div class="gallery"  data-is-empty="false" data-translation="Add images" data-columns="2">
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/53/gallery/Screenshot-from-2025-10-10-11-23-51.png" data-size="1444x751"><img loading="lazy" src="https://flexmeasures.io/media/posts/53/gallery/Screenshot-from-2025-10-10-11-23-51-thumbnail.png" alt="List of endpoints" width="720" height="374"></a>
-<figcaption>List of endpoints</figcaption>
-</figure>
-<figure class="gallery__item"><a href="https://flexmeasures.io/media/posts/53/gallery/Screenshot-from-2025-10-13-14-43-23.png" data-size="1297x920"><img loading="lazy" src="https://flexmeasures.io/media/posts/53/gallery/Screenshot-from-2025-10-13-14-43-23-thumbnail.png" alt="Trying out an endpoint from SwaggerUI" width="720" height="511"></a>
-<figcaption>Trying out an endpoint from SwaggerUI</figcaption>
-</figure>
-</div></div>
-<p> </p>
-<p>This work was done in Pull Request <a href="https://github.com/FlexMeasures/flexmeasures/pull/1703" target="_blank" rel="noopener noreferrer">1703</a>.</p>
-</div>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>v0.28: Daily KPIs, faster graphs</title>
-        <author>
-            <name>SeitaBV</name>
-        </author>
-        <link href="https://flexmeasures.io/v028-daily-kpis/"/>
-        <id>https://flexmeasures.io/v028-daily-kpis/</id>
-        <media:content url="https://flexmeasures.io/media/posts/52/KPI-preview.png" medium="image" />
-            <category term="FlexMeasures Blog"/>
-
-        <updated>2025-09-09T16:35:14+02:00</updated>
-            <summary type="html">
-                <![CDATA[
-                        <img src="https://flexmeasures.io/media/posts/52/KPI-preview.png" alt="a KPI widget" />
-                    Version v0.28 of FlexMeasures brings the ability to show daily KPIs above the graphs. Also, we improved the performance of&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <p><img src="https://flexmeasures.io/media/posts/52/KPI-preview.png" class="type:primaryImage" alt="a KPI widget" /></p>
-                <div class="post__inner post__entry">
-<p>Version v0.28 of FlexMeasures brings the ability to show daily KPIs above the graphs. Also, we improved the performance of viewing graphs.</p>
-<p>Plus, a lot of small tweaks have happened!</p>
-<p><a href="https://flexmeasures.readthedocs.io/latest/changelog.html#v0-28-0-september-10-2025" target="_blank" rel="noopener noreferrer">See the changelog</a> for a complete list of improvements.</p>
-</div>
-<div class="post__inner post__entry">
-<h2>Daily KPIs</h2>
-<p>Until now, FlexMeasures would only let you see graphs data. We do have a reporting engine, but you have to know it is there (one tutorial does help you use it) and showing that data is your own job.</p>
-<p>Now, we make the first step for such data to step into the light - daily KPIs (e.g. daily energy costs) can be shown above the graphs:</p>
-<figure class="post__image post__image--center"><img loading="lazy"  src="https://flexmeasures.io/media/posts/52/KPIs-full.png" alt="KPIs shown on top of graphs" width="800" height="429" sizes="(min-width: 37.5em) 1600px, 80vw" srcset="https://flexmeasures.io/media/posts/52/responsive/KPIs-full-xs.png 384w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-sm.png 600w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-md.png 768w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-lg.png 1200w ,https://flexmeasures.io/media/posts/52/responsive/KPIs-full-xl.png 1600w"></figure>
-<p>This is the way to configure such KPI widgets at the moment:</p>
-<p><code>[</code><br><code>    {"title": "My KPI", "sensor": 2, "function": "sum"},</code><br><code>    {"title": "Raw Power KPI", "sensor": 3, "function": "sum"}</code><br><code>]</code></p>
-<p>The function setting can be either "sum", "mean", "max" or "min". We are working on a graphical way to set these soon. Until then, see <a href="https://flexmeasures.readthedocs.io/latest/views/asset-data.html#showing-daily-kpis">this documentation</a> on how to use htis feature.</p>
-<p>This work was done in Pull Request <a href="https://github.com/FlexMeasures/flexmeasures/pull/1608" target="_blank" rel="noopener noreferrer">1608</a>,  <a href="https://github.com/FlexMeasures/flexmeasures/pull/1656" target="_blank" rel="noopener noreferrer">1656</a> , <a href="https://github.com/FlexMeasures/flexmeasures/pull/1633" target="_blank" rel="noopener noreferrer">1633</a> and <a href="https://github.com/FlexMeasures/flexmeasures/pull/1634" target="_blank" rel="noopener noreferrer">1634</a></p>
-<h2>Faster graphs page</h2>
-<p>The graphs page is very important to check in on a site, especially if it is new. It had some UX problems, which we fixed in JavaScript, as well as some data processing problems in the backend when loading graph data, which we fixed there.</p>
-<p>As a result. waiting for data to load should be taking less time, and larger data set can be viewed.</p>
-<p>This work was done in Pull Requests <a href="https://github.com/FlexMeasures/flexmeasures/pull/1641" target="_blank" rel="noopener noreferrer">1641</a>,<a href="https://github.com/FlexMeasures/flexmeasures/pull/1645" target="_blank" rel="noopener noreferrer"> 1645</a> and<a href="https://github.com/FlexMeasures/flexmeasures/pull/1596" target="_blank" rel="noopener noreferrer"> 1596</a>.</p>
-</div>
             ]]>
         </content>
     </entry>
